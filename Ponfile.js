@@ -7,8 +7,9 @@
 
 const pon = require('pon')
 const { react, css, browser, map } = require('pon-task-web')
-const { fs, mocha } = require('pon-task-basic')
+const { fs, mocha, command } = require('pon-task-basic')
 const { mkdir, chmod } = fs
+const { fork } = command
 const { cssModule } = browser.plugins
 
 module.exports = pon({
@@ -17,12 +18,15 @@ module.exports = pon({
   // ----------------
   'struct:mkdir': mkdir([
     'bin',
+    'docs',
+    'db',
     'env',
-    'doc',
-    'hub',
+    'loc',
+    'server',
     'public',
     'shim',
     'tmp',
+    'misc',
     'test',
     'ui',
     'var'
@@ -37,6 +41,8 @@ module.exports = pon({
   }),
   'ui:map': map('public/js', 'public/js'),
   'test:mocha': mocha('test/**/*.js', { timeout: 3000 }),
+  'debug:server': fork('bin/app.js'),
+  'debug:watch': [ 'ui:*/watch' ],
   // ----------------
   // Main Tasks
   // ----------------
@@ -46,10 +52,12 @@ module.exports = pon({
   build: [ 'struct', 'ui' ],
   watch: [ 'ui:*', 'ui:*/watch' ],
   default: [ 'build' ],
+  debug: [ 'build', 'debug:*' ],
   // ----------------
-  // Shortcuts
+  // Aliases
   // ----------------
   t: 'test',
   b: 'build',
-  w: 'watch'
+  w: 'watch',
+  d: 'debug'
 })

@@ -4,6 +4,7 @@
   "description": "Demo of web site using pon",
   "main": "lib",
   "scripts": {
+    "start": "./bin/ap.js",
     "test": "pon test",
     "watch": "pon watch",
     "prepare": "pon build"
@@ -24,6 +25,9 @@
   "homepage": "https://github.com/realglobe-Inc/pon-demo-site#readme",
   "dependencies": {
     "co": "^4.6.0",
+    "evaljson": "^4.1.4",
+    "jk-env": "^1.0.1",
+    "jk-loc": "^1.0.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router-dom": "^4.0.0",

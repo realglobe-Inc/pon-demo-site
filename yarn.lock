@@ -1798,7 +1798,7 @@ esutils@^2.0.0, esutils@^2.0.2:
   version "2.0.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
 
-evaljson@^4.0.12:
+evaljson@^4.0.12, evaljson@^4.1.4:
   version "4.1.4"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/evaljson/-/evaljson-4.1.4.tgz#4dd3fdf39bc311b5e6e44c1bdb057d89949d7f17"
   dependencies:
@@ -3186,7 +3186,7 @@ pleeease-filters@^3.0.0:
     onecolor "~2.4.0"
     postcss "^5.0.4"
 
-pon-cli@^2.0.1:
+pon-cli@^2.0.2:
   version "2.0.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-cli/-/pon-cli-2.0.2.tgz#5df130bab8992afcd7bf0e41517270ef9a342fe9"
   dependencies:
@@ -3213,7 +3213,7 @@ pon-logger@^1.0.2:
     co "^4.6.0"
     colorprint "^4.1.0"
 
-pon-runner@^1.0.1:
+pon-runner@^1.0.1, pon-runner@^1.2.1:
   version "1.2.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-runner/-/pon-runner-1.2.1.tgz#ce7c9e3844a323abfbf7ff826a288dca650fd36a"
   dependencies:
@@ -3344,15 +3344,15 @@ pon-writer@^1.0.1:
     writeout "^2.1.0"
 
 pon@^3.2.1:
-  version "3.2.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon/-/pon-3.2.1.tgz#ea6928629fdb8c68aca1cf75cd0a61e9ce8cb962"
+  version "3.2.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon/-/pon-3.2.2.tgz#db49c8ad821b2caebdfbfe66740f73a624915873"
   dependencies:
     abind "^1.0.3"
     co "^4.6.0"
     minimatch "^3.0.3"
-    pon-cli "^2.0.1"
+    pon-cli "^2.0.2"
     pon-context "^1.1.1"
-    pon-runner "^1.0.1"
+    pon-runner "^1.2.1"
 
 ponfile@^2.0.1:
   version "2.0.1"
