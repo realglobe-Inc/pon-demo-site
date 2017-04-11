@@ -25,7 +25,7 @@
   "homepage": "https://github.com/realglobe-Inc/pon-demo-site#readme",
   "dependencies": {
     "co": "^4.6.0",
-    "evaljson": "^4.1.4",
+    "jk-db": "^1.0.1",
     "jk-env": "^1.0.1",
     "jk-loc": "^1.0.1",
     "react": "^15.4.2",
@@ -33,20 +33,19 @@
     "react-router-dom": "^4.0.0",
     "sugo-actor": "^4.6.4",
     "sugo-caller": "^3.3.1",
+    "sugo-endpoint-actor": "^1.0.2",
+    "sugo-endpoint-html": "^1.0.1",
     "sugo-hub": "^5.3.2"
   },
   "devDependencies": {
-    "amocha": "^2.0.0",
-    "ape-formatting": "^1.0.2",
-    "ape-releasing": "^4.0.4",
-    "ape-tasking": "^4.0.9",
     "ape-tmpl": "^5.0.20",
-    "ape-updating": "^4.1.0",
+    "aport": "^1.0.0",
+    "arequest": "^2.0.7",
+    "asleep": "^1.0.3",
     "coz": "^6.0.20",
     "injectmock": "^2.0.0",
     "pon": "^3.2.1",
     "pon-task-basic": "^1.0.1",
-    "pon-task-mocha": "^1.0.1",
     "pon-task-web": "^1.0.1"
   },
   "engines": {

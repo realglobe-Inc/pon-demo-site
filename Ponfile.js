@@ -6,8 +6,9 @@
 'use strict'
 
 const pon = require('pon')
+
 const { react, css, browser, map } = require('pon-task-web')
-const { fs, mocha, command } = require('pon-task-basic')
+const { fs, mocha, command, coz } = require('pon-task-basic')
 const { mkdir, chmod } = fs
 const { fork } = command
 const { cssModule } = browser.plugins
@@ -18,8 +19,8 @@ module.exports = pon({
   // ----------------
   'struct:mkdir': mkdir([
     'bin',
-    'docs',
     'db',
+    'docs',
     'env',
     'loc',
     'server',
@@ -34,7 +35,10 @@ module.exports = pon({
   'struct:chmod': chmod({
     'bin/**/*.*': '577'
   }),
-  'ui:react': react('ui', 'shim', { pattern: [ '**/*.js', '**/*.jsx' ] }),
+  'struct:render': [
+    coz('+(db|ui)/**/.*.bud')
+  ],
+  'ui:react': react('ui', 'shim', { pattern: [ '**/*.js', 'html/*.jsx' ] }),
   'ui:css': css('ui/stylesheets', 'shim/css', { pattern: '*.pcss' }),
   'ui:browser': browser('shim/entrypoints', 'public/js', {
     plugins: [ cssModule('shim/css', 'public/css/bundle.css') ]
@@ -46,7 +50,7 @@ module.exports = pon({
   // ----------------
   // Main Tasks
   // ----------------
-  struct: [ 'struct:mkdir', 'struct:chmod' ],
+  struct: [ 'struct:mkdir', 'struct:chmod', 'struct:render' ],
   ui: [ 'ui:css', 'ui:react', 'ui:browser', 'ui:map' ],
   test: [ 'test:mocha' ],
   build: [ 'struct', 'ui' ],
@@ -61,3 +65,5 @@ module.exports = pon({
   w: 'watch',
   d: 'debug'
 })
+
+
