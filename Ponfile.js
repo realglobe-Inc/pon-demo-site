@@ -45,15 +45,16 @@ module.exports = pon({
     plugins: [ cssModule('shim/css', 'public/css/bundle.css') ]
   }),
   'ui:map': map('public/js', 'public/js'),
-  'test:mocha': mocha('test/**/*.js', { timeout: 3000 }),
+  'test:mocha': [ mocha('test/**/*.js', { timeout: 3000 }) ],
   'debug:server': fork('bin/app.js'),
   'debug:watch': [ 'ui:*/watch' ],
+  'exit': () => process.exit(),
   // ----------------
   // Main Tasks
   // ----------------
   struct: [ 'struct:mkdir', 'struct:chmod', 'struct:render' ],
   ui: [ 'ui:css', 'ui:react', 'ui:browser', 'ui:map' ],
-  test: [ 'test:mocha' ],
+  test: [ 'test:mocha', 'exit' ],
   build: [ 'struct', 'ui' ],
   watch: [ 'ui:*', 'ui:*/watch' ],
   default: [ 'build' ],

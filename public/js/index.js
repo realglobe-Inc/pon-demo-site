@@ -24373,6 +24373,90 @@ module.exports = warning;
 
 },{"_process":36}],224:[function(require,module,exports){
 /**
+ * About component
+ */
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactAutobind = require('react-autobind');
+
+var _reactAutobind2 = _interopRequireDefault(_reactAutobind);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var About = function (_React$PureComponent) {
+  _inherits(About, _React$PureComponent);
+
+  function About(props) {
+    _classCallCheck(this, About);
+
+    var _this = _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).call(this, props));
+
+    var s = _this;
+    (0, _reactAutobind2.default)(s);
+    return _this;
+  }
+
+  _createClass(About, [{
+    key: 'render',
+    value: function render() {
+      var s = this;
+      var props = s.props;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'about' },
+        'This is About!',
+        props.children
+      );
+    }
+
+    // ---------
+    // Sub components
+    // ---------
+
+  }], [{
+    key: 'PrivacyPolicy',
+    value: function PrivacyPolicy() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'privacy-policy' },
+        'This is privacy policy'
+      );
+    }
+  }, {
+    key: 'TermOfUse',
+    value: function TermOfUse() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'about-term-of-use' },
+        'This is term of use'
+      );
+    }
+  }]);
+
+  return About;
+}(_react2.default.PureComponent);
+
+exports.default = About;
+
+},{"react":220,"react-autobind":43}],225:[function(require,module,exports){
+/**
  * App component
  */
 'use strict';
@@ -24393,13 +24477,13 @@ var _reactAutobind = require('react-autobind');
 
 var _reactAutobind2 = _interopRequireDefault(_reactAutobind);
 
-var _home = require('./home');
+var _Home = require('./Home');
 
-var _home2 = _interopRequireDefault(_home);
+var _Home2 = _interopRequireDefault(_Home);
 
-var _about = require('./about');
+var _About = require('./About');
 
-var _about2 = _interopRequireDefault(_about);
+var _About2 = _interopRequireDefault(_About);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24438,19 +24522,19 @@ var App = function (_React$PureComponent) {
           _react2.default.createElement(
             _reactRouterDom.Switch,
             null,
-            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _home2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
             _react2.default.createElement(
               _reactRouterDom.Route,
               { path: '/about' },
               _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_about2.default, null),
+                _react2.default.createElement(_About2.default, null),
                 _react2.default.createElement(
                   _reactRouterDom.Switch,
                   null,
-                  _react2.default.createElement(_reactRouterDom.Route, { path: '/about/privacy-policy', component: _about2.default.PrivacyPolicy }),
-                  _react2.default.createElement(_reactRouterDom.Route, { path: '/about/term-of-use', component: _about2.default.TermOfUse })
+                  _react2.default.createElement(_reactRouterDom.Route, { path: '/about/privacy-policy', component: _About2.default.PrivacyPolicy }),
+                  _react2.default.createElement(_reactRouterDom.Route, { path: '/about/term-of-use', component: _About2.default.TermOfUse })
                 )
               )
             ),
@@ -24544,91 +24628,7 @@ var App = function (_React$PureComponent) {
 
 exports.default = App;
 
-},{"./about":225,"./home":226,"react":220,"react-autobind":43,"react-router-dom":182}],225:[function(require,module,exports){
-/**
- * About component
- */
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactAutobind = require('react-autobind');
-
-var _reactAutobind2 = _interopRequireDefault(_reactAutobind);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var About = function (_React$PureComponent) {
-  _inherits(About, _React$PureComponent);
-
-  function About(props) {
-    _classCallCheck(this, About);
-
-    var _this = _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).call(this, props));
-
-    var s = _this;
-    (0, _reactAutobind2.default)(s);
-    return _this;
-  }
-
-  _createClass(About, [{
-    key: 'render',
-    value: function render() {
-      var s = this;
-      var props = s.props;
-
-      return _react2.default.createElement(
-        'div',
-        { className: 'about' },
-        'This is About!',
-        props.children
-      );
-    }
-
-    // ---------
-    // Sub components
-    // ---------
-
-  }], [{
-    key: 'PrivacyPolicy',
-    value: function PrivacyPolicy() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'privacy-policy' },
-        'This is privacy policy'
-      );
-    }
-  }, {
-    key: 'TermOfUse',
-    value: function TermOfUse() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'about-term-of-use' },
-        'This is term of use'
-      );
-    }
-  }]);
-
-  return About;
-}(_react2.default.PureComponent);
-
-exports.default = About;
-
-},{"react":220,"react-autobind":43}],226:[function(require,module,exports){
+},{"./About":224,"./Home":226,"react":220,"react-autobind":43,"react-router-dom":182}],226:[function(require,module,exports){
 /**
  * Home component
  */
@@ -24714,5 +24714,5 @@ document.addEventListener('DOMContentLoaded', function () {
   ), container);
 });
 
-},{"../components/App":224,"react":220,"react-dom":45,"react-router-dom":182}]},{},[227])
+},{"../components/App":225,"react":220,"react-dom":45,"react-router-dom":182}]},{},[227])
 

@@ -24,7 +24,7 @@ class App extends React.PureComponent {
       <div className='app'>
         <App.Header />
         <App.Main>
-          <Switch>
+          <Switch>w
             <Route exact path='/' component={ Home }/>
             <Route path='/about'>
               <div>
