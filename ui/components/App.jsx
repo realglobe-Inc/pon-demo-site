@@ -7,8 +7,8 @@ import React from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
 import autoBind from 'react-autobind'
 
-import Home from './home'
-import About from './about'
+import Home from './Home'
+import About from './About'
 
 class App extends React.PureComponent {
   constructor (props) {
