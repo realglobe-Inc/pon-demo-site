@@ -4,32 +4,31 @@
  */
 'use strict'
 
-const sugoHub = require('sugo-hub')
-const sugoActor = require('sugo-actor')
-const sugoEndpointActor = require('sugo-endpoint-actor')
-const sugoEndpointHTML = require('sugo-endpoint-html')
+const jkServer = require('jk-server')
+const { serverRendering } = require('jk-react')
+const db = require('../db')
+const Html = require('../shim/components/Html').default
+const App = require('../shim/components/App').default
 
 /** @lends create */
 function create () {
-  let hub = sugoHub({
+  let server = jkServer({
     static: [ 'public' ],
-    middlewares: [],
-    localActors: {
-      rpc: sugoActor({
-        modules: {
-          sign: require('./rpc/sign_module')
-        }
-      })
+    rpc: {
+      sign: require('./rpc/sign_module')
     },
-    endpoints: {
-      '/': '/views/index/index',
-      '/rest/:module/:method': sugoEndpointActor({}),
-      '/views/:module/:method': sugoEndpointHTML({
-        index: require('./views/index_view')
-      })
-    }
+    scope: {
+      db
+    },
+    middlewares: []
   })
-  return hub
+
+  //TODO
+  server.server.use(
+    serverRendering(Html, App)
+  )
+
+  return server
 }
 
 module.exports = create

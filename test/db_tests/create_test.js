@@ -6,29 +6,28 @@
 
 const create = require('../../db/create.js')
 const { ok, equal } = require('assert')
-const co = require('co')
 
 describe('create', function () {
   this.timeout(3000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Create', () => co(function * () {
+  it('Create', async () => {
     let db = create({
       dialect: 'memory'
     })
     let { User } = db.resources
     ok(User)
 
-    let user = yield User.create({ name: 'foo' })
+    let user = await User.create({ name: 'foo' })
     equal(user.name, 'foo')
-  }))
+  })
 })
 
 /* global describe, before, after, it */

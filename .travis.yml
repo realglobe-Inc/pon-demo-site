@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- '6'
+- '7'
 before_install:
 # TODO OSS
 # - npm i npm-cli-login -g
@@ -14,10 +14,8 @@ install:
 - npm install pon-cli -g
 - npm install
 script:
-- ./ci/build.js
-- ./ci/shim.js
-- ./ci/doc.js
-- ./ci/test.js
+- npm run build
+- npm run test
 after_success:
 - ./ci/travis/publish.js
 env:

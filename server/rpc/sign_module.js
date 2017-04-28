@@ -1,16 +1,12 @@
 'use strict'
 
-const { Module } = require('sugo-module-base')
 const db = require('../../db')
-const co = require('co')
 const { User } = db.resources
 
-const signModule = new Module({
-  signup (username, password) {
-    return co(function * () {
-      let user = yield User.create({ username, password })
-      return user
-    })
+const signModule = (app, client) => ({
+  async signup (username, password) {
+    let user = await User.create({ username, password })
+    return user
   }
 })
 

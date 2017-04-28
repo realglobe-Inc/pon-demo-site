@@ -20,7 +20,7 @@ module.exports = pon({
   'struct:mkdir': mkdir([
     'bin',
     'db',
-    'docs',
+    'doc',
     'env',
     'loc',
     'server',
@@ -38,9 +38,10 @@ module.exports = pon({
   'struct:render': [
     coz('+(db|ui)/**/.*.bud')
   ],
-  'ui:react': react('ui', 'shim', { pattern: [ '**/*.js', 'html/*.jsx' ] }),
+  'ui:react': react('ui', 'shim', { pattern: [ '**/*.js', '**/*.jsx' ] }),
   'ui:css': css('ui/stylesheets', 'shim/css', { pattern: '*.pcss' }),
   'ui:browser': browser('shim/entrypoints', 'public/js', {
+    watchTargets: 'shim/**/*.js',
     plugins: [ cssModule('shim/css', 'public/css/bundle.css') ]
   }),
   'ui:map': map('public/js', 'public/js'),
@@ -65,5 +66,3 @@ module.exports = pon({
   w: 'watch',
   d: 'debug'
 })
-
-

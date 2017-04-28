@@ -6,7 +6,6 @@
 
 const create = require('../../server/create.js')
 const { ok, equal } = require('assert')
-const co = require('co')
 const aport = require('aport')
 const asleep = require('asleep')
 const arequest = require('arequest')
@@ -14,31 +13,42 @@ const arequest = require('arequest')
 describe('create', function () {
   this.timeout(13000)
 
-  before(() => co(function * () {
+  before(async () => {
 
-  }))
+  })
 
-  after(() => co(function * () {
+  after(async () => {
 
-  }))
+  })
 
-  it('Create', () => co(function * () {
-    let port = yield aport()
+  it('Create', async () => {
+    let port = await aport()
     let created = create({})
     ok(created)
 
-    yield created.listen(port)
+    await created.listen(port)
 
-    let { statusCode, body } = yield arequest({
-      url: `http://localhost:${port}`,
-      method: 'GET'
-    })
-    equal(statusCode, 200)
-    ok(body)
+    {
+      let { statusCode, body } = await arequest({
+        url: `http://localhost:${port}/about`,
+        method: 'GET'
+      })
+      equal(statusCode, 200)
+      ok(body)
+    }
 
-    yield asleep(100)
-    yield created.close()
-  }))
+    {
+      let { statusCode, body } = await arequest({
+        url: `http://localhost:${port}/foo`,
+        method: 'GET'
+      })
+      equal(statusCode, 404)
+      ok(body)
+    }
+
+    await asleep(100)
+    await created.close()
+  })
 })
 
 /* global describe, before, after, it */

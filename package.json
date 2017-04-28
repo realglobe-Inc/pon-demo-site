@@ -4,10 +4,11 @@
   "description": "Demo of web site using pon",
   "main": "lib",
   "scripts": {
-    "start": "./bin/ap.js",
+    "start": "./bin/app.js",
     "test": "pon test",
     "watch": "pon watch",
-    "prepare": "pon build"
+    "prepare": "pon build",
+    "debug": "pon debug"
   },
   "repository": "realglobe-Inc/pon-demo-site",
   "keywords": [
@@ -24,18 +25,19 @@
   },
   "homepage": "https://github.com/realglobe-Inc/pon-demo-site#readme",
   "dependencies": {
-    "co": "^4.6.0",
+    "jk-client": "^1.0.1",
     "jk-db": "^1.0.1",
     "jk-env": "^1.0.1",
     "jk-loc": "^1.0.1",
+    "jk-react": "^1.0.2",
+    "jk-server": "^1.0.1",
+    "pon-task-basic": "^2.0.1",
+    "prop-types": "^15.5.8",
     "react": "^15.4.2",
+    "react-autobind": "^1.0.6",
     "react-dom": "^15.4.2",
-    "react-router-dom": "^4.0.0",
-    "sugo-actor": "^4.6.4",
-    "sugo-caller": "^3.3.1",
-    "sugo-endpoint-actor": "^1.0.2",
-    "sugo-endpoint-html": "^1.0.1",
-    "sugo-hub": "^5.3.2"
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
     "ape-tmpl": "^5.0.20",
@@ -49,7 +51,7 @@
     "pon-task-web": "^1.0.1"
   },
   "engines": {
-    "node": ">=6",
+    "node": ">=7.6",
     "npm": ">=4"
   }
 }
