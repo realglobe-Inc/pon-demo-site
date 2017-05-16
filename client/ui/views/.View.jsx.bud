@@ -1,0 +1,15 @@
+'use strict'
+
+module.exports = [
+  'NotfoundView',
+  'HomeView'
+].map((name) => ({
+  force: false,
+  mode: '644',
+  path: `${name}.jsx`,
+  data: { name }
+}))
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

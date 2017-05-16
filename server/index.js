@@ -4,6 +4,12 @@
  */
 'use strict'
 
-let create = require('./create')
+const server = require('./server')
+const db = require('./db')
+const env = require('./env')
 
-module.exports = create()
+module.exports = {
+  server,
+  db,
+  env
+}

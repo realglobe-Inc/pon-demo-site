@@ -1,0 +1,27 @@
+{
+  "default": {
+    "HOST": "localhost",
+    "STORAGE": "var/storage/the-demo-site.json",
+    "DIALECT": "json",
+    "SCHEMA": "the-demo-site",
+    "USER": "thedemosite",
+    "PASSWORD": "thedemosite"
+  },
+  "production": {
+    "HOST": "localhost",
+    "DIALECT": "mysql",
+    "USER": "thedemosite",
+    "PASSWORD": "thedemosite"
+  },
+  "development": {
+    "DIALECT": "mysql",
+    "USER": "thedemositedev",
+    "PASSWORD": "thedemositedev"
+  },
+  "test": {
+    "DIALECT": "sqlite",
+    "STORAGE": "var/storage/the-demo-site.db",
+    "USER": "thedemositetest",
+    "PASSWORD": "thedemositetest"
+  }
+}
