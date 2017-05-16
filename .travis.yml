@@ -8,13 +8,9 @@ addons:
 node_js:
 - '7'
 before_install:
-# TODO OSS
-# - npm i npm-cli-login -g
-# - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
-# - npm who
-- echo "registry = https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual" > $HOME/.npmrc
-- curl -u${NPM_USER}:${NPM_PASSWORD} "https://realglobe.artifactoryonline.com/realglobe/api/npm/auth" >> $HOME/.npmrc
-- cat $HOME/.npmrc
+ - npm i npm-cli-login -g
+ - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
+ - npm who
 install:
 - npm install jsdoc -g
 - npm install pon-cli -g
@@ -24,5 +20,3 @@ script:
 - npm run test
 after_success:
 - ./ci/travis/publish.js
-env:
-  secure: "V9c0b4rGZyAlagm4FbbPXVB3Fo2p/1Bt6+mz+G55SzmVVc945yL5WrRftRTuZ3TT20uYffADRezknCxqKOEYBAQZ2xIEBZsbkqmycO5BqGE4gHOqoJu0jOT4QiL/4kB9JKMumW+n3dTFMYYs/fGTEwEzp1mTL9kJIu7Z6rV1WR3CEBWZMaO3TmpKJQS8y+22XXpz6eka/y1A+JbWHv4YznQGuENJGhduwluWLU2pvYEovqpPDh3IAMtCLndXeoCE3TRwvivhlaeHlHmrl3q1lxtmXH3Ulz1WyCLl0vOPZXGycrUzGUqrVHOFU+4e4JB7ivZyceH7o9Ysfq0XopTE9eZiAWyxptMAqf5v8YtNUoJxpN0redixfKUM4qkGkt4+8/rTfAwY+q5SK8B3qVTVEAz/ABlLWe/ysfWx0sQMpZxs8lNc3sQojuVi0fsxrOvBMBc4yUQ2Sr3nE0AdqQycCksa1pXtn92psRPyClLzBNIh+8tQ4dZR7u6IPXF3Fxk1NA1K5tg+PsocIZUe7zqjzoAyXaxYJmuckIJkR3IL5+Gjd58PUivlndYj/WfsKLK6GS+aiWFwuD9lgWeTFt6zRi/6Y7Gl5uKv/dlBcLi3nyWIjZctkzfQ97hHyV1NYSYztq4+IbPWwnshGfmqbRHN68WDWny+wExdcAzBUtxV2xQ="

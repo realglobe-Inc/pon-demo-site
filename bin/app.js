@@ -5,13 +5,13 @@
  */
 'use strict'
 
-const { port } = require('../env')
-const server = require('../server')
+require('babel-polyfill')
+const { server, env } = require('../server')
 
 ;(async () => {
-  await server.listen(port.APP)
+  const port = env.port.APP
+  await server.listen(port)
 })().catch((err) => {
   console.error(err)
   process.exit(1)
 })
-

@@ -23,6 +23,12 @@ accepts@^1.2.2, accepts@1.3.3:
     mime-types "~2.1.11"
     negotiator "0.6.1"
 
+acolor@^1.2.0:
+  version "1.2.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/acolor/-/acolor-1.2.0.tgz#2f4e0973ff7d8a801236af275a111d2ae8167760"
+  dependencies:
+    color "^0.11.3"
+
 acorn@^4.0.3:
   version "4.0.11"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/acorn/-/acorn-4.0.11.tgz#edcda3bd937e7556410d42ed5860f67399c794c0"
@@ -54,8 +60,8 @@ aglob@^2.0.1:
     glob "^7.1.1"
 
 ajv@^4.9.1:
-  version "4.11.7"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ajv/-/ajv-4.11.7.tgz#8655a5d86d0824985cc471a1d913fb6729a0ec48"
+  version "4.11.8"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ajv/-/ajv-4.11.8.tgz#82ffb02b29e662ae53bdc20af15947706739c536"
   dependencies:
     co "^4.6.0"
     json-stable-stringify "^1.0.1"
@@ -121,6 +127,27 @@ any-promise@^1.0.0, any-promise@^1.1.0:
   version "1.3.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/any-promise/-/any-promise-1.3.0.tgz#abc6afeedcea52e809cdc0376aed3ce39635d17f"
 
+ape-asking@^3.0.1:
+  version "3.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ape-asking/-/ape-asking-3.0.2.tgz#48f7ebb9804718107f0894471d3db1fc58edd38b"
+  dependencies:
+    argx "^3.0.0"
+    co "^4.6.0"
+    yesno "0.0.1"
+
+ape-releasing@^4.0.4:
+  version "4.0.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ape-releasing/-/ape-releasing-4.0.4.tgz#202121efc8fea8fdf0ee4e28eace3cc3654c0ce1"
+  dependencies:
+    ape-asking "^3.0.1"
+    argx "^3.0.0"
+    co "^4.6.0"
+    colorprint "^4.0.9"
+    execcli "^4.0.8"
+    stringcase "^3.0.1"
+    taggit "^2.0.1"
+    versionup "^2.0.1"
+
 ape-tmpl@^5.0.20:
   version "5.0.20"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ape-tmpl/-/ape-tmpl-5.0.20.tgz#d39e1dd2e2b9e331ddc91c03226a247792111fec"
@@ -133,6 +160,16 @@ ape-tmpl@^5.0.20:
     minimatch "^3.0.2"
     objnest "^3.0.8"
     stringcase "^3.1.1"
+
+ape-updating@^4.1.0:
+  version "4.1.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ape-updating/-/ape-updating-4.1.1.tgz#be436c875ad6762c3e1cad0d3a36c117d4dbebb2"
+  dependencies:
+    argx "^3.0.0"
+    co "^4.6.0"
+    colorprint "^4.0.9"
+    execcli "^4.0.11"
+    stringcase "^3.2.1"
 
 apemanredis@^1.0.9:
   version "1.0.9"
@@ -227,11 +264,11 @@ asap@~2.0.3:
   version "2.0.5"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/asap/-/asap-2.0.5.tgz#522765b50c3510490e52d7dcfe085ef9ba96958f"
 
-asenv@^1.0.4, asenv@^1.0.6, asenv@^1.1.0:
-  version "1.1.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/asenv/-/asenv-1.1.0.tgz#70bd3f5181c747e8e78c6e47d817708c9f6fe56a"
+asenv@^1.0.4, asenv@^1.0.6, asenv@^1.1.0, asenv@^1.1.1:
+  version "1.1.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/asenv/-/asenv-1.1.1.tgz#e6d446453ed5e478d31178061ccbaa91c2746c00"
   dependencies:
-    babel-runtime "^6.11.6"
+    babel-runtime "^6.23.0"
     co "^4.6.0"
 
 asfs@^1.0.5, asfs@^1.1.1, asfs@^1.2.2, asfs@^1.2.3:
@@ -314,8 +351,8 @@ async@^1.4.0, async@^1.5.2, async@~1.5, async@1.x:
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
 async@^2.0.1:
-  version "2.3.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/async/-/async-2.3.0.tgz#1013d1051047dd320fe24e494d5c66ecaf6147d9"
+  version "2.4.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/async/-/async-2.4.0.tgz#4990200f18ea5b837c2cc4f8c031a6985c385611"
   dependencies:
     lodash "^4.14.0"
 
@@ -344,7 +381,7 @@ autoprefixer@^6.0.2, autoprefixer@^6.7.7:
     postcss "^5.2.16"
     postcss-value-parser "^3.2.3"
 
-awatch@^1.0.5:
+awatch@^1.0.7:
   version "1.0.7"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/awatch/-/awatch-1.0.7.tgz#7207fabc2b7dcf0e94029eb93cefc85dad171c32"
   dependencies:
@@ -406,6 +443,14 @@ babel-generator@^6.24.1:
     source-map "^0.5.0"
     trim-right "^1.0.1"
 
+babel-helper-builder-binary-assignment-operator-visitor@^6.24.1:
+  version "6.24.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-helper-builder-binary-assignment-operator-visitor/-/babel-helper-builder-binary-assignment-operator-visitor-6.24.1.tgz#cce4517ada356f4220bcae8a02c2b346f9a56664"
+  dependencies:
+    babel-helper-explode-assignable-expression "^6.24.1"
+    babel-runtime "^6.22.0"
+    babel-types "^6.24.1"
+
 babel-helper-builder-react-jsx@^6.24.1:
   version "6.24.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-helper-builder-react-jsx/-/babel-helper-builder-react-jsx-6.24.1.tgz#0ad7917e33c8d751e646daca4e77cc19377d2cbc"
@@ -431,6 +476,14 @@ babel-helper-define-map@^6.24.1:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
     lodash "^4.2.0"
+
+babel-helper-explode-assignable-expression@^6.24.1:
+  version "6.24.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-helper-explode-assignable-expression/-/babel-helper-explode-assignable-expression-6.24.1.tgz#f25b82cf7dc10433c55f70592d5746400ac22caa"
+  dependencies:
+    babel-runtime "^6.22.0"
+    babel-traverse "^6.24.1"
+    babel-types "^6.24.1"
 
 babel-helper-function-name@^6.24.1:
   version "6.24.1"
@@ -471,6 +524,16 @@ babel-helper-regex@^6.24.1:
     babel-types "^6.24.1"
     lodash "^4.2.0"
 
+babel-helper-remap-async-to-generator@^6.24.1:
+  version "6.24.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-helper-remap-async-to-generator/-/babel-helper-remap-async-to-generator-6.24.1.tgz#5ec581827ad723fecdd381f1c928390676e4551b"
+  dependencies:
+    babel-helper-function-name "^6.24.1"
+    babel-runtime "^6.22.0"
+    babel-template "^6.24.1"
+    babel-traverse "^6.24.1"
+    babel-types "^6.24.1"
+
 babel-helper-replace-supers@^6.24.1:
   version "6.24.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-helper-replace-supers/-/babel-helper-replace-supers-6.24.1.tgz#bf6dbfe43938d17369a213ca8a8bf74b6a90ab1a"
@@ -501,6 +564,14 @@ babel-plugin-check-es2015-constants@^6.22.0:
   dependencies:
     babel-runtime "^6.22.0"
 
+babel-plugin-syntax-async-functions@^6.8.0:
+  version "6.13.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"
+
+babel-plugin-syntax-exponentiation-operator@^6.8.0:
+  version "6.13.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-plugin-syntax-exponentiation-operator/-/babel-plugin-syntax-exponentiation-operator-6.13.0.tgz#9ee7e8337290da95288201a6a57f4170317830de"
+
 babel-plugin-syntax-flow@^6.18.0:
   version "6.18.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-plugin-syntax-flow/-/babel-plugin-syntax-flow-6.18.0.tgz#4c3ab20a2af26aa20cd25995c398c4eb70310c8d"
@@ -508,6 +579,18 @@ babel-plugin-syntax-flow@^6.18.0:
 babel-plugin-syntax-jsx@^6.3.13, babel-plugin-syntax-jsx@^6.8.0:
   version "6.18.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz#0af32a9a6e13ca7a3fd5069e62d7b0f58d0d8946"
+
+babel-plugin-syntax-trailing-function-commas@^6.22.0:
+  version "6.22.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-plugin-syntax-trailing-function-commas/-/babel-plugin-syntax-trailing-function-commas-6.22.0.tgz#ba0360937f8d06e40180a43fe0d5616fff532cf3"
+
+babel-plugin-transform-async-to-generator@^6.24.1:
+  version "6.24.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-plugin-transform-async-to-generator/-/babel-plugin-transform-async-to-generator-6.24.1.tgz#6536e378aff6cb1d5517ac0e40eb3e9fc8d08761"
+  dependencies:
+    babel-helper-remap-async-to-generator "^6.24.1"
+    babel-plugin-syntax-async-functions "^6.8.0"
+    babel-runtime "^6.22.0"
 
 babel-plugin-transform-es2015-arrow-functions@^6.22.0:
   version "6.22.0"
@@ -677,6 +760,14 @@ babel-plugin-transform-es2015-unicode-regex@^6.24.1:
     babel-runtime "^6.22.0"
     regexpu-core "^2.0.0"
 
+babel-plugin-transform-exponentiation-operator@^6.24.1:
+  version "6.24.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-plugin-transform-exponentiation-operator/-/babel-plugin-transform-exponentiation-operator-6.24.1.tgz#2ab0c9c7f3098fa48907772bb813fe41e8de3a0e"
+  dependencies:
+    babel-helper-builder-binary-assignment-operator-visitor "^6.24.1"
+    babel-plugin-syntax-exponentiation-operator "^6.8.0"
+    babel-runtime "^6.22.0"
+
 babel-plugin-transform-flow-strip-types@^6.22.0:
   version "6.22.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-plugin-transform-flow-strip-types/-/babel-plugin-transform-flow-strip-types-6.22.0.tgz#84cb672935d43714fdc32bce84568d87441cf7cf"
@@ -725,6 +816,14 @@ babel-plugin-transform-strict-mode@^6.24.1:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
 
+babel-polyfill@^6.23.0:
+  version "6.23.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-polyfill/-/babel-polyfill-6.23.0.tgz#8364ca62df8eafb830499f699177466c3b03499d"
+  dependencies:
+    babel-runtime "^6.22.0"
+    core-js "^2.4.0"
+    regenerator-runtime "^0.10.0"
+
 babel-preset-es2015@^6.24.1:
   version "6.24.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-preset-es2015/-/babel-preset-es2015-6.24.1.tgz#d44050d6bc2c9feea702aaf38d727a0210538939"
@@ -753,6 +852,19 @@ babel-preset-es2015@^6.24.1:
     babel-plugin-transform-es2015-typeof-symbol "^6.22.0"
     babel-plugin-transform-es2015-unicode-regex "^6.24.1"
     babel-plugin-transform-regenerator "^6.24.1"
+
+babel-preset-es2016@^6.24.1:
+  version "6.24.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-preset-es2016/-/babel-preset-es2016-6.24.1.tgz#f900bf93e2ebc0d276df9b8ab59724ebfd959f8b"
+  dependencies:
+    babel-plugin-transform-exponentiation-operator "^6.24.1"
+
+babel-preset-es2017@^6.24.1:
+  version "6.24.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babel-preset-es2017/-/babel-preset-es2017-6.24.1.tgz#597beadfb9f7f208bcfd8a12e9b2b29b8b2f14d1"
+  dependencies:
+    babel-plugin-syntax-trailing-function-commas "^6.22.0"
+    babel-plugin-transform-async-to-generator "^6.24.1"
 
 babel-preset-flow@^6.23.0:
   version "6.23.0"
@@ -824,8 +936,8 @@ babel-types@^6.19.0, babel-types@^6.24.1:
     to-fast-properties "^1.0.1"
 
 babylon@^6.11.0, babylon@^6.15.0:
-  version "6.17.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babylon/-/babylon-6.17.0.tgz#37da948878488b9c4e3c4038893fa3314b3fc932"
+  version "6.17.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/babylon/-/babylon-6.17.1.tgz#17f14fddf361b695981fe679385e4f1c01ebd86f"
 
 backo2@1.0.2:
   version "1.0.2"
@@ -895,7 +1007,7 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-brace-expansion@^1.0.0:
+brace-expansion@^1.1.7:
   version "1.1.7"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/brace-expansion/-/brace-expansion-1.1.7.tgz#3effc3c50e000531fb720eaff80f0ae8ef23cf59"
   dependencies:
@@ -909,6 +1021,13 @@ braces@^1.8.2:
     expand-range "^1.8.1"
     preserve "^0.2.0"
     repeat-element "^1.1.2"
+
+bredux@^1.7.2:
+  version "1.7.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/bredux/-/bredux-1.7.2.tgz#9b9b29a7742cf15bfc7d88b1a7370c83925fb151"
+  dependencies:
+    bstorage "^1.1.1"
+    co "^4.6.0"
 
 brequest@^1.0.1:
   version "1.0.1"
@@ -1069,6 +1188,14 @@ browserslist@^1.0.0, browserslist@^1.3.6, browserslist@^1.7.6:
     caniuse-db "^1.0.30000639"
     electron-to-chromium "^1.2.7"
 
+bstorage@^1.1.1:
+  version "1.1.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/bstorage/-/bstorage-1.1.1.tgz#de9f0b4faf570ca7c28e916df14383ef1dd41721"
+  dependencies:
+    bwindow "^1.0.7"
+    co "^4.6.0"
+    qs "^6.2.1"
+
 buffer-shims@~1.0.0:
   version "1.0.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/buffer-shims/-/buffer-shims-1.0.0.tgz#9978ce317388c649ad8793028c3477ef044a8b51"
@@ -1083,6 +1210,10 @@ buffer@^5.0.2:
   dependencies:
     base64-js "^1.0.2"
     ieee754 "^1.1.4"
+
+builtin-modules@^1.0.0:
+  version "1.1.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/builtin-modules/-/builtin-modules-1.1.1.tgz#270f076c5a72c02f5b65a47df94c5fe3a278892f"
 
 builtin-status-codes@^3.0.0:
   version "3.0.0"
@@ -1108,6 +1239,10 @@ camelcase@^1.0.2:
   version "1.2.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/camelcase/-/camelcase-1.2.1.tgz#9bb5304d2e0b56698b2c758b08a3eaa9daa58a39"
 
+camelcase@^3.0.0:
+  version "3.0.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
+
 caniuse-api@^1.5.3:
   version "1.6.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/caniuse-api/-/caniuse-api-1.6.1.tgz#b534e7c734c4f81ec5fbe8aca2ad24354b962c6c"
@@ -1118,8 +1253,8 @@ caniuse-api@^1.5.3:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000662"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/caniuse-db/-/caniuse-db-1.0.30000662.tgz#616b17a525b52fec14611f88af3d5a9b5438c050"
+  version "1.0.30000670"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/caniuse-db/-/caniuse-db-1.0.30000670.tgz#90d33b79e3090e25829c311113c56d6b1788bf43"
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -1132,6 +1267,10 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
+chain-function@^1.0.0:
+  version "1.0.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/chain-function/-/chain-function-1.0.0.tgz#0d4ab37e7e18ead0bdc47b920764118ce58733dc"
+
 chalk@^1.1.0, chalk@^1.1.1, chalk@^1.1.3:
   version "1.1.3"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
@@ -1142,23 +1281,15 @@ chalk@^1.1.0, chalk@^1.1.1, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-cipher-base@^1.0.0, cipher-base@^1.0.1:
+cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   version "1.0.3"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/cipher-base/-/cipher-base-1.0.3.tgz#eeabf194419ce900da3018c207d212f2a6df0a07"
   dependencies:
     inherits "^2.0.1"
 
-clay-collection@^1.0.3:
-  version "1.0.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-collection/-/clay-collection-1.0.3.tgz#04e891f044b48d352da58ad8caa66cc3c02bfb95"
-  dependencies:
-    clay-id "^2.0.2"
-
-clay-collection@^2.0.1:
-  version "2.0.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-collection/-/clay-collection-2.0.1.tgz#cedecadcc627e1a6bddfa19c01fe408fd5d06cbe"
-  dependencies:
-    clay-id "^3.0.1"
+classnames@^2.2.5:
+  version "2.2.5"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
 clay-collection@^3.0.1:
   version "3.0.1"
@@ -1166,24 +1297,9 @@ clay-collection@^3.0.1:
   dependencies:
     clay-id "^3.0.1"
 
-clay-constants@^2.0.1, clay-constants@^2.3.2, clay-constants@^2.4.3, clay-constants@^2.8.1, clay-constants@^2.9.1:
-  version "2.10.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-constants/-/clay-constants-2.10.1.tgz#587fad932cdc1c935806345dd901e9c5aba4d9af"
-
 clay-constants@^3.0.1, clay-constants@^3.0.2:
   version "3.0.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-constants/-/clay-constants-3.0.2.tgz#7498b9c4f6a61074ef9fe7aa8ff7c117ff2cb094"
-
-clay-crypto@^2.0.2:
-  version "2.0.2"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-crypto/-/clay-crypto-2.0.2.tgz#0092d29752475c3686ead34c27a46b44e8487011"
-  dependencies:
-    clay-constants "^2.3.2"
-    co "^4.6.0"
-    debug "^2.6.1"
-    keypair "^1.0.1"
-    objnest "^3.0.9"
-    uuid "^3.0.1"
 
 clay-crypto@^4.0.1:
   version "4.0.1"
@@ -1195,13 +1311,6 @@ clay-crypto@^4.0.1:
     keypair "^1.0.1"
     objnest "^3.0.9"
     uuid "^3.0.1"
-
-clay-driver-base@^2.0.1:
-  version "2.0.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-driver-base/-/clay-driver-base-2.0.1.tgz#83147bcd2acac7dd0c7707111ae2900dcd50a582"
-  dependencies:
-    clay-constants "^2.0.1"
-    co "^4.6.0"
 
 clay-driver-base@^3.0.1:
   version "3.0.1"
@@ -1221,8 +1330,8 @@ clay-driver-benchmarks@^2.0.1:
     debug "^2.6.3"
 
 clay-driver-json@^3.0.1:
-  version "3.0.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-driver-json/-/clay-driver-json-3.0.1.tgz#f721e4751a289f1e3cfacefef4eb4c61d0827277"
+  version "3.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-driver-json/-/clay-driver-json-3.0.2.tgz#d503eefd53f8a378ca4304b9e321fc612cdb40eb"
   dependencies:
     aglob "^2.0.1"
     asfs "^1.2.3"
@@ -1230,7 +1339,7 @@ clay-driver-json@^3.0.1:
     clay-driver-memory "^4.0.1"
     clay-serial "^2.0.1"
     co "^4.6.0"
-    writeout "^2.1.0"
+    writeout "^2.2.0"
 
 clay-driver-localstorage@^2.0.1:
   version "2.0.1"
@@ -1242,11 +1351,11 @@ clay-driver-localstorage@^2.0.1:
     clay-serial "^2.0.1"
     co "^4.6.0"
 
-clay-driver-memory@^4.0.1:
-  version "4.0.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-driver-memory/-/clay-driver-memory-4.0.1.tgz#bbef8249267f54e8faacfb7a7736b15f135cc1b6"
+clay-driver-memory@^4.0.1, clay-driver-memory@^4.0.2:
+  version "4.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-driver-memory/-/clay-driver-memory-4.0.2.tgz#16f5413925bcebe720c4534948bcb7b7b2c492ff"
   dependencies:
-    clay-collection "^2.0.1"
+    clay-collection "^3.0.1"
     clay-constants "^3.0.1"
     clay-driver-base "^3.0.1"
     clay-entity "^2.0.1"
@@ -1257,36 +1366,23 @@ clay-driver-memory@^4.0.1:
     clay-resource-name "^4.0.1"
     co "^4.6.0"
 
-clay-driver-mysql@^1.0.3:
-  version "1.0.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-driver-mysql/-/clay-driver-mysql-1.0.3.tgz#e1f4fb34e32897169f4f5b80f73215314fcdc0f2"
+clay-driver-mysql@^*:
+  version "2.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-driver-mysql/-/clay-driver-mysql-2.0.1.tgz#3ee8da6834bb9bfffc904003c7f5072efa3191d0"
   dependencies:
-    clay-constants "^2.8.1"
-    clay-driver-sequelize "^2.0.12"
+    clay-constants "^3.0.2"
+    clay-driver-benchmarks "^2.0.1"
+    clay-driver-sequelize "^3.0.5"
     co "^4.6.0"
     mysql "^2.13.0"
 
-clay-driver-sequelize@^2.0.12:
-  version "2.0.13"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-driver-sequelize/-/clay-driver-sequelize-2.0.13.tgz#505877f20938bc9800a3c41a341521ec440c27f9"
-  dependencies:
-    clay-collection "^1.0.3"
-    clay-constants "^2.9.1"
-    clay-driver-base "^2.0.1"
-    clay-entity "^1.5.2"
-    clay-id "^2.1.2"
-    clay-list-pager "^1.1.1"
-    clay-serial "^1.2.1"
-    co "^4.6.0"
-    continuation-local-storage "^3.2.0"
-    sequelize "^3.30.3"
-
 clay-driver-sequelize@^3.0.5:
-  version "3.0.5"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-driver-sequelize/-/clay-driver-sequelize-3.0.5.tgz#5e0860a3025e4e7851a873648ab6557d91f2495b"
+  version "3.0.7"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-driver-sequelize/-/clay-driver-sequelize-3.0.7.tgz#86ff09dd0d5ffad50da7b102496e3e9db4403b7b"
   dependencies:
-    clay-collection "^2.0.1"
-    clay-constants "^3.0.1"
+    asleep "^1.0.3"
+    clay-collection "^3.0.1"
+    clay-constants "^3.0.2"
     clay-driver-base "^3.0.1"
     clay-entity "^2.0.1"
     clay-id "^3.0.1"
@@ -1299,8 +1395,8 @@ clay-driver-sequelize@^3.0.5:
     sequelize "^3.30.4"
 
 clay-driver-sqlite@^3.0.2:
-  version "3.0.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-driver-sqlite/-/clay-driver-sqlite-3.0.3.tgz#703e622808442ac06903fc2d0f2664ca8bf54ac6"
+  version "3.0.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-driver-sqlite/-/clay-driver-sqlite-3.0.4.tgz#64a31a1dc0b21d2af103dde3e0069a5901b87840"
   dependencies:
     asobj "^1.5.0"
     clay-constants "^3.0.2"
@@ -1310,35 +1406,18 @@ clay-driver-sqlite@^3.0.2:
     mkdirp "^0.5.1"
     sqlite3 "^3.1.8"
 
-clay-entity@^1.5.2:
-  version "1.5.2"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-entity/-/clay-entity-1.5.2.tgz#621b15fcb629b82f81123d3f8c9f7f6afabe6bf5"
-  dependencies:
-    asobj "^1.5.0"
-    clay-constants "^2.4.3"
-    clay-crypto "^2.0.2"
-    clay-id "^2.0.1"
-
-clay-entity@^2.0.1:
-  version "2.0.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-entity/-/clay-entity-2.0.1.tgz#4468a3537248f3fc0e7c78906e59f58871670d3a"
+clay-entity@^2.0.1, clay-entity@^2.0.2:
+  version "2.0.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-entity/-/clay-entity-2.0.4.tgz#a33497fd4829f4b720f84c035b823d786fac6c68"
   dependencies:
     asobj "^1.5.0"
     clay-constants "^3.0.1"
     clay-crypto "^4.0.1"
     clay-id "^3.0.1"
 
-clay-errors@^3.0.1:
-  version "3.0.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-errors/-/clay-errors-3.0.1.tgz#52f47232b49f18d7ba4f72208b576cc1d94fcedb"
-
-clay-id@^2.0.1, clay-id@^2.0.2, clay-id@^2.1.1, clay-id@^2.1.2:
-  version "2.1.2"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-id/-/clay-id-2.1.2.tgz#346951f9b0313fdccad6667e7e3bf5f6f7044dd0"
-  dependencies:
-    clay-constants "^2.9.1"
-    co "^4.6.0"
-    uuid "^3.0.1"
+clay-errors@^3.0.1, clay-errors@^3.1.1:
+  version "3.1.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-errors/-/clay-errors-3.1.1.tgz#88a29d2515aa79bd021203660d3920b01a734dc0"
 
 clay-id@^3.0.1:
   version "3.0.1"
@@ -1352,10 +1431,6 @@ clay-list-filter@^2.0.1:
   version "2.1.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-list-filter/-/clay-list-filter-2.1.1.tgz#bf348764cc4d0d1830a7b4c8658467c0a6436d68"
 
-clay-list-pager@^1.1.1:
-  version "1.1.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-list-pager/-/clay-list-pager-1.1.1.tgz#eaf52c87e951a1cbfb62db1e1ecd4463559e7311"
-
 clay-list-pager@^2.0.1:
   version "2.0.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-list-pager/-/clay-list-pager-2.0.1.tgz#7f881751546e844f4033d268384146217b88892f"
@@ -1364,9 +1439,9 @@ clay-list-sorter@^2.0.1:
   version "2.0.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-list-sorter/-/clay-list-sorter-2.0.1.tgz#91a20b48481a5f610692066bb77d01dbca6eb8e1"
 
-clay-lump@^4.1.1:
-  version "4.1.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-lump/-/clay-lump-4.1.1.tgz#4447271c1ac7a6be4f87330f61364aa0861254ec"
+clay-lump@^4.2.1:
+  version "4.2.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-lump/-/clay-lump-4.2.3.tgz#186772c133e2460b9fcb43e6e04a8cc795dce635"
   dependencies:
     abind "^1.0.3"
     argx "^3.0.2"
@@ -1383,16 +1458,16 @@ clay-lump@^4.1.1:
     co "^4.6.0"
     debug "^2.6.3"
 
-clay-policy@^2.0.1, clay-policy@^2.0.2:
-  version "2.0.2"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-policy/-/clay-policy-2.0.2.tgz#1fdac06c43fc23ef1d2051e68c229a92b321feae"
+clay-policy@^2.0.1, clay-policy@^2.0.14:
+  version "2.0.15"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-policy/-/clay-policy-2.0.15.tgz#f9eec9b9480efd922523fa6524343fc1f19a8e8b"
   dependencies:
     adigest "^1.0.2"
     asobj "^1.5.0"
     clay-constants "^3.0.1"
     clay-entity "^2.0.1"
     clay-errors "^3.0.1"
-    clay-schemas "^4.0.3"
+    clay-schemas "^4.0.4"
     clay-serial "^2.0.2"
     co "^4.6.0"
     tv4 "^1.3.0"
@@ -1412,9 +1487,9 @@ clay-resource-collection@^1.0.1:
     clay-resource-name "^4.0.1"
     co "^4.6.0"
 
-clay-resource-entity@^1.0.2:
-  version "1.0.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-resource-entity/-/clay-resource-entity-1.0.3.tgz#6fb23c0f97916c86e89b4118f0981e730f7cabae"
+clay-resource-entity@^1.0.4:
+  version "1.0.5"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-resource-entity/-/clay-resource-entity-1.0.5.tgz#aab5d0459fa1476839dcd95c2cb384c50b044f46"
   dependencies:
     clay-entity "^2.0.1"
     clay-resource-name "^4.0.1"
@@ -1427,15 +1502,6 @@ clay-resource-name@^4.0.1:
     clay-constants "^3.0.1"
     co "^4.6.0"
 
-clay-resource-ref@^1.0.3:
-  version "1.1.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-resource-ref/-/clay-resource-ref-1.1.3.tgz#0e440fe902020a93397ee3ddc7da694c9511c30c"
-  dependencies:
-    clay-entity "^2.0.1"
-    clay-id "^3.0.1"
-    clay-resource-name "^4.0.1"
-    co "^4.6.0"
-
 clay-resource-ref@^2.0.1:
   version "2.0.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-resource-ref/-/clay-resource-ref-2.0.1.tgz#638629045e025fcbafa69a178173a4c7e43fe8c7"
@@ -1445,36 +1511,27 @@ clay-resource-ref@^2.0.1:
     clay-resource-name "^4.0.1"
     co "^4.6.0"
 
-clay-resource@^3.0.1, clay-resource@^3.0.6:
-  version "3.1.5"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-resource/-/clay-resource-3.1.5.tgz#b7ba0ba45ab87e61420aca495b9177415f636292"
+clay-resource@^3.0.1, clay-resource@^3.1.14:
+  version "3.1.14"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-resource/-/clay-resource-3.1.14.tgz#5235a59634a3b78fdf368574019c72f6d4ba80d6"
   dependencies:
     asleep "^1.0.3"
     clay-collection "^3.0.1"
     clay-constants "^3.0.1"
-    clay-entity "^2.0.1"
-    clay-errors "^3.0.1"
-    clay-policy "^2.0.2"
+    clay-entity "^2.0.2"
+    clay-errors "^3.1.1"
+    clay-policy "^2.0.14"
     clay-resource-cache "^1.0.4"
     clay-resource-collection "^1.0.1"
-    clay-resource-entity "^1.0.2"
+    clay-resource-entity "^1.0.4"
     clay-resource-name "^4.0.1"
     clay-resource-ref "^2.0.1"
-    clay-schemas "^4.0.3"
+    clay-schemas "^4.0.5"
     co "^4.6.0"
 
-clay-schemas@^4.0.3:
-  version "4.0.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-schemas/-/clay-schemas-4.0.3.tgz#d7b4f3113d166d1dfaa55ed76720839ef1d6c3f2"
-
-clay-serial@^1.2.1:
-  version "1.3.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-serial/-/clay-serial-1.3.1.tgz#eaf22b68a03a962a5d758b9ece0c9b5be32eecbb"
-  dependencies:
-    clay-constants "^2.9.1"
-    clay-entity "^1.5.2"
-    clay-id "^2.1.1"
-    clay-resource-ref "^1.0.3"
+clay-schemas@^4.0.4, clay-schemas@^4.0.5:
+  version "4.0.5"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clay-schemas/-/clay-schemas-4.0.5.tgz#4ca9f07de85fff937961e1e6ac0922c6ee384082"
 
 clay-serial@^2.0.1, clay-serial@^2.0.2:
   version "2.0.2"
@@ -1504,6 +1561,14 @@ cliui@^2.1.0:
     right-align "^0.1.1"
     wordwrap "0.0.2"
 
+cliui@^3.2.0:
+  version "3.2.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/cliui/-/cliui-3.2.0.tgz#120601537a916d29940f934da3b48d585a39213d"
+  dependencies:
+    string-width "^1.0.1"
+    strip-ansi "^3.0.1"
+    wrap-ansi "^2.0.0"
+
 clone@^1.0.2:
   version "1.0.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/clone/-/clone-1.0.2.tgz#260b7a99ebb1edfe247538175f783243cb19d149"
@@ -1517,7 +1582,7 @@ co-body@^4.2.0:
     raw-body "~2.1.2"
     type-is "~1.6.6"
 
-co@^4.6.0:
+co@*, co@^4.6.0:
   version "4.6.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/co/-/co-4.6.0.tgz#6ea6bdf3d853ae54ccb8e47bfa0bf3f9031fb184"
 
@@ -1781,21 +1846,33 @@ create-ecdh@^4.0.0:
     bn.js "^4.1.0"
     elliptic "^6.0.0"
 
-create-hash@^1.1.0, create-hash@^1.1.1:
-  version "1.1.2"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/create-hash/-/create-hash-1.1.2.tgz#51210062d7bb7479f6c65bb41a92208b1d61abad"
+create-hash@^1.1.0, create-hash@^1.1.1, create-hash@^1.1.2:
+  version "1.1.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/create-hash/-/create-hash-1.1.3.tgz#606042ac8b9262750f483caddab0f5819172d8fd"
   dependencies:
     cipher-base "^1.0.1"
     inherits "^2.0.1"
-    ripemd160 "^1.0.0"
-    sha.js "^2.3.6"
+    ripemd160 "^2.0.0"
+    sha.js "^2.4.0"
 
-create-hmac@^1.1.0, create-hmac@^1.1.2:
-  version "1.1.4"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/create-hmac/-/create-hmac-1.1.4.tgz#d3fb4ba253eb8b3f56e39ea2fbcb8af747bd3170"
+create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
+  version "1.1.6"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/create-hmac/-/create-hmac-1.1.6.tgz#acb9e221a4e17bdb076e90657c42b93e3726cf06"
   dependencies:
+    cipher-base "^1.0.3"
     create-hash "^1.1.0"
     inherits "^2.0.1"
+    ripemd160 "^2.0.0"
+    safe-buffer "^5.0.1"
+    sha.js "^2.4.8"
+
+create-react-class@^15.5.1:
+  version "15.5.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/create-react-class/-/create-react-class-15.5.3.tgz#fb0f7cae79339e9a179e194ef466efa3923820fe"
+  dependencies:
+    fbjs "^0.8.9"
+    loose-envify "^1.3.1"
+    object-assign "^4.1.1"
 
 cross-env@^3.1.2:
   version "3.2.4"
@@ -1897,7 +1974,7 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
 
-debug@*, debug@^2.1.1, debug@^2.1.3, debug@^2.2.0, debug@^2.6.0, debug@^2.6.1, debug@^2.6.3, debug@^2.6.4:
+debug@*, debug@^2.1.1, debug@^2.1.3, debug@^2.2.0, debug@^2.6.0, debug@^2.6.3, debug@^2.6.4, debug@^2.6.6:
   version "2.6.6"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/debug/-/debug-2.6.6.tgz#a9fa6fbe9ca43cf1e79f73b75c0189cbb7d6db5a"
   dependencies:
@@ -1925,17 +2002,17 @@ debug@2.6.0:
   dependencies:
     ms "0.7.2"
 
-decamelize@^1.0.0:
+decamelize@^1.0.0, decamelize@^1.1.1:
   version "1.2.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
-deep-equal@^1.0.1, deep-equal@~1.0.0:
+deep-equal@^1.0.1, deep-equal@~1.0.1:
   version "1.0.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/deep-equal/-/deep-equal-1.0.1.tgz#f5d260292b660e084eff4cdbc9f08ad3247448b5"
 
 deep-extend@~0.4.0:
-  version "0.4.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/deep-extend/-/deep-extend-0.4.1.tgz#efe4113d08085f4e6f9687759810f807469e2253"
+  version "0.4.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/deep-extend/-/deep-extend-0.4.2.tgz#48b699c27e334bf89f10892be432f6e4c7d34a7f"
 
 deep-is@~0.1.3:
   version "0.1.3"
@@ -2018,6 +2095,10 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
+dom-helpers@^3.2.0:
+  version "3.2.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/dom-helpers/-/dom-helpers-3.2.1.tgz#3203e07fed217bd1f424b019735582fc37b2825a"
+
 domain-browser@~1.1.0:
   version "1.1.7"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/domain-browser/-/domain-browser-1.1.7.tgz#867aa4b093faa05f1de08c06f4d7b21fdf8698bc"
@@ -2047,8 +2128,8 @@ ee-first@1.1.1:
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
 electron-to-chromium@^1.2.7:
-  version "1.3.8"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/electron-to-chromium/-/electron-to-chromium-1.3.8.tgz#b2c8a2c79bb89fbbfd3724d9555e15095b5f5fb6"
+  version "1.3.10"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/electron-to-chromium/-/electron-to-chromium-1.3.10.tgz#63d62b785471f0d8dda85199d64579de8a449f08"
 
 elliptic@^6.0.0:
   version "6.4.0"
@@ -2074,9 +2155,9 @@ encoding@^0.1.11:
   dependencies:
     iconv-lite "~0.4.13"
 
-engine.io-client@1.8.3:
-  version "1.8.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/engine.io-client/-/engine.io-client-1.8.3.tgz#1798ed93451246453d4c6f635d7a201fe940d5ab"
+engine.io-client@~1.8.4:
+  version "1.8.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/engine.io-client/-/engine.io-client-1.8.4.tgz#9fe85dee25853ca6babe25bd2ad68710863e91c2"
   dependencies:
     component-emitter "1.2.1"
     component-inherit "0.0.3"
@@ -2102,24 +2183,30 @@ engine.io-parser@1.3.2:
     has-binary "0.1.7"
     wtf-8 "1.0.0"
 
-engine.io@1.8.3:
-  version "1.8.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/engine.io/-/engine.io-1.8.3.tgz#8de7f97895d20d39b85f88eeee777b2bd42b13d4"
+engine.io@~1.8.4:
+  version "1.8.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/engine.io/-/engine.io-1.8.4.tgz#77bce12b80e5d60429337fec3b0daf691ebc9003"
   dependencies:
     accepts "1.3.3"
     base64id "1.0.0"
     cookie "0.3.1"
     debug "2.3.3"
     engine.io-parser "1.3.2"
-    ws "1.1.2"
+    ws "1.1.4"
+
+error-ex@^1.2.0:
+  version "1.3.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/error-ex/-/error-ex-1.3.1.tgz#f855a86ce61adc4e8621c3cda21e7a7612c3a8dc"
+  dependencies:
+    is-arrayish "^0.2.1"
 
 error-inject@~1.0.0:
   version "1.0.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/error-inject/-/error-inject-1.0.0.tgz#e2b3d91b54aed672f309d950d154850fa11d4f37"
 
 es5-ext@^0.10.12, es5-ext@^0.10.13, es5-ext@^0.10.14, es5-ext@^0.10.9, es5-ext@~0.10.14, es5-ext@~0.10.2:
-  version "0.10.15"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/es5-ext/-/es5-ext-0.10.15.tgz#c330a5934c1ee21284a7c081a86e5fd937c91ea6"
+  version "0.10.18"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/es5-ext/-/es5-ext-0.10.18.tgz#dc239d3dce4c22b9c939aa180878837a3c0b5c92"
   dependencies:
     es6-iterator "2"
     es6-symbol "~3.1"
@@ -2183,7 +2270,7 @@ esutils@^2.0.0, esutils@^2.0.2:
   version "2.0.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
 
-evaljson@^4.0.12, evaljson@^4.1.4, evaljson@^4.1.6:
+evaljson@^4.0.12, evaljson@^4.1.6:
   version "4.1.6"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/evaljson/-/evaljson-4.1.6.tgz#15b57819fb906a5fdb4f2a6bfea72dfe0686c9a2"
   dependencies:
@@ -2211,7 +2298,7 @@ evp_bytestokey@^1.0.0:
   dependencies:
     create-hash "^1.1.1"
 
-execcli@^4.0.8:
+execcli@^4.0.11, execcli@^4.0.8:
   version "4.0.11"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/execcli/-/execcli-4.0.11.tgz#3db9820a83fa1242b9bfb50d11551d0505927d43"
   dependencies:
@@ -2249,8 +2336,8 @@ expand-tilde@^1.2.2:
     os-homedir "^1.0.1"
 
 extend@^3.0.0, extend@~3.0.0:
-  version "3.0.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/extend/-/extend-3.0.0.tgz#5a474353b9f3353ddd8176dfd37b91c83a46f1d4"
+  version "3.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
 
 extglob@^0.3.1:
   version "0.3.2"
@@ -2286,7 +2373,7 @@ fbjs@^0.8.9:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
 
-filecopy@^3.0.0:
+filecopy@^3.0.0, filecopy@^3.0.1:
   version "3.0.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/filecopy/-/filecopy-3.0.1.tgz#86a5f8a72968ecaeaa5bbb2e3e810a877cd49966"
   dependencies:
@@ -2295,7 +2382,7 @@ filecopy@^3.0.0:
     co "^4.6.0"
     mkdirp "^0.5.1"
 
-filedel@^2.0.3, filedel@^2.0.5:
+filedel@^2.0.3, filedel@^2.0.4, filedel@^2.0.5:
   version "2.0.5"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/filedel/-/filedel-2.0.5.tgz#f28f987c29737a17e18f92aa093acbc88797965b"
   dependencies:
@@ -2304,6 +2391,16 @@ filedel@^2.0.3, filedel@^2.0.5:
     asfs "^1.0.5"
     babel-runtime "^6.11.6"
     co "^4.6.0"
+    rimraf "^2.5.4"
+
+filelink@^3.0.6:
+  version "3.0.6"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/filelink/-/filelink-3.0.6.tgz#94cd38e47c777a9b53fd30b65363a54b1b226b00"
+  dependencies:
+    argx "^3.0.1"
+    asfs "^1.0.5"
+    co "^4.6.0"
+    filedel "^2.0.4"
     rimraf "^2.5.4"
 
 filemode@^2.0.3:
@@ -2315,8 +2412,8 @@ filemode@^2.0.3:
     co "^4.6.0"
 
 filename-regex@^2.0.0:
-  version "2.0.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/filename-regex/-/filename-regex-2.0.0.tgz#996e3e80479b98b9897f15a8a58b3d084e926775"
+  version "2.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/filename-regex/-/filename-regex-2.0.1.tgz#c1c4b9bee3e09725ddb106b75c1e301fe2f18b26"
 
 fill-range@^2.1.0:
   version "2.2.3"
@@ -2328,6 +2425,13 @@ fill-range@^2.1.0:
     repeat-element "^1.1.2"
     repeat-string "^1.5.2"
 
+find-up@^1.0.0:
+  version "1.1.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/find-up/-/find-up-1.1.2.tgz#6b2e9822b1a2ce0a60ab64d610eccad53cb24d0f"
+  dependencies:
+    path-exists "^2.0.0"
+    pinkie-promise "^2.0.0"
+
 findout@^2.0.1:
   version "2.1.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/findout/-/findout-2.1.2.tgz#78415cf73ed9e27c02e29a9bc444e7d22af60105"
@@ -2335,9 +2439,9 @@ findout@^2.0.1:
     babel-runtime "^6.11.6"
     co "^4.6.0"
 
-findup-sync@^0.4.3:
-  version "0.4.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/findup-sync/-/findup-sync-0.4.3.tgz#40043929e7bc60adf0b7f4827c4c6e75a0deca12"
+findup-sync@^1.0.0:
+  version "1.0.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/findup-sync/-/findup-sync-1.0.0.tgz#6f7e4b57b6ee3a4037b4414eaedea3f58f71e0ec"
   dependencies:
     detect-file "^0.1.0"
     is-glob "^2.0.1"
@@ -2347,6 +2451,22 @@ findup-sync@^0.4.3:
 flatten@^1.0.2:
   version "1.0.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
+
+flux-standard-action@^0.6.1:
+  version "0.6.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/flux-standard-action/-/flux-standard-action-0.6.1.tgz#6f34211b94834ea1c3cc30f4e7afad3d0fbf71a2"
+  dependencies:
+    lodash.isplainobject "^3.2.0"
+
+fmtjson@^3.0.7:
+  version "3.0.7"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/fmtjson/-/fmtjson-3.0.7.tgz#78633eee1464df70a8b484567cdeeb4be8ffd3cc"
+  dependencies:
+    aglob "^1.0.2"
+    argx "^3.0.1"
+    asfs "^1.0.5"
+    co "^4.6.0"
+    writeout "^2.0.7"
 
 for-in@^1.0.1:
   version "1.0.2"
@@ -2419,7 +2539,7 @@ function-bind@^1.0.2:
   version "1.1.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/function-bind/-/function-bind-1.1.0.tgz#16176714c801798e4e8f2cf7f7529467bb4a5771"
 
-gauge@~2.7.1:
+gauge@~2.7.3:
   version "2.7.4"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/gauge/-/gauge-2.7.4.tgz#2c03405c7538c39d7eb37b317022e325fb018bf7"
   dependencies:
@@ -2435,6 +2555,10 @@ gauge@~2.7.1:
 generic-pool@2.4.2:
   version "2.4.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/generic-pool/-/generic-pool-2.4.2.tgz#886bc5bf0beb7db96e81bcbba078818de5a62683"
+
+get-caller-file@^1.0.1:
+  version "1.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/get-caller-file/-/get-caller-file-1.0.2.tgz#f702e63127e7e231c160a80c1554acb70d5047e5"
 
 getpass@^0.1.1:
   version "0.1.7"
@@ -2509,8 +2633,8 @@ growl@1.9.2:
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/growl/-/growl-1.9.2.tgz#0ea7743715db8d8de2c5ede1775e1b45ac85c02f"
 
 handlebars@^4.0.1, handlebars@^4.0.5:
-  version "4.0.6"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/handlebars/-/handlebars-4.0.6.tgz#2ce4484850537f9c97a8026d5399b935c4ed4ed7"
+  version "4.0.8"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/handlebars/-/handlebars-4.0.8.tgz#22b875cd3f0e6cbea30314f144e82bc7a72ff420"
   dependencies:
     async "^1.4.0"
     optimist "^0.6.1"
@@ -2565,6 +2689,12 @@ hasbin@^1.2.3:
   dependencies:
     async "~1.5"
 
+hash-base@^2.0.0:
+  version "2.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/hash-base/-/hash-base-2.0.2.tgz#66ea1d856db4e8a5470cadf6fce23ae5244ef2e1"
+  dependencies:
+    inherits "^2.0.1"
+
 hash.js@^1.0.0, hash.js@^1.0.3:
   version "1.0.3"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/hash.js/-/hash.js-1.0.3.tgz#1332ff00156c0a0ffdd8236013d07b77a0451573"
@@ -2602,7 +2732,7 @@ hoek@2.x.x:
   version "2.16.3"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
 
-hoist-non-react-statics@^1.2.0:
+hoist-non-react-statics@^1.0.3, hoist-non-react-statics@^1.2.0:
   version "1.2.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
 
@@ -2619,18 +2749,22 @@ homedir-polyfill@^1.0.0:
   dependencies:
     parse-passwd "^1.0.0"
 
+hosted-git-info@^2.1.4:
+  version "2.4.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/hosted-git-info/-/hosted-git-info-2.4.2.tgz#0076b9f46a270506ddbaaea56496897460612a67"
+
 htmlescape@^1.1.0:
   version "1.1.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/htmlescape/-/htmlescape-1.1.1.tgz#3a03edc2214bca3b66424a3e7959349509cb0351"
 
 http-assert@^1.1.0:
-  version "1.2.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/http-assert/-/http-assert-1.2.0.tgz#d6392e6f6519def4e340266b35096db6d3feba00"
+  version "1.3.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/http-assert/-/http-assert-1.3.0.tgz#a31a5cf88c873ecbb5796907d4d6f132e8c01e4a"
   dependencies:
-    deep-equal "~1.0.0"
-    http-errors "~1.4.0"
+    deep-equal "~1.0.1"
+    http-errors "~1.6.1"
 
-http-errors@^1.2.8, http-errors@^1.3.1:
+http-errors@^1.2.8, http-errors@^1.3.1, http-errors@~1.6.1:
   version "1.6.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/http-errors/-/http-errors-1.6.1.tgz#5f8b8ed98aca545656bf572997387f904a722257"
   dependencies:
@@ -2638,13 +2772,6 @@ http-errors@^1.2.8, http-errors@^1.3.1:
     inherits "2.0.3"
     setprototypeof "1.0.3"
     statuses ">= 1.3.1 < 2"
-
-http-errors@~1.4.0:
-  version "1.4.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/http-errors/-/http-errors-1.4.0.tgz#6c0242dea6b3df7afda153c71089b31c6e82aabf"
-  dependencies:
-    inherits "2.0.1"
-    statuses ">= 1.2.1 < 2"
 
 http-errors@~1.5.0:
   version "1.5.1"
@@ -2667,8 +2794,8 @@ https-browserify@^1.0.0:
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
 
 iconv-lite@~0.4.13:
-  version "0.4.16"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/iconv-lite/-/iconv-lite-0.4.16.tgz#65de3beeb39e2960d67f049f1634ffcbcde9014b"
+  version "0.4.17"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/iconv-lite/-/iconv-lite-0.4.17.tgz#4fdaa3b38acbc2c031b045d0edcdfe1ecab18c8d"
 
 iconv-lite@0.4.13:
   version "0.4.13"
@@ -2723,10 +2850,6 @@ ini@^1.3.4, ini@~1.3.0:
   version "1.3.4"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ini/-/ini-1.3.4.tgz#0537cb79daf59b59a1a517dff706c86ec039162e"
 
-injectmock@^2.0.0:
-  version "2.0.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/injectmock/-/injectmock-2.0.0.tgz#a4d6876087f5d4d66a6c0dc9072959cdfe14e704"
-
 inline-source-map@~0.6.0:
   version "0.6.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/inline-source-map/-/inline-source-map-0.6.2.tgz#f9393471c18a79d1724f863fa38b586370ade2a5"
@@ -2750,15 +2873,29 @@ int64-buffer@^0.1.9:
   version "0.1.9"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/int64-buffer/-/int64-buffer-0.1.9.tgz#9e039da043b24f78b196b283e04653ef5e990f61"
 
-invariant@^2.2.0, invariant@^2.2.1, invariant@^2.2.2:
+invariant@^2.0.0, invariant@^2.2.0, invariant@^2.2.1, invariant@^2.2.2:
   version "2.2.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
   dependencies:
     loose-envify "^1.0.0"
 
+invert-kv@^1.0.0:
+  version "1.0.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
+
+is-arrayish@^0.2.1:
+  version "0.2.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/is-arrayish/-/is-arrayish-0.2.1.tgz#77c99840527aa8ecb1a8ba697b80645a7a926a9d"
+
 is-buffer@^1.1.0, is-buffer@^1.1.5:
   version "1.1.5"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/is-buffer/-/is-buffer-1.1.5.tgz#1f3b26ef613b214b88cbca23cc6c01d87961eecc"
+
+is-builtin-module@^1.0.0:
+  version "1.0.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/is-builtin-module/-/is-builtin-module-1.0.0.tgz#540572d34f7ac3119f8f76c30cbc1b1e037affbe"
+  dependencies:
+    builtin-modules "^1.0.0"
 
 is-dotfile@^1.0.0:
   version "1.0.2"
@@ -2826,13 +2963,17 @@ is-typedarray@~1.0.0:
   version "1.0.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
 
+is-utf8@^0.2.0:
+  version "0.2.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
+
 is-windows@^0.2.0:
   version "0.2.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/is-windows/-/is-windows-0.2.0.tgz#de1aa6d63ea29dd248737b69f1ff8b8002d2108c"
 
 is-windows@^1.0.0:
-  version "1.0.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/is-windows/-/is-windows-1.0.0.tgz#c61d61020c3ebe99261b781bd3d1622395f547f8"
+  version "1.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/is-windows/-/is-windows-1.0.1.tgz#310db70f742d259a16a369202b51af84233310d9"
 
 isarray@^1.0.0, isarray@~1.0.0, isarray@1.0.0:
   version "1.0.0"
@@ -2886,63 +3027,6 @@ istanbul@^0.4.4:
     which "^1.1.1"
     wordwrap "^1.0.0"
 
-jk-client@^1.0.1:
-  version "1.0.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/jk-client/-/jk-client-1.0.1.tgz#6e5f8e1a8b677718f1de0d497cec6a427ca3bdd6"
-  dependencies:
-    co "^4.6.0"
-    sugo-caller "^4.0.1"
-    sugo-scope "^1.0.1"
-    uuid "^3.0.1"
-
-jk-db@^1.0.1:
-  version "1.0.5"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/jk-db/-/jk-db-1.0.5.tgz#af82b1fd9285c419ee29d475afc7b7235307c128"
-  dependencies:
-    clay-constants "^3.0.1"
-    clay-driver-json "^3.0.1"
-    clay-driver-localstorage "^2.0.1"
-    clay-driver-memory "^4.0.1"
-    clay-driver-mysql "^1.0.3"
-    clay-driver-sqlite "^3.0.2"
-    clay-lump "^4.1.1"
-    clay-resource "^3.0.6"
-    clay-resource-name "^4.0.1"
-    co "^4.6.0"
-    uuid "^3.0.1"
-
-jk-env@^1.0.1:
-  version "1.0.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/jk-env/-/jk-env-1.0.1.tgz#abb41245bbb4116483c1b973faa1936941e9e76e"
-  dependencies:
-    co "^4.6.0"
-    evaljson "^4.1.4"
-    stringcase "^3.2.1"
-
-jk-loc@^1.0.1:
-  version "1.0.6"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/jk-loc/-/jk-loc-1.0.6.tgz#83d0cbe08db5a8f4bba651873edea44f9a7378f1"
-  dependencies:
-    co "^4.6.0"
-    evaljson "^4.1.6"
-    stringcase "^3.2.1"
-
-jk-react:
-  version "1.0.2"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/jk-react/-/jk-react-1.0.2.tgz#44e87dc20db6554c3cdf8f3c3f046009e98900b8"
-  dependencies:
-    co "^4.6.0"
-
-jk-server@^1.0.1:
-  version "1.0.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/jk-server/-/jk-server-1.0.3.tgz#bc25c353f51bfea3d91bbaf40cdc866947cfdd42"
-  dependencies:
-    co "^4.6.0"
-    stringcase "^3.2.1"
-    sugo-actor "^5.0.1"
-    sugo-hub "^6.0.5"
-    sugo-module-scoped "^1.0.3"
-
 jodid25519@^1.0.0:
   version "1.0.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/jodid25519/-/jodid25519-1.0.2.tgz#06d4912255093419477d425633606e0e90782967"
@@ -2958,8 +3042,8 @@ js-tokens@^3.0.0:
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/js-tokens/-/js-tokens-3.0.1.tgz#08e9f132484a2c45a30907e9dc4d5567b7f114d7"
 
 js-yaml@3.x:
-  version "3.8.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/js-yaml/-/js-yaml-3.8.3.tgz#33a05ec481c850c8875929166fe1beb61c728766"
+  version "3.8.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/js-yaml/-/js-yaml-3.8.4.tgz#520b4564f86573ba96662af85a8cafa7b4b5a6f6"
   dependencies:
     argparse "^1.0.7"
     esprima "^3.1.1"
@@ -3021,8 +3105,8 @@ jsonify@~0.0.0:
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
 
 jsonparse@^1.2.0:
-  version "1.3.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/jsonparse/-/jsonparse-1.3.0.tgz#85fc245b1d9259acc6941960b905adf64e7de0e8"
+  version "1.3.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/jsonparse/-/jsonparse-1.3.1.tgz#3f4dae4a91fac315f71062f8521cc239f1366280"
 
 jsonparse@0.0.5:
   version "0.0.5"
@@ -3155,6 +3239,12 @@ lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
 
+lcid@^1.0.0:
+  version "1.0.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/lcid/-/lcid-1.0.0.tgz#308accafa0bc483a3867b4b6f2b9506251d1b835"
+  dependencies:
+    invert-kv "^1.0.0"
+
 levn@~0.3.0:
   version "0.3.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/levn/-/levn-0.3.0.tgz#3b09924edf9f083c0490fdd4c0bc4421e04764ee"
@@ -3167,6 +3257,24 @@ lexical-scope@^1.2.0:
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/lexical-scope/-/lexical-scope-1.2.0.tgz#fcea5edc704a4b3a8796cdca419c3a0afaf22df4"
   dependencies:
     astw "^2.0.0"
+
+load-json-file@^1.0.0:
+  version "1.1.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
+  dependencies:
+    graceful-fs "^4.1.2"
+    parse-json "^2.2.0"
+    pify "^2.0.0"
+    pinkie-promise "^2.0.0"
+    strip-bom "^2.0.0"
+
+locale@^0.1.0:
+  version "0.1.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/locale/-/locale-0.1.0.tgz#3b5bf70614fdab48ac3e3fbc648147cb65443bde"
+
+lodash-es@^4.17.4, lodash-es@^4.2.0, lodash-es@^4.2.1:
+  version "4.17.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/lodash-es/-/lodash-es-4.17.4.tgz#dcc1d7552e150a0640073ba9cb31d70f032950e7"
 
 lodash._baseassign@^3.0.0:
   version "3.2.0"
@@ -3182,6 +3290,10 @@ lodash._basecopy@^3.0.0:
 lodash._basecreate@^3.0.0:
   version "3.0.3"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/lodash._basecreate/-/lodash._basecreate-3.0.3.tgz#1bc661614daa7fc311b7d03bf16806a0213cf821"
+
+lodash._basefor@^3.0.0:
+  version "3.0.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/lodash._basefor/-/lodash._basefor-3.0.3.tgz#7550b4e9218ef09fad24343b612021c79b4c20c2"
 
 lodash._getnative@^3.0.0:
   version "3.9.1"
@@ -3211,11 +3323,26 @@ lodash.isarray@^3.0.0:
   version "3.0.4"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/lodash.isarray/-/lodash.isarray-3.0.4.tgz#79e4eb88c36a8122af86f844aa9bcd851b5fbb55"
 
+lodash.isplainobject@^3.2.0:
+  version "3.2.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/lodash.isplainobject/-/lodash.isplainobject-3.2.0.tgz#9a8238ae16b200432960cd7346512d0123fbf4c5"
+  dependencies:
+    lodash._basefor "^3.0.0"
+    lodash.isarguments "^3.0.0"
+    lodash.keysin "^3.0.0"
+
 lodash.keys@^3.0.0:
   version "3.1.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/lodash.keys/-/lodash.keys-3.1.2.tgz#4dbc0472b156be50a0b286855d1bd0b0c656098a"
   dependencies:
     lodash._getnative "^3.0.0"
+    lodash.isarguments "^3.0.0"
+    lodash.isarray "^3.0.0"
+
+lodash.keysin@^3.0.0:
+  version "3.0.8"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/lodash.keysin/-/lodash.keysin-3.0.8.tgz#22c4493ebbedb1427962a54b445b2c8a767fb47f"
+  dependencies:
     lodash.isarguments "^3.0.0"
     lodash.isarray "^3.0.0"
 
@@ -3248,7 +3375,7 @@ lodash@^3.8.0:
   version "3.10.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.14.0, lodash@^4.17.4, lodash@^4.2.0:
+lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.4, lodash@^4.2.0, lodash@^4.2.1:
   version "4.17.4"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -3280,16 +3407,16 @@ lru-queue@0.1:
     es5-ext "~0.10.2"
 
 math-expression-evaluator@^1.2.14:
-  version "1.2.16"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/math-expression-evaluator/-/math-expression-evaluator-1.2.16.tgz#b357fa1ca9faefb8e48d10c14ef2bcb2d9f0a7c9"
+  version "1.2.17"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
 
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
 
 memoizee@^0.4.3:
-  version "0.4.4"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/memoizee/-/memoizee-0.4.4.tgz#ecf4b791a09cd11c970203f80682534730fad78f"
+  version "0.4.5"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/memoizee/-/memoizee-0.4.5.tgz#1bc3ea1e4be056dd475d521979d7be3d5e5b21c8"
   dependencies:
     d "1"
     es5-ext "^0.10.13"
@@ -3340,8 +3467,8 @@ mime-types@^2.0.7, mime-types@^2.1.10, mime-types@^2.1.12, mime-types@~2.1.11, m
     mime-db "~1.27.0"
 
 mime@^1.3.4:
-  version "1.3.4"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/mime/-/mime-1.3.4.tgz#115f9e3b6b3daf2959983cb38f149a2d40eb5d53"
+  version "1.3.6"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/mime/-/mime-1.3.6.tgz#591d84d3653a6b0b4a3b9df8de5aa8108e72e5e0"
 
 minimalistic-assert@^1.0.0:
   version "1.0.0"
@@ -3352,10 +3479,10 @@ minimalistic-crypto-utils@^1.0.0, minimalistic-crypto-utils@^1.0.1:
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
 
 minimatch@^3.0.0, minimatch@^3.0.2, minimatch@^3.0.3, "minimatch@2 || 3":
-  version "3.0.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/minimatch/-/minimatch-3.0.3.tgz#2a4e4090b96b2db06a9d7df01055a62a77c9b774"
+  version "3.0.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   dependencies:
-    brace-expansion "^1.0.0"
+    brace-expansion "^1.1.7"
 
 minimist@^1.1.0, minimist@^1.2.0:
   version "1.2.0"
@@ -3379,9 +3506,9 @@ mkdirp@^0.5.1, "mkdirp@>=0.5 0", mkdirp@0.5.1, mkdirp@0.5.x:
   dependencies:
     minimist "0.0.8"
 
-mocha@^3.1.2, mocha@^3.2.0, mocha@^3.3.0:
-  version "3.3.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/mocha/-/mocha-3.3.0.tgz#d29b7428d3f52c82e2e65df1ecb7064e1aabbfb5"
+mocha@^3.1.2, mocha@^3.2.0, mocha@^3.3.0, mocha@^3.4.1:
+  version "3.4.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/mocha/-/mocha-3.4.1.tgz#a3802b4aa381934cacb38de70cf771621da8f9af"
   dependencies:
     browser-stdout "1.3.0"
     commander "2.9.0"
@@ -3415,7 +3542,7 @@ module-deps@^4.0.8:
     through2 "^2.0.0"
     xtend "^4.0.0"
 
-mold-source-map@~0.4.0:
+mold-source-map@^0.4.0, mold-source-map@~0.4.0:
   version "0.4.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/mold-source-map/-/mold-source-map-0.4.0.tgz#cf67e0b31c47ab9badb5c9c25651862127bb8317"
   dependencies:
@@ -3519,6 +3646,15 @@ nopt@3.x:
   dependencies:
     abbrev "1"
 
+normalize-package-data@^2.3.2:
+  version "2.3.8"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/normalize-package-data/-/normalize-package-data-2.3.8.tgz#d819eda2a9dedbd1ffa563ea4071d936782295bb"
+  dependencies:
+    hosted-git-info "^2.1.4"
+    is-builtin-module "^1.0.0"
+    semver "2 || 3 || 4 || 5"
+    validate-npm-package-license "^3.0.1"
+
 normalize-path@^2.0.1:
   version "2.1.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/normalize-path/-/normalize-path-2.1.1.tgz#1ab28b556e198363a8c1a6f7e6fa20137fe6aed9"
@@ -3530,12 +3666,12 @@ normalize-range@^0.1.2:
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
 
 npmlog@^4.0.2:
-  version "4.0.2"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/npmlog/-/npmlog-4.0.2.tgz#d03950e0e78ce1527ba26d2a7592e9348ac3e75f"
+  version "4.1.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/npmlog/-/npmlog-4.1.0.tgz#dc59bee85f64f00ed424efb2af0783df25d1c0b5"
   dependencies:
     are-we-there-yet "~1.1.2"
     console-control-strings "~1.1.0"
-    gauge "~2.7.1"
+    gauge "~2.7.3"
     set-blocking "~2.0.0"
 
 num2fraction@^1.2.2:
@@ -3554,7 +3690,7 @@ object-assign@^3.0.0:
   version "3.0.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/object-assign/-/object-assign-3.0.0.tgz#9bedd5ca0897949bca47e7ff408062d549f587f2"
 
-object-assign@^4.0.1, object-assign@^4.1.0:
+object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
@@ -3630,6 +3766,12 @@ os-homedir@^1.0.0, os-homedir@^1.0.1:
   version "1.0.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/os-homedir/-/os-homedir-1.0.2.tgz#ffbc4988336e0e833de0c168c7ef152121aa7fb3"
 
+os-locale@^1.4.0:
+  version "1.4.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/os-locale/-/os-locale-1.4.0.tgz#20f9f17ae29ed345e8bde583b13d2009803c14d9"
+  dependencies:
+    lcid "^1.0.0"
+
 os-tmpdir@^1.0.0, os-tmpdir@^1.0.1:
   version "1.0.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
@@ -3670,6 +3812,12 @@ parse-glob@^3.0.4:
     is-extglob "^1.0.0"
     is-glob "^2.0.0"
 
+parse-json@^2.2.0:
+  version "2.2.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/parse-json/-/parse-json-2.2.0.tgz#f480f40434ef80741f8469099f8dea18f55a4dc9"
+  dependencies:
+    error-ex "^1.2.0"
+
 parse-passwd@^1.0.0:
   version "1.0.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/parse-passwd/-/parse-passwd-1.0.0.tgz#6d5b934a456993b23d37f40a382d6f1666a8e5c6"
@@ -3700,6 +3848,12 @@ path-browserify@~0.0.0:
   version "0.0.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/path-browserify/-/path-browserify-0.0.0.tgz#a0b870729aae214005b7d5032ec2cbbb0fb4451a"
 
+path-exists@^2.0.0:
+  version "2.1.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/path-exists/-/path-exists-2.1.0.tgz#0feb6c64f0fc518d9a754dd5efb62c7022761f4b"
+  dependencies:
+    pinkie-promise "^2.0.0"
+
 path-is-absolute@^1.0.0, path-is-absolute@1.0.1:
   version "1.0.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
@@ -3718,15 +3872,41 @@ path-to-regexp@^1.1.1, path-to-regexp@^1.5.3:
   dependencies:
     isarray "0.0.1"
 
-pbkdf2@^3.0.3:
-  version "3.0.9"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pbkdf2/-/pbkdf2-3.0.9.tgz#f2c4b25a600058b3c3773c086c37dbbee1ffe693"
+path-type@^1.0.0:
+  version "1.1.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/path-type/-/path-type-1.1.0.tgz#59c44f7ee491da704da415da5a4070ba4f8fe441"
   dependencies:
-    create-hmac "^1.1.2"
+    graceful-fs "^4.1.2"
+    pify "^2.0.0"
+    pinkie-promise "^2.0.0"
+
+pbkdf2@^3.0.3:
+  version "3.0.12"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pbkdf2/-/pbkdf2-3.0.12.tgz#be36785c5067ea48d806ff923288c5f750b6b8a2"
+  dependencies:
+    create-hash "^1.1.2"
+    create-hmac "^1.1.4"
+    ripemd160 "^2.0.1"
+    safe-buffer "^5.0.1"
+    sha.js "^2.4.8"
 
 performance-now@^0.2.0:
   version "0.2.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
+
+pify@^2.0.0:
+  version "2.3.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
+
+pinkie-promise@^2.0.0:
+  version "2.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pinkie-promise/-/pinkie-promise-2.0.1.tgz#2135d6dfa7a358c069ac9b178776288228450ffa"
+  dependencies:
+    pinkie "^2.0.0"
+
+pinkie@^2.0.0:
+  version "2.0.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
 pixrem@^3.0.0:
   version "3.0.2"
@@ -3743,63 +3923,65 @@ pleeease-filters@^3.0.0:
     onecolor "~2.4.0"
     postcss "^5.0.4"
 
-pon-cli@^2.0.2:
-  version "2.0.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-cli/-/pon-cli-2.0.3.tgz#6cee42b413447af3f7d55851dd32bd24fdea07c6"
+pon-cli@^3.0.1:
+  version "3.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-cli/-/pon-cli-3.0.1.tgz#27ee5f046cb0dfa130f8957a8387b09a74525b19"
   dependencies:
     argx "^3.0.2"
     co "^4.6.0"
     commander "^2.9.0"
-    ponfile "^2.0.1"
+    ponfile "^3.0.1"
 
-pon-context@^1.1.1:
-  version "1.1.4"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-context/-/pon-context-1.1.4.tgz#a954cfeb8baf84dd511b9537cbfd9dc32d3aed5a"
+pon-context@^2.0.2:
+  version "2.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-context/-/pon-context-2.0.2.tgz#5062d724ef375cb626ceddaa7fea4bdc09be7907"
   dependencies:
     co "^4.6.0"
-    pon-logger "^1.0.2"
-    pon-timer "^1.1.3"
-    pon-watcher "^1.0.1"
-    pon-writer "^1.0.1"
+    pon-logger "^2.0.2"
+    pon-timer "^2.0.1"
+    pon-watcher "^2.0.1"
+    pon-writer "^1.0.4"
     uuid "^3.0.1"
 
-pon-logger@^1.0.2:
-  version "1.0.2"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-logger/-/pon-logger-1.0.2.tgz#d2a99db03fc8c3b92c01017e495989afb789d5d1"
+pon-logger@^2.0.2:
+  version "2.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-logger/-/pon-logger-2.0.2.tgz#abc554eb4d1f9120dfa63a3fe7ada1d6ac1b14a4"
   dependencies:
     co "^4.6.0"
     colorprint "^4.1.0"
 
-pon-runner@^1.0.1, pon-runner@^1.2.1:
-  version "1.2.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-runner/-/pon-runner-1.2.1.tgz#ce7c9e3844a323abfbf7ff826a288dca650fd36a"
+pon-runner@^2.0.1, pon-runner@^2.0.2:
+  version "2.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-runner/-/pon-runner-2.0.2.tgz#9e7bf272884c242312954df2fbad18d7e4c6ba19"
   dependencies:
     abind "^1.0.3"
     co "^4.6.0"
     minimatch "^3.0.3"
-    pon-context "^1.1.1"
+    pon-context "^2.0.2"
 
-pon-task-basic:
-  version "2.0.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-basic/-/pon-task-basic-2.0.1.tgz#6e4c3993212c864389ef9557efa7734a5f86f7b8"
+pon-task-basic@^2.0.3:
+  version "2.0.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-basic/-/pon-task-basic-2.0.3.tgz#3f47b351ec835d6913616626b039c141ecd6af4e"
   dependencies:
     co "^4.6.0"
     pon-task-command "^1.0.2"
     pon-task-coz "^1.0.2"
-    pon-task-fs "^2.0.1"
+    pon-task-fmtjson "^1.0.1"
+    pon-task-fs "^2.1.2"
     pon-task-mocha "^1.0.2"
 
-pon-task-browser@^1.0.2:
-  version "1.1.5"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-browser/-/pon-task-browser-1.1.5.tgz#da4543309da261ac070596e5336cc91be3cef243"
+pon-task-browser@^2.0.1:
+  version "2.0.8"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-browser/-/pon-task-browser-2.0.8.tgz#2735135b7705c08832c93c93928c72c254d0f9fa"
   dependencies:
     amkdirp "^1.0.0"
     asenv "^1.1.0"
+    asfs "^1.2.3"
     browserify "^14.1.0"
     browserify-incremental "^3.1.1"
     co "^4.6.0"
     css-modulesify "^0.27.2"
-    pon-task-compile "^2.0.1"
+    pon-task-compile "^2.1.4"
 
 pon-task-command@^1.0.2:
   version "1.0.2"
@@ -3807,23 +3989,15 @@ pon-task-command@^1.0.2:
   dependencies:
     co "^4.6.0"
 
-pon-task-compile@^1.1.1:
-  version "1.1.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-compile/-/pon-task-compile-1.1.1.tgz#07b09afc77e20c674e1a659987cb1658216fe23f"
+pon-task-compile@^2.0.1, pon-task-compile@^2.1.4:
+  version "2.1.5"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-compile/-/pon-task-compile-2.1.5.tgz#039e3bd980fc7837b645a1a499650a40d775874b"
   dependencies:
     aglob "^2.0.1"
     asfs "^1.2.3"
     co "^4.6.0"
-    pon-task-watch "^1.0.2"
-
-pon-task-compile@^2.0.1:
-  version "2.0.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-compile/-/pon-task-compile-2.0.1.tgz#48f901f5e617d9707d932814e1f9240157cf00eb"
-  dependencies:
-    aglob "^2.0.1"
-    asfs "^1.2.3"
-    co "^4.6.0"
-    pon-task-watch "^2.0.1"
+    minimatch "^3.0.3"
+    pon-task-watch "^2.0.2"
 
 pon-task-coz@^1.0.2:
   version "1.0.3"
@@ -3831,30 +4005,47 @@ pon-task-coz@^1.0.2:
   dependencies:
     co "^4.6.0"
 
-pon-task-css@^1.0.6:
-  version "1.0.7"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-css/-/pon-task-css-1.0.7.tgz#eb2e7b26cdf708b3f71e5671592e7ce9dd05cdf1"
+pon-task-css@^2.0.1:
+  version "2.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-css/-/pon-task-css-2.0.1.tgz#6ba15124e7a43562af32ce1cedccee54de929b52"
   dependencies:
     autoprefixer "^6.7.7"
     co "^4.6.0"
-    pon-task-compile "^1.1.1"
-    postcss "^5.2.16"
+    pon-task-compile "^2.0.1"
+    postcss "^5.2.17"
     postcss-cssnext "^2.10.0"
 
-pon-task-fs@^2.0.1:
-  version "2.0.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-fs/-/pon-task-fs-2.0.1.tgz#df459415925baa90eedc02bee9fab07620f8ebaa"
+pon-task-db@^1.0.1:
+  version "1.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-db/-/pon-task-db-1.0.1.tgz#eb4ad7c617c23c1ceebea70f791b7330b7a6cc44"
+  dependencies:
+    co "^4.6.0"
+    pon-task-seed "^1.0.1"
+
+pon-task-fmtjson@^1.0.1:
+  version "1.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-fmtjson/-/pon-task-fmtjson-1.0.1.tgz#5e827233b120fb5bfa177a87b7c29c2fd1064d16"
+  dependencies:
+    co "^4.6.0"
+    fmtjson "^3.0.7"
+
+pon-task-fs@^2.1.2:
+  version "2.1.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-fs/-/pon-task-fs-2.1.2.tgz#4a1ba4654cc7a3c660a26b33157bf70efe6a451b"
   dependencies:
     amkdirp "^1.0.0"
+    asfs "^1.2.3"
     co "^4.6.0"
+    filelink "^3.0.6"
     filemode "^2.0.3"
 
-pon-task-map@^1.0.1:
-  version "1.0.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-map/-/pon-task-map-1.0.3.tgz#9f715e75fd2f2af7b693363afbda250a8ab5c189"
+pon-task-map@^1.0.3:
+  version "1.0.6"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-map/-/pon-task-map-1.0.6.tgz#0f7896857cd350675ef683e0aa405e781a3232f5"
   dependencies:
     co "^4.6.0"
     exorcist "^0.4.0"
+    mold-source-map "^0.4.0"
     pon-task-compile "^2.0.1"
 
 pon-task-mocha@^1.0.2:
@@ -3866,81 +4057,82 @@ pon-task-mocha@^1.0.2:
     mocha "^3.3.0"
     pon-task-watch "^2.0.1"
 
-pon-task-react@^1.0.6:
-  version "1.0.8"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-react/-/pon-task-react-1.0.8.tgz#a9a193ee027b8be1100cf41f299f4a3bcc098155"
+pon-task-react@^1.0.8:
+  version "1.1.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-react/-/pon-task-react-1.1.2.tgz#433d52ed463136bb7f09cd3c06b1c20d621adbd6"
   dependencies:
     babel-core "^6.24.1"
     babel-preset-es2015 "^6.24.1"
+    babel-preset-es2016 "^6.24.1"
+    babel-preset-es2017 "^6.24.1"
     babel-preset-react "^6.24.1"
     co "^4.6.0"
     pon-task-compile "^2.0.1"
 
-pon-task-watch@^1.0.2:
-  version "1.0.2"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-watch/-/pon-task-watch-1.0.2.tgz#3ffed4740e234106ede77572a174a665df160d27"
+pon-task-seed@^1.0.1:
+  version "1.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-seed/-/pon-task-seed-1.0.1.tgz#890723bb3726614fa97f53985c01167627b2bd0e"
+  dependencies:
+    co "^4.6.0"
+
+pon-task-watch@^2.0.1, pon-task-watch@^2.0.2:
+  version "2.0.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-watch/-/pon-task-watch-2.0.4.tgz#fd9673adcee723c1e096f8a1cc72c6caea6e5679"
   dependencies:
     asleep "^1.0.3"
     co "^4.6.0"
 
-pon-task-watch@^2.0.1:
-  version "2.0.2"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-watch/-/pon-task-watch-2.0.2.tgz#966dc323e93183938a9933b8fb24078c8fd311bc"
-  dependencies:
-    asleep "^1.0.3"
-    co "^4.6.0"
-
-pon-task-web@^1.0.1:
-  version "1.0.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-web/-/pon-task-web-1.0.3.tgz#51507606f848e1841a27bb70870bde26c911a949"
+pon-task-web@^3.0.1:
+  version "3.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-task-web/-/pon-task-web-3.0.1.tgz#335e0fe13641380d1b5c0be85646e3b12a32d595"
   dependencies:
     co "^4.6.0"
-    pon-task-browser "^1.0.2"
-    pon-task-compile "^1.1.1"
-    pon-task-css "^1.0.6"
-    pon-task-map "^1.0.1"
-    pon-task-react "^1.0.6"
-    pon-task-watch "^1.0.2"
+    pon-task-browser "^2.0.1"
+    pon-task-compile "^2.0.1"
+    pon-task-css "^2.0.1"
+    pon-task-map "^1.0.3"
+    pon-task-react "^1.0.8"
+    pon-task-watch "^2.0.2"
 
-pon-timer@^1.1.3:
-  version "1.1.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-timer/-/pon-timer-1.1.3.tgz#3286c71d3ebd37bcae35bb819d5ada6d46114e82"
+pon-timer@^2.0.1:
+  version "2.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-timer/-/pon-timer-2.0.1.tgz#1cbc4e200fe8d1fb507ba40c24d4df6183eca914"
   dependencies:
     astimer "^1.3.0"
     co "^4.6.0"
 
-pon-watcher@^1.0.1:
+pon-watcher@^2.0.1:
+  version "2.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-watcher/-/pon-watcher-2.0.1.tgz#f7fa32f8ea8796ce93ebc8225535a3da830476f0"
+  dependencies:
+    awatch "^1.0.7"
+    co "^4.6.0"
+
+pon-writer@^1.0.4:
   version "1.0.4"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-watcher/-/pon-watcher-1.0.4.tgz#659e21f3a11af2931b3b88c4598a3cdfbbf725e7"
-  dependencies:
-    awatch "^1.0.5"
-    co "^4.6.0"
-
-pon-writer@^1.0.1:
-  version "1.0.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-writer/-/pon-writer-1.0.3.tgz#f0eeb89a6e0a3bd284ac907cc696623c2948adfd"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon-writer/-/pon-writer-1.0.4.tgz#4258ba2b604391f6404c6423fba2ddf25a8dbd30"
   dependencies:
     co "^4.6.0"
-    writeout "^2.1.0"
+    writeout "^2.2.0"
 
-pon@^3.2.1:
-  version "3.2.2"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon/-/pon-3.2.2.tgz#db49c8ad821b2caebdfbfe66740f73a624915873"
+pon@^4.0.1:
+  version "4.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/pon/-/pon-4.0.2.tgz#e9a6050810b3d0664fa52507912232bea7866924"
   dependencies:
     abind "^1.0.3"
     co "^4.6.0"
     minimatch "^3.0.3"
-    pon-cli "^2.0.2"
-    pon-context "^1.1.1"
-    pon-runner "^1.2.1"
+    pon-cli "^3.0.1"
+    pon-context "^2.0.2"
+    pon-runner "^2.0.2"
 
-ponfile@^2.0.1:
-  version "2.0.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ponfile/-/ponfile-2.0.1.tgz#d3817bf0064b1885b28ad280cb9c9243b65f82bd"
+ponfile@^3.0.1:
+  version "3.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ponfile/-/ponfile-3.0.2.tgz#5ec41e53a505c005b6e62ff5969840776dca8019"
   dependencies:
     co "^4.6.0"
-    findup-sync "^0.4.3"
-    pon-runner "^1.0.1"
+    findup-sync "^1.0.0"
+    pon-runner "^2.0.1"
 
 postcss-apply@^0.3.0:
   version "0.3.0"
@@ -4030,8 +4222,8 @@ postcss-color-rgba-fallback@^2.0.0:
     rgb-hex "^1.0.0"
 
 postcss-cssnext@^2.10.0:
-  version "2.10.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/postcss-cssnext/-/postcss-cssnext-2.10.0.tgz#30e0dddcfb978eae2523a340aa2c8ba49c5d7103"
+  version "2.11.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/postcss-cssnext/-/postcss-cssnext-2.11.0.tgz#31e68f001e409604da703b66de14b8b8c8c9f2b1"
   dependencies:
     autoprefixer "^6.0.2"
     caniuse-api "^1.5.3"
@@ -4055,6 +4247,7 @@ postcss-cssnext@^2.10.0:
     postcss-custom-selectors "^3.0.0"
     postcss-font-family-system-ui "^1.0.1"
     postcss-font-variant "^2.0.0"
+    postcss-image-set-polyfill "^0.3.3"
     postcss-initial "^1.3.1"
     postcss-media-minmax "^2.1.0"
     postcss-nesting "^2.0.5"
@@ -4099,6 +4292,13 @@ postcss-font-variant@^2.0.0:
   dependencies:
     postcss "^5.0.4"
 
+postcss-image-set-polyfill@^0.3.3:
+  version "0.3.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/postcss-image-set-polyfill/-/postcss-image-set-polyfill-0.3.3.tgz#ba36a330e1f294b2f0350e64285b92e538ee01ab"
+  dependencies:
+    postcss "^5.0.14"
+    postcss-media-query-parser "^0.2.3"
+
 postcss-initial@^1.3.1:
   version "1.5.3"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/postcss-initial/-/postcss-initial-1.5.3.tgz#20c3e91c96822ddb1bed49508db96d56bac377d0"
@@ -4111,6 +4311,10 @@ postcss-media-minmax@^2.1.0:
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/postcss-media-minmax/-/postcss-media-minmax-2.1.2.tgz#444c5cf8926ab5e4fd8a2509e9297e751649cdf8"
   dependencies:
     postcss "^5.0.4"
+
+postcss-media-query-parser@^0.2.3:
+  version "0.2.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/postcss-media-query-parser/-/postcss-media-query-parser-0.2.3.tgz#27b39c6f4d94f81b1a73b8f76351c609e5cef244"
 
 postcss-message-helpers@^2.0.0:
   version "2.0.0"
@@ -4202,7 +4406,7 @@ postcss-value-parser@^3.0.2, postcss-value-parser@^3.2.3, postcss-value-parser@^
   version "3.3.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/postcss-value-parser/-/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
 
-postcss@^5.0.0, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.19, postcss@^5.0.2, postcss@^5.0.21, postcss@^5.0.3, postcss@^5.0.4, postcss@^5.1.1, postcss@^5.2.0, postcss@^5.2.12, postcss@^5.2.16:
+postcss@^5.0.0, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.19, postcss@^5.0.2, postcss@^5.0.21, postcss@^5.0.3, postcss@^5.0.4, postcss@^5.1.1, postcss@^5.2.0, postcss@^5.2.12, postcss@^5.2.16, postcss@^5.2.17:
   version "5.2.17"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/postcss/-/postcss-5.2.17.tgz#cf4f597b864d65c8a492b2eabe9d706c879c388b"
   dependencies:
@@ -4249,11 +4453,12 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@~15.5.7:
-  version "15.5.8"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/prop-types/-/prop-types-15.5.8.tgz#6b7b2e141083be38c8595aa51fc55775c7199394"
+prop-types@^15.0.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@~15.5.7:
+  version "15.5.10"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
     fbjs "^0.8.9"
+    loose-envify "^1.3.1"
 
 pseudomap@^1.0.1:
   version "1.0.2"
@@ -4277,7 +4482,7 @@ punycode@1.3.2:
   version "1.3.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/punycode/-/punycode-1.3.2.tgz#9653a036fb7c1ee42342f2325cceefea3926c48d"
 
-qs@^6.1.0, qs@~6.4.0:
+qs@^6.1.0, qs@^6.2.1, qs@~6.4.0:
   version "6.4.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/qs/-/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
 
@@ -4321,11 +4526,7 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-autobind@^1.0.6:
-  version "1.0.6"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/react-autobind/-/react-autobind-1.0.6.tgz#936bb58edf6b89b619c50f82f0e617159fdfd4f1"
-
-react-dom@^15.4.2:
+react-dom@^15.5.4:
   version "15.5.4"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/react-dom/-/react-dom-15.5.4.tgz#ba0c28786fd52ed7e4f2135fe0288d462aef93da"
   dependencies:
@@ -4333,6 +4534,18 @@ react-dom@^15.4.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "~15.5.7"
+
+react-redux@^5.0.4:
+  version "5.0.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/react-redux/-/react-redux-5.0.4.tgz#1563babadcfb2672f57f9ceaa439fb16bf85d55b"
+  dependencies:
+    create-react-class "^15.5.1"
+    hoist-non-react-statics "^1.0.3"
+    invariant "^2.0.0"
+    lodash "^4.2.0"
+    lodash-es "^4.2.0"
+    loose-envify "^1.1.0"
+    prop-types "^15.0.0"
 
 react-router-dom@^4.1.1:
   version "4.1.1"
@@ -4355,7 +4568,16 @@ react-router@^4.1.1:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
-react@^15.4.2:
+react-transition-group@^1.1.2:
+  version "1.1.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/react-transition-group/-/react-transition-group-1.1.3.tgz#5e02cf6e44a863314ff3c68a0c826c2d9d70b221"
+  dependencies:
+    chain-function "^1.0.0"
+    dom-helpers "^3.2.0"
+    prop-types "^15.5.6"
+    warning "^3.0.0"
+
+react@^15.5.4:
   version "15.5.4"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/react/-/react-15.5.4.tgz#fa83eb01506ab237cdc1c8c3b1cea8de012bf047"
   dependencies:
@@ -4369,6 +4591,21 @@ read-only-stream@^2.0.0:
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/read-only-stream/-/read-only-stream-2.0.0.tgz#2724fd6a8113d73764ac288d4386270c1dbf17f0"
   dependencies:
     readable-stream "^2.0.2"
+
+read-pkg-up@^1.0.1:
+  version "1.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/read-pkg-up/-/read-pkg-up-1.0.1.tgz#9d63c13276c065918d57f002a57f40a1b643fb02"
+  dependencies:
+    find-up "^1.0.0"
+    read-pkg "^1.0.0"
+
+read-pkg@^1.0.0:
+  version "1.1.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/read-pkg/-/read-pkg-1.1.0.tgz#f5ffaa5ecd29cb31c0474bca7d756b6bb29e3f28"
+  dependencies:
+    load-json-file "^1.0.0"
+    normalize-package-data "^2.3.2"
+    path-type "^1.0.0"
 
 readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.6:
   version "2.2.9"
@@ -4440,13 +4677,41 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
+reduce-reducers@^0.1.0:
+  version "0.1.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/reduce-reducers/-/reduce-reducers-0.1.2.tgz#fa1b4718bc5292a71ddd1e5d839c9bea9770f14b"
+
+redux-actions@^2.0.3:
+  version "2.0.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/redux-actions/-/redux-actions-2.0.3.tgz#1550aba9def179166ccd234d07672104a736d889"
+  dependencies:
+    invariant "^2.2.1"
+    lodash "^4.13.1"
+    lodash-es "^4.17.4"
+    reduce-reducers "^0.1.0"
+
+redux-promise@^0.5.3:
+  version "0.5.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/redux-promise/-/redux-promise-0.5.3.tgz#e97e6c9d3bf376eacb79babe6d906da20112d6d8"
+  dependencies:
+    flux-standard-action "^0.6.1"
+
+redux@^3.6.0:
+  version "3.6.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/redux/-/redux-3.6.0.tgz#887c2b3d0b9bd86eca2be70571c27654c19e188d"
+  dependencies:
+    lodash "^4.2.1"
+    lodash-es "^4.2.1"
+    loose-envify "^1.1.0"
+    symbol-observable "^1.0.2"
+
 regenerate@^1.2.1:
   version "1.3.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/regenerate/-/regenerate-1.3.2.tgz#d1941c67bad437e1be76433add5b385f95b19260"
 
 regenerator-runtime@^0.10.0:
-  version "0.10.4"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/regenerator-runtime/-/regenerator-runtime-0.10.4.tgz#74cb6598d3ba2eb18694e968a40e2b3b4df9cf93"
+  version "0.10.5"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
 
 regenerator-transform@0.9.11:
   version "0.9.11"
@@ -4534,6 +4799,14 @@ request@^2.74.0, request@^2.81.0:
     tunnel-agent "^0.6.0"
     uuid "^3.0.0"
 
+require-directory@^2.1.1:
+  version "2.1.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/require-directory/-/require-directory-2.1.1.tgz#8c64ad5fd30dab1c976e2344ffe7f792a6a6df42"
+
+require-main-filename@^1.0.1:
+  version "1.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/require-main-filename/-/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
+
 resolve-dir@^0.1.0:
   version "0.1.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/resolve-dir/-/resolve-dir-0.1.1.tgz#b219259a5602fac5c5c496ad894a6e8cc430261e"
@@ -4590,19 +4863,22 @@ rimraf@^2.5.1, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@2:
   dependencies:
     glob "^7.0.5"
 
-ripemd160@^1.0.0:
-  version "1.0.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ripemd160/-/ripemd160-1.0.1.tgz#93a4bbd4942bc574b69a8fa57c71de10ecca7d6e"
+ripemd160@^2.0.0, ripemd160@^2.0.1:
+  version "2.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ripemd160/-/ripemd160-2.0.1.tgz#0f4584295c53a3628af7e6d79aca21ce57d1c6e7"
+  dependencies:
+    hash-base "^2.0.0"
+    inherits "^2.0.1"
 
 safe-buffer@^5.0.1:
   version "5.0.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/safe-buffer/-/safe-buffer-5.0.1.tgz#d263ca54696cd8a306b5ca6551e92de57918fbe7"
 
-semver@^5.0.1, semver@^5.3.0:
+semver@^5.0.1, semver@^5.3.0, "semver@2 || 3 || 4 || 5":
   version "5.3.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
 
-sequelize@^3.30.3, sequelize@^3.30.4:
+sequelize@^3.30.4:
   version "3.30.4"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/sequelize/-/sequelize-3.30.4.tgz#bda2df1e31854b099e4149a111e9fc0a5ca1d1a4"
   dependencies:
@@ -4623,7 +4899,7 @@ sequelize@^3.30.3, sequelize@^3.30.4:
     validator "^5.2.0"
     wkx "0.2.0"
 
-set-blocking@~2.0.0:
+set-blocking@^2.0.0, set-blocking@~2.0.0:
   version "2.0.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
 
@@ -4679,7 +4955,7 @@ sg-server@^1.6.1:
     koa-router "^7.1.0"
     koa-static "^3.0.0"
 
-sg-socket-client@^1.2.17, sg-socket-client@^1.2.7, sg-socket-client@^1.5.0:
+sg-socket-client@^1.2.17, sg-socket-client@^1.5.0:
   version "1.5.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/sg-socket-client/-/sg-socket-client-1.5.0.tgz#00409b0f99e3032f490672ffe8a441ede023d49e"
   dependencies:
@@ -4719,7 +4995,7 @@ sg-validator@^1.0.4, sg-validator@^1.1.1:
     co "^4.6.0"
     tv4 "^1.2.7"
 
-sha.js@^2.3.6, sha.js@~2.4.4:
+sha.js@^2.4.0, sha.js@^2.4.8, sha.js@~2.4.4:
   version "2.4.8"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/sha.js/-/sha.js-2.4.8.tgz#37068c2c476b6baf402d14a49c67f597921f634f"
   dependencies:
@@ -4759,6 +5035,12 @@ shimmer@1.0.0:
   version "1.0.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/shimmer/-/shimmer-1.0.0.tgz#49c2d71c678360b802be18b278382d1cbb805c39"
 
+showdown@^1.6.4:
+  version "1.6.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/showdown/-/showdown-1.6.4.tgz#056bbb654ecdb8d8643ae12d6d597893ccaf46c6"
+  dependencies:
+    yargs "^6.6.0"
+
 signal-exit@^3.0.0:
   version "3.0.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
@@ -4780,15 +5062,15 @@ socket.io-adapter@0.5.0:
     debug "2.3.3"
     socket.io-parser "2.3.1"
 
-socket.io-client@^1.7.2, socket.io-client@1.7.3:
-  version "1.7.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/socket.io-client/-/socket.io-client-1.7.3.tgz#b30e86aa10d5ef3546601c09cde4765e381da377"
+socket.io-client@^1.7.2, socket.io-client@1.7.4:
+  version "1.7.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/socket.io-client/-/socket.io-client-1.7.4.tgz#ec9f820356ed99ef6d357f0756d648717bdd4281"
   dependencies:
     backo2 "1.0.2"
     component-bind "1.0.0"
     component-emitter "1.2.1"
     debug "2.3.3"
-    engine.io-client "1.8.3"
+    engine.io-client "~1.8.4"
     has-binary "0.1.7"
     indexof "0.0.1"
     object-component "0.0.3"
@@ -4806,8 +5088,8 @@ socket.io-parser@2.3.1:
     json3 "3.3.2"
 
 socket.io-redis@^4.0.0:
-  version "4.0.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/socket.io-redis/-/socket.io-redis-4.0.0.tgz#65c9295237d36a66c81d829cdb9dd6a5186b5b02"
+  version "4.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/socket.io-redis/-/socket.io-redis-4.0.1.tgz#53ae018e3690f29d7a6abb1d8c0a73fcdea5a843"
   dependencies:
     async "2.1.4"
     debug "2.3.3"
@@ -4817,15 +5099,15 @@ socket.io-redis@^4.0.0:
     uid2 "0.0.3"
 
 socket.io@^1.4.8:
-  version "1.7.3"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/socket.io/-/socket.io-1.7.3.tgz#b8af9caba00949e568e369f1327ea9be9ea2461b"
+  version "1.7.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/socket.io/-/socket.io-1.7.4.tgz#2f7ecedc3391bf2d5c73e291fe233e6e34d4dd00"
   dependencies:
     debug "2.3.3"
-    engine.io "1.8.3"
+    engine.io "~1.8.4"
     has-binary "0.1.7"
     object-assign "4.1.0"
     socket.io-adapter "0.5.0"
-    socket.io-client "1.7.3"
+    socket.io-client "1.7.4"
     socket.io-parser "2.3.1"
 
 socketio-auth@^0.1.0:
@@ -4836,8 +5118,8 @@ socketio-auth@^0.1.0:
     lodash "^3.8.0"
 
 source-map-support@^0.4.2:
-  version "0.4.14"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/source-map-support/-/source-map-support-0.4.14.tgz#9d4463772598b86271b4f523f6c1f4e02a7d6aef"
+  version "0.4.15"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/source-map-support/-/source-map-support-0.4.15.tgz#03202df65c06d2bd8c7ec2362a193056fef8d3b1"
   dependencies:
     source-map "^0.5.6"
 
@@ -4857,9 +5139,27 @@ source-map@~0.2.0:
   dependencies:
     amdefine ">=0.0.4"
 
+spdx-correct@~1.0.0:
+  version "1.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/spdx-correct/-/spdx-correct-1.0.2.tgz#4b3073d933ff51f3912f03ac5519498a4150db40"
+  dependencies:
+    spdx-license-ids "^1.0.2"
+
+spdx-expression-parse@~1.0.0:
+  version "1.0.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/spdx-expression-parse/-/spdx-expression-parse-1.0.4.tgz#9bdf2f20e1f40ed447fbe273266191fced51626c"
+
+spdx-license-ids@^1.0.2:
+  version "1.2.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/spdx-license-ids/-/spdx-license-ids-1.2.2.tgz#c9df7a3424594ade6bd11900d596696dc06bac57"
+
 sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
+
+sprintf@^0.1.5:
+  version "0.1.5"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/sprintf/-/sprintf-0.1.5.tgz#8f83e39a9317c1a502cb7db8050e51c679f6edcf"
 
 sqlite3@^3.1.8:
   version "3.1.8"
@@ -4891,7 +5191,7 @@ stack-trace@0.0.x:
   version "0.0.9"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/stack-trace/-/stack-trace-0.0.9.tgz#a8f6eaeca90674c333e7c43953f275b451510695"
 
-statuses@^1.2.0, "statuses@>= 1.2.1 < 2", "statuses@>= 1.3.1 < 2":
+statuses@^1.2.0, "statuses@>= 1.3.1 < 2":
   version "1.3.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/statuses/-/statuses-1.3.1.tgz#faf51b9eb74aaef3b3acf4ad5f61abf24cb7b93e"
 
@@ -4910,8 +5210,8 @@ stream-combiner2@^1.1.1:
     readable-stream "^2.0.2"
 
 stream-http@^2.0.0:
-  version "2.7.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/stream-http/-/stream-http-2.7.0.tgz#cec1f4e3b494bc4a81b451808970f8b20b4ed5f6"
+  version "2.7.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/stream-http/-/stream-http-2.7.1.tgz#546a51741ad5a6b07e9e31b0b10441a917df528a"
   dependencies:
     builtin-status-codes "^3.0.0"
     inherits "^2.0.1"
@@ -4940,7 +5240,7 @@ string-hash@^1.1.0:
   version "1.1.3"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/string-hash/-/string-hash-1.1.3.tgz#e8aafc0ac1855b4666929ed7dd1275df5d6c811b"
 
-string-width@^1.0.1:
+string-width@^1.0.1, string-width@^1.0.2:
   version "1.0.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/string-width/-/string-width-1.0.2.tgz#118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3"
   dependencies:
@@ -4962,6 +5262,12 @@ strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   dependencies:
     ansi-regex "^2.0.0"
 
+strip-bom@^2.0.0:
+  version "2.0.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/strip-bom/-/strip-bom-2.0.0.tgz#6219a85616520491f35788bdbf1447a99c7e6b0e"
+  dependencies:
+    is-utf8 "^0.2.0"
+
 strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
@@ -4972,13 +5278,14 @@ subarg@^1.0.0:
   dependencies:
     minimist "^1.1.0"
 
-sugo-actor@^5.0.1:
-  version "5.0.2"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/sugo-actor/-/sugo-actor-5.0.2.tgz#1401161a989d457802d26c3ea1ba7632cae9e53b"
+sugo-actor@^5.0.4:
+  version "5.0.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/sugo-actor/-/sugo-actor-5.0.4.tgz#d69157375cd89db53ffec75acea42a84387214ba"
   dependencies:
     argx "^3.0.1"
     asenv "^1.0.6"
     asleep "^1.0.3"
+    asobj "^1.5.0"
     bwindow "^1.0.7"
     co "^4.6.0"
     sg-queue "^1.1.4"
@@ -4993,9 +5300,9 @@ sugo-actor@^5.0.1:
     sugo-module-base "^1.2.6"
     uuid "^3.0.1"
 
-sugo-caller@^4.0.1:
-  version "4.0.2"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/sugo-caller/-/sugo-caller-4.0.2.tgz#caa75481a4a8d193344e13b7be6845c333bf8cbb"
+sugo-caller@^4.0.4:
+  version "4.0.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/sugo-caller/-/sugo-caller-4.0.4.tgz#a2c61a4c5bbb311bc4c4a920050e70a36021aaa9"
   dependencies:
     argx "^3.0.1"
     bwindow "^1.0.7"
@@ -5029,11 +5336,12 @@ sugo-constants@^2.4.1, sugo-constants@^2.4.2:
   version "2.4.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/sugo-constants/-/sugo-constants-2.4.2.tgz#bf057ad57a1af829c5342b086a9817d987709f67"
 
-sugo-hub@^6.0.5:
-  version "6.0.7"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/sugo-hub/-/sugo-hub-6.0.7.tgz#71d1fd0c21932db1a61b25cae3727c700939f172"
+sugo-hub@^6.0.8:
+  version "6.0.8"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/sugo-hub/-/sugo-hub-6.0.8.tgz#4ef649992b73a766eb861e3e081f476acf6731d5"
   dependencies:
     asenv "^1.1.0"
+    asleep "^1.0.3"
     aslogger "^1.0.2"
     brequest "^1.0.1"
     co "^4.6.0"
@@ -5067,13 +5375,9 @@ sugo-module-base@^1.2.6:
     sg-validator "^1.1.1"
     sugo-constants "^2.4.1"
 
-sugo-module-scoped@^1.0.3:
+sugo-module-scoped@^1.0.4:
   version "1.0.4"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/sugo-module-scoped/-/sugo-module-scoped-1.0.4.tgz#6fc67a536d1e85ae5d478a2f86ed4381ab447c47"
-
-sugo-scope@^1.0.1:
-  version "1.0.1"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/sugo-scope/-/sugo-scope-1.0.1.tgz#8fa980250271da28b0a0fc232e9a3f2bd1feb875"
 
 superagent@^2.1.0:
   version "2.3.0"
@@ -5106,11 +5410,25 @@ supports-color@3.1.2:
   dependencies:
     has-flag "^1.0.0"
 
+symbol-observable@^1.0.2:
+  version "1.0.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/symbol-observable/-/symbol-observable-1.0.4.tgz#29bf615d4aa7121bdd898b22d4b3f9bc4e2aa03d"
+
 syntax-error@^1.1.1:
   version "1.3.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/syntax-error/-/syntax-error-1.3.0.tgz#1ed9266c4d40be75dc55bf9bb1cb77062bb96ca1"
   dependencies:
     acorn "^4.0.3"
+
+taggit@^2.0.1:
+  version "2.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/taggit/-/taggit-2.0.2.tgz#b6ffe94b84e07e978eafe15de7cb5215e38b56e2"
+  dependencies:
+    argx "^3.0.0"
+    async "^2.0.1"
+    co "^4.6.0"
+    commander "^2.9.0"
+    execcli "^4.0.8"
 
 tar-pack@^3.4.0:
   version "3.4.0"
@@ -5144,6 +5462,434 @@ terraformer@~1.0.5:
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/terraformer/-/terraformer-1.0.8.tgz#51e0ad89746fcf2161dc6f65aa70e42377c8b593"
   dependencies:
     "@types/geojson" "^1.0.0"
+
+the-assets@^1.0.0:
+  version "1.0.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-assets/-/the-assets-1.0.0.tgz#33093cb7c8550825f7596a4830071a5e893de9c4"
+  dependencies:
+    aglob "^2.0.1"
+    co "^4.6.0"
+    filecopy "^3.0.1"
+    filelink "^3.0.6"
+
+the-body@^2.0.4:
+  version "2.0.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-body/-/the-body-2.0.4.tgz#a193a18976fe55982920271cb5c48f3d2df976fa"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-constants "^1.1.0"
+    the-component-util "^1.0.5"
+    the-style "^1.2.1"
+
+the-button@^1.1.2:
+  version "1.1.5"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-button/-/the-button-1.1.5.tgz#db45bce7712ab6ff29b0ce443bceed169622ebc7"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.9"
+    the-component-util "^1.4.1"
+    the-icon "^1.0.4"
+    the-link "^2.0.6"
+    the-style "^1.2.2"
+
+the-check@^1.0.0:
+  version "1.0.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-check/-/the-check-1.0.0.tgz#1f4713a7e9de7d7050c06100ea23d432bbc8a989"
+  dependencies:
+    asenv "^1.1.1"
+
+the-client@^1.2.6:
+  version "1.2.6"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-client/-/the-client-1.2.6.tgz#bd66999ba82045f09592bc17720f654e9e7671b5"
+  dependencies:
+    argx "^3.0.2"
+    bstorage "^1.1.1"
+    bwindow "^1.0.7"
+    co "^4.6.0"
+    prop-types "^15.5.10"
+    sugo-caller "^4.0.4"
+    uuid "^3.0.1"
+
+the-component-constants@^1.1.0, the-component-constants@^1.1.1, the-component-constants@^1.1.8:
+  version "1.1.9"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-component-constants/-/the-component-constants-1.1.9.tgz#d0f3a55b9fd1f5dbfdfbc6635b243434e7f276ca"
+
+the-component-util@^1.0.5, the-component-util@^1.3.0, the-component-util@^1.4.0, the-component-util@^1.4.1:
+  version "1.4.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-component-util/-/the-component-util-1.4.1.tgz#ab739138060b00ed8c8236493f0e49381e37e1cc"
+  dependencies:
+    acolor "^1.2.0"
+    bwindow "^1.0.7"
+    the-component-constants "^1.1.8"
+    uuid "^3.0.1"
+
+the-components@^1.3.13:
+  version "1.3.14"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-components/-/the-components-1.3.14.tgz#c4911a6183d29d2271315951802d99fbf0abf64b"
+  dependencies:
+    classnames "^2.2.5"
+    co "^4.6.0"
+    prop-types "^15.5.8"
+    the-body "^2.0.4"
+    the-button "^1.1.2"
+    the-container "^2.0.10"
+    the-footer "^1.0.2"
+    the-form "^1.0.4"
+    the-head "^1.0.5"
+    the-header "^1.2.8"
+    the-html "^1.0.6"
+    the-icon "^1.0.4"
+    the-image "^1.0.3"
+    the-input "^1.1.2"
+    the-link "^2.0.7"
+    the-list "^1.1.2"
+    the-main "^2.0.3"
+    the-markdown "^1.0.0"
+    the-menu "^1.0.2"
+    the-root "^1.0.8"
+    the-route "^1.0.6"
+    the-router "^1.0.8"
+    the-section "^1.0.2"
+    the-style "^1.2.3"
+    the-toast "^1.0.3"
+    the-view "^1.0.2"
+
+the-container@^2.0.10:
+  version "2.0.10"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-container/-/the-container-2.0.10.tgz#239b2cc855160f8fc761338918efc7685c5ea98e"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-util "^1.3.0"
+    the-style "^1.2.2"
+
+the-controller-base, the-controller-base@^2.0.3:
+  version "2.0.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-controller-base/-/the-controller-base-2.0.3.tgz#a8431b7edbce75e7825088323d3d16913c029496"
+  dependencies:
+    debug "^2.6.6"
+    sugo-module-base "^1.2.6"
+
+the-db@^3.0.5:
+  version "3.0.5"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-db/-/the-db-3.0.5.tgz#625efdf1e23a8c2ab985b0f2da48bb5ed189fda0"
+  dependencies:
+    asobj "^1.5.0"
+    clay-constants "^3.0.1"
+    clay-driver-json "^3.0.1"
+    clay-driver-localstorage "^2.0.1"
+    clay-driver-memory "^4.0.2"
+    clay-driver-mysql "^*"
+    clay-driver-sqlite "^3.0.2"
+    clay-lump "^4.2.1"
+    clay-resource "^3.1.14"
+    clay-resource-name "^4.0.1"
+
+the-env@^1.0.0:
+  version "1.0.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-env/-/the-env-1.0.0.tgz#532cbd8d89c30101408314e1253d8c924fb95956"
+  dependencies:
+    evaljson "^4.1.6"
+    stringcase "^3.2.1"
+
+the-footer@^1.0.2:
+  version "1.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-footer/-/the-footer-1.0.2.tgz#035d6b0bba05151de74e9de8f72a82ee789cceec"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-util "^1.4.0"
+    the-container "^2.0.10"
+    the-link "^2.0.7"
+    the-style "^1.2.3"
+
+the-form@^1.0.4:
+  version "1.0.8"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-form/-/the-form-1.0.8.tgz#601e240753bb78a5eea6818874f2b2ca05a28066"
+  dependencies:
+    asobj "^1.5.0"
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-util "^1.4.1"
+    the-icon "^1.0.4"
+    the-input "^1.0.6"
+    the-style "^1.2.3"
+
+the-head@^1.0.5:
+  version "1.0.5"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-head/-/the-head-1.0.5.tgz#3df723bb2d2886d6545b8c0c32d8c04d68fbcfd1"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    stringcase "^3.2.1"
+
+the-header@^1.2.8:
+  version "1.2.8"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-header/-/the-header-1.2.8.tgz#0bc3369e371a4ded6ca0869e68b5490550deee09"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-util "^1.4.1"
+    the-container "^2.0.10"
+    the-link "^2.0.6"
+    the-style "^1.2.2"
+
+the-html@^1.0.6:
+  version "1.0.6"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-html/-/the-html-1.0.6.tgz#294915ad387c9513a674a12c04c18aebde77d739"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+
+the-icon@^1.0.3, the-icon@^1.0.4:
+  version "1.0.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-icon/-/the-icon-1.0.4.tgz#6cba5b94b476efa06ba5c0e021f3b6277802f104"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-util "^1.4.1"
+    the-style "^1.2.2"
+
+the-image@^1.0.2, the-image@^1.0.3:
+  version "1.0.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-image/-/the-image-1.0.3.tgz#7e698a04a13015efb455506aa534a0084954d779"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-util "^1.3.0"
+    the-icon "^1.0.3"
+    the-style "^1.2.3"
+
+the-input@^1.0.6, the-input@^1.1.2:
+  version "1.1.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-input/-/the-input-1.1.2.tgz#536dc048e35f0eba5e34702aff33baca31f908c2"
+  dependencies:
+    asobj "^1.5.0"
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-util "^1.4.1"
+    the-icon "^1.0.4"
+    the-style "^1.2.3"
+
+the-link@^2.0.6, the-link@^2.0.7:
+  version "2.0.7"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-link/-/the-link-2.0.7.tgz#5b5fe9ea32b09ba76320f2174c5397399f8930c9"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-util "^1.3.0"
+    the-style "^1.2.2"
+
+the-list@^1.1.2:
+  version "1.1.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-list/-/the-list-1.1.2.tgz#8c7a9c9219bc7ee1f5667ea0dc9ebcf6c3db69f8"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-util "^1.3.0"
+    the-icon "^1.0.3"
+    the-image "^1.0.2"
+    the-link "^2.0.7"
+    the-style "^1.2.3"
+
+the-loc@^1.1.0:
+  version "1.1.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-loc/-/the-loc-1.1.0.tgz#27378df7556e623e724b27943c17d06f5c252a7f"
+  dependencies:
+    argx "^3.0.2"
+    evaljson "^4.1.6"
+    prop-types "^15.5.10"
+    sprintf "^0.1.5"
+
+the-main@^2.0.3:
+  version "2.0.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-main/-/the-main-2.0.3.tgz#6d8343ed423227d5ba77b7640cf3834d5ccf5a81"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-util "^1.4.0"
+    the-style "^1.2.3"
+
+the-markdown@^1.0.0:
+  version "1.0.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-markdown/-/the-markdown-1.0.0.tgz#4a4a3ab93b02de3cd94cd7d01e8a680abc622e3b"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    showdown "^1.6.4"
+    the-component-util "^1.3.0"
+    the-style "^1.2.2"
+
+the-menu@^1.0.2:
+  version "1.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-menu/-/the-menu-1.0.2.tgz#5dc0540a5a01036fd116bd4af34908ae3066b457"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-util "^1.4.0"
+    the-icon "^1.0.3"
+    the-link "^2.0.7"
+    the-style "^1.2.3"
+
+the-resource-user@^2.0.2:
+  version "2.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-resource-user/-/the-resource-user-2.0.2.tgz#e5728211af12a8a658f986ab4a9615c8fb93a242"
+  dependencies:
+    the-token "^1.0.0"
+
+the-root@^1.0.8:
+  version "1.0.8"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-root/-/the-root-1.0.8.tgz#cc7f3d5a0eefd937d69559cd7c2f6e692a6da271"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-util "^1.0.5"
+    the-style "^1.2.1"
+
+the-route@^1.0.6:
+  version "1.0.6"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-route/-/the-route-1.0.6.tgz#9e250d422201f9dff00d245907027c1d0ddd8ccf"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-util "^1.4.0"
+
+the-router@^1.0.4, the-router@^1.0.8:
+  version "1.0.9"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-router/-/the-router-1.0.9.tgz#8702cfa4c81a5cadfc246e65b4665731ca9bee18"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-util "^1.4.0"
+    the-style "^1.2.3"
+
+the-scope@^1.0.4:
+  version "1.0.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-scope/-/the-scope-1.0.4.tgz#0cb4fd69a09524e342c07aec17201b965c2df51f"
+  dependencies:
+    the-check "^1.0.0"
+
+the-script-release@^1.0.6:
+  version "1.0.6"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-script-release/-/the-script-release-1.0.6.tgz#0bedbc74873a935cc9602adacb176c0d911c7961"
+  dependencies:
+    ape-releasing "^4.0.4"
+    argx "^3.0.2"
+    co "^4.6.0"
+    commander "^2.9.0"
+    execcli "^4.0.11"
+
+the-script-share@^1.0.5:
+  version "1.0.5"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-script-share/-/the-script-share-1.0.5.tgz#b13d2d2191e48d30bfddc7dca3c6513f47628df1"
+  dependencies:
+    argx "^3.0.2"
+    co "*"
+    commander "^2.9.0"
+    execcli "^4.0.11"
+
+the-script-update@^1.0.0:
+  version "1.0.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-script-update/-/the-script-update-1.0.0.tgz#94d8665f7462b15ec3060e7526fadc3f0a91fb34"
+  dependencies:
+    ape-updating "^4.1.0"
+    argx "^3.0.2"
+    co "^4.6.0"
+    commander "^2.9.0"
+
+the-section@^1.0.2:
+  version "1.0.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-section/-/the-section-1.0.2.tgz#ce315cc999183d59ae7560d72a574f2bb74cada0"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-util "^1.3.0"
+    the-icon "^1.0.3"
+    the-style "^1.2.3"
+
+the-server@^2.0.21:
+  version "2.0.21"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-server/-/the-server-2.0.21.tgz#aba935d9e43dff9b860cfbaecd8366a0539b18b1"
+  dependencies:
+    classnames "^2.2.5"
+    co "^4.6.0"
+    locale "^0.1.0"
+    prop-types "^15.5.9"
+    sugo-actor "^5.0.4"
+    sugo-hub "^6.0.8"
+    sugo-module-scoped "^1.0.4"
+    the-check "^1.0.0"
+    the-component-util "^1.4.1"
+    the-controller-base "^2.0.3"
+    uuid "^3.0.1"
+
+the-store@^3.3.3:
+  version "3.3.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-store/-/the-store-3.3.3.tgz#a6540e4042d44dfff09210d351dcbad8b5e874db"
+  dependencies:
+    argx "^3.0.2"
+    asobj "^1.5.0"
+    bredux "^1.7.2"
+    objnest "^3.0.9"
+    react-redux "^5.0.4"
+    redux "^3.6.0"
+    redux-actions "^2.0.3"
+    redux-promise "^0.5.3"
+    the-check "^1.0.0"
+    the-scope "^1.0.4"
+
+the-style@^1.2.1, the-style@^1.2.2, the-style@^1.2.3:
+  version "1.2.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-style/-/the-style-1.2.3.tgz#1e828f1e351f2e0bd3dd588401d4e308efcd8691"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-component-constants "^1.1.1"
+
+the-templates@^1.0.12:
+  version "1.0.12"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-templates/-/the-templates-1.0.12.tgz#4648469fa89d84942652571ce3603ce25e254b10"
+  dependencies:
+    aglob "^2.0.1"
+    ape-tmpl "^5.0.20"
+    co "^4.6.0"
+    stringcase "^3.2.1"
+
+the-toast@^1.0.3:
+  version "1.0.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-toast/-/the-toast-1.0.3.tgz#7ce8b8a936b0c6593e8fc804925f604cf9105f5e"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    react-transition-group "^1.1.2"
+    the-component-util "^1.3.0"
+    the-style "^1.2.3"
+
+the-token@^1.0.0:
+  version "1.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-token/-/the-token-1.0.1.tgz#d2a5c4231f9c3b3fc24ddf3e0c24c959f650ea2b"
+  dependencies:
+    abind "^1.0.3"
+
+the-view@^1.0.2:
+  version "1.0.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-view/-/the-view-1.0.3.tgz#9b199d2400ea3077f02681a5c483119ae32d8d06"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    the-button "^1.1.2"
+    the-component-util "^1.3.0"
+    the-container "^2.0.10"
+    the-link "^2.0.7"
+    the-style "^1.2.2"
+
+the-window@^4.0.0:
+  version "4.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/the-window/-/the-window-4.0.1.tgz#acde795f0cdd043c1fa32ca97e876590c419b832"
+  dependencies:
+    bwindow "^1.0.7"
+    the-router "^1.0.4"
 
 thenify-all@^1.0.0:
   version "1.6.0"
@@ -5194,8 +5940,8 @@ to-arraybuffer@^1.0.0:
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/to-arraybuffer/-/to-arraybuffer-1.0.1.tgz#7d229b1fcc637e466ca081180836a7aabff83f43"
 
 to-fast-properties@^1.0.1:
-  version "1.0.2"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/to-fast-properties/-/to-fast-properties-1.0.2.tgz#f3f5c0c3ba7299a7ef99427e44633257ade43320"
+  version "1.0.3"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/to-fast-properties/-/to-fast-properties-1.0.3.tgz#b83571fa4d8c25b82e231b06e3a3055de4ca1a47"
 
 toposort-class@^1.0.1:
   version "1.0.1"
@@ -5251,8 +5997,8 @@ ua-parser-js@^0.7.9:
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ua-parser-js/-/ua-parser-js-0.7.12.tgz#04c81a99bdd5dc52263ea29d24c6bf8d4818a4bb"
 
 uglify-js@^2.6:
-  version "2.8.22"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/uglify-js/-/uglify-js-2.8.22.tgz#d54934778a8da14903fa29a326fb24c0ab51a1a0"
+  version "2.8.25"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/uglify-js/-/uglify-js-2.8.25.tgz#11b776e7c3925802853e4c3dd6d0ffad8eb72336"
   dependencies:
     source-map "~0.5.1"
     yargs "~3.10.0"
@@ -5319,6 +6065,13 @@ uuid@^3.0.0, uuid@^3.0.1:
   version "3.0.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/uuid/-/uuid-3.0.1.tgz#6544bba2dfda8c1cf17e629a3a305e2bb1fee6c1"
 
+validate-npm-package-license@^3.0.1:
+  version "3.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/validate-npm-package-license/-/validate-npm-package-license-3.0.1.tgz#2804babe712ad3379459acfbe24746ab2c303fbc"
+  dependencies:
+    spdx-correct "~1.0.0"
+    spdx-expression-parse "~1.0.0"
+
 validator@^5.2.0:
   version "5.7.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/validator/-/validator-5.7.0.tgz#7a87a58146b695ac486071141c0c49d67da05e5c"
@@ -5336,6 +6089,15 @@ verror@1.3.6:
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/verror/-/verror-1.3.6.tgz#cff5df12946d297d2baaefaa2689e25be01c005c"
   dependencies:
     extsprintf "1.0.2"
+
+versionup@^2.0.1:
+  version "2.1.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/versionup/-/versionup-2.1.2.tgz#3636640b81cf3afb73776d4bf059308daa4fc7e8"
+  dependencies:
+    argx "^3.0.0"
+    babel-runtime "^6.11.6"
+    co "^4.6.0"
+    commander "^2.9.0"
 
 viewport-dimensions@^0.2.0:
   version "0.2.0"
@@ -5357,6 +6119,10 @@ whatwg-fetch@>=0.10.0:
   version "2.0.3"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
 
+which-module@^1.0.0:
+  version "1.0.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/which-module/-/which-module-1.0.0.tgz#bba63ca861948994ff307736089e3b96026c2a4f"
+
 which@^1.1.1, which@^1.2.12, which@^1.2.9:
   version "1.2.14"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/which/-/which-1.2.14.tgz#9a87c4378f03e827cecaf1acdf56c736c01c14e5"
@@ -5364,10 +6130,10 @@ which@^1.1.1, which@^1.2.12, which@^1.2.9:
     isexe "^2.0.0"
 
 wide-align@^1.1.0:
-  version "1.1.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/wide-align/-/wide-align-1.1.0.tgz#40edde802a71fea1f070da3e62dcda2e7add96ad"
+  version "1.1.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/wide-align/-/wide-align-1.1.2.tgz#571e0f1b0604636ebc0dfc21b0339bbe31341710"
   dependencies:
-    string-width "^1.0.1"
+    string-width "^1.0.2"
 
 window-size@0.1.0:
   version "0.1.0"
@@ -5400,13 +6166,20 @@ wordwrap@0.0.2:
   version "0.0.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/wordwrap/-/wordwrap-0.0.2.tgz#b79669bb42ecb409f83d583cad52ca17eaa1643f"
 
+wrap-ansi@^2.0.0:
+  version "2.1.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/wrap-ansi/-/wrap-ansi-2.1.0.tgz#d8fc3d284dd05794fe84973caecdd1cf824fdd85"
+  dependencies:
+    string-width "^1.0.1"
+    strip-ansi "^3.0.1"
+
 wrappy@1:
   version "1.0.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
 
-writeout@^2.0.7, writeout@^2.1.0:
-  version "2.1.0"
-  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/writeout/-/writeout-2.1.0.tgz#285df648cfa8cddbf772ecdbe9c2e0fadaede39c"
+writeout@^2.0.7, writeout@^2.2.0:
+  version "2.2.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/writeout/-/writeout-2.2.0.tgz#6f10fbc9549a20d00c8a1290cf029f60a9f9e18a"
   dependencies:
     argx "^3.0.0"
     babel-runtime "^6.11.6"
@@ -5417,6 +6190,13 @@ writeout@^2.0.7, writeout@^2.1.0:
 ws@1.1.2:
   version "1.1.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ws/-/ws-1.1.2.tgz#8a244fa052401e08c9886cf44a85189e1fd4067f"
+  dependencies:
+    options ">=0.0.5"
+    ultron "1.0.x"
+
+ws@1.1.4:
+  version "1.1.4"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ws/-/ws-1.1.4.tgz#57f40d036832e5f5055662a397c4de76ed66bf61"
   dependencies:
     options ">=0.0.5"
     ultron "1.0.x"
@@ -5433,9 +6213,37 @@ xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
 
+y18n@^3.2.1:
+  version "3.2.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
+
 yallist@^2.0.0:
   version "2.1.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/yallist/-/yallist-2.1.2.tgz#1c11f9218f076089a47dd512f93c6699a6a81d52"
+
+yargs-parser@^4.2.0:
+  version "4.2.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/yargs-parser/-/yargs-parser-4.2.1.tgz#29cceac0dc4f03c6c87b4a9f217dd18c9f74871c"
+  dependencies:
+    camelcase "^3.0.0"
+
+yargs@^6.6.0:
+  version "6.6.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/yargs/-/yargs-6.6.0.tgz#782ec21ef403345f830a808ca3d513af56065208"
+  dependencies:
+    camelcase "^3.0.0"
+    cliui "^3.2.0"
+    decamelize "^1.1.1"
+    get-caller-file "^1.0.1"
+    os-locale "^1.4.0"
+    read-pkg-up "^1.0.1"
+    require-directory "^2.1.1"
+    require-main-filename "^1.0.1"
+    set-blocking "^2.0.0"
+    string-width "^1.0.2"
+    which-module "^1.0.0"
+    y18n "^3.2.1"
+    yargs-parser "^4.2.0"
 
 yargs@~3.10.0:
   version "3.10.0"
@@ -5449,4 +6257,41 @@ yargs@~3.10.0:
 yeast@0.1.2:
   version "0.1.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
+
+yesno@0.0.1:
+  version "0.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/yesno/-/yesno-0.0.1.tgz#ffbc04ff3d6f99dad24f7463134e9b92ae41bef6"
+
+e/api/npm/npm-virtual/yargs/-/yargs-6.6.0.tgz#782ec21ef403345f830a808ca3d513af56065208"
+  dependencies:
+    camelcase "^3.0.0"
+    cliui "^3.2.0"
+    decamelize "^1.1.1"
+    get-caller-file "^1.0.1"
+    os-locale "^1.4.0"
+    read-pkg-up "^1.0.1"
+    require-directory "^2.1.1"
+    require-main-filename "^1.0.1"
+    set-blocking "^2.0.0"
+    string-width "^1.0.2"
+    which-module "^1.0.0"
+    y18n "^3.2.1"
+    yargs-parser "^4.2.0"
+
+yargs@~3.10.0:
+  version "3.10.0"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/yargs/-/yargs-3.10.0.tgz#f7ee7bd857dd7c1d2d38c0e74efbd681d1431fd1"
+  dependencies:
+    camelcase "^1.0.2"
+    cliui "^2.1.0"
+    decamelize "^1.0.0"
+    window-size "0.1.0"
+
+yeast@0.1.2:
+  version "0.1.2"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
+
+yesno@0.0.1:
+  version "0.0.1"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/yesno/-/yesno-0.0.1.tgz#ffbc04ff3d6f99dad24f7463134e9b92ae41bef6"
 
