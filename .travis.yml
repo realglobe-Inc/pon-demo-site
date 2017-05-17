@@ -8,9 +8,9 @@ addons:
 node_js:
 - '7'
 before_install:
- - npm i npm-cli-login -g
- - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
- - npm who
+# - npm i npm-cli-login -g
+# - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
+# - npm who
 install:
 - npm install jsdoc -g
 - npm install pon-cli -g
@@ -19,4 +19,4 @@ script:
 - npm run build
 - npm run test
 after_success:
-- ./ci/travis/publish.js
+# - ./ci/travis/publish.js

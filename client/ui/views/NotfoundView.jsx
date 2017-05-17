@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheRoute } from 'the-components'
+import { TheView, TheRoute, TheContainer } from 'the-components'
 import { asView } from '../wrappers'
 
 class NotfoundView extends React.PureComponent {
@@ -12,16 +12,16 @@ class NotfoundView extends React.PureComponent {
     const s = this
     const { props } = s
     return (
-      <TheView className='errorNotfoundView'>
+      <TheView className={style.root}>
         <TheView.Header icon={null}
                         text={null}
         />
         <TheRoute.Status code={404}>
-          <div>
-            <h3>Sorry Page Not Found!!</h3>
+          <TheContainer>
+            <h3>Sorry, Page Not Found!!</h3>
             <div>
             </div>
-          </div>
+          </TheContainer>
         </TheRoute.Status>
       </TheView>
     )

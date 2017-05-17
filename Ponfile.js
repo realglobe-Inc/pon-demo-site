@@ -60,15 +60,16 @@ module.exports = pon({
     coz('+(bin|client|conf|doc|misc|server)/**/.*.bud')
   ],
   'ui:react': react('client', 'client/shim', { pattern: [ '*.js', '!(shim)/**/+(*.jsx|*.js)' ] }),
-  'ui:css': css('client/ui/stylesheets', 'client/shim/css', { pattern: '*.pcss' }),
+  'ui:css': css('client/ui', 'client/shim/ui', { pattern: '**/*.pcss' }),
   'ui:browser': browser('client/shim/ui/entrypoint.js', `public/${JS_BUNDLE_URL}`, {
-    plugins: [ cssModule('client/shim/stylesheets', `public/${CSS_BUNDLE_URL}`) ],
+    plugins: [ cssModule('client/shim', `public/${CSS_BUNDLE_URL}`) ],
     externals: EXTERNAL_BUNDLES,
     watchTargets: 'client/shim/**/*.js'
   }),
   'ui:browser-external': browser('client/shim/ui/externals.js', `public/${JS_EXTERNAL_URL}`, {
     requires: EXTERNAL_BUNDLES,
-    skipWatching: true
+    skipWatching: true,
+    watchDelay: 300
   }),
   'ui:assets': () => theAssets().installTo('assets'),
   'ui:map': map('public', 'public'),
