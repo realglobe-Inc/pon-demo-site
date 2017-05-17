@@ -1,0 +1,26 @@
+'use strict'
+
+module.exports = [
+  'NotfoundView',
+  'HomeView'
+].reduce((buds, name) => [
+  ...buds,
+  {
+    force: false,
+    mode: '644',
+    tmpl: `${name}.jsx.hbs`,
+    path: `${name}.jsx`,
+    data: { name }
+  },
+  {
+    force: false,
+    mode: '644',
+    tmpl: `${name}.pcss.hbs`,
+    path: `${name}.pcss`,
+    data: { name }
+  }
+], [])
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}
