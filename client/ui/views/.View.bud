@@ -8,14 +8,14 @@ module.exports = [
   {
     force: false,
     mode: '644',
-    tmpl: `${name}.jsx.hbs`,
+    tmpl: `.View.jsx.hbs`,
     path: `${name}.jsx`,
     data: { name }
   },
   {
     force: false,
     mode: '644',
-    tmpl: `${name}.pcss.hbs`,
+    tmpl: `.View.pcss.hbs`,
     path: `${name}.pcss`,
     data: { name }
   }
