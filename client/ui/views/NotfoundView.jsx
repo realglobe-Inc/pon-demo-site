@@ -12,7 +12,7 @@ class NotfoundView extends React.PureComponent {
     const s = this
     const { props } = s
     return (
-      <TheView className={style.root}>
+      <TheView className={style.self}>
         <TheView.Header icon={null}
                         text={null}
         />

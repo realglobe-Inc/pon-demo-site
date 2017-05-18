@@ -12,7 +12,6 @@ const { fs, mocha, command, coz, fmtjson } = require('pon-task-basic')
 const { seed } = require('pon-task-db')
 const { mkdir, symlink, chmod } = fs
 const { fork } = command
-const { cssModule } = browser.plugins
 
 const theAssets = require('the-assets')
 const { UI, Urls } = require('./conf')
@@ -62,10 +61,12 @@ module.exports = pon({
     coz('+(bin|client|conf|doc|misc|server)/**/.*.bud')
   ],
   'db:seed': seed(db, 'server/db/seeds/:env/*.seed.js'),
-  'ui:react': react('client', 'client/shim', { pattern: [ '*.js', '!(shim)/**/+(*.jsx|*.js)' ] }),
-  'ui:css': css('client/ui', 'client/shim/ui', { pattern: '**/*.pcss' }),
+  'ui:react': react('client', 'client/shim', {
+    pattern: [ '*.js', '!(shim)/**/+(*.jsx|*.js)' ],
+    extractCss: `client/shim/ui/bundle.pcss`
+  }),
+  'ui:css': css('client/shim/ui', 'public', { pattern: '*.pcss' }),
   'ui:browser': browser('client/shim/ui/entrypoint.js', `public/${JS_BUNDLE_URL}`, {
-    plugins: [ cssModule('client/shim', `public/${CSS_BUNDLE_URL}`) ],
     externals: EXTERNAL_BUNDLES,
     watchTargets: 'client/shim/**/*.js'
   }),
@@ -84,7 +85,7 @@ module.exports = pon({
   // Main Tasks
   // ----------------
   struct: [ 'struct:mkdir', 'struct:chmod', 'struct:symlink', 'struct:render', 'struct:json' ],
-  ui: [ 'ui:assets', 'ui:css', 'ui:react', 'ui:browser', 'ui:browser-external', 'ui:map' ],
+  ui: [ 'ui:assets', 'ui:react', 'ui:css', 'ui:browser', 'ui:browser-external', 'ui:map' ],
   test: [ 'test:client' ],
   build: [ 'struct', 'ui' ],
   watch: [ 'ui:*', 'ui:*/watch' ],
