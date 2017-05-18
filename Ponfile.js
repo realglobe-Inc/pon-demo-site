@@ -15,7 +15,7 @@ const { fork } = command
 
 const theAssets = require('the-assets')
 const { UI, Urls } = require('./conf')
-const { JS_EXTERNAL_URL, JS_BUNDLE_URL, CSS_BUNDLE_URL } = Urls
+const { JS_EXTERNAL_URL, JS_BUNDLE_URL } = Urls
 const { EXTERNAL_BUNDLES } = UI
 const db = () => require('./server/db')
 

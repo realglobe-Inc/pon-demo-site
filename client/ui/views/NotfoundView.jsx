@@ -6,6 +6,7 @@
 import React from 'react'
 import { TheView, TheRoute, TheContainer } from 'the-components'
 import { asView } from '../wrappers'
+import style from './NotfoundView.pcss'
 
 class NotfoundView extends React.PureComponent {
   render () {
