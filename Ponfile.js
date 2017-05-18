@@ -9,6 +9,7 @@ const pon = require('pon')
 
 const { react, css, browser, map } = require('pon-task-web')
 const { fs, mocha, command, coz, fmtjson } = require('pon-task-basic')
+const { seed } = require('pon-task-db')
 const { mkdir, symlink, chmod } = fs
 const { fork } = command
 const { cssModule } = browser.plugins
@@ -17,6 +18,7 @@ const theAssets = require('the-assets')
 const { UI, Urls } = require('./conf')
 const { JS_EXTERNAL_URL, JS_BUNDLE_URL, CSS_BUNDLE_URL } = Urls
 const { EXTERNAL_BUNDLES } = UI
+const db = () => require('./server/db')
 
 module.exports = pon({
   // ----------------
@@ -59,6 +61,7 @@ module.exports = pon({
   'struct:render': [
     coz('+(bin|client|conf|doc|misc|server)/**/.*.bud')
   ],
+  'db:seed': seed(db, 'server/db/seeds/:env/*.seed.js'),
   'ui:react': react('client', 'client/shim', { pattern: [ '*.js', '!(shim)/**/+(*.jsx|*.js)' ] }),
   'ui:css': css('client/ui', 'client/shim/ui', { pattern: '**/*.pcss' }),
   'ui:browser': browser('client/shim/ui/entrypoint.js', `public/${JS_BUNDLE_URL}`, {
@@ -87,7 +90,7 @@ module.exports = pon({
   watch: [ 'ui:*', 'ui:*/watch' ],
   default: [ 'build' ],
   debug: [ 'build', 'debug:*' ],
-  production: [ 'production:env', 'build', 'production:map' ],
+  production: [ 'production:env', 'build', 'db:seed', 'production:map' ],
   // ----------------
   // Aliases
   // ----------------
