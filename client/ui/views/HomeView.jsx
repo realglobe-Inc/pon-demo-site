@@ -22,7 +22,7 @@ class HomeView extends React.PureComponent {
     const { props, homeScene } = s
     const { l } = props
     return (
-      <TheView className={style.root}>
+      <TheView className={style.self}>
         <TheView.Header icon={null}
                         text={null}
         />

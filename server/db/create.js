@@ -13,7 +13,6 @@ const {
 /** @lends create */
 function create (env = {}) {
   const db = theDB(env)
-
   db.load(RoomResource, 'Room')
 
   return db
