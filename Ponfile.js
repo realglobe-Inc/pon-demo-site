@@ -83,6 +83,7 @@ module.exports = pon({
   'clean': [ 'clean:shim', 'clean:public' ],
   'test:client': mocha('client/test/**/*.js', { timeout: 3000 }),
   'production:env': () => Object.assign(process.env, { NODE_ENV: 'production' }),
+  'production:map': del('public/**/*.map'),
   'debug:server': fork('bin/app.js'),
   'debug:watch': [ 'ui:*/watch' ],
   // ----------------
