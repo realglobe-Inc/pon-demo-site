@@ -10,7 +10,7 @@ const pon = require('pon')
 const { react, css, browser, map } = require('pon-task-web')
 const { fs, mocha, command, coz, fmtjson } = require('pon-task-basic')
 const { seed } = require('pon-task-db')
-const { mkdir, symlink, chmod } = fs
+const { mkdir, symlink, chmod, del } = fs
 const { fork } = command
 
 const theAssets = require('the-assets')
@@ -78,8 +78,12 @@ module.exports = pon({
   }),
   'ui:assets': () => theAssets().installTo('assets'),
   'ui:map': map('public', 'public'),
+  'clean:shim': del('client/shim/**/*.*'),
+  'clean:public': del('public/**/*.*'),
+  'clean': [ 'clean:shim', 'clean:public' ],
   'test:client': mocha('client/test/**/*.js', { timeout: 3000 }),
   'production:env': () => Object.assign(process.env, { NODE_ENV: 'production' }),
+  'production:map': del('public/**/*.map'),
   'debug:server': fork('bin/app.js'),
   'debug:watch': [ 'ui:*/watch' ],
   // ----------------

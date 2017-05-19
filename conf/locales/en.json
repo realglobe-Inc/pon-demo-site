@@ -5,7 +5,8 @@
   "buttons": {
     "DO_COUNT_UP": "Count Up",
     "SHOW_ABOUT": "About",
-    "SHOW_PRIVACY_POLICY": "Privacy Policy"
+    "SHOW_PRIVACY_POLICY": "Privacy Policy",
+    "SHOW_TERMS_OF_USE": "Terms of Use"
   },
   "toasts": {
     "COUNT_UP_DID_SUCCESS": "Count Up success!"
