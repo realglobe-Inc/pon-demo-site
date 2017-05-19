@@ -22,6 +22,7 @@ function create ({ locales, db }) {
       store: (ctx) => createStore()
     },
     html: Html,
+    langs: Object.keys(locales),
     scope: {
       pkg,
       db,
