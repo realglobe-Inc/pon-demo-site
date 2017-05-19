@@ -63,7 +63,8 @@ module.exports = pon({
   'db:seed': seed(db, 'server/db/seeds/:env/*.seed.js'),
   'ui:react': react('client', 'client/shim', {
     pattern: [ '*.js', '!(shim)/**/+(*.jsx|*.js)' ],
-    extractCss: `client/shim/ui/bundle.pcss`
+    extractCss: `client/shim/ui/bundle.pcss`,
+    watchTargets: 'client/ui/**/*.pcss'
   }),
   'ui:css': css('client/shim/ui', 'public', { pattern: '*.pcss' }),
   'ui:browser': browser('client/shim/ui/entrypoint.js', `public/${JS_BUNDLE_URL}`, {
