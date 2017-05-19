@@ -10,18 +10,18 @@
   "production": {
     "HOST": "localhost",
     "DIALECT": "mysql",
-    "USER": "thedemosite",
+    "USERNAME": "thedemosite",
     "PASSWORD": "thedemosite"
   },
   "development": {
     "DIALECT": "mysql",
-    "USER": "thedemositedev",
+    "USERNAME": "thedemositedev",
     "PASSWORD": "thedemositedev"
   },
   "test": {
     "DIALECT": "sqlite",
     "STORAGE": "var/storage/the-demo-site.db",
-    "USER": "thedemositetest",
+    "USERNAME": "thedemositetest",
     "PASSWORD": "thedemositetest"
   }
 }

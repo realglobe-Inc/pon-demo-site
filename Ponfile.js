@@ -106,5 +106,3 @@ module.exports = pon({
   d: 'debug',
   p: 'production'
 })
-
-
