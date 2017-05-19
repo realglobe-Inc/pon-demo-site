@@ -6,14 +6,14 @@
 import React from 'react'
 import { TheView, TheRoute, TheContainer } from 'the-components'
 import { asView } from '../wrappers'
-import style from './NotfoundView.pcss'
+import styles from './NotfoundView.pcss'
 
 class NotfoundView extends React.PureComponent {
   render () {
     const s = this
     const { props } = s
     return (
-      <TheView className={style.self}>
+      <TheView className={styles.self}>
         <TheView.Header icon={null}
                         text={null}
         />

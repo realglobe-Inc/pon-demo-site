@@ -13,7 +13,8 @@ class AppCtrl extends TheCtrl {
   // Just an example
   async countUp () {
     const s = this
-    const { session } = s // Controller instance is created per session
+    const { session, app } = s // Controller instance is created per session
+    const { db } = app
     let { count = 0 } = session
     count++
     session.count = count

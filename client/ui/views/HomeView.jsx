@@ -7,7 +7,7 @@ import React from 'react'
 import { TheView, TheButton } from 'the-components'
 import { asView } from '../wrappers'
 import { HomeScene } from '../../scenes'
-import style from './HomeView.pcss'
+import styles from './HomeView.pcss'
 
 class HomeView extends React.PureComponent {
   constructor (props) {
@@ -22,12 +22,12 @@ class HomeView extends React.PureComponent {
     const { props, homeScene } = s
     const { l } = props
     return (
-      <TheView className={style.self}>
+      <TheView className={styles.self}>
         <TheView.Header icon={null}
                         text={null}
         />
         <TheView.Body>
-          <p className={style.loadingMessage}>
+          <p className={styles.loadingMessage}>
             {props.busy && 'Now calculating...'}
           </p>
           <p>
