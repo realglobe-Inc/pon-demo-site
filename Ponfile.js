@@ -8,7 +8,7 @@
 const pon = require('pon')
 
 const { react, css, browser, map } = require('pon-task-web')
-const { fs, mocha, command, coz, fmtjson } = require('pon-task-basic')
+const { fs, mocha, command, coz, fmtjson, env } = require('pon-task-basic')
 const { seed } = require('pon-task-db')
 const { mkdir, symlink, chmod, del } = fs
 const { fork } = command
@@ -77,13 +77,14 @@ module.exports = pon({
     watchDelay: 300
   }),
   'ui:assets': () => theAssets().installTo('assets'),
-  'ui:map': map('public', 'public'),
+  'ui:map': map('public', 'public', { watchDelay: 300 }),
   'clean:shim': del('client/shim/**/*.*'),
   'clean:public': del('public/**/*.*'),
   'clean': [ 'clean:shim', 'clean:public' ],
   'test:client': mocha('client/test/**/*.js', { timeout: 3000 }),
-  'production:env': () => Object.assign(process.env, { NODE_ENV: 'production' }),
+  'production:env': env('production'),
   'production:map': del('public/**/*.map'),
+  'development:env': env('development'),
   'debug:server': fork('bin/app.js'),
   'debug:watch': [ 'ui:*/watch' ],
   // ----------------
@@ -95,7 +96,7 @@ module.exports = pon({
   build: [ 'struct', 'ui' ],
   watch: [ 'ui:*', 'ui:*/watch' ],
   default: [ 'build' ],
-  debug: [ 'build', 'debug:*' ],
+  debug: [ 'development:env', 'build', 'debug:*' ],
   production: [ 'production:env', 'build', 'db:seed', 'production:map' ],
   // ----------------
   // Aliases

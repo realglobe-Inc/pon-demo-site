@@ -1,27 +1,22 @@
 {
   "default": {
     "HOST": "localhost",
-    "STORAGE": "var/storage/the-demo-site.json",
+    "STORAGE": "var/storage/pon-demo-site.json",
     "DIALECT": "json",
-    "SCHEMA": "the-demo-site",
-    "USER": "thedemosite",
-    "PASSWORD": "thedemosite"
+    "SCHEMA": "pon-demo-site",
+    "USER": "pondemosite",
+    "PASSWORD": "pondemosite"
   },
   "production": {
     "HOST": "localhost",
     "DIALECT": "mysql",
-    "USERNAME": "thedemosite",
-    "PASSWORD": "thedemosite"
-  },
-  "development": {
-    "DIALECT": "mysql",
-    "USERNAME": "thedemositedev",
-    "PASSWORD": "thedemositedev"
+    "USERNAME": "pondemosite",
+    "PASSWORD": "pondemosite"
   },
   "test": {
     "DIALECT": "sqlite",
-    "STORAGE": "var/storage/the-demo-site.db",
-    "USERNAME": "thedemositetest",
-    "PASSWORD": "thedemositetest"
+    "STORAGE": "var/storage/pon-demo-site.db",
+    "USERNAME": "pondemositetest",
+    "PASSWORD": "pondemositetest"
   }
 }
