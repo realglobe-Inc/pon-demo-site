@@ -1,0 +1,7 @@
+{
+  "default": {
+    "HOST": "127.0.0.1",
+    "PORT": "#{Infra.REDIS_PUBLISHED_PORT}",
+    "DB": "1"
+  }
+}

@@ -6,6 +6,7 @@
   "production": {
     "HOST": "localhost",
     "DIALECT": "mysql",
+    "PORT": "#{Infra.MYSQL_PUBLISHED_PORT}",
     "USERNAME": "pondemosite",
     "PASSWORD": "pondemosite",
     "ROOT_USERNAME": "root"

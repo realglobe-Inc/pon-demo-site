@@ -9,6 +9,7 @@ const pon = require('pon')
 
 const { react, css, browser, map } = require('pon-task-web')
 const { fs, mocha, command, coz, fmtjson, env } = require('pon-task-basic')
+const { mysql } = require('pon-task-docker')
 const { seed } = require('pon-task-db')
 const { mkdir, symlink, chmod, del } = fs
 const { fork } = command
@@ -17,7 +18,14 @@ const theAssets = require('the-assets')
 const { UI, Urls } = require('./conf')
 const { JS_EXTERNAL_URL, JS_BUNDLE_URL } = Urls
 const { EXTERNAL_BUNDLES } = UI
+const pkg = require('./package.json')
 const createDB = require('./server/db/create')
+const {
+  MYSQL_IMAGE,
+  MYSQL_PUBLISHED_PORT,
+  REDIS_IMAGE,
+  REDIS_PUBLISHED_PORT
+} = require('./Infra')
 
 module.exports = pon({
   // ----------------
@@ -88,6 +96,10 @@ module.exports = pon({
   'development:env': env('development'),
   'debug:server': fork('bin/app.js'),
   'debug:watch': [ 'ui:*/watch' ],
+  'infra:mysql': mysql(`${pkg.name}-mysql`, {
+    image: MYSQL_IMAGE,
+    publish: `${MYSQL_PUBLISHED_PORT}:3306`
+  }),
   // ----------------
   // Main Tasks
   // ----------------
