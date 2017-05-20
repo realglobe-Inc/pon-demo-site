@@ -1,18 +1,19 @@
 /**
  * Create an db instance
  * @function create
- * @returns {TheDb}
+ * @returns {TheDB}
  */
 'use strict'
 
 const theDB = require('the-db')
+const env = require('../env')
 const {
   RoomResource
 } = require('./resources')
 
 /** @lends create */
-function create (env = {}) {
-  const db = theDB(env)
+function create (config = env.database) {
+  const db = theDB(config)
   db.load(RoomResource, 'Room')
 
   return db

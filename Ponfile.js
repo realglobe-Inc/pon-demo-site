@@ -17,7 +17,7 @@ const theAssets = require('the-assets')
 const { UI, Urls } = require('./conf')
 const { JS_EXTERNAL_URL, JS_BUNDLE_URL } = Urls
 const { EXTERNAL_BUNDLES } = UI
-const db = () => require('./server/db')
+const createDB = require('./server/db/create')
 
 module.exports = pon({
   // ----------------
@@ -60,7 +60,8 @@ module.exports = pon({
   'struct:render': [
     coz('+(bin|client|conf|doc|misc|server)/**/.*.bud')
   ],
-  'db:seed': seed(db, 'server/db/seeds/:env/*.seed.js'),
+  'db:setup': () => createDB().setup(),
+  'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),
   'ui:react': react('client', 'client/shim', {
     pattern: [ '*.js', '!(shim)/**/+(*.jsx|*.js)' ],
     extractCss: `client/shim/ui/bundle.pcss`,
@@ -92,12 +93,13 @@ module.exports = pon({
   // ----------------
   struct: [ 'struct:mkdir', 'struct:chmod', 'struct:symlink', 'struct:render', 'struct:json' ],
   ui: [ 'ui:assets', 'ui:react', 'ui:css', 'ui:browser', 'ui:browser-external', 'ui:map' ],
+  db: [ 'db:setup', 'db:seed' ],
   test: [ 'test:client' ],
   build: [ 'struct', 'ui' ],
   watch: [ 'ui:*', 'ui:*/watch' ],
   default: [ 'build' ],
   debug: [ 'development:env', 'build', 'debug:*' ],
-  production: [ 'production:env', 'build', 'db:seed', 'production:map' ],
+  production: [ 'production:env', 'build', 'db', 'production:map' ],
   // ----------------
   // Aliases
   // ----------------
