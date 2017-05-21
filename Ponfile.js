@@ -9,7 +9,8 @@ const pon = require('pon')
 
 const { react, css, browser, map } = require('pon-task-web')
 const { fs, mocha, command, coz, fmtjson, env } = require('pon-task-basic')
-const { mysql } = require('pon-task-docker')
+const { mysql, redis } = require('pon-task-docker')
+const pm2 = require('pon-task-pm2')
 const { seed } = require('pon-task-db')
 const { mkdir, symlink, chmod, del } = fs
 const { fork } = command
@@ -19,7 +20,7 @@ const { UI, Urls } = require('./conf')
 const { JS_EXTERNAL_URL, JS_BUNDLE_URL } = Urls
 const { EXTERNAL_BUNDLES } = UI
 const pkg = require('./package.json')
-const createDB = require('./server/db/create')
+const createDB = () => require('./server/db/create')()
 const {
   MYSQL_IMAGE,
   MYSQL_PUBLISHED_PORT,
@@ -96,10 +97,15 @@ module.exports = pon({
   'development:env': env('development'),
   'debug:server': fork('bin/app.js'),
   'debug:watch': [ 'ui:*/watch' ],
-  'infra:mysql': mysql(`${pkg.name}-mysql`, {
+  'docker:mysql': mysql(`${pkg.name}-mysql`, {
     image: MYSQL_IMAGE,
     publish: `${MYSQL_PUBLISHED_PORT}:3306`
   }),
+  'docker:redis': redis(`${pkg.name}-redis`, {
+    image: REDIS_IMAGE,
+    publish: `${REDIS_PUBLISHED_PORT}:6379`
+  }),
+  pm2: pm2('./bin/app.js', { name: pkg.name }),
   // ----------------
   // Main Tasks
   // ----------------
@@ -112,6 +118,11 @@ module.exports = pon({
   default: [ 'build' ],
   debug: [ 'development:env', 'build', 'debug:*' ],
   production: [ 'production:env', 'build', 'db', 'production:map' ],
+  docker: [ 'docker:redis/run', 'docker:mysql/run' ],
+  start: [ 'pm2/start' ],
+  stop: [ 'pm2/stop' ],
+  restart: [ 'pm2/restart' ],
+  show: [ 'pm2/show' ],
   // ----------------
   // Aliases
   // ----------------

@@ -8,7 +8,7 @@ const { locales } = require('../../conf')
 const singleton = create({
   locales,
   db,
-  env
+  redis: env.redis
 })
 
 Object.assign(singleton, {

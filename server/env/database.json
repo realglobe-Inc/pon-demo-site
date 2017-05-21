@@ -1,15 +1,23 @@
 {
   "default": {
-    "STORAGE": "var/storage/pon-demo-site.json",
-    "DIALECT": "json"
+    "DIALECT": "mysql",
+    "HOST": "localhost",
+    "PORT": "#{Infra.MYSQL_PUBLISHED_PORT}",
+    "DATABASE": "pondemosite_dev",
+    "USERNAME": "pondemosite_dev",
+    "PASSWORD": "pondemosite_dev",
+    "ROOT_USERNAME": "root",
+    "ROOT_PASSWORD": "root"
   },
   "production": {
-    "HOST": "localhost",
     "DIALECT": "mysql",
+    "HOST": "localhost",
     "PORT": "#{Infra.MYSQL_PUBLISHED_PORT}",
+    "DATABASE": "pondemosite",
     "USERNAME": "pondemosite",
     "PASSWORD": "pondemosite",
-    "ROOT_USERNAME": "root"
+    "ROOT_USERNAME": "root",
+    "ROOT_PASSWORD": "root"
   },
   "test": {
     "DIALECT": "sqlite",

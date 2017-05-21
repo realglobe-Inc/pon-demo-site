@@ -1,0 +1,63 @@
+Tops
+-----------
+
+
+### Managing Docker Infra
+
+To show available commands,
+
+```bash
+
+pon -l | grep docker
+
+```
+
+
+##### Manage MySQL on docker
+
+```bash
+
+# Create MySQL container and start it
+pon docker:mysql/run
+
+# Show MySQL logs
+pon docker:mysql/logs
+
+# Start MySQL container
+pon docker:mysql/start
+
+# Stop MySQL container
+pon docker:mysql/stop
+
+# Remove MySQL container
+pon docker:mysql/remove
+
+# Open MySQL client terminal
+pon docker:mysql/terminal
+
+```
+
+
+##### Manage Redis on docker
+
+```bash
+
+# Create Redis container and start it
+docker:redis/run
+
+# Show Redis logs
+docker:redis/logs
+
+# Start Redis container
+docker:redis/start
+
+# Stop Redis container
+docker:redis/stop
+
+# Remove Redis container
+docker:redis/remove
+
+# Open Redis client terminal
+docker:redis/terminal
+
+```
