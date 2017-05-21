@@ -26,7 +26,7 @@ const {
   MYSQL_PUBLISHED_PORT,
   REDIS_IMAGE,
   REDIS_PUBLISHED_PORT
-} = require('./Infra')
+} = require('./misc/docker/Container')
 
 module.exports = pon({
   // ----------------

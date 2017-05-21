@@ -1,7 +1,7 @@
 'use strict'
 
 const theEnv = require('the-env')
-const Infra = require('../../Infra.json')
+const Container = require('../../misc/docker/Container')
 
 let config = {
   port: require('./port'),
@@ -9,7 +9,7 @@ let config = {
   redis: require('./redis')
 }
 
-const vars = { Infra }
+const vars = { Container }
 
 const env = theEnv(config, { vars }).forEnv()
 module.exports = env

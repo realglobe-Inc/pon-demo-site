@@ -2,7 +2,7 @@
   "default": {
     "DIALECT": "mysql",
     "HOST": "localhost",
-    "PORT": "#{Infra.MYSQL_PUBLISHED_PORT}",
+    "PORT": "#{Container.MYSQL_PUBLISHED_PORT}",
     "DATABASE": "pondemosite_dev",
     "USERNAME": "pondemosite_dev",
     "PASSWORD": "pondemosite_dev",
@@ -12,7 +12,7 @@
   "production": {
     "DIALECT": "mysql",
     "HOST": "localhost",
-    "PORT": "#{Infra.MYSQL_PUBLISHED_PORT}",
+    "PORT": "#{Container.MYSQL_PUBLISHED_PORT}",
     "DATABASE": "pondemosite",
     "USERNAME": "pondemosite",
     "PASSWORD": "pondemosite",

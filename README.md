@@ -80,7 +80,7 @@ Then, install dependencies and build the project
 
 ```bash
 $ yarn install
-$ yarn run prepare
+$ yarn prepare
 ```
 
 <!-- Section from "doc/guides/01.Preparing.md.hbs" End -->

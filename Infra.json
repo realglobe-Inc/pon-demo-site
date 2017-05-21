@@ -1,6 +1,0 @@
-{
-  "MYSQL_IMAGE": "mysql:8",
-  "MYSQL_PUBLISHED_PORT": "4567",
-  "REDIS_IMAGE": "redis:3",
-  "REDIS_PUBLISHED_PORT": "4568"
-}
