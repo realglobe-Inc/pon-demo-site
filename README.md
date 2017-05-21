@@ -50,6 +50,157 @@ Demo of web site using pon
 <!-- Sections Start -->
 <a name="sections"></a>
 
+<!-- Section from "doc/guides/00.Requiements.md.hbs" Start -->
+
+<a name="section-doc-guides-00-requiements-md"></a>
+
+Requirements
+----------
+
++ [Node.js &gt;&#x3D;7.6](https://nodejs.org/en/)
++ [Docker](https://www.docker.com/)
+
+
+<!-- Section from "doc/guides/00.Requiements.md.hbs" End -->
+
+<!-- Section from "doc/guides/01.Preparing.md.hbs" Start -->
+
+<a name="section-doc-guides-01-preparing-md"></a>
+
+Preparing
+----------
+
+Install CLI packages if you have not
+
+```bash
+$ npm i yarn pon pm2 -g
+```
+
+Then, install dependencies and build the project
+
+```bash
+$ yarn install
+$ yarn run prepare
+```
+
+<!-- Section from "doc/guides/01.Preparing.md.hbs" End -->
+
+<!-- Section from "doc/guides/02.Development.md.hbs" Start -->
+
+<a name="section-doc-guides-02-development-md"></a>
+
+Development
+----------
+
+### Starting dev server
+
+```bash
+# Start server and watch files to compile
+pon d
+```
+
+<!-- Section from "doc/guides/02.Development.md.hbs" End -->
+
+<!-- Section from "doc/guides/03.Production.md.hbs" Start -->
+
+<a name="section-doc-guides-03-production-md"></a>
+
+Production
+----------
+
+```bash
+
+# Start app on production
+
+pon production
+```
+
+<!-- Section from "doc/guides/03.Production.md.hbs" End -->
+
+<!-- Section from "doc/guides/10.Tips.md.hbs" Start -->
+
+<a name="section-doc-guides-10-tips-md"></a>
+
+Tops
+-----------
+
+
+### Managing Docker Infra
+
+To show available commands,
+
+```bash
+
+pon -l | grep docker
+
+```
+
+
+##### Manage MySQL on docker
+
+```bash
+
+# Create MySQL container and start it
+pon docker:mysql/run
+
+# Show MySQL logs
+pon docker:mysql/logs
+
+# Start MySQL container
+pon docker:mysql/start
+
+# Stop MySQL container
+pon docker:mysql/stop
+
+# Remove MySQL container
+pon docker:mysql/remove
+
+# Open MySQL client terminal
+pon docker:mysql/terminal
+
+```
+
+
+##### Manage Redis on docker
+
+```bash
+
+# Create Redis container and start it
+docker:redis/run
+
+# Show Redis logs
+docker:redis/logs
+
+# Start Redis container
+docker:redis/start
+
+# Stop Redis container
+docker:redis/stop
+
+# Remove Redis container
+docker:redis/remove
+
+# Open Redis client terminal
+docker:redis/terminal
+
+```
+
+
+### Restarting Server
+
+```bash
+pon stop
+pon start
+```
+
+Or, just
+
+```bash
+pon restart
+```
+
+<!-- Section from "doc/guides/10.Tips.md.hbs" End -->
+
 
 <!-- Sections Start -->
 
