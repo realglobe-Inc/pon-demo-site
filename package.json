@@ -5,8 +5,7 @@
   "main": "lib",
   "scripts": {
     "build": "pon build",
-    "prepare": "pon infra && pon db && pon build",
-    "release": "the-script-release -y",
+    "prepare": "pon docker && pon db && pon build",
     "share": "the-script-share",
     "test": "pon test",
     "start": "pon start",

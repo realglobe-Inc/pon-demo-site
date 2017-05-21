@@ -117,7 +117,7 @@ module.exports = pon({
   watch: [ 'ui:*', 'ui:*/watch' ],
   default: [ 'build' ],
   debug: [ 'development:env', 'build', 'debug:*' ],
-  production: [ 'production:env', 'build', 'db', 'production:map' ],
+  production: [ 'production:env', 'build', 'db', 'production:map', 'start' ],
   docker: [ 'docker:redis/run', 'docker:mysql/run' ],
   start: [ 'pm2/start' ],
   stop: [ 'pm2/stop' ],
