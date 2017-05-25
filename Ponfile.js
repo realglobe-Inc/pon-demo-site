@@ -7,7 +7,7 @@
 
 const pon = require('pon')
 
-const { react, css, browser, map } = require('pon-task-web')
+const { react, css, browser, map, ccjs } = require('pon-task-web')
 const { fs, mocha, command, coz, fmtjson, env } = require('pon-task-basic')
 const { mysql, redis } = require('pon-task-docker')
 const pm2 = require('pon-task-pm2')
@@ -17,7 +17,12 @@ const { fork } = command
 
 const theAssets = require('the-assets')
 const { UI, Urls } = require('./conf')
-const { JS_EXTERNAL_URL, JS_BUNDLE_URL } = Urls
+const {
+  JS_EXTERNAL_URL,
+  JS_EXTERNAL_CC_URL,
+  JS_BUNDLE_URL,
+  JS_BUNDLE_CC_URL
+} = Urls
 const { EXTERNAL_BUNDLES } = UI
 const pkg = require('./package.json')
 const createDB = () => require('./server/db/create')()
@@ -94,6 +99,13 @@ module.exports = pon({
   'test:client': mocha('client/test/**/*.js', { timeout: 3000 }),
   'production:env': env('production'),
   'production:map': del('public/**/*.map'),
+  'production:ccjs': [
+    ccjs(`public${JS_BUNDLE_URL}`, `public${JS_BUNDLE_CC_URL}`, { level: 'SIMPLE_OPTIMIZATIONS' }),
+    ccjs(`public${JS_EXTERNAL_URL}`, `public${JS_EXTERNAL_CC_URL}`, { level: 'SIMPLE_OPTIMIZATIONS' })
+  ],
+  'production:prepare': [
+    'production:env', 'db', 'build', 'production:map', 'production:ccjs'
+  ],
   'development:env': env('development'),
   'debug:server': fork('bin/app.js'),
   'debug:watch': [ 'ui:*/watch' ],
@@ -117,12 +129,13 @@ module.exports = pon({
   watch: [ 'ui:*', 'ui:*/watch' ],
   default: [ 'build' ],
   debug: [ 'development:env', 'build', 'debug:*' ],
-  production: [ 'production:env', 'build', 'db', 'production:map', 'start' ],
+  production: [ 'production:prepare', 'start' ],
   docker: [ 'docker:redis/run', 'docker:mysql/run' ],
   start: [ 'pm2/start' ],
   stop: [ 'pm2/stop' ],
   restart: [ 'pm2/restart' ],
   show: [ 'pm2/show' ],
+  logs: [ 'pm2/logs' ],
   // ----------------
   // Aliases
   // ----------------

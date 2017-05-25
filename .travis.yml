@@ -1,10 +1,7 @@
 language: node_js
+sudo: required
 services:
-  - redis-server
-addons:
-  apt:
-    packages:
-      - redis-server
+- docker
 node_js:
 - '7'
 before_install:

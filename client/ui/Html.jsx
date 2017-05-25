@@ -10,13 +10,16 @@ import {
 } from 'the-components'
 import App from './App'
 import { UI, Urls, Styles, locales } from '@self/conf'
+import { isProduction } from 'the-check'
 
 const { DOMINANT_COLOR } = Styles
 const { APP_PROP_NAME, APP_CONTAINER_ID } = UI
 
 const {
   JS_BUNDLE_URL,
+  JS_BUNDLE_CC_URL,
   JS_EXTERNAL_URL,
+  JS_EXTERNAL_CC_URL,
   CSS_BUNDLE_URL,
   CSS_FONT_URL
 } = Urls
@@ -28,7 +31,10 @@ const Html = ({ appScope, clientScope, renderingContext }) => {
   let appProps = { lang }
   return (
     <TheHtml>
-      <TheHead js={[ JS_EXTERNAL_URL, JS_BUNDLE_URL ]}
+      <TheHead js={[
+        isProduction() ? JS_EXTERNAL_CC_URL : JS_EXTERNAL_URL,
+        isProduction() ? JS_BUNDLE_CC_URL : JS_BUNDLE_URL
+      ]}
                css={[ CSS_BUNDLE_URL, CSS_FONT_URL ]}
                title={l('app.APP_NAME')}
                version={version}
