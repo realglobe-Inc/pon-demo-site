@@ -96,17 +96,18 @@ module.exports = pon({
   'clean:shim': del('client/shim/**/*.*'),
   'clean:public': del('public/**/*.*'),
   'clean': [ 'clean:shim', 'clean:public' ],
+  'env:production': env('production'),
+  'env:test': env('test'),
+  'env:debug': env('development'),
   'test:client': mocha('client/test/**/*.js', { timeout: 3000 }),
-  'production:env': env('production'),
   'production:map': del('public/**/*.map'),
   'production:ccjs': [
     ccjs(`public${JS_BUNDLE_URL}`, `public${JS_BUNDLE_CC_URL}`, { level: 'SIMPLE_OPTIMIZATIONS' }),
     ccjs(`public${JS_EXTERNAL_URL}`, `public${JS_EXTERNAL_CC_URL}`, { level: 'SIMPLE_OPTIMIZATIONS' })
   ],
   'production:prepare': [
-    'production:env', 'db', 'build', 'production:map', 'production:ccjs'
+    'env:production', 'db', 'build', 'production:map', 'production:ccjs'
   ],
-  'development:env': env('development'),
   'debug:server': fork('bin/app.js'),
   'debug:watch': [ 'ui:*/watch' ],
   'docker:mysql': mysql(`${pkg.name}-mysql`, {
@@ -124,11 +125,11 @@ module.exports = pon({
   struct: [ 'struct:mkdir', 'struct:chmod', 'struct:symlink', 'struct:render', 'struct:json' ],
   ui: [ 'ui:assets', 'ui:react', 'ui:css', 'ui:browser', 'ui:browser-external', 'ui:map' ],
   db: [ 'db:setup', 'db:seed' ],
-  test: [ 'test:client' ],
+  test: [ 'env:test', 'test:client' ],
   build: [ 'struct', 'ui' ],
   watch: [ 'ui:*', 'ui:*/watch' ],
   default: [ 'build' ],
-  debug: [ 'development:env', 'build', 'debug:*' ],
+  debug: [ 'env:debug', 'build', 'debug:*' ],
   production: [ 'production:prepare', 'start' ],
   docker: [ 'docker:redis/run', 'docker:mysql/run' ],
   start: [ 'pm2/start' ],
