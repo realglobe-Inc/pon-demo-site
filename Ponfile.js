@@ -118,7 +118,7 @@ module.exports = pon({
     image: REDIS_IMAGE,
     publish: `${REDIS_PUBLISHED_PORT}:6379`
   }),
-  pm2: pm2('./bin/app.js', { name: pkg.name }),
+  'pm2': pm2('./bin/app.js', { name: pkg.name }),
   // ----------------
   // Main Tasks
   // ----------------

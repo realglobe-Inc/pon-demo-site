@@ -1,25 +1,33 @@
 'use strict'
 
+const path = require('path')
+
 module.exports = [
-  'NotfoundView',
-  'HomeView'
-].reduce((buds, name) => [
-  ...buds,
-  {
-    force: false,
-    mode: '644',
-    tmpl: `.View.jsx.hbs`,
-    path: `${name}.jsx`,
-    data: { name }
-  },
-  {
-    force: false,
-    mode: '644',
-    tmpl: `.View.pcss.hbs`,
-    path: `${name}.pcss`,
-    data: { name }
-  }
-], [])
+  'error/ErrorNotfoundView',
+  'about/AboutPrivacyPolicyView',
+  'about/AboutTermsOfUseView',
+].reduce((buds, fullName) => {
+  const name = path.basename(fullName)
+  return [
+    ...buds,
+    {
+      force: false,
+      mode: '644',
+      mkdirp: true,
+      tmpl: `.View.jsx.hbs`,
+      path: `${fullName}.jsx`,
+      data: { name }
+    },
+    {
+      force: false,
+      mode: '644',
+      mkdirp: true,
+      tmpl: `.View.pcss.hbs`,
+      path: `${fullName}.pcss`,
+      data: { name }
+    }
+  ]
+}, [])
 
 if (!module.parent) {
   require('coz').render(__filename)

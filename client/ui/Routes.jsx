@@ -6,14 +6,20 @@ import { TheRoute } from 'the-components'
 
 import {
   HomeView,
-  NotfoundView
+  AboutPrivacyPolicyView,
+  AboutTermsOfUseView,
+  ErrorNotfoundView
 } from './views'
 import { withLoc } from 'the-loc'
 
 const Routes = ({ l }) => (
   <TheRoute.Switch>
     <TheRoute exact path={Urls.TOP_URL} component={HomeView}/>
-    <TheRoute component={NotfoundView}/>
+
+    <TheRoute exact path={Urls.ABOUT_TERMS_OF_USE_URL} component={AboutTermsOfUseView}/>
+    <TheRoute exact path={Urls.ABOUT_PRIVACY_POLICY_URL} component={AboutPrivacyPolicyView}/>
+
+    <TheRoute component={ErrorNotfoundView}/>
   </TheRoute.Switch>
 )
 

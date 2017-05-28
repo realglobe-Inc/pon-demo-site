@@ -2,7 +2,7 @@
 
 const { dir } = require('the-templates')
 
-module.exports = dir({
+module.exports = dir.recursive({
   dirname: __dirname,
   name: 'views',
   description: 'View components'

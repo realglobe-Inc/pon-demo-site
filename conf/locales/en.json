@@ -9,6 +9,18 @@
     "SHOW_PRIVACY_POLICY": "Privacy Policy",
     "SHOW_TERMS_OF_USE": "Terms of Use"
   },
+  "messages": {
+    "PAGE_NOT_FOUND": "Sorry! Page not found..."
+  },
+  "org": {
+    "ORG_EMAIL": "__email_of_your_org__",
+    "ORG_HOMEPAGE": "__homepage_or_your_org__",
+    "ORG_NAME": "__name_of_your_org__"
+  },
+  "titles": {
+    "PRIVACY_POLICY_VIEW_TITLE": "Privacy Policy",
+    "TERMS_OF_USE_VIEW_TITLE": "Terms of Use"
+  },
   "toasts": {
     "COUNT_UP_DID_SUCCESS": "Count Up success!"
   }

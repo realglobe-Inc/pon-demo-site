@@ -4,10 +4,14 @@
  */
 'use strict'
 
+import AboutPrivacyPolicyView from './about/AboutPrivacyPolicyView'
+import AboutTermsOfUseView from './about/AboutTermsOfUseView'
+import ErrorNotfoundView from './error/ErrorNotfoundView'
 import HomeView from './HomeView'
-import NotfoundView from './NotfoundView'
 
 export {
-  HomeView,
-  NotfoundView
+  AboutPrivacyPolicyView,
+  AboutTermsOfUseView,
+  ErrorNotfoundView,
+  HomeView
 }
