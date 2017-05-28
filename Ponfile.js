@@ -141,6 +141,7 @@ module.exports = pon({
   // Aliases
   // ----------------
   t: 'test',
+  c: 'clean',
   b: 'build',
   w: 'watch',
   d: 'debug',

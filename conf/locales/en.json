@@ -1,7 +1,6 @@
 {
   "app": {
-    "APP_NAME": "pon-demo-site",
-    "COPYRIGHT": ""
+    "APP_NAME": "pon-demo-site"
   },
   "buttons": {
     "DO_COUNT_UP": "Count Up",
