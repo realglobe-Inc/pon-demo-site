@@ -16,6 +16,7 @@ const { DOMINANT_COLOR } = Styles
 const { APP_PROP_NAME, APP_CONTAINER_ID } = UI
 
 const {
+  ICON_URL,
   JS_BUNDLE_URL,
   JS_BUNDLE_CC_URL,
   JS_EXTERNAL_URL,
@@ -37,6 +38,7 @@ const Html = ({ appScope, clientScope, renderingContext }) => {
       ]}
                css={[ CSS_BUNDLE_URL, CSS_FONT_URL ]}
                title={l('app.APP_NAME')}
+               icon={ICON_URL}
                version={version}
                globals={{ [APP_PROP_NAME]: { lang } }}
                color={DOMINANT_COLOR}

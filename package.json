@@ -5,7 +5,7 @@
   "main": "lib",
   "scripts": {
     "build": "pon build",
-    "prepare": "pon struct && pon docker && pon db && pon build",
+    "prepare": "pon prepare",
     "share": "the-script-share",
     "test": "pon test",
     "start": "pon start",
@@ -38,6 +38,7 @@
     "pon-task-basic": "^2.0.3",
     "pon-task-db": "^1.0.2",
     "pon-task-docker": "^1.1.3",
+    "pon-task-icon": "^1.0.1",
     "pon-task-pm2": "^1.0.2",
     "pon-task-web": "^3.0.3",
     "prop-types": "^15.5.10",

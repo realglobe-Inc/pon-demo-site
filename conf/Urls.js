@@ -14,6 +14,7 @@ module.exports = Object.freeze(
     ABOUT_PRIVACY_POLICY_URL: '/about/privacy-policy',
     ABOUT_TERMS_OF_USE_URL: '/about/terms-of-use',
 
+    ICON_URL: '/icons/favicon.svg',
     JS_BUNDLE_URL: '/bundle.js',
     JS_BUNDLE_CC_URL: '/bundle.cc.js',
     JS_EXTERNAL_URL: '/external-bundle.js',

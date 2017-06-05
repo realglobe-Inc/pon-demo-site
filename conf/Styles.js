@@ -7,6 +7,8 @@
 module.exports = Object.freeze(
   /** @lends Styles */
   {
-    DOMINANT_COLOR: '#3A8'
+    DOMINANT_COLOR: '#3A8',
+    TEXT_COLOR: '#555',
+    LIGHT_TEXT_COLOR: '#CCC'
   }
 )
