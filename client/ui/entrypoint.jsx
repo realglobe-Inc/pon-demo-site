@@ -1,6 +1,9 @@
 'use strict'
 
 import 'babel-polyfill'
+import './constants/variables.pcss'
+import './base.pcss'
+
 import React from 'react'
 import { once, get, mount } from 'the-window'
 import App from './App'

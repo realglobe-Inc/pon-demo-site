@@ -11,12 +11,13 @@ const { react, css, browser, map, ccjs } = require('pon-task-web')
 const { fs, mocha, command, coz, fmtjson, env } = require('pon-task-basic')
 const { mysql, redis } = require('pon-task-docker')
 const pm2 = require('pon-task-pm2')
+const icon = require('pon-task-icon')
 const { seed } = require('pon-task-db')
 const { mkdir, symlink, chmod, del } = fs
 const { fork } = command
 
 const theAssets = require('the-assets')
-const { UI, Urls } = require('./conf')
+const { Styles, UI, Urls } = require('./conf')
 const {
   JS_EXTERNAL_URL,
   JS_EXTERNAL_CC_URL,
@@ -63,7 +64,8 @@ module.exports = pon({
     'conf': 'node_modules/@self/conf',
     'client': 'node_modules/@self/client',
     'assets/css': 'public/css',
-    'assets/fonts': 'public/fonts'
+    'assets/fonts': 'public/fonts',
+    'assets/icons': 'public/icons'
   }, { force: true }),
   'struct:chmod': chmod({
     'bin/**/*.*': '577'
@@ -91,10 +93,16 @@ module.exports = pon({
     skipWatching: true,
     watchDelay: 300
   }),
-  'ui:assets': () => theAssets().installTo('assets'),
+  'assets:install': () => theAssets().installTo('assets'),
+  'assets:generate': icon('assets/icons/favicon.svg', {
+    text: pkg.name[ 0 ],
+    font: 'a',
+    shape: 'b',
+    color: Styles.DOMINANT_COLOR
+  }),
   'ui:map': map('public', 'public', { watchDelay: 300 }),
   'clean:shim': del('client/shim/**/*.*'),
-  'clean:public': del('public/**/*.*'),
+  'clean:public': del('public/*.*'),
   'clean': [ 'clean:shim', 'clean:public' ],
   'env:production': env('production'),
   'env:test': env('test'),
@@ -122,11 +130,13 @@ module.exports = pon({
   // ----------------
   // Main Tasks
   // ----------------
+  assets: [ 'assets:*' ],
   struct: [ 'struct:mkdir', 'struct:chmod', 'struct:symlink', 'struct:render', 'struct:json' ],
-  ui: [ 'ui:assets', 'ui:react', 'ui:css', 'ui:browser', 'ui:browser-external', 'ui:map' ],
+  ui: [ 'ui:react', 'ui:css', 'ui:browser', 'ui:browser-external', 'ui:map' ],
   db: [ 'db:setup', 'db:seed' ],
   test: [ 'env:test', 'test:client' ],
   build: [ 'struct', 'ui' ],
+  prepare: [ 'struct', 'assets', 'docker', 'db', 'build' ],
   watch: [ 'ui:*', 'ui:*/watch' ],
   default: [ 'build' ],
   debug: [ 'env:debug', 'build', 'debug:*' ],
