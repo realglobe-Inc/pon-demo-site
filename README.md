@@ -124,7 +124,6 @@ pon production
 Tops
 -----------
 
-
 ### Managing Docker Infra
 
 To show available commands,
@@ -134,57 +133,6 @@ To show available commands,
 pon -l | grep docker
 
 ```
-
-
-##### Manage MySQL on docker
-
-```bash
-
-# Create MySQL container and start it
-pon docker:mysql/run
-
-# Show MySQL logs
-pon docker:mysql/logs
-
-# Start MySQL container
-pon docker:mysql/start
-
-# Stop MySQL container
-pon docker:mysql/stop
-
-# Remove MySQL container
-pon docker:mysql/remove
-
-# Open MySQL client terminal
-pon docker:mysql/terminal
-
-```
-
-
-##### Manage Redis on docker
-
-```bash
-
-# Create Redis container and start it
-docker:redis/run
-
-# Show Redis logs
-docker:redis/logs
-
-# Start Redis container
-docker:redis/start
-
-# Stop Redis container
-docker:redis/stop
-
-# Remove Redis container
-docker:redis/remove
-
-# Open Redis client terminal
-docker:redis/terminal
-
-```
-
 
 ### Restarting Server
 
@@ -198,6 +146,39 @@ Or, just
 ```bash
 pon restart
 ```
+
+
+### Project Structure
+
+Directory structure of this project
+
+| Directory Path | Description |
+| ---- | ----- |
+| assets | Static file directory |
+| bin | Executable files |
+| client | Client side scripts |
+| client/client | RPC Client |
+| client/scenes | Client logic without ui |
+| client/shim | Generated shim files |
+| client/store | Client side data store |
+| client/test | Client tests |
+| client/ui | User interfaces |
+| conf | Configuration of project |
+| doc | Documents |
+| doc/guides | Guides for README |
+| misc | Misc scripts |
+| public | Public directory to serve static files. Auto-generated |
+| server | Server side files |
+| server/controllers | Controller classes to handle RPC |
+| server/db | Database modules |
+| server/env | Env dependant variables |
+| server/server | HTTP Server module |
+| server/test | Server tests |
+| test | Project tests |
+| tmp | Temporary files. Can be deleted anytime. |
+| var | Var files |
+
+
 
 <!-- Section from "doc/guides/10.Tips.md.hbs" End -->
 
