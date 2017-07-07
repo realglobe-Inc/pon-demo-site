@@ -9,11 +9,13 @@ const pon = require('pon')
 
 const { react, css, browser, map, ccjs } = require('pon-task-web')
 const { fs, mocha, command, coz, fmtjson, env } = require('pon-task-basic')
-const { mysql, redis } = require('pon-task-docker')
+const { mysql, redis, nginx } = require('pon-task-docker')
 const pm2 = require('pon-task-pm2')
 const icon = require('pon-task-icon')
 const { seed } = require('pon-task-db')
-const { mkdir, symlink, chmod, del } = fs
+const { isMacOS } = require('the-check')
+const { mkdir, symlink, chmod, del, cp } = fs
+const { port } = require('./server/env')
 const { fork } = command
 
 const theAssets = require('the-assets')
@@ -31,7 +33,9 @@ const {
   MYSQL_IMAGE,
   MYSQL_PUBLISHED_PORT,
   REDIS_IMAGE,
-  REDIS_PUBLISHED_PORT
+  REDIS_PUBLISHED_PORT,
+  NGINX_IMAGE,
+  NGINX_PUBLISHED_PORT
 } = require('./misc/docker/Container')
 
 module.exports = pon({
@@ -62,10 +66,12 @@ module.exports = pon({
   ]),
   'struct:symlink': symlink({
     'conf': 'node_modules/@self/conf',
-    'client': 'node_modules/@self/client',
+    'client': 'node_modules/@self/client'
+  }, { force: true }),
+  'struct:cp': cp({
     'assets/css': 'public/css',
     'assets/fonts': 'public/fonts',
-    'assets/icons': 'public/icons'
+    'assets/js': 'public/js'
   }, { force: true }),
   'struct:chmod': chmod({
     'bin/**/*.*': '577'
@@ -126,12 +132,21 @@ module.exports = pon({
     image: REDIS_IMAGE,
     publish: `${REDIS_PUBLISHED_PORT}:6379`
   }),
+  'docker:nginx': nginx(`${pkg.name}-nginx`, {
+    image: NGINX_IMAGE,
+    httpPublishPort: NGINX_PUBLISHED_PORT,
+    template: 'misc/docker/nginx.conf.template',
+    env: {
+      HOST_IP: isMacOS() ? 'docker.for.mac.localhost' : '172.17.0.1',
+      APP_PORT: port.APP
+    }
+  }),
   'pm2': pm2('./bin/app.js', { name: pkg.name }),
   // ----------------
   // Main Tasks
   // ----------------
   assets: [ 'assets:*' ],
-  struct: [ 'struct:mkdir', 'struct:chmod', 'struct:symlink', 'struct:render', 'struct:json' ],
+  struct: [ 'struct:mkdir', 'struct:chmod', 'struct:symlink', 'struct:cp', 'struct:render', 'struct:json' ],
   ui: [ 'ui:react', 'ui:css', 'ui:browser', 'ui:browser-external', 'ui:map' ],
   db: [ 'db:setup', 'db:seed' ],
   test: [ 'env:test', 'test:client' ],
@@ -141,7 +156,7 @@ module.exports = pon({
   default: [ 'build' ],
   debug: [ 'env:debug', 'build', 'debug:*' ],
   production: [ 'production:prepare', 'start' ],
-  docker: [ 'docker:redis/run', 'docker:mysql/run' ],
+  docker: [ 'docker:redis/run', 'docker:mysql/run', 'docker:nginx/run' ],
   start: [ 'pm2/start' ],
   stop: [ 'pm2/stop' ],
   restart: [ 'pm2/restart' ],
