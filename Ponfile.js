@@ -12,7 +12,7 @@ const { fs, mocha, command, coz, fmtjson, env } = require('pon-task-basic')
 const { mysql, redis, nginx } = require('pon-task-docker')
 const pm2 = require('pon-task-pm2')
 const icon = require('pon-task-icon')
-const { seed } = require('pon-task-db')
+const { seed, setup, drop } = require('pon-task-db')
 const { isMacOS } = require('the-check')
 const { mkdir, symlink, chmod, del, cp } = fs
 const { port } = require('./server/env')
@@ -82,8 +82,9 @@ module.exports = pon({
   'struct:render': [
     coz([ '+(bin|client|conf|doc|misc|server)/**/.*.bud', '.*.bud' ])
   ],
-  'db:setup': () => createDB().setup(),
+  'db:setup': setup(createDB),
   'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),
+  'db:drop': drop(createDB),
   'ui:react': react('client', 'client/shim', {
     pattern: [ '*.js', '!(shim)/**/+(*.jsx|*.js)' ],
     extractCss: `client/shim/ui/bundle.pcss`,
