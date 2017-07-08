@@ -4369,9 +4369,9 @@ pon-task-css@^2.0.2:
     postcss "^6.0.1"
     postcss-cssnext "^2.11.0"
 
-pon-task-db@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/pon-task-db/-/pon-task-db-1.2.1.tgz#db524c068591586fa4eddbc03bed1ed68f629a0b"
+pon-task-db@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/pon-task-db/-/pon-task-db-1.2.2.tgz#789ef6f4bdea7929bc3c14c10d0fd293c2514f84"
   dependencies:
     co "^4.6.0"
     pon-task-seed "^1.0.8"
