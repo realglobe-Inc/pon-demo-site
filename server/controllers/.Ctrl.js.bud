@@ -1,0 +1,20 @@
+/**
+ * Bud file for Ctrls
+ */
+'use strict'
+
+module.exports = [
+  'AppCtrl'
+].map((name) => ({
+  force: false,
+  mode: '644',
+  path: `${name}.js`,
+  data: {
+    name
+  }
+}))
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}
+
