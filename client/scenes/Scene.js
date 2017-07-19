@@ -12,11 +12,12 @@ const SceneBase = [
 ].reduce((Clazz, mix) => mix(Clazz), class Root {})
 
 class Scene extends SceneBase {
-  constructor ({ store, client, l }) {
+  constructor ({ store, client, l, history }) {
     super()
     const s = this
     s.store = store
     s.client = client
+    s.history = history
     s.l = l
   }
 }

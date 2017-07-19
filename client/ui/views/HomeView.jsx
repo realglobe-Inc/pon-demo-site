@@ -12,9 +12,8 @@ import styles from './HomeView.pcss'
 class HomeView extends React.PureComponent {
   constructor (props) {
     super(props)
-    const { client, store, l } = props
     const s = this
-    s.homeScene = new HomeScene({ client, store, l })
+    s.homeScene = new HomeScene(props)
   }
 
   render () {
