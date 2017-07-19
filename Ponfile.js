@@ -71,7 +71,7 @@ module.exports = pon({
   'struct:cp': cp({
     'assets/css': 'public/css',
     'assets/fonts': 'public/fonts',
-    'assets/js': 'public/js'
+    'assets/icons': 'public/icons'
   }, { force: true }),
   'struct:chmod': chmod({
     'bin/**/*.*': '577'
