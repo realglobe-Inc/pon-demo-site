@@ -11,12 +11,18 @@ const { get } = require('bwindow')
 function goMix (BaseClass) {
   class GoMixed extends BaseClass {
     goTo (href) {
+      const s = this
+      const { history } = s
+      if (history) {
+        history.push(href)
+        return
+      }
       const location = get('location')
       if (location) {
         location.href = href
-      } else {
-        console.warn(`Failed to got to ${href}`)
+        return
       }
+      console.warn(`Failed to got to ${href}`)
     }
 
     goToTop () {
