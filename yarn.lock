@@ -8851,9 +8851,9 @@ the-script-update@^1.0.0:
     co "^4.6.0"
     commander "^2.9.0"
 
-the-seat@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/the-seat/-/the-seat-1.0.2.tgz#062a32ea81b2e323c6f720bc66e19e74a37cb523"
+the-seat@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/the-seat/-/the-seat-1.1.0.tgz#09fb8157fe6ed8162c98d0ddb93e2b815f507640"
   dependencies:
     abind "^1.0.3"
     asfs latest
