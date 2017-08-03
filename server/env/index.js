@@ -7,7 +7,7 @@ const portBase = 5000
 const seat = theSeat()
 const ports = seat.scope('ports')
 const portFor = (name) =>
-  ports.acquire(`${name}@${__dirname}`, port => portBase + 1)
+  ports.acquire(`${name}@${__dirname}`, (port = portBase) => port + 1)
 
 const config = {
   port: require('./port'),
