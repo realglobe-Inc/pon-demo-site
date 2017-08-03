@@ -626,7 +626,7 @@ asenv@^1.1.1:
     babel-runtime "^6.23.0"
     co "^4.6.0"
 
-asfs@^1.0.5, asfs@^1.1.1, asfs@^1.2.2, asfs@^1.2.3:
+asfs@^1.0.5, asfs@^1.1.1, asfs@^1.2.2, asfs@^1.2.3, asfs@latest:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/asfs/-/asfs-1.2.3.tgz#5671363e83c43908ef15a25c88191c61b5080833"
   dependencies:
@@ -5742,7 +5742,7 @@ mixin-object@^2.0.1:
     for-in "^0.1.3"
     is-extendable "^0.1.1"
 
-mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1:
+mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@latest:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
@@ -8850,6 +8850,15 @@ the-script-update@^1.0.0:
     argx "^3.0.2"
     co "^4.6.0"
     commander "^2.9.0"
+
+the-seat@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/the-seat/-/the-seat-1.0.2.tgz#062a32ea81b2e323c6f720bc66e19e74a37cb523"
+  dependencies:
+    abind "^1.0.3"
+    asfs latest
+    json-pointer "^0.6.0"
+    mkdirp latest
 
 the-section@^1.0.3:
   version "1.0.3"
