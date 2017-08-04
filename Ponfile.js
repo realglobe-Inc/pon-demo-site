@@ -29,14 +29,6 @@ const {
 const {EXTERNAL_BUNDLES} = UI
 const pkg = require('./package.json')
 const createDB = () => require('./server/db/create')()
-const {
-  MYSQL_IMAGE,
-  MYSQL_PUBLISHED_PORT,
-  REDIS_IMAGE,
-  REDIS_PUBLISHED_PORT,
-  NGINX_IMAGE,
-  NGINX_PUBLISHED_PORT
-} = require('./misc/docker/Container')
 
 module.exports = pon({
   // ----------------
@@ -126,20 +118,20 @@ module.exports = pon({
   'debug:server': fork('bin/app.js'),
   'debug:watch': ['ui:*/watch'],
   'docker:mysql': mysql(`${pkg.name}-mysql`, {
-    image: MYSQL_IMAGE,
-    publish: `${MYSQL_PUBLISHED_PORT}:3306`
+    image: 'mysql:8',
+    publish: `${port.MYSQL_PORT}:3306`
   }),
   'docker:redis': redis(`${pkg.name}-redis`, {
-    image: REDIS_IMAGE,
-    publish: `${REDIS_PUBLISHED_PORT}:6379`
+    image: 'redis:4',
+    publish: `${port.REDIS_PORT}:6379`
   }),
   'docker:nginx': nginx(`${pkg.name}-nginx`, {
-    image: NGINX_IMAGE,
-    httpPublishPort: NGINX_PUBLISHED_PORT,
+    image: 'nginx:1.13',
+    httpPublishPort: port.NGINX_PORT,
     template: 'misc/docker/nginx.conf.template',
     env: {
       HOST_IP: isMacOS() ? 'docker.for.mac.localhost' : '172.17.0.1',
-      APP_PORT: port.APP
+      APP_PORT: port.APP_PORT
     }
   }),
   'pm2': pm2('./bin/app.js', {name: pkg.name}),
