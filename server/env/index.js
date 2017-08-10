@@ -1,23 +1,14 @@
 'use strict'
 
 const theEnv = require('the-env')
-const theSeat = require('the-seat')
-
-const portBase = 5000
-const seat = theSeat()
-const ports = seat.scope('ports')
-const portFor = (name) =>
-  ports.acquire(`${name}@${__dirname}`, (port = portBase) => port + 1)
+const Local = require('../../Local')
 
 const config = {
-  port: require('./port'),
   database: require('./database'),
   redis: require('./redis')
 }
 
-const vars = {
-  portFor
-}
+const vars = {Local}
 
-const env = theEnv(config, {vars, portFor}).forEnv()
+const env = theEnv(config, {vars}).forEnv()
 module.exports = env

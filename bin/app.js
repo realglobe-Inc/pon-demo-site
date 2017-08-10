@@ -6,15 +6,16 @@
 'use strict'
 
 require('babel-polyfill')
-const {server, env} = require('../server')
-const {NGINX_PORT, APP_PORT} = env.port
+const {server} = require('../server')
+const {APP_PORT, NGINX_PUBLISHED_PORT} = require('../Local')
 
 ;(async () => {
-  await server.listen(APP_PORT)
+  const {port = APP_PORT} = process.env
+  await server.listen(port)
   console.log(`
   =============================
   
-  Access to http://localhost:${NGINX_PORT} in your browser
+  Access to http://localhost:${NGINX_PUBLISHED_PORT} in your browser
   
   =============================
   `)

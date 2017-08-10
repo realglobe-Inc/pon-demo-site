@@ -11,11 +11,22 @@ const {react, css, browser, map, ccjs} = require('pon-task-web')
 const {fs, mocha, command, coz, fmtjson, env} = require('pon-task-basic')
 const {mysql, redis, nginx} = require('pon-task-docker')
 const pm2 = require('pon-task-pm2')
+const es = require('pon-task-es')
 const icon = require('pon-task-icon')
 const {seed, setup, drop} = require('pon-task-db')
 const {isMacOS} = require('the-check')
 const {mkdir, symlink, chmod, del, cp} = fs
-const {port} = require('./server/env')
+const {
+  APP_PORT,
+  MYSQL_CONTAINER_NAME,
+  MYSQL_PUBLISHED_PORT,
+  REDIS_CONTAINER_NAME,
+  REDIS_PUBLISHED_PORT,
+  NGINX_CONTAINER_NAME,
+  NGINX_PUBLISHED_PORT,
+  APP_PROCESS_NAME
+} = require('./Local')
+
 const {fork} = command
 
 const theAssets = require('the-assets')
@@ -57,7 +68,7 @@ module.exports = pon({
     'var'
   ]),
   'struct:symlink': symlink({
-    'conf': 'node_modules/@self/conf',
+    'shim/conf': 'node_modules/@self/conf',
     'client': 'node_modules/@self/client'
   }, {force: true}),
   'struct:cp': cp({
@@ -68,6 +79,7 @@ module.exports = pon({
   'struct:chmod': chmod({
     'bin/**/*.*': '577'
   }),
+  'struct:compile': es('conf', 'shim/conf'),
   'struct:json': fmtjson([
     'conf/**/*.json'
   ], {sort: true}),
@@ -117,29 +129,29 @@ module.exports = pon({
   ],
   'debug:server': fork('bin/app.js'),
   'debug:watch': ['ui:*/watch'],
-  'docker:mysql': mysql(`${pkg.name}-mysql`, {
+  'docker:mysql': mysql(MYSQL_CONTAINER_NAME, {
     image: 'mysql:8',
-    publish: `${port.MYSQL_PORT}:3306`
+    publish: `${MYSQL_PUBLISHED_PORT}:3306`
   }),
-  'docker:redis': redis(`${pkg.name}-redis`, {
+  'docker:redis': redis(REDIS_CONTAINER_NAME, {
     image: 'redis:4',
-    publish: `${port.REDIS_PORT}:6379`
+    publish: `${REDIS_PUBLISHED_PORT}:6379`
   }),
-  'docker:nginx': nginx(`${pkg.name}-nginx`, {
+  'docker:nginx': nginx(NGINX_CONTAINER_NAME, {
     image: 'nginx:1.13',
-    httpPublishPort: port.NGINX_PORT,
+    httpPublishPort: NGINX_PUBLISHED_PORT,
     template: 'misc/docker/nginx.conf.template',
     env: {
       HOST_IP: isMacOS() ? 'docker.for.mac.localhost' : '172.17.0.1',
-      APP_PORT: port.APP_PORT
+      APP_PORT
     }
   }),
-  'pm2': pm2('./bin/app.js', {name: pkg.name}),
+  'pm2': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
   // ----------------
   // Main Tasks
   // ----------------
   assets: ['assets:*'],
-  struct: ['struct:mkdir', 'struct:chmod', 'struct:symlink', 'struct:cp', 'struct:render', 'struct:json'],
+  struct: ['struct:mkdir', 'struct:chmod', 'struct:compile', 'struct:symlink', 'struct:cp', 'struct:render', 'struct:json'],
   ui: ['ui:react', 'ui:css', 'ui:browser', 'ui:browser-external', 'ui:map'],
   db: ['db:setup', 'db:seed'],
   test: ['env:test', 'test:client'],
