@@ -1,8 +1,0 @@
-{
-  "default": {
-    "APP_PORT": "#{portFor('app')}",
-    "MYSQL_PORT": "#{portFor('mysql')}",
-    "REDIS_PORT": "#{portFor('redis')}",
-    "NGINX_PORT": "#{portFor('nginx')}"
-  }
-}
