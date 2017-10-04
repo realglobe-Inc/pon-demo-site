@@ -5,8 +5,6 @@ services:
 node_js:
 - '8'
 before_install:
-- sudo apt-get -o Dpkg::Options::="--force-confnew" -y update
-- sudo apt-get -o Dpkg::Options::="--force-confnew" -y install docker-engine
 - npm install yarn pm2 pon jsdoc -g
  - npm i npm-cli-login -g
  - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
