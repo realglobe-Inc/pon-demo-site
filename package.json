@@ -33,6 +33,7 @@
     "asleep": "^1.0.3",
     "babel-polyfill": "^6.23.0",
     "coz": "^6.0.20",
+    "history": "^4.7.2",
     "mocha": "^4.0.0",
     "pon": "^5.0.1",
     "pon-task-basic": "^3.0.1",
