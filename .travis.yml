@@ -8,13 +8,15 @@ before_install:
 - sudo apt-get -o Dpkg::Options::="--force-confnew" -y update
 - sudo apt-get -o Dpkg::Options::="--force-confnew" -y install docker-engine
 - npm install yarn pm2 pon jsdoc -g
-# - npm i npm-cli-login -g
-# - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
-# - npm who
+ - npm i npm-cli-login -g
+ - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
+ - npm who
 install:
 - npm install
 script:
 - npm run build
 - npm run test
 after_success:
-# - ./ci/travis/publish.js
+- ./ci/travis/publish.js
+env:
+  secure: "mrcwJ3Z79eff8m3RFbzCsmbkoJ540SVfUOtQV2TRa3/xNLvzY7l8N2/lrEZB2iDWfWc0FqI+mnjAIMEIEiLbH9/cSccIWrQlVLTnH5cLHCg9uMMd/Yau8q8UE01NIPu2UI4AxTSHVNpGIlEda22WFF7DeoP1S8Z6E84ZE2+eNrF0lPkAKvRPKZFOl+qYM1GEdPZdfI5z7pH6YScoJcHLTGDMBFJZfsqiPFiGp9/GlKabVDrRmosCsDG6GKWtQiQ4KfGakjXUFnoGinc/Jn9qGq4N3HP8kGN4g6jt3d8PdxeHizSO72oFZNm7U+ABV2SuV7TWE/TWA62GhflvGpTbZUz8TLNmw4sbjsb+1pxbnHZ6pgSwJrDngZufO1Ijex1AQQ9qb0GUWRR7e1ofrrBmEhkr+LVK/WOsviy+n2M9r8RW/pQkQvQRSwo/V4/nu2BKn7Y98zYPrDlmClFiHrd5n4aRA306hkSccHV/qBLsXHNRpYBWeuvG+Dohij5o4QuDD4HecP/gzYMtWQhT/j9Tbwo9nMcJFqRKrTzB9guHsXmO5wZcCbS3iB/XEMtBoz4ltvfzS/3DO72Dhq5HudhiCcLh/6cfrjjTnKQTIcEOJVQxLJBuC5R9Kwd8thN+ZsbOc1do9kTVIIadAIPPV6H5al26CTWEx1fLLAUY7ceX5YI="
