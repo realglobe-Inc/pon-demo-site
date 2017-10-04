@@ -45,7 +45,7 @@
     "prop-types": "^15.5.10",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-router-dom": "^4.1.1",
+    "react-router-dom": "^4.2.2",
     "the-assets": "^1.0.0",
     "the-check": "^1.1.1",
     "the-client": "^4.1.7",
