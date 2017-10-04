@@ -6,34 +6,43 @@
 'use strict'
 
 const theServer = require('the-server')
-const { Html } = require('@self/client/shim/ui')
-const { createClient, createStore } = require('@self/client')
-const {
-  AppCtrl
-} = require('../controllers')
+const {Html} = require('@self/client/shim/ui')
+const {createClient, createStore} = require('@self/client')
+const c = require('../controllers')
 const pkg = require('../../package.json')
 const env = require('../env')
 
 /** @lends create */
 function create (config) {
-  let { locales, db, redis = env.redis } = config
-  let server = theServer({
-    static: [ 'public' ],
-    redis,
+  const {
+    locales,
+    db,
+    mail,
+    redisConfig = env.redis
+  } = config
+  const app = {
+    pkg,
+    db,
+    locales,
+    mail
+  }
+  const server = theServer({
+    static: ['public'],
+    redis: redisConfig,
+    endpoints: {
+    },
+    cacheDir: 'tmp/cache',
     injectors: {
+      app: (ctx) => app,
       client: (ctx) => createClient(),
       store: (ctx) => createStore()
     },
     html: Html,
     langs: Object.keys(locales),
-    scope: {
-      pkg,
-      db,
-      locales
-    }
+    scope: app
   })
 
-  server.load(AppCtrl, 'app')
+  server.load(c.AppCtrl, 'app')
 
   return server
 }
