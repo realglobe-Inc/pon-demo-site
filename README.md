@@ -57,7 +57,7 @@ Demo of web site using pon
 Requirements
 ----------
 
-+ [Node.js &gt;&#x3D;7.6](https://nodejs.org/en/)
++ [Node.js &gt;&#x3D;8](https://nodejs.org/en/)
 + [Docker](https://www.docker.com/)
 
 

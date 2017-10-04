@@ -84,7 +84,7 @@ module.exports = pon({
     'conf/**/*.json'
   ], {sort: true}),
   'struct:render': [
-    coz(['+(bin|client|conf|doc|misc|server)/**/.*.bud', '.*.bud'])
+    coz(['+(assets|bin|client|conf|doc|misc|server)/**/.*.bud', '.*.bud'])
   ],
   'db:setup': setup(createDB),
   'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),
@@ -146,7 +146,7 @@ module.exports = pon({
       APP_PORT
     }
   }),
-  'pm2': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
+  'pm2:app': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
   // ----------------
   // Main Tasks
   // ----------------
@@ -162,11 +162,11 @@ module.exports = pon({
   debug: ['env:debug', 'build', 'debug:*'],
   production: ['production:prepare', 'start'],
   docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
-  start: ['pm2/start'],
-  stop: ['pm2/stop'],
-  restart: ['pm2/restart'],
-  show: ['pm2/show'],
-  logs: ['pm2/logs'],
+  start: ['pm2:app/start'],
+  stop: ['pm2:app/stop'],
+  restart: ['pm2:app/restart'],
+  show: ['pm2:app/show'],
+  logs: ['pm2:app/logs'],
   // ----------------
   // Aliases
   // ----------------
