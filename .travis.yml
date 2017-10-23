@@ -9,10 +9,10 @@ before_install:
 - npm-cli-login -u "${NPM_USER}" -p "${NPM_PASSWORD}" -e "${NPM_EMAIL}"
 - rm -rf var
 install:
-- npm install
+- yarn install
 script:
-- npm run build
-- npm run test
+- yarn prepare
+- yarn build
 after_success:
 - ./misc/travis/publish.js
 env:
