@@ -1,6 +1,6 @@
 {
   "name": "pon-demo-site",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "Demo of web site using pon",
   "main": "lib",
   "scripts": {
