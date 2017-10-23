@@ -1669,8 +1669,8 @@ clay-driver-mysql@^5.2.2:
     mysqldump "^1.4.2"
 
 clay-driver-sequelize@^6.4.2:
-  version "6.4.5"
-  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.4.5.tgz#41d0f8f5f6abfafae7e1267f8b63cdc4c7fa332b"
+  version "6.4.6"
+  resolved "https://registry.yarnpkg.com/clay-driver-sequelize/-/clay-driver-sequelize-6.4.6.tgz#bc66e736dae969a39d3802a7a1ea9dbb274073c2"
   dependencies:
     asenv "^2.0.0"
     asleep "^1.0.3"
