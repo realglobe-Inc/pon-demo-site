@@ -13,7 +13,7 @@ const {mysql, redis, nginx} = require('pon-task-docker')
 const pm2 = require('pon-task-pm2')
 const es = require('pon-task-es')
 const icon = require('pon-task-icon')
-const {seed, setup, drop} = require('pon-task-db')
+const {seed, setup, drop, dump} = require('pon-task-db')
 const {isMacOS} = require('the-check')
 const {mkdir, symlink, chmod, del, cp} = fs
 const {
@@ -24,7 +24,8 @@ const {
   REDIS_PUBLISHED_PORT,
   NGINX_CONTAINER_NAME,
   NGINX_PUBLISHED_PORT,
-  APP_PROCESS_NAME
+  APP_PROCESS_NAME,
+  BACKUP_PROCESS_NAME
 } = require('./Local')
 
 const {fork} = command
@@ -89,6 +90,7 @@ module.exports = pon({
   'db:setup': setup(createDB),
   'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),
   'db:drop': drop(createDB),
+  'db:dump': dump(createDB, 'var/backup'),
   'ui:react': react('client', 'client/shim', {
     pattern: ['*.js', '!(shim)/**/+(*.jsx|*.js)'],
     extractCss: `client/shim/ui/bundle.pcss`,
@@ -147,6 +149,8 @@ module.exports = pon({
     }
   }),
   'pm2:app': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
+  'pm2:backup:dump': pm2.pon('db:dump', {name: `${BACKUP_PROCESS_NAME}:dump`, cron: '* * * * 1'}),
+
   // ----------------
   // Main Tasks
   // ----------------
@@ -162,9 +166,9 @@ module.exports = pon({
   debug: ['env:debug', 'build', 'debug:*'],
   production: ['production:prepare', 'start'],
   docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
-  start: ['pm2:app/start'],
-  stop: ['pm2:app/stop'],
-  restart: ['pm2:app/restart'],
+  start: ['pm2:app/start', 'pm2:backup:*/start'],
+  stop: ['pm2:app/stop', 'pm2:backup:*/stop'],
+  restart: ['pm2:app/restart', 'pm2:backup:*/restart'],
   show: ['pm2:app/show'],
   logs: ['pm2:app/logs'],
   // ----------------
