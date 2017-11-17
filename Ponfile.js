@@ -10,12 +10,14 @@ const pon = require('pon')
 const {react, css, browser, map, ccjs} = require('pon-task-web')
 const {fs, mocha, command, coz, fmtjson, env} = require('pon-task-basic')
 const {mysql, redis, nginx} = require('pon-task-docker')
+const {envify} = browser.transforms
 const pm2 = require('pon-task-pm2')
 const es = require('pon-task-es')
 const icon = require('pon-task-icon')
-const {seed, setup, drop, dump} = require('pon-task-db')
+const {setup, seed, drop, dump, migrate, load} = require('pon-task-db')
+const md = require('pon-task-md')
 const {isMacOS} = require('the-check')
-const {mkdir, symlink, chmod, del, cp} = fs
+const {mkdir, symlink, chmod, del, cp, concat} = fs
 const {
   APP_PORT,
   MYSQL_CONTAINER_NAME,
@@ -25,22 +27,20 @@ const {
   NGINX_CONTAINER_NAME,
   NGINX_PUBLISHED_PORT,
   APP_PROCESS_NAME,
-  BACKUP_PROCESS_NAME
+  BACKUP_PROCESS_NAME,
+  DUMP_SCHEDULE,
+  DUMP_ROTATION,
+  getSetting,
+  askSetting
 } = require('./Local')
 
-const {fork} = command
+const {fork, spawn} = command
 
 const theAssets = require('the-assets')
 const {Styles, UI, Urls} = require('./conf')
-const {
-  JS_EXTERNAL_URL,
-  JS_EXTERNAL_CC_URL,
-  JS_BUNDLE_URL,
-  JS_BUNDLE_CC_URL
-} = Urls
-const {EXTERNAL_BUNDLES} = UI
 const pkg = require('./package.json')
 const createDB = () => require('./server/db/create')()
+const migration = require('./server/db/migration')
 
 module.exports = pon({
   // ----------------
@@ -64,15 +64,22 @@ module.exports = pon({
     'server/env',
     'server/server',
     'server/test',
+    'utils',
     'tmp',
     'test',
     'var'
   ]),
   'struct:symlink': symlink({
+    'package.json': 'shim/package.json',
     'shim/conf': 'node_modules/@self/conf',
+    'Local.js': 'node_modules/@self/Local.js',
+    'shim/utils': 'node_modules/@self/utils',
     'client': 'node_modules/@self/client'
   }, {force: true}),
   'struct:cp': cp({
+    'assets/text': 'public',
+    'assets/html/partials': 'public/partials',
+    'assets/html/errors': 'public/errors',
     'assets/css': 'public/css',
     'assets/fonts': 'public/fonts',
     'assets/icons': 'public/icons'
@@ -80,34 +87,78 @@ module.exports = pon({
   'struct:chmod': chmod({
     'bin/**/*.*': '577'
   }),
-  'struct:compile': es('conf', 'shim/conf'),
+  'struct:compile': [
+    es('conf', 'shim/conf'),
+    es('utils', 'shim/utils')
+  ],
   'struct:json': fmtjson([
-    'conf/**/*.json'
+    'conf/**/*.json',
+    'client/**/*.json'
   ], {sort: true}),
   'struct:render': [
-    coz(['+(assets|bin|client|conf|doc|misc|server)/**/.*.bud', '.*.bud'])
+    coz(['+(assets|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud', '.*.bud'])
   ],
+  'unless:production': env.notFor('production'),
   'db:setup': setup(createDB),
+  'db:cli': () => createDB().cli(),
   'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),
-  'db:drop': drop(createDB),
-  'db:dump': dump(createDB, 'var/backup/dump'),
+  'db:migrate': migrate(createDB, migration, {snapshot: 'var/migration/snapshots'}),
+  'db:drop': ['unless:production', drop(createDB)],
+  'db:dump': dump(createDB, 'var/backup/dump', {max: DUMP_ROTATION}),
+  'db:load': load.ask(createDB),
+  'db:reset': ['unless:production', 'db:drop', 'db:setup', 'db:seed'],
   'ui:react': react('client', 'client/shim', {
-    pattern: ['*.js', '!(shim)/**/+(*.jsx|*.js)'],
+    pattern: ['*.js', '!(shim)/**/+(*.jsx|*.js|*.json)'],
     extractCss: `client/shim/ui/bundle.pcss`,
     watchTargets: 'client/ui/**/*.pcss'
   }),
-  'ui:css': css('client/shim/ui', 'public', {pattern: '*.pcss'}),
-  'ui:browser': browser('client/shim/ui/entrypoint.js', `public/${JS_BUNDLE_URL}`, {
-    externals: EXTERNAL_BUNDLES,
-    watchTargets: 'client/shim/**/*.js'
-  }),
-  'ui:browser-external': browser('client/shim/ui/externals.js', `public/${JS_EXTERNAL_URL}`, {
-    requires: EXTERNAL_BUNDLES,
-    skipWatching: true,
-    watchDelay: 300
-  }),
+  'ui:css': [
+    css('client/ui', 'client/shim/ui', {
+      modules: true,
+      pattern: ['*.pcss', '+(bounds|views|fragments|layouts|wrappers|components)/**/*.pcss'],
+      inlineMap: true
+    }),
+    concat([
+      'client/shim/ui/**/*.css',
+      'client/ui/base.pcss',
+      'client/ui/constants/variables.pcss'
+    ], 'public/build/bundle.pcss', {}),
+    css('public/build', 'public/build', {pattern: '*.pcss'})
+  ],
+  'ui:browser': env.dynamic(({isProduction}) =>
+    browser('client/shim/ui/entrypoint.js', `public${Urls.JS_BUNDLE_URL}`, {
+      externals: UI.EXTERNAL_BUNDLES,
+      watchTargets: 'client/shim/**/*.js',
+      transforms: [envify()],
+      fullPaths: !isProduction(),
+      ignores: [
+        // TODO Be smarter
+        ...(isProduction() ? [
+          require.resolve('react/cjs/react.development.js'),
+          require.resolve('react-dom/cjs/react-dom.development.js'),
+          require.resolve('react-dom/cjs/react-dom-server.browser.development.js')
+        ] : [
+          require.resolve('react/cjs/react.production.min.js'),
+          require.resolve('react-dom/cjs/react-dom.production.min.js'),
+          require.resolve('react-dom/cjs/react-dom-server.browser.production.min.js')
+        ])
+      ]
+    })
+  ),
+  'ui:browser-external': env.dynamic(({isProduction}) =>
+    browser('client/shim/ui/externals.js', `public${Urls.JS_EXTERNAL_URL}`, {
+      requires: UI.EXTERNAL_BUNDLES,
+      skipWatching: true,
+      watchDelay: 300,
+      transforms: [envify()],
+      fullPaths: !isProduction()
+    })
+  ),
   'assets:install': () => theAssets().installTo('assets'),
-  'assets:generate': icon('assets/icons/favicon.svg', {
+  'assets:compile': md('assets/markdowns', 'assets/html/partials', {
+    vars: require('./conf/locales')
+  }),
+  'image:generate': icon('assets/icons/favicon.png', {
     text: pkg.name[0],
     font: 'a',
     shape: 'b',
@@ -117,20 +168,29 @@ module.exports = pon({
   'clean:shim': del('client/shim/**/*.*'),
   'clean:public': del('public/*.*'),
   'clean': ['clean:shim', 'clean:public'],
-  'env:production': env('production'),
+  'env:prod': env('production'),
   'env:test': env('test'),
-  'env:debug': env('development'),
+  'env:debug': env('development', {DEBUG: 'app:*'}),
   'test:client': mocha('client/test/**/*.js', {timeout: 3000}),
-  'production:map': del('public/**/*.map'),
-  'production:ccjs': [
-    ccjs(`public${JS_BUNDLE_URL}`, `public${JS_BUNDLE_CC_URL}`, {level: 'SIMPLE_OPTIMIZATIONS'}),
-    ccjs(`public${JS_EXTERNAL_URL}`, `public${JS_EXTERNAL_CC_URL}`, {level: 'SIMPLE_OPTIMIZATIONS'})
+  'test:server': mocha('server/test/**/*.js', {timeout: 3000}),
+  'prod:map': del('public/**/*.map'),
+  'prod:js': ccjs([
+    `public${Urls.JS_EXTERNAL_URL}`,
+    `public${Urls.JS_BUNDLE_URL}`
+  ], `public${Urls.PRODUCTION_JS_URL}`, {level: 'SIMPLE'}),
+  'prod:css': css.minify([
+    Urls.CSS_THEME_URL,
+    Urls.CSS_FONT_URL,
+    Urls.CSS_BUNDLE_URL
+  ], Urls.PRODUCTION_CSS_URL),
+  'prod:compile': [
+    'env:prod', 'build', 'prod:map', 'prod:css', 'prod:js',
   ],
-  'production:prepare': [
-    'env:production', 'db', 'build', 'production:map', 'production:ccjs'
+  'prod:db': [
+    'env:prod', 'db'
   ],
-  'debug:server': fork('bin/app.js'),
-  'debug:watch': ['ui:*/watch'],
+  'debug:server': ['env:debug', fork('bin/app.js')],
+  'debug:watch': ['env:debug', 'ui:*/watch'],
   'docker:mysql': mysql(MYSQL_CONTAINER_NAME, {
     image: 'mysql:8',
     publish: `${MYSQL_PUBLISHED_PORT}:3306`
@@ -148,15 +208,15 @@ module.exports = pon({
       APP_PORT
     }
   }),
-  'pm2:app': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
-  'pm2:backup:dump': pm2.pon('db:dump', {name: `${BACKUP_PROCESS_NAME}:dump`, cron: '* * * * 1'}),
 
+  'pm2:app': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
+  'pm2:backup:dump': pm2.pon('db:dump', {name: `${BACKUP_PROCESS_NAME}:dump`, cron: DUMP_SCHEDULE}),
   // ----------------
   // Main Tasks
   // ----------------
   assets: ['assets:*'],
   struct: ['struct:mkdir', 'struct:chmod', 'struct:compile', 'struct:symlink', 'struct:cp', 'struct:render', 'struct:json'],
-  ui: ['ui:react', 'ui:css', 'ui:browser', 'ui:browser-external', 'ui:map'],
+  ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:browser-external', 'ui:map'],
   db: ['db:setup', 'db:seed'],
   test: ['env:test', 'test:client'],
   build: ['struct', 'ui'],
@@ -164,13 +224,15 @@ module.exports = pon({
   watch: ['ui:*', 'ui:*/watch'],
   default: ['build'],
   debug: ['env:debug', 'build', 'debug:*'],
-  production: ['production:prepare', 'start'],
+  prod: ['env:prod', 'prod:compile', 'prod:db', 'start'],
   docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
   start: ['pm2:app/start', 'pm2:backup:*/start'],
   stop: ['pm2:app/stop', 'pm2:backup:*/stop'],
   restart: ['pm2:app/restart', 'pm2:backup:*/restart'],
   show: ['pm2:app/show'],
   logs: ['pm2:app/logs'],
+
+  setting: () => askSetting(),
   // ----------------
   // Aliases
   // ----------------
@@ -180,4 +242,5 @@ module.exports = pon({
   w: 'watch',
   d: 'debug',
   p: 'production'
+
 })

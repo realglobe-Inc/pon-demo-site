@@ -7,10 +7,11 @@
 
 const theServer = require('the-server')
 const {Html} = require('@self/client/shim/ui')
-const {createClient, createStore} = require('@self/client')
-const c = require('../controllers')
+const {createClient, createStore, createHandle} = require('@self/client')
 const pkg = require('../../package.json')
+const {ControllerMapping} = require('../mappings')
 const env = require('../env')
+const {isProduction} = require('the-check')
 
 /** @lends create */
 function create (config) {
@@ -27,22 +28,24 @@ function create (config) {
     mail
   }
   const server = theServer({
-    static: ['public'],
+    static: isProduction ? [] : ['public'],
     redis: redisConfig,
-    endpoints: {
-    },
+    endpoints: {},
     cacheDir: 'tmp/cache',
     injectors: {
       app: (ctx) => app,
       client: (ctx) => createClient(),
-      store: (ctx) => createStore()
+      store: (ctx) => createStore(),
+      handle: (ctx) => createHandle()
     },
     html: Html,
     langs: Object.keys(locales),
     scope: app
   })
 
-  server.load(c.AppCtrl, 'app')
+  for (const [name, Controller] of Object.entries(ControllerMapping)) {
+    server.load(Controller, name)
+  }
 
   return server
 }
