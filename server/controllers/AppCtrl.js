@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const { TheCtrl } = require('the-controller-base')
+const {TheCtrl} = require('the-controller-base')
 
 /** @lends AppCtrl */
 class AppCtrl extends TheCtrl {
@@ -13,9 +13,9 @@ class AppCtrl extends TheCtrl {
   // Just an example
   async countUp () {
     const s = this
-    const { session, app } = s // Controller instance is created per session
-    const { db } = app
-    let { count = 0 } = session
+    const {app, session} = s // Controller instance is created per session
+    const {db} = app
+    let {count = 0} = session
     count++
     session.count = count
     await new Promise((resolve) => setTimeout(() => resolve(), 1000))

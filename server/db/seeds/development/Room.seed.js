@@ -1,7 +1,7 @@
 'use strict'
 
-const _seed = require('./_seed')
+const seed = require('the-seed')('en')
 
-module.exports = _seed.explode({
-  name: '#{flower}-room-#{i}'
+module.exports = seed.explode({
+  name: 'room-#{i}',
 }, 10).map((room, i) => Object.assign(room, {id: String(i + 1)}))

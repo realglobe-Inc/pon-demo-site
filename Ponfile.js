@@ -6,241 +6,362 @@
 'use strict'
 
 const pon = require('pon')
-
-const {react, css, browser, map, ccjs} = require('pon-task-web')
-const {fs, mocha, command, coz, fmtjson, env} = require('pon-task-basic')
-const {mysql, redis, nginx} = require('pon-task-docker')
-const {envify} = browser.transforms
-const pm2 = require('pon-task-pm2')
-const es = require('pon-task-es')
-const icon = require('pon-task-icon')
-const {setup, seed, drop, dump, migrate, load} = require('pon-task-db')
-const md = require('pon-task-md')
-const {isMacOS} = require('the-check')
-const {mkdir, symlink, chmod, del, cp, concat} = fs
 const {
-  APP_PORT,
-  MYSQL_CONTAINER_NAME,
-  MYSQL_PUBLISHED_PORT,
-  REDIS_CONTAINER_NAME,
-  REDIS_PUBLISHED_PORT,
-  NGINX_CONTAINER_NAME,
-  NGINX_PUBLISHED_PORT,
-  APP_PROCESS_NAME,
-  BACKUP_PROCESS_NAME,
-  DUMP_SCHEDULE,
-  DUMP_ROTATION,
-  getSetting,
-  askSetting
-} = require('./Local')
-
-const {fork, spawn} = command
-
+  command: {spawn: {git, npx}},
+  coz,
+  env,
+  fs: {chmod, concat, cp, del, mkdir, symlink, write},
+} = require('pon-task-basic')
+const db = require('pon-task-db')
+const {mysql, nginx, redis} = require('pon-task-docker')
+const es = require('pon-task-es')
+const pm2 = require('pon-task-pm2')
+const {browser, ccjs, css, map, react} = require('pon-task-web')
 const theAssets = require('the-assets')
-const {Styles, UI, Urls} = require('./conf')
-const pkg = require('./package.json')
-const createDB = () => require('./server/db/create')()
+const thePS = require('the-ps/pon')
+const {Urls, locales} = require('./conf')
+const Local = require('./Local')
+const ExternalIgnorePatch = require('./misc/browser/ExternalIgnorePatch')
+const Externals = require('./misc/browser/Externals')
+const Containers = require('./misc/docker/Containers')
+const Directories = require('./misc/project/Directories')
+const Pondoc = require('./misc/project/Pondoc')
 const migration = require('./server/db/migration')
+const {envify} = browser.transforms
+const {secret, setting} = Local
+const createDB = () => require('./server/db/create').forTask()
 
-module.exports = pon({
-  // ----------------
-  // Sub Tasks
-  // ----------------
-  'struct:mkdir': mkdir([
-    'bin',
-    'conf',
-    'client',
-    'client/client',
-    'client/shim',
-    'client/store',
-    'client/ui',
-    'client/test',
-    'doc',
-    'misc',
-    'public',
-    'server',
-    'server/controllers',
-    'server/db',
-    'server/env',
-    'server/server',
-    'server/test',
-    'utils',
-    'tmp',
-    'test',
-    'var'
-  ]),
-  'struct:symlink': symlink({
-    'package.json': 'shim/package.json',
-    'shim/conf': 'node_modules/@self/conf',
-    'Local.js': 'node_modules/@self/Local.js',
-    'shim/utils': 'node_modules/@self/utils',
-    'client': 'node_modules/@self/client'
-  }, {force: true}),
-  'struct:cp': cp({
-    'assets/text': 'public',
-    'assets/html/partials': 'public/partials',
-    'assets/html/errors': 'public/errors',
-    'assets/css': 'public/css',
-    'assets/fonts': 'public/fonts',
-    'assets/icons': 'public/icons'
-  }, {force: true}),
-  'struct:chmod': chmod({
-    'bin/**/*.*': '577'
-  }),
-  'struct:compile': [
-    es('conf', 'shim/conf'),
-    es('utils', 'shim/utils')
-  ],
-  'struct:json': fmtjson([
-    'conf/**/*.json',
-    'client/**/*.json'
-  ], {sort: true}),
-  'struct:render': [
-    coz(['+(assets|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud', '.*.bud'])
-  ],
-  'unless:production': env.notFor('production'),
-  'db:setup': setup(createDB),
-  'db:cli': () => createDB().cli(),
-  'db:seed': seed(createDB, 'server/db/seeds/:env/*.seed.js'),
-  'db:migrate': migrate(createDB, migration, {snapshot: 'var/migration/snapshots'}),
-  'db:drop': ['unless:production', drop(createDB)],
-  'db:dump': dump(createDB, 'var/backup/dump', {max: DUMP_ROTATION}),
-  'db:load': load.ask(createDB),
-  'db:reset': ['unless:production', 'db:drop', 'db:setup', 'db:seed'],
-  'ui:react': react('client', 'client/shim', {
-    pattern: ['*.js', '!(shim)/**/+(*.jsx|*.js|*.json)'],
-    extractCss: `client/shim/ui/bundle.pcss`,
-    watchTargets: 'client/ui/**/*.pcss'
-  }),
-  'ui:css': [
-    css('client/ui', 'client/shim/ui', {
-      modules: true,
-      pattern: ['*.pcss', '+(bounds|views|fragments|layouts|wrappers|components)/**/*.pcss'],
-      inlineMap: true
-    }),
-    concat([
-      'client/shim/ui/**/*.css',
-      'client/ui/base.pcss',
-      'client/ui/constants/variables.pcss'
-    ], 'public/build/bundle.pcss', {}),
-    css('public/build', 'public/build', {pattern: '*.pcss'})
-  ],
-  'ui:browser': env.dynamic(({isProduction}) =>
-    browser('client/shim/ui/entrypoint.js', `public${Urls.JS_BUNDLE_URL}`, {
-      externals: UI.EXTERNAL_BUNDLES,
-      watchTargets: 'client/shim/**/*.js',
-      transforms: [envify()],
-      fullPaths: !isProduction(),
-      ignores: [
-        // TODO Be smarter
-        ...(isProduction() ? [
-          require.resolve('react/cjs/react.development.js'),
-          require.resolve('react-dom/cjs/react-dom.development.js'),
-          require.resolve('react-dom/cjs/react-dom-server.browser.development.js')
-        ] : [
-          require.resolve('react/cjs/react.production.min.js'),
-          require.resolve('react-dom/cjs/react-dom.production.min.js'),
-          require.resolve('react-dom/cjs/react-dom-server.browser.production.min.js')
+module.exports = pon(
+  /** @module tasks */
+  {
+
+    // -----------------------------------
+    // Meta info
+    // -----------------------------------
+    ...{
+      $cwd: __dirname,
+      $doc: Pondoc,
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Assert
+    // -----------------------------------
+    ...{
+      /** Make sure that not production */
+      'assert:not-prod': env.notFor('production'),
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Assets
+    // -----------------------------------
+    ...{
+      /** Install asset files */
+      'assets:install': () => theAssets().installTo('assets', {copy: true}),
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Database
+    // -----------------------------------
+    ...{
+      /** Open database cli */
+      'db:cli': () => createDB().cli(),
+      /** Drop database */
+      'db:drop': ['assert:not-prod', db.drop(createDB)],
+      /** Dump data */
+      'db:dump': db.dump(createDB, 'var/backup/dump', {max: Local.DUMP_ROTATION}),
+      /** Load data from dum */
+      'db:load': db.load.ask(createDB),
+      /** Migrate data */
+      'db:migrate': db.migrate(createDB, migration, {snapshot: 'var/migration/snapshots'}),
+      /** Drop and setup database again */
+      'db:reset': ['assert:not-prod', 'db:drop', 'db:setup', 'db:seed'],
+      /** Generate test data */
+      'db:seed': db.seed(createDB, 'server/db/seeds/:env/*.seed.js'),
+      /** Setup database */
+      'db:setup': db.setup(createDB),
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Docker
+    // -----------------------------------
+    ...{
+      /** Prepare mysql docker container */
+      'docker:mysql': mysql(Containers.mysql.name, Containers.mysql.options),
+      /** Prepare nginx docker container */
+      'docker:nginx': nginx(Containers.nginx.name, Containers.nginx.options),
+      /** Prepare redis docker container */
+      'docker:redis': redis(Containers.redis.name, Containers.redis.options),
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Environment
+    // -----------------------------------
+    ...{
+      /** Set env variables for debug */
+      'env:debug': env('development', {DEBUG: 'app:*', ...Local}),
+      /** Set env variables for production */
+      'env:prod': env('production'),
+      /** Set env variables for test */
+      'env:test': env('test'),
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Git
+    // -----------------------------------
+    ...{
+      /** Catch up to latest git */
+      'git:catchup': [git('stash'), git('pull')],
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Locales
+    // -----------------------------------
+    ...{
+      /** Print locale settings */
+      'loc:print': () => console.log(locales.toCompound()),
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Local Config
+    // -----------------------------------
+    ...{
+      /** Print local settings */
+      'local:print': () => Local.print(),
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Maintenance
+    // -----------------------------------
+    ...{
+      /** Disable maintenance mode */
+      'maint:off': del('public/status/maintenance'),
+      /** Enable maintenance mode */
+      'maint:on': write('public/status/maintenance'),
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Package
+    // -----------------------------------
+    ...{
+      /** Fix package.json */
+      'pkg:fix': npx('fixpack'),
+      /** Install packages */
+      'pkg:install': npx('yarn', 'install', '--ignore-scripts'),
+      /** Link self packages */
+      'pkg:link': symlink({
+        'Local.js': 'node_modules/@self/Local.js',
+        'assets/data': 'node_modules/@self/data',
+        'client': 'node_modules/@self/client',
+        'shim/conf': 'node_modules/@self/conf',
+        'shim/utils': 'node_modules/@self/utils',
+      }, {force: true}),
+    },
+
+    // -----------------------------------
+    // Sub Tasks for PM2
+    // -----------------------------------
+    ...{
+      /** Run app with pm2 */
+      'pm2:app': pm2('./bin/app.js', {name: Local.APP_PROCESS_NAME}),
+      /** Run backup cron with pm2 */
+      'pm2:backup:dump': pm2.pon('db:dump', {cron: Local.DUMP_SCHEDULE, name: `${Local.BACKUP_PROCESS_NAME}:dump`}),
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Production
+    // -----------------------------------
+    ...{
+      /** Compile files for production */
+      'prod:compile': ['env:prod', 'build', 'prod:map', 'prod:css', 'prod:js',],
+      /** Compile css files for production */
+      'prod:css': css.minify([
+        `public${Urls.CSS_NORMALIZE_URL}`,
+        `public${Urls.CSS_THEME_URL}`,
+        `public${Urls.CSS_FONT_URL}`,
+        `public${Urls.CSS_BUNDLE_URL}`,
+      ], `public${Urls.PRODUCTION_CSS_URL}`),
+      /** Prepare database for production */
+      'prod:db': ['env:prod', 'db'],
+      /** Compile js files for production */
+      'prod:js': ccjs([
+        `public${Urls.JS_EXTERNAL_URL}`,
+        `public${Urls.JS_BUNDLE_URL}`
+      ], `public${Urls.PRODUCTION_JS_URL}`),
+      /** Delete source map files for production */
+      'prod:map': del('public/**/*.map'),
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Process
+    // -----------------------------------
+    ...{
+      /** Process check for debug */
+      'ps:debug': thePS('var/app/debug.pid'),
+      /** Process check for e2e */
+      'ps:e2e': thePS('var/app/e2e.pid'),
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Secret
+    // -----------------------------------
+    ...{
+      /** Decrypt secret file */
+      'secret:dec': () => secret.decrypt(),
+      /** Encrypt secret file */
+      'secret:enc': () => secret.encrypt(),
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Structure
+    // -----------------------------------
+    ...{
+      /** Change file permissions */
+      'struct:chmod': chmod({
+        '.githooks/**/*.js': '577',
+        'bin/**/*.*': '577',
+        'misc/**/*.sh': '577',
+        'misc/scripts/*.*': '577',
+      }),
+      /** Compile files */
+      'struct:compile': [
+        es('conf', 'shim/conf', {sourceRoot: '../../../../conf'}),
+        es('utils', 'shim/utils', {sourceRoot: '../../../../conf'}),
+      ],
+      /** Execute file copy */
+      'struct:cp': cp({
+        'assets/css': 'public/css',
+        'assets/html/server-error': 'public/server-error',
+        'assets/images': 'public/images',
+        'assets/text': 'public',
+        'assets/webfonts': 'public/webfonts',
+      }, {force: true}),
+      /** Generate project directories */
+      'struct:mkdir': mkdir([
+        ...Object.keys(Directories)
+      ]),
+      /** Prepare sub packages */
+      'struct:pkg': [
+        cp({
+          'package.json': 'shim/package.json',
+        }, {force: true}),
+        del('package-lock.json'), // Using yarn
+      ],
+      /** Render coz templates */
+      'struct:render': [
+        coz([
+          '+(conf|client|server)/**/.index.*.bud',
+          '+(assets|e2e|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud',
+          '.*.bud'
         ])
-      ]
-    })
-  ),
-  'ui:browser-external': env.dynamic(({isProduction}) =>
-    browser('client/shim/ui/externals.js', `public${Urls.JS_EXTERNAL_URL}`, {
-      requires: UI.EXTERNAL_BUNDLES,
-      skipWatching: true,
-      watchDelay: 300,
-      transforms: [envify()],
-      fullPaths: !isProduction()
-    })
-  ),
-  'assets:install': () => theAssets().installTo('assets'),
-  'assets:compile': md('assets/markdowns', 'assets/html/partials', {
-    vars: require('./conf/locales')
-  }),
-  'image:generate': icon('assets/icons/favicon.png', {
-    text: pkg.name[0],
-    font: 'a',
-    shape: 'b',
-    color: Styles.DOMINANT_COLOR
-  }),
-  'ui:map': map('public', 'public', {watchDelay: 400}),
-  'clean:shim': del('client/shim/**/*.*'),
-  'clean:public': del('public/*.*'),
-  'clean': ['clean:shim', 'clean:public'],
-  'env:prod': env('production'),
-  'env:test': env('test'),
-  'env:debug': env('development', {DEBUG: 'app:*'}),
-  'test:client': mocha('client/test/**/*.js', {timeout: 3000}),
-  'test:server': mocha('server/test/**/*.js', {timeout: 3000}),
-  'prod:map': del('public/**/*.map'),
-  'prod:js': ccjs([
-    `public${Urls.JS_EXTERNAL_URL}`,
-    `public${Urls.JS_BUNDLE_URL}`
-  ], `public${Urls.PRODUCTION_JS_URL}`, {level: 'SIMPLE'}),
-  'prod:css': css.minify([
-    Urls.CSS_THEME_URL,
-    Urls.CSS_FONT_URL,
-    Urls.CSS_BUNDLE_URL
-  ], Urls.PRODUCTION_CSS_URL),
-  'prod:compile': [
-    'env:prod', 'build', 'prod:map', 'prod:css', 'prod:js',
-  ],
-  'prod:db': [
-    'env:prod', 'db'
-  ],
-  'debug:server': ['env:debug', fork('bin/app.js')],
-  'debug:watch': ['env:debug', 'ui:*/watch'],
-  'docker:mysql': mysql(MYSQL_CONTAINER_NAME, {
-    image: 'mysql:8',
-    publish: `${MYSQL_PUBLISHED_PORT}:3306`
-  }),
-  'docker:redis': redis(REDIS_CONTAINER_NAME, {
-    image: 'redis:4',
-    publish: `${REDIS_PUBLISHED_PORT}:6379`
-  }),
-  'docker:nginx': nginx(NGINX_CONTAINER_NAME, {
-    image: 'nginx:1.13',
-    httpPublishPort: NGINX_PUBLISHED_PORT,
-    template: 'misc/docker/nginx.conf.template',
-    env: {
-      HOST_IP: isMacOS() ? 'docker.for.mac.localhost' : '172.17.0.1',
-      APP_PORT
-    }
-  }),
+      ],
+    },
 
-  'pm2:app': pm2('./bin/app.js', {name: APP_PROCESS_NAME}),
-  'pm2:backup:dump': pm2.pon('db:dump', {name: `${BACKUP_PROCESS_NAME}:dump`, cron: DUMP_SCHEDULE}),
-  // ----------------
-  // Main Tasks
-  // ----------------
-  assets: ['assets:*'],
-  struct: ['struct:mkdir', 'struct:chmod', 'struct:compile', 'struct:symlink', 'struct:cp', 'struct:render', 'struct:json'],
-  ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:browser-external', 'ui:map'],
-  db: ['db:setup', 'db:seed'],
-  test: ['env:test', 'test:client'],
-  build: ['struct', 'ui'],
-  prepare: ['struct', 'assets', 'docker', 'db', 'build'],
-  watch: ['ui:*', 'ui:*/watch'],
-  default: ['build'],
-  debug: ['env:debug', 'build', 'debug:*'],
-  prod: ['env:prod', 'prod:compile', 'prod:db', 'start'],
-  docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
-  start: ['pm2:app/start', 'pm2:backup:*/start'],
-  stop: ['pm2:app/stop', 'pm2:backup:*/stop'],
-  restart: ['pm2:app/restart', 'pm2:backup:*/restart'],
-  show: ['pm2:app/show'],
-  logs: ['pm2:app/logs'],
+    // -----------------------------------
+    // Sub Tasks for UI
+    // -----------------------------------
+    ...{
+      /** Bundle browser script */
+      'ui:browser': env.dynamic(({isProduction}) =>
+        browser('client/shim/ui/entrypoint.js', `public${Urls.JS_BUNDLE_URL}`, {
+          externals: Externals,
+          fullPaths: !isProduction(),
+          transforms: [envify()],
+          watchTargets: 'client/shim/**/*.js',
+        }), {sub: ['watch', 'deps']}
+      ),
+      /** Bundle external browser script */
+      'ui:browser-external': env.dynamic(({isProduction}) =>
+        browser('client/shim/ui/externals.js', `public${Urls.JS_EXTERNAL_URL}`, {
+          fullPaths: !isProduction(),
+          ignores: [
+            // TODO remove patch
+            ...ExternalIgnorePatch({isProduction}),
+          ],
+          requires: Externals,
+          skipWatching: true,
+          transforms: [envify()],
+          watchDelay: 300,
+        }), {sub: ['deps']}
+      ),
+      /** Compile stylesheets */
+      'ui:css': [
+        css('client/ui', 'client/shim/ui', {
+          inlineMap: true,
+          modules: true,
+          pattern: ['*.pcss', '+(stateful|stateless|views|layouts|wrappers|components)/**/*.pcss'],
+        }),
+        concat([
+          'client/shim/ui/**/*.css',
+          'client/ui/base.pcss',
+          'client/ui/constants/variables.pcss'
+        ], 'public/build/bundle.pcss', {}),
+        css('public/build', 'public/build', {pattern: '*.pcss'})
+      ],
+      /** Run css watch */
+      'ui:css/watch': 'ui:css/*/watch',
+      /** Extract map files */
+      'ui:map': map('public', 'public', {pattern: '**/*.js', watchDelay: 400}),
+      /** Compile react components */
+      'ui:react': react('client', 'client/shim', {
+        extractCss: `client/shim/ui/bundle.pcss`,
+        pattern: ['*.js', '*.jsx', '!(shim)/**/+(*.jsx|*.js|*.json)'],
+        sourceRoot: '..',
+        watchTargets: 'client/ui/**/*.pcss',
+      }),
+    },
 
-  setting: () => askSetting(),
-  // ----------------
-  // Aliases
-  // ----------------
-  t: 'test',
-  c: 'clean',
-  b: 'build',
-  w: 'watch',
-  d: 'debug',
-  p: 'production'
+    // -----------------------------------
+    // Main Tasks
+    // -----------------------------------
+    ...{
+      /** Run all assets tasks */
+      assets: ['assets:*'],
+      /** Build all */
+      build: ['pkg:link', 'struct', 'format', 'ui'],
+      /** Prepare DB */
+      db: ['db:setup', 'db:seed'],
+      /** Default for `pon` command */
+      default: ['build'],
+      /** Deploy project on production */
+      deploy: ['maint:on', 'stop', 'git:catchup', 'prod', 'maint:off'],
+      /** Generate docs */
+      doc: 'doc:*',
+      /** Setup docker infra */
+      docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
+      /** Show app daemon logs */
+      logs: ['pm2:app/logs'],
+      /** Prepare project */
+      prepare: [
+        'pkg:link', 'secret:enc', 'struct', 'assets', 'docker', 'db', 'build',
+      ],
+      /** Prepare and start on production */
+      prod: ['env:prod', 'prod:compile', 'prod:db', 'start'],
+      /** Restart app as daemon */
+      restart: ['pm2:app/restart', 'pm2:backup:*/restart'],
+      /** Update project settings with interactive shell */
+      setting: () => setting.ask(),
+      /** Show app daemon status */
+      show: ['pm2:app/show'],
+      /** Start app as daemon */
+      start: ['pm2:app/start', 'pm2:backup:*/start'],
+      /** Stop app as daemon */
+      stop: ['pm2:app/stop', 'pm2:backup:*/stop'],
+      /** Run all struct tasks */
+      struct: ['struct:mkdir', 'struct:compile', 'struct:cp', 'struct:pkg', 'struct:render', 'struct:chmod',],
+      /** Run all ui tasks */
+      ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:browser-external', 'ui:map'],
+    },
 
-})
+    // -----------------------------------
+    // Aliases
+    // -----------------------------------
+    ...{
+      /** Shortcut for `build` task */
+      b: 'build',
+      /** Shortcut for `prod` task */
+      p: 'prod',
+      /** Shortcut for 'prepare` task */
+      pre: 'prepare',
+    },
+  }
+)

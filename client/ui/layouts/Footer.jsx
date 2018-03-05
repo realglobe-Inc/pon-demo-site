@@ -5,16 +5,16 @@
 
 import React from 'react'
 import {
-  TheFooter
+  TheFooter,
 } from 'the-components'
 import { withLoc } from 'the-loc'
 import { Urls } from '@self/conf'
 
-const Footer = ({ l }) => {
+const Footer = ({l }) => {
   return (
     <TheFooter className='footer'>
-      <TheFooter.CopyRight year={2017}
-                           footer={l('org.ORG_NAME')}
+      <TheFooter.CopyRight footer={l('org.ORG_NAME')}
+                           year={2017}
       />
       <TheFooter.Links className='footerLinks'>
         <TheFooter.Link to={Urls.ABOUT_PRIVACY_POLICY_URL}>

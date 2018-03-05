@@ -4,12 +4,12 @@
  */
 'use strict'
 
-const env = require('../env')
 const create = require('./create')
+const env = require('../env')
 
 const singleton = create(env.database)
 Object.assign(singleton, {
-  create
+  create,
 })
 
 module.exports = singleton

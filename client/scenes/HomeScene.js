@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const Scene = require('./Scene')
+const Scene = require('./abstract/Scene')
 
 /** @lends HomeScene */
 class HomeScene extends Scene {
@@ -13,7 +13,7 @@ class HomeScene extends Scene {
   // Just an example
   async countUp () {
     const s = this
-    const {store, client, l} = s
+    const {client, l, store} = s
     const {app, toast} = store
     await app.busy.true()
     {

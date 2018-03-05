@@ -4,8 +4,8 @@
  */
 'use strict'
 
+const {equal, ok } = require('assert')
 const server = require('../server')
-const { ok, equal } = require('assert')
 
 describe('server', () => {
   before(() => {
@@ -15,7 +15,6 @@ describe('server', () => {
   })
 
   it('Do test', () => {
-
   })
 })
 

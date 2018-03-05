@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const { create } = require('../client')
+const client = require('..')
 const { ok, equal } = require('assert')
 
 describe('client', () => {
@@ -14,9 +14,8 @@ describe('client', () => {
   after(() => {
   })
 
-  it('Create test', () => {
-    let created = create()
-    ok(created)
+  it('Do test', () => {
+
   })
 })
 

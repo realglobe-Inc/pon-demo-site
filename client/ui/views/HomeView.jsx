@@ -4,10 +4,10 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheButton } from 'the-components'
+import { TheButton, TheView } from 'the-components'
+import styles from './HomeView.pcss'
 import { asView } from '../wrappers'
 import { HomeScene } from '../../scenes'
-import styles from './HomeView.pcss'
 
 class HomeView extends React.PureComponent {
   constructor (props) {
@@ -16,10 +16,16 @@ class HomeView extends React.PureComponent {
     s.homeScene = new HomeScene(props)
   }
 
+  componentDidMount () {
+  }
+
+  componentWillUnmount () {
+  }
+
   render () {
     const s = this
-    const { props, homeScene } = s
-    const { l } = props
+    const {homeScene, props } = s
+    const {l } = props
     return (
       <TheView className={styles.self}>
         <TheView.Header icon={null}
@@ -40,17 +46,9 @@ class HomeView extends React.PureComponent {
       </TheView>
     )
   }
-
-  componentDidMount () {
-  }
-
-  componentWillUnmount () {
-  }
 }
 
 export default asView(HomeView, (state) => ({
+  busy: state[ 'app.busy' ],
   count: state[ 'app' ].count,
-  busy: state[ 'app.busy' ]
 }))
-
-

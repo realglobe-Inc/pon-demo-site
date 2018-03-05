@@ -3,21 +3,23 @@
  */
 'use strict'
 
-const { Resource, DataTypes } = require('the-db')
-const { STRING, ENTITY } = DataTypes
+const {
+  DataTypes: {STRING},
+  TheResource,
+} = require('the-resource-base')
 
-class RoomResource extends Resource {
+class RoomResource extends TheResource {
 
   static get policy () {
     return {
       name: {
         description: 'Name of room',
-        type: STRING,
-        unique: true,
+        minLength: 4,
         required: true,
         trim: true,
-        minLength: 4
-      }
+        type: STRING,
+        unique: true,
+      },
     }
   }
 
@@ -25,6 +27,7 @@ class RoomResource extends Resource {
     /** @class */
     class TheRoomResourceEntity extends ResourceEntity {
     }
+
     return TheRoomResourceEntity
   }
 }

@@ -5,12 +5,12 @@
 
 import React from 'react'
 import {
-  TheHeader
+  TheHeader,
 } from 'the-components'
 import { withLoc } from 'the-loc'
-import { Urls, Icons } from '@self/conf'
+import { Icons, Urls } from '@self/conf'
 
-const Header = ({ l }) => {
+const Header = ({l }) => {
   return (
     <TheHeader className='header'>
       <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>

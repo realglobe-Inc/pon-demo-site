@@ -1,20 +1,16 @@
 'use strict'
 
 const create = require('./create')
-const env = require('../env')
 const db = require('../db')
-const { locales } = require('../../conf')
+const env = require('../env')
+const mail = require('../mail')
+const {locales} = require('../../conf')
 
 const singleton = create({
+  db,
   locales,
-  db,
-  redis: env.redis
-})
-
-Object.assign(singleton, {
-  create,
-  db,
-  env
+  mail,
+  redis: env.redis,
 })
 
 module.exports = singleton

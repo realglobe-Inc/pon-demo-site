@@ -5,31 +5,25 @@
  */
 'use strict'
 
-const theStore = require('the-store')
+const theStore = require('the-store').default
 const {
-  ObjectScope,
-  ArrayScope,
-  BooleanScope
-} = require('the-scope')
+  ObjectScope, ArrayScope, BooleanScope, StringScope, ValueScope, NumberScope,
+} = require('the-scope/shim/scopes')
+const scopes = require('./scopes')
 
 /** @lends create */
 module.exports = function create () {
-  const store = theStore({
-    // States to persists with localstorage
-    persists: []
+  return theStore({
+    // States to persists on local storage
+    persists: [],
+    scopes,
+    types: {
+      'OBJ': ObjectScope,
+      'ARR': ArrayScope,
+      'BOOL': BooleanScope,
+      'STR': StringScope,
+      'VAL': ValueScope,
+      'NUM': NumberScope
+    }
   })
-
-  {
-    const app = store.load(ObjectScope, 'app')
-    app.load(BooleanScope, 'busy')
-  }
-
-  {
-    const toast = store.load(ObjectScope, 'toast')
-    toast.load(ArrayScope, 'info')
-    toast.load(ArrayScope, 'warn')
-    toast.load(ArrayScope, 'error')
-  }
-
-  return store
 }

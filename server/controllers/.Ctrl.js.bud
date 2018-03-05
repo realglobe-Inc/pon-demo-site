@@ -3,15 +3,13 @@
  */
 'use strict'
 
+const {Ctrl} = require('the-templates')
+
 module.exports = [
-  'AppCtrl'
-].map((name) => ({
-  force: false,
-  mode: '644',
-  path: `${name}.js`,
-  data: {
-    name
-  }
+  'AppCtrl',
+].map((name) => Ctrl({
+  name,
+  cjs: true,
 }))
 
 if (!module.parent) {

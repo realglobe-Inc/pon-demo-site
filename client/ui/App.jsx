@@ -4,50 +4,55 @@
 'use strict'
 
 import React from 'react'
-import {
-  TheRoot
-} from 'the-components'
-
-import Header from './layouts/Header'
-import Main from './layouts/Main'
-import Toasts from './layouts/Toasts'
-import Footer from './layouts/Footer'
-import Routes from './Routes'
-import { withProvider, connect, withStore } from 'the-store'
 import { withClient } from 'the-client'
-import { withLoc } from 'the-loc'
+import { cycled, localized, stateful, titled } from 'the-component-mixins'
+import {
+  TheMain,
+  TheRoot,
+} from 'the-components'
+import { withBinder } from 'the-handle'
+import { withProvider } from 'the-store'
 import { locales } from '@self/conf'
+import { Dialogs, Footer, Header, Toasts } from './layouts'
+import Routes from './Routes'
+import { ofUser } from './wrappers'
 
+@ofUser
+@withProvider
+@withBinder
+@withClient.root
+@localized.with(locales)
+@titled.app(({l}) => l('app.APP_NAME'))
 class App extends React.Component {
-  constructor (props) {
-    super(props)
-    const s = this
-  }
-
   render () {
-    const s = this
-    const { props } = s
-    const { user } = props
+    const {busy} = this.props
     return (
-      <TheRoot className='app'>
-        <Header {...{user}}/>
-        <Toasts />
-        <Main>
-          <Routes />
-        </Main>
-        <Footer />
+      <TheRoot>
+        <Header/>
+        <Toasts/>
+        <TheMain spinning={busy}>
+          <Routes/>
+        </TheMain>
+        <Footer/>
+        <Dialogs/>
       </TheRoot>
     )
   }
-
 }
 
-const ConnectedApp = connect((state) => ({
-
-}))(withClient(withStore(App)))
-
-export default withProvider(
-  withClient.root(
-    withLoc.root(ConnectedApp, locales)
-  )
-)
+export default stateful(
+  (state) => ({
+    busy: state['app.busy'],
+    pathname: state['app.pathname'],
+  }),
+  ({
+     accountScene,
+     appScene,
+     verifyNeedScene,
+   }) => ({
+    onMount: async () => {
+      await accountScene.doSync()
+      await verifyNeedScene.doSync({delay: 3 * 1000})
+    },
+  })
+)(App)

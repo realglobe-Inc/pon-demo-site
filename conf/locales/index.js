@@ -1,10 +1,9 @@
 'use strict'
 
-const theLoc = require('the-loc')
+const theLoc = require('the-loc').default
 
 const env = theLoc({
-  en: require('./en'),
-  ja: require('./ja')
+  en: require('./en')
 })
 
 module.exports = env

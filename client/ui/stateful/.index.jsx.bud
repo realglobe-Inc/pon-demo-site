@@ -1,0 +1,14 @@
+'use strict'
+
+const {dir} = require('the-templates')
+
+module.exports = dir.recursive({
+  dirname: __dirname,
+  name: 'stateful',
+  description: 'Stateful components',
+  ext: '.jsx',
+})
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

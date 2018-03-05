@@ -1,11 +1,11 @@
 'use strict'
 
-const theEnv = require('the-env')
+const theEnv = require('the-env').default
 const Local = require('../../Local')
 
 const config = {
   database: require('./database'),
-  redis: require('./redis')
+  redis: require('./redis'),
 }
 
 const vars = {Local}

@@ -1,28 +1,48 @@
 'use strict'
 
-import 'the-polyfill/apply'
-
 import React from 'react'
-import { once, get, mount, rescue } from 'the-window'
+import { isProduction } from 'the-check'
+import { history as historyFor, mount } from 'the-entrypoint'
+import { get, once, rescue, set } from 'the-window'
+import { GlobalKeys, locales, UI } from '@self/conf'
 import App from './App'
-import { UI, locales } from '@self/conf'
 import client from '../client'
+import handle from '../handle'
 import store from '../store'
 
-const {APP_PROP_NAME, APP_CONTAINER_ID} = UI
+set(GlobalKeys.STAGE, 'registering')
 
-once('DOMContentLoaded', () => {
-  const props = get(APP_PROP_NAME)
-  const app = (<App {...props} {...{store, client}}/>)
-  mount(app, APP_CONTAINER_ID, {router: true})
-    .then(() => {
-      console.debug(`The app mounted on "#${APP_CONTAINER_ID}" with props:`, props)
-    })
+once('DOMContentLoaded', async () => {
+  set(GlobalKeys.STAGE, 'mounting')
 
-  rescue(() => {
-    const {lang} = s.props
-    const l = locales.bind(lang)
-    const {toast} = store
-    toast.error.push(l('errors.UNEXPECTED_ERROR'))
+  const props = get(GlobalKeys.PROPS)
+  const {
+    lang = (get('navigator.language')).split('-')[0],
+  } = props
+  const app = (<App {...props} {...{client, handle, store}}/>)
+  const l = locales.bind(lang)
+  const controllers = await client.useAll({debug: !isProduction()})
+
+  const history = historyFor()
+  handle.setAttributes({client, controllers, history, l, lang, store})
+  handle.initAll()
+
+  const {appScene, toastScene} = handle
+  history.listen((location) => appScene.setLocation(location))
+  appScene.set({host: get('location.host'), locale: lang})
+  appScene.setLocation(history.location)
+
+  rescue((e) => {
+    const handled = appScene.handleRejectionReason(e.reason)
+    if (!handled) {
+      toastScene.showError(l('errors.UNEXPECTED_ERROR'))
+    }
   })
+
+  await mount(app, UI.APP_CONTAINER_ID, {history, router: true})
+  console.debug(`The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`, props)
+
+  set(GlobalKeys.STAGE, 'mounted')
+  set(GlobalKeys.HANDLE, handle)
+  set(GlobalKeys.STORE, store)
 })

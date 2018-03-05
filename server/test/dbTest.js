@@ -4,8 +4,8 @@
  */
 'use strict'
 
+const {equal, ok } = require('assert')
 const createDB = require('../db/create')
-const { ok, equal } = require('assert')
 
 describe('db', () => {
   before(() => {

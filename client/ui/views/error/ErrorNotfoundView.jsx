@@ -4,15 +4,21 @@
 'use strict'
 
 import React from 'react'
-import { TheView, TheRoute } from 'the-components'
-import { asView } from '../../wrappers'
+import { TheRoute, TheView } from 'the-components'
 import styles from './ErrorNotfoundView.pcss'
+import { asView } from '../../wrappers'
 
 class ErrorNotfoundView extends React.Component {
+  componentDidMount () {
+  }
+
+  componentWillUnmount () {
+  }
+
   render () {
     const s = this
-    const { props } = s
-    const { l } = props
+    const {props } = s
+    const {l } = props
     return (
       <TheView className={styles.self}>
         <TheView.Header icon={null}
@@ -29,13 +35,6 @@ class ErrorNotfoundView extends React.Component {
         </TheView.Body>
       </TheView>
     )
-  }
-
-  componentDidMount () {
-
-  }
-
-  componentWillUnmount () {
   }
 }
 

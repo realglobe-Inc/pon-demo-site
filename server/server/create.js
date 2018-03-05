@@ -5,49 +5,57 @@
  */
 'use strict'
 
-const theServer = require('the-server')
-const {Html} = require('@self/client/shim/ui')
-const {createClient, createStore, createHandle} = require('@self/client')
-const pkg = require('../../package.json')
-const {ControllerMapping} = require('../mappings')
-const env = require('../env')
 const {isProduction} = require('the-check')
+const theSeal = require('the-seal').default
+const theServer = require('the-server').default
+const {servicesProxy} = require('the-service-base')
+const {Html, createClient, createHandle, createStore} = require('@self/client/shim')
+const Local = require('@self/Local')
+const endpoints = require('../endpoints')
+const env = require('../env')
+const mappings = require('../mappings')
+const conf = require('../../conf')
+const pkg = require('../../package')
+
+const {ControllerMapping, ServiceMapping} = mappings
 
 /** @lends create */
 function create (config) {
   const {
-    locales,
     db,
+    locales = conf.locales,
     mail,
-    redisConfig = env.redis
+    redisConfig = env.redis,
+    sealConfig = env.seal,
   } = config
+  const seal = theSeal(sealConfig['SEAL_SECRET'])
+
   const app = {
-    pkg,
+    cdnUrl: isProduction() ? Local.APP_CDN_URL : null,
     db,
     locales,
-    mail
+    mail,
+    seal,
+    services: servicesProxy(ServiceMapping, db),
+    version: isProduction() ? pkg.version : String(new Date().getTime()),
   }
-  const server = theServer({
-    static: isProduction ? [] : ['public'],
-    redis: redisConfig,
-    endpoints: {},
+
+  return theServer({
     cacheDir: 'tmp/cache',
+    controllers: ControllerMapping,
+    endpoints,
+    html: Html,
     injectors: {
       app: (ctx) => app,
       client: (ctx) => createClient(),
+      handle: (ctx) => createHandle(),
       store: (ctx) => createStore(),
-      handle: (ctx) => createHandle()
     },
-    html: Html,
     langs: Object.keys(locales),
-    scope: app
+    redis: redisConfig,
+    scope: app,
+    static: isProduction() ? [] : [Local.PUBLIC_DIR],
   })
-
-  for (const [name, Controller] of Object.entries(ControllerMapping)) {
-    server.load(Controller, name)
-  }
-
-  return server
 }
 
 module.exports = create

@@ -1,30 +1,22 @@
 'use strict'
 
 const path = require('path')
+const {View} = require('the-templates')
 
-module.exports = [
-  'error/ErrorNotfoundView',
-  'about/AboutPrivacyPolicyView',
-  'about/AboutTermsOfUseView',
-].reduce((buds, fullName) => {
-  const name = path.basename(fullName)
+module.exports = [].reduce((buds, name) => {
   return [
     ...buds,
+    View({name}),
     {
       force: false,
       mode: '644',
       mkdirp: true,
-      tmpl: `.View.jsx.hbs`,
-      path: `${fullName}.jsx`,
-      data: { name }
-    },
-    {
-      force: false,
-      mode: '644',
-      mkdirp: true,
-      tmpl: `.View.pcss.hbs`,
-      path: `${fullName}.pcss`,
-      data: { name }
+      tmpl: `
+.self {
+
+}`,
+      path: `${name}.pcss`,
+      data: {name}
     }
   ]
 }, [])

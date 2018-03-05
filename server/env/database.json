@@ -1,23 +1,23 @@
 {
   "default": {
+    "DATABASE": "pondemosite_dev",
     "DIALECT": "mysql",
     "HOST": "localhost",
-    "PORT": "#{Local.MYSQL_PUBLISHED_PORT}",
-    "DATABASE": "pondemosite_dev",
-    "USERNAME": "pondemosite_dev",
     "PASSWORD": "pondemosite_dev",
+    "PORT": "#{Local.MYSQL_CONTAINER_PORT}",
+    "ROOT_PASSWORD": "root",
     "ROOT_USERNAME": "root",
-    "ROOT_PASSWORD": "root"
+    "USERNAME": "pondemosite_dev"
   },
   "production": {
+    "DATABASE": "pondemosite",
     "DIALECT": "mysql",
     "HOST": "localhost",
-    "PORT": "#{Local.MYSQL_PUBLISHED_PORT}",
-    "DATABASE": "pondemosite",
-    "USERNAME": "pondemosite",
     "PASSWORD": "pondemosite",
+    "PORT": "#{Local.MYSQL_CONTAINER_PORT}",
+    "ROOT_PASSWORD": "root",
     "ROOT_USERNAME": "root",
-    "ROOT_PASSWORD": "root"
+    "USERNAME": "pondemosite"
   },
   "test": {
     "DIALECT": "sqlite",

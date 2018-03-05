@@ -1,0 +1,17 @@
+/**
+ * Bud file for stateless components
+ */
+'use strict'
+
+const {Stateful} = require('the-templates')
+
+module.exports = [
+  'admin/user/AdminUserRoleForm'
+].map((name) => Stateful({
+  name
+}))
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}
+

@@ -4,9 +4,9 @@
  */
 'use strict'
 
+const {equal, ok } = require('assert')
 const controllers = require('../controllers')
 const createDB = require('../db/create')
-const { ok, equal } = require('assert')
 
 describe('controllers', () => {
   before(() => {
@@ -18,12 +18,12 @@ describe('controllers', () => {
   // TODO Remove this
   // Just an example
   it('App Ctrl', async () => {
-    const { AppCtrl } = controllers
+    const {AppCtrl } = controllers
     const session = {}
     let appCtrl = new AppCtrl({
-      app: { db: createDB({}) },
+      app: {db: createDB({}) },
       client: {},
-      session
+      session,
     })
 
     equal(await appCtrl.countUp(), 1)

@@ -1,66 +1,57 @@
+/**
+ * @class Html
+ */
 'use strict'
 
 import React from 'react'
-import {
-  TheHtml,
-  TheHead,
-  TheBody,
-  TheRouter
-} from 'the-components'
-
-import App from './App'
-import { UI, Urls, Styles, locales } from '@self/conf'
 import { isProduction } from 'the-check'
-import {
-  APP_CDN_URL
-} from '@self/Local'
+import { TheBody, TheHead, TheHtml, TheRouter } from 'the-components'
+import { GlobalKeys, locales, Styles, UI, Urls } from '@self/conf'
+import App from './App'
 
-const {APP_PROP_NAME, APP_STAGE_NAME, APP_CONTAINER_ID} = UI
-const {DOMINANT_COLOR} = Styles
-const u = Urls
-
-const Html = ({appScope, renderingContext}) => {
-  const {version} = appScope.pkg
-  const {lang, client, store, handle, path} = renderingContext
-  handle.setAttributes({store, client, l})
+/** @lends Html */
+function Html ({appScope, renderingContext}) {
+  const {
+    cdnUrl,
+    version,
+  } = appScope
+  const {client, handle, lang, path, store} = renderingContext
   const l = locales.bind(lang)
+  handle.setAttributes({client, l, lang, store})
   const appProps = {
-    lang
+    lang,
   }
+  const js = isProduction() ? [
+    Urls.PRODUCTION_JS_URL
+  ] : [
+    Urls.JS_EXTERNAL_URL,
+    Urls.JS_BUNDLE_URL
+  ]
+  const css = isProduction() ? [
+    Urls.PRODUCTION_CSS_URL
+  ] : [
+    Urls.CSS_NORMALIZE_URL,
+    Urls.CSS_THEME_URL,
+    Urls.CSS_FONT_URL,
+    Urls.CSS_BUNDLE_URL
+  ]
   return (
     <TheHtml>
       <TheHead title={l('app.APP_NAME')}
-               js={[
-                 ...(isProduction() ? [
-                   u.PRODUCTION_JS_URL
-                 ] : [
-                   u.JS_EXTERNAL_URL,
-                   u.JS_BUNDLE_URL
-                 ])
-               ]}
-               css={[
-                 ...(isProduction() ? [
-                   u.PRODUCTION_CSS_URL
-                 ] : [
-                   u.CSS_THEME_URL,
-                   u.CSS_FONT_URL,
-                   u.CSS_BUNDLE_URL
-                 ])
-               ]}
-               icon={u.ICON_URL}
-               version={isProduction() ? version : String(new Date().getTime())}
-               globals={{[APP_PROP_NAME]: appProps}}
-               color={DOMINANT_COLOR}
-               cdn={isProduction() ? APP_CDN_URL : null}
-               fallbackUnless={APP_STAGE_NAME}
+               {...{css, js}}
+               cdn={cdnUrl}
+               color={Styles.DOMINANT_COLOR}
+               globals={{[GlobalKeys.APP]: {}, [GlobalKeys.PROPS]: appProps}}
+               icon={Urls.ICON_URL}
+               version={version}
       >
       </TheHead>
       <TheBody>
-        <div id={APP_CONTAINER_ID}>
+        <div id={UI.APP_CONTAINER_ID}>
           <TheRouter.Static context={renderingContext}
                             location={path}
           >
-            <App {...appProps} {...{client, store, handle}}/>
+            <App {...appProps} {...{client, handle, store}}/>
           </TheRouter.Static>
         </div>
       </TheBody>

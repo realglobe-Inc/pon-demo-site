@@ -1,52 +1,68 @@
 /**
  * Local variables
- * @file Local
+ * @namespace Local
  */
-
 'use strict'
 
-const theSeat = require('the-seat')
+const theSeat = require('the-seat').default
+const theSecret = require('the-secret').default
+const theSetting = require('the-setting').default
+const {envOf, seatAccess} = require('the-site-util')
+const {inspect} = require('util')
+const pkg = require('./package')
+
+const secret = theSecret(`${__dirname}/secrets.json`, envOf('THE_DEMO_SITE_MASTER_PASSWORD', {strict: true}))
 const seat = theSeat()
-const pkg = require('./package.json')
-const crypto = require('crypto')
+const {
+  containerNameFor,
+  portNumberFor,
+  processNameFor,
+  secretFor,
+  userNameFor,
+} = seatAccess(seat)
 
-const portFor = (name, portBase = 6000) =>
-  seat.scope('ports').acquire(name, (port = portBase) => port + 1)
-
-const containerFor = (name, length = 4) => [
-  name.split('@')[0],
-  seat.scope('containers').acquire(name, () => crypto.randomBytes(length).toString('hex'))
-].join('-')
-
-const processFor = (name, length = 4) => [
-  name.split('@')[0],
-  seat.scope('processes').acquire(name, () => crypto.randomBytes(length).toString('hex'))
-].join('-')
-
-const Vars = Object.freeze({
-  APP_PORT: portFor(`app@${__dirname}`),
-
-  MYSQL_PUBLISHED_PORT: portFor(`mysql@${__dirname}`),
-  REDIS_PUBLISHED_PORT: portFor(`redis@${__dirname}`),
-  NGINX_PUBLISHED_PORT: portFor(`nginx@${__dirname}`),
-
-  MYSQL_CONTAINER_NAME: containerFor(`${pkg.name}-mysql@${__dirname}`),
-  REDIS_CONTAINER_NAME: containerFor(`${pkg.name}-redis@${__dirname}`),
-  NGINX_CONTAINER_NAME: containerFor(`${pkg.name}-nginx@${__dirname}`),
-
-  APP_PROCESS_NAME: processFor(`${pkg.name}-app@${__dirname}`),
-  BACKUP_PROCESS_NAME: processFor(`${pkg.name}-backup@${__dirname}`)
-
-})
-
-const Local = Object.assign({
-  toEnv () {
-    return Object.assign({}, Vars)
+const setting = theSetting(`${__dirname}/var/app/setting.json`,
+  /** @lends Local */
+  {
+    APP_CDN_URL: '',
+    APP_DOMAIN: 'pon-demo-site.org',
+    DUMP_ROTATION: 3,
+    DUMP_SCHEDULE: '00 00 * * 3',
   }
-}, Vars)
+)
+
+const Vars = Object.freeze(
+  /** @lends Local */
+  {
+    APP_PORT: portNumberFor(`app@${__dirname}`),
+    APP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-app',
+    BACKUP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-backup',
+    INSPECT_PORT: portNumberFor(`inspect@${__dirname}`),
+    MYSQL_CONTAINER_NAME: containerNameFor(`${pkg.name}-mysql@${__dirname}`),
+    MYSQL_CONTAINER_PORT: portNumberFor(`mysql@${__dirname}`),
+    NGINX_CONTAINER_NAME: containerNameFor(`${pkg.name}-nginx@${__dirname}`),
+    NGINX_CONTAINER_PORT: portNumberFor(`nginx@${__dirname}`),
+    PUBLIC_DIR: `${__dirname}/public`,
+    REDIS_CONTAINER_NAME: containerNameFor(`${pkg.name}-redis@${__dirname}`),
+    REDIS_CONTAINER_PORT: portNumberFor(`redis@${__dirname}`),
+    SEAL_SECRET: secretFor(`seal@${__dirname}`),
+  }
+)
+
+/** @lends Local */
+const Local = {
+  __proto__: {
+    print: () => console.log(inspect(Local)),
+    secret,
+    setting,
+  },
+  ...secret.get(),
+  ...setting.get(),
+  ...Vars,
+}
 
 module.exports = Local
 
 if (!module.parent) {
-  console.log(JSON.stringify(Local, null, '  '))
+  Local.print()
 }

@@ -4,23 +4,51 @@
  */
 'use strict'
 
+const {isProduction} = require('the-check')
+const {hashProxy} = require('the-site-util')
+const pkg = require('../package')
+
 module.exports = Object.freeze(
   /** @lends Urls */
   {
 
-    TOP_URL: '/',
-
-    ABOUT_APP_URL: '/about/app',
-    ABOUT_PRIVACY_POLICY_URL: '/about/privacy-policy',
-    ABOUT_TERMS_OF_USE_URL: '/about/terms-of-use',
-
-    ICON_URL: '/icons/favicon.svg',
-    JS_BUNDLE_URL: '/bundle.js',
-    JS_BUNDLE_CC_URL: '/bundle.cc.js',
-    JS_EXTERNAL_URL: '/external-bundle.js',
-    JS_EXTERNAL_CC_URL: '/external-bundle.cc.js',
+    // -----------------------------------
+    // Css
+    // -----------------------------------
+    CSS_BUNDLE_URL: '/build/bundle.css',
+    CSS_FONT_URL: '/css/fontawesome-all.css',
+    CSS_NORMALIZE_URL: '/css/normalize.css',
     CSS_THEME_URL: '/css/theme.css',
-    CSS_BUNDLE_URL: '/bundle.css',
-    CSS_FONT_URL: '/css/font-awesome.css'
+
+    // -----------------------------------
+    // Error
+    // -----------------------------------
+    ERROR_FORBIDDEN_URL: '/errors/forbidden',
+
+    // -----------------------------------
+    // Icon
+    // -----------------------------------
+    ICON_URL: '/images/app-icon.png',
+
+    // -----------------------------------
+    // JS
+    // -----------------------------------
+    JS_BUNDLE_URL: '/build/bundle.js',
+    JS_EXTERNAL_URL: '/build/external-bundle.js',
+
+    // -----------------------------------
+    // Production
+    // -----------------------------------
+    PRODUCTION_CSS_URL: `/${pkg.name}-${pkg.version}.css`,
+    PRODUCTION_JS_URL: `/${pkg.name}-${pkg.version}.js`,
+
+    // -----------------------------------
+    // Top
+    // -----------------------------------
+    TOP_URL: '/',
   }
 )
+
+if (!isProduction()) {
+  module.exports = hashProxy(module.exports, {name: 'Urls', unknownCheck: true})
+}
