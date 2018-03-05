@@ -7,7 +7,7 @@ const { pcssVars } = require('the-templates')
 
 module.exports = pcssVars({
   src: 'conf/Styles.js',
-  values: require('@self/conf').Styles
+  values: require('../../conf').Styles
 })
 
 if (!module.parent) {
