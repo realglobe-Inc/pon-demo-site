@@ -134,24 +134,22 @@ module.exports = pon(
       /** Clean all */
       clean: ['clean:shim', 'clean:public', 'clean:cache'],
       /** Start debugging */
-      debug: ['ps:debug', 'env:debug', 'build', 'lint', 'debug:*'],
+      debug: ['ps:debug', 'env:debug', 'build', 'debug:*'],
       /** Format source codes */
       format: [
         'format:conf', 'format:json', 'format:client', 'format:server'
       ],
-      /** Lint all */
-      lint: ['lint:loc', 'lint:rules'],
       /** Open project */
       open: 'open:app',
       /** Prepare project */
       prepare: [
         ...tasks.prepare,
-        ...['pkg:fix', 'doc', 'lint']
+        ...['pkg:fix', 'doc',]
       ],
       start: ['debug:server'],
       stop: [],
       /** Run all tess */
-      test: ['env:test', 'test:client', 'test:server'],
+      test: ['env:test', 'test:client', 'test:server', () => process.exit(0)],
       /** Run watches */
       watch: ['ui:*', 'ui:*/watch'],
     },
@@ -167,8 +165,6 @@ module.exports = pon(
       ds: 'debug:server',
       /** Shortcut for `format` task */
       f: 'format',
-      /** Shortcut for `lint` task */
-      l: 'lint',
       /** Shortcut for `open` task */
       o: 'open',
       /** Shortcut for `open` task */

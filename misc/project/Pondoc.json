@@ -4,7 +4,6 @@
     "assert:not-prod": "Make sure that not production",
     "assets": "Run all assets tasks",
     "assets:install": "Install asset files",
-    "assets:markdown": "Render markdown assets",
     "b": "Shortcut for `build` task",
     "build": "Build all",
     "db": "Prepare DB",

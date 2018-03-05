@@ -4,11 +4,12 @@
  */
 'use strict'
 
-const {equal, ok } = require('assert')
+const {equal, ok} = require('assert')
 const controllers = require('../controllers')
 const createDB = require('../db/create')
 
-describe('controllers', () => {
+describe('controllers', function () {
+  this.timeout(3 * 1000)
   before(() => {
   })
 
@@ -18,16 +19,19 @@ describe('controllers', () => {
   // TODO Remove this
   // Just an example
   it('App Ctrl', async () => {
-    const {AppCtrl } = controllers
+    const {AppCtrl} = controllers
     const session = {}
-    let appCtrl = new AppCtrl({
-      app: {db: createDB({}) },
+    const db = createDB({})
+    const appCtrl = new AppCtrl({
+      app: {db},
       client: {},
       session,
     })
 
     equal(await appCtrl.countUp(), 1)
     equal(await appCtrl.countUp(), 2)
+
+    await db.close()
   })
 })
 

@@ -1,33 +1,15 @@
 {
   "name": "pon-demo-site",
-  "version": "3.0.0",
   "description": "Demo of web site using pon",
-  "main": "lib",
-  "scripts": {
-    "build": "pon build",
-    "prepare": "pon prepare",
-    "share": "the-script-share",
-    "test": "pon test",
-    "start": "pon start",
-    "stop": "pon stop",
-    "restart": "pon restart",
-    "update": "the-script-update",
-    "debug": "pon debug"
-  },
-  "repository": "realglobe-Inc/pon-demo-site",
-  "keywords": [
-    "Pon"
-  ],
+  "version": "3.0.0",
   "author": {
     "name": "Taka Okunishi",
     "email": "okunishinish@gmail.com",
     "url": "http://okunishitaka.com"
   },
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/realglobe-inc/pon-demo-site/issues"
   },
-  "homepage": "https://github.com/realglobe-inc/pon-demo-site#readme",
   "dependencies": {
     "ape-tmpl": "^6.0.2",
     "asleep": "^1.0.3",
@@ -52,6 +34,7 @@
     "the-component-mixins": "^1.3.14",
     "the-components": "^6.0.30",
     "the-controller-base": "^4.0.4",
+    "the-date": "^1.4.0",
     "the-db": "^9.3.15",
     "the-decorators": "^1.0.0",
     "the-entrypoint": "^1.0.1",
@@ -78,6 +61,7 @@
   "devDependencies": {
     "eslint": "^4.8.0",
     "pon-task-dev": "^1.0.1",
+    "sqlite3": "^3.1.13",
     "sugos-travis": "^2.0.7",
     "the-code": "^3.7.1",
     "the-lint": "^1.7.0",
@@ -89,5 +73,23 @@
   "engines": {
     "node": ">=8",
     "npm": ">=4"
+  },
+  "homepage": "https://github.com/realglobe-inc/pon-demo-site#readme",
+  "keywords": [
+    "Pon"
+  ],
+  "license": "Apache-2.0",
+  "main": "lib",
+  "repository": "realglobe-Inc/pon-demo-site",
+  "scripts": {
+    "build": "pon build",
+    "debug": "pon debug",
+    "prepare": "pon prepare",
+    "restart": "pon restart",
+    "share": "the-script-share",
+    "start": "pon start",
+    "stop": "pon stop",
+    "test": "pon test",
+    "update": "the-script-update"
   }
 }

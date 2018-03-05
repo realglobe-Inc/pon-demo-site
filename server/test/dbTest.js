@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {equal, ok } = require('assert')
+const {equal, ok} = require('assert')
 const createDB = require('../db/create')
 
 describe('db', () => {
@@ -17,6 +17,8 @@ describe('db', () => {
   it('Do test', async () => {
     let db = createDB()
     ok(db)
+
+    await db.close()
   })
 })
 
