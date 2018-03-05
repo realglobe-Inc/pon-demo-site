@@ -1,10 +1,12 @@
 'use strict'
 
-const createStore = require('./store/create')
-const createClient = require('./client/create')
-const createHandle = require('./handle/create')
+import createStore from './store/create'
+import createClient from './client/create'
+import createHandle from './handle/create'
+import Html from './ui/Html'
 
-module.exports = {
+export {
+  Html,
   createStore,
   createClient,
   createHandle

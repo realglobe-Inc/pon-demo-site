@@ -14,8 +14,8 @@ class HomeView extends React.Component {
     const {
       busy,
       count,
-      countUp,
       l,
+      onCountUp,
     } = this.props
     return (
       <TheView className={styles.self}>
@@ -29,7 +29,7 @@ class HomeView extends React.Component {
           <p>
 
             <span>Count={count}</span>
-            <TheButton onClick={countUp}>
+            <TheButton onClick={onCountUp}>
               {l('buttons.DO_COUNT_UP')}
             </TheButton>
           </p>

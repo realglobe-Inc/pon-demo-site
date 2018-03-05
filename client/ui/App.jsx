@@ -15,9 +15,7 @@ import { withProvider } from 'the-store'
 import { locales } from '@self/conf'
 import { Dialogs, Footer, Header, Toasts } from './layouts'
 import Routes from './Routes'
-import { ofUser } from './wrappers'
 
-@ofUser
 @withProvider
 @withBinder
 @withClient.root
@@ -46,13 +44,9 @@ export default stateful(
     pathname: state['app.pathname'],
   }),
   ({
-     accountScene,
      appScene,
-     verifyNeedScene,
    }) => ({
     onMount: async () => {
-      await accountScene.doSync()
-      await verifyNeedScene.doSync({delay: 3 * 1000})
     },
   })
 )(App)

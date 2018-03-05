@@ -61,6 +61,7 @@
   "devDependencies": {
     "eslint": "^4.8.0",
     "pon-task-dev": "^1.0.1",
+    "pretty-exceptions": "^1.3.2",
     "sqlite3": "^3.1.13",
     "sugos-travis": "^2.0.7",
     "the-code": "^3.7.1",

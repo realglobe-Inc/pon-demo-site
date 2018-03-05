@@ -19,8 +19,6 @@
     "format:json": "Format json files",
     "format:server": "Format server files",
     "icon:generate": "Generate icons",
-    "l": "Shortcut for `lint` task",
-    "lint": "Lint all",
     "o": "Shortcut for `open` task",
     "open": "Open project",
     "open:app": "Open app in browser",

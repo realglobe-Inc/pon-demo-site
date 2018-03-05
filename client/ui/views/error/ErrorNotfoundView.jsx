@@ -4,32 +4,28 @@
 'use strict'
 
 import React from 'react'
-import { TheRoute, TheView } from 'the-components'
+import { cycled, localized, stateful, titled } from 'the-component-mixins'
+import { TheButton, TheButtonGroup, TheLead, TheRoute, TheView } from 'the-components'
 import styles from './ErrorNotfoundView.pcss'
-import { asView } from '../../wrappers'
 
+@localized
+@titled(({l}) => l('titles.ERROR_NOTFOUND_TITLE'))
 class ErrorNotfoundView extends React.Component {
-  componentDidMount () {
-  }
-
-  componentWillUnmount () {
-  }
-
   render () {
-    const s = this
-    const {props } = s
-    const {l } = props
+    const {l} = this.props
+
     return (
       <TheView className={styles.self}>
-        <TheView.Header icon={null}
-                        text={null}
-        />
         <TheView.Body>
           <TheRoute.Status code={404}>
+            <br/>
+            <TheLead title={l('messages.PAGE_NOT_FOUND')}>
+            </TheLead>
+            <br/>
             <div>
-              <h3>{l('messages.PAGE_NOT_FOUND')}</h3>
-              <div>
-              </div>
+              <TheButtonGroup>
+                <TheButton href='/'>{l('buttons.SHOW_TOP_AGAIN')}</TheButton>
+              </TheButtonGroup>
             </div>
           </TheRoute.Status>
         </TheView.Body>
@@ -38,4 +34,7 @@ class ErrorNotfoundView extends React.Component {
   }
 }
 
-export default asView(ErrorNotfoundView)
+export default stateful(
+  (state) => ({}),
+  ({}) => ({}),
+)(ErrorNotfoundView)
