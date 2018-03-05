@@ -23,7 +23,7 @@ module.exports = Object.freeze(
     // -----------------------------------
     // Error
     // -----------------------------------
-    ERROR_FORBIDDEN_URL: '/errors/forbidden',
+    ERROR_NOTFOUND_URL: '/errors/not-found',
 
     // -----------------------------------
     // Icon

@@ -4,28 +4,19 @@
 'use strict'
 
 import React from 'react'
+import { localized, stateful } from 'the-component-mixins'
 import { TheButton, TheView } from 'the-components'
 import styles from './HomeView.pcss'
-import { asView } from '../wrappers'
-import { HomeScene } from '../../scenes'
 
-class HomeView extends React.PureComponent {
-  constructor (props) {
-    super(props)
-    const s = this
-    s.homeScene = new HomeScene(props)
-  }
-
-  componentDidMount () {
-  }
-
-  componentWillUnmount () {
-  }
-
+@localized
+class HomeView extends React.Component {
   render () {
-    const s = this
-    const {homeScene, props } = s
-    const {l } = props
+    const {
+      busy,
+      count,
+      countUp,
+      l,
+    } = this.props
     return (
       <TheView className={styles.self}>
         <TheView.Header icon={null}
@@ -33,12 +24,12 @@ class HomeView extends React.PureComponent {
         />
         <TheView.Body>
           <p className={styles.loadingMessage}>
-            {props.busy && 'Now calculating...'}
+            {busy && 'Now calculating...'}
           </p>
           <p>
 
-            <span>Count={props.count}</span>
-            <TheButton onClick={ () => homeScene.countUp() }>
+            <span>Count={count}</span>
+            <TheButton onClick={countUp}>
               {l('buttons.DO_COUNT_UP')}
             </TheButton>
           </p>
@@ -48,7 +39,19 @@ class HomeView extends React.PureComponent {
   }
 }
 
-export default asView(HomeView, (state) => ({
-  busy: state[ 'app.busy' ],
-  count: state[ 'app' ].count,
-}))
+export default stateful(
+  (state) => ({
+    busy: state['home.busy'],
+    count: state['home.count'],
+  }),
+  ({
+     homeScene,
+     l,
+     toastScene,
+   }) => ({
+    onCountUp: async () => {
+      await homeScene.countUp()
+      await toastScene.showInfo(l('toasts.COUNT_UP_DID_SUCCESS'))
+    },
+  })
+)(HomeView,)

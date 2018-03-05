@@ -4,29 +4,23 @@
  */
 'use strict'
 
+const {bindScope, withBusy} = require('the-scene-mixins/shim')
 const Scene = require('./abstract/Scene')
 
+@withBusy
+@bindScope('home')
+class HomeSceneBase extends Scene {}
+
 /** @lends HomeScene */
-class HomeScene extends Scene {
+class HomeScene extends HomeSceneBase {
 
   // TODO Remove this
   // Just an example
+  @withBusy.while
   async countUp () {
-    const s = this
-    const {client, l, store} = s
-    const {app, toast} = store
-    await app.busy.true()
-    {
-      let count
-      try {
-        let appCtrl = await client.use('appCtrl')
-        count = await appCtrl.countUp()
-      } finally {
-        await app.busy.false()
-      }
-      app.set({count})
-      toast.info.push(l('toasts.COUNT_UP_DID_SUCCESS'))
-    }
+    const {appCtrl} = this.controllers
+    const count = await appCtrl.countUp()
+    this.set({count})
   }
 
 }

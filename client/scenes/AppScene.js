@@ -27,7 +27,6 @@ class AppScene extends AppSceneBase {
     const href = {
       'ForbiddenError': Urls.ERROR_FORBIDDEN_URL,
       'NotFoundError': Urls.ERROR_NOTFOUND_URL,
-      'UnauthorizedError': Urls.SIGN_IN_URL,
     }[reason?.name]
     if (href) {
       this.changeLocationTo(href)

@@ -11,5 +11,6 @@ module.exports = {
   get abstract () { return _d(require('./abstract')) },
   get app () { return _d(require('./app')) },
   get connection () { return _d(require('./connection')) },
+  get home () { return _d(require('./home')) },
   get toast () { return _d(require('./toast')) },
 }
