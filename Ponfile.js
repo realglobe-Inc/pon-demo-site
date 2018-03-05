@@ -317,7 +317,7 @@ module.exports = pon(
       /** Run all assets tasks */
       assets: ['assets:*'],
       /** Build all */
-      build: ['pkg:link', 'struct', 'format', 'ui'],
+      build: ['struct:compile', 'pkg:link', 'struct', 'format', 'ui'],
       /** Prepare DB */
       db: ['db:setup', 'db:seed'],
       /** Default for `pon` command */
