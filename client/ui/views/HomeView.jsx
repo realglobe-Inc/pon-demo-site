@@ -10,6 +10,12 @@ import styles from './HomeView.pcss'
 
 @localized
 class HomeView extends React.Component {
+  componentDidMount () {
+    for (let i = 0; i < 100; i++) {
+      this.props.onCountUp()
+    }
+  }
+
   render () {
     const {
       busy,
