@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { isProduction } from 'the-check'
-import { history as historyFor, mount } from 'the-entrypoint'
+import { history as historyFor, mount, singleton } from 'the-entrypoint'
 import { get, once, rescue, set } from 'the-window'
 import { GlobalKeys, locales, UI } from '@self/conf'
 import App from './App'
@@ -10,6 +10,7 @@ import client from '../client'
 import handle from '../handle'
 import store from '../store'
 
+singleton()
 set(GlobalKeys.STAGE, 'registering')
 
 once('DOMContentLoaded', async () => {

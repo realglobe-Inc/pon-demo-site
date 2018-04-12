@@ -6,6 +6,9 @@
     "DO_COUNT_UP": "Count Up",
     "DO_RELOAD": "Reload Page"
   },
+  "errors": {
+    "UNEXPECTED_ERROR": "Unexpected Error "
+  },
   "messages": {
     "CONNECTION_SEEMS_TO_BE_LOST": "Connection lost",
     "PAGE_NOT_FOUND": "Sorry! Page not found..."

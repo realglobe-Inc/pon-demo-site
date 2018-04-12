@@ -21,11 +21,14 @@ function Html ({appScope, renderingContext}) {
   const appProps = {
     lang,
   }
-  const js = isProduction() ? [
-    Urls.PRODUCTION_JS_URL
-  ] : [
-    Urls.JS_EXTERNAL_URL,
-    Urls.JS_BUNDLE_URL
+  const js = [
+    Urls.JS_SHIM_URL,
+    ...(isProduction() ? [
+      Urls.PRODUCTION_JS_URL
+    ] : [
+      Urls.JS_EXTERNAL_URL,
+      Urls.JS_BUNDLE_URL
+    ])
   ]
   const css = isProduction() ? [
     Urls.PRODUCTION_CSS_URL
