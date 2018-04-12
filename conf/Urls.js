@@ -19,6 +19,7 @@ module.exports = Object.freeze(
     CSS_FONT_URL: '/css/fontawesome-all.css',
     CSS_NORMALIZE_URL: '/css/normalize.css',
     CSS_THEME_URL: '/css/theme.css',
+    ERROR_FORBIDDEN_URL: '/errors/forbidden',
 
     // -----------------------------------
     // Error
@@ -35,6 +36,7 @@ module.exports = Object.freeze(
     // -----------------------------------
     JS_BUNDLE_URL: '/build/bundle.js',
     JS_EXTERNAL_URL: '/build/external-bundle.js',
+    JS_SHIM_URL: '/js/es5-shim.min.js',
 
     // -----------------------------------
     // Production

@@ -14,8 +14,7 @@ class AppCtrl extends TheCtrl {
   async countUp () {
     const {session} = this // Controller instance is created per session
     let {count = 0} = session
-    count++
-    session.count = count
+    session.count = count + 1
     await new Promise((resolve) => setTimeout(() => resolve(), 1000))
     return count
   }

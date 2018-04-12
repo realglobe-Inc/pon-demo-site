@@ -232,6 +232,7 @@ module.exports = pon(
         'assets/css': 'public/css',
         'assets/html/server-error': 'public/server-error',
         'assets/images': 'public/images',
+        'assets/js': 'public/js',
         'assets/text': 'public',
         'assets/webfonts': 'public/webfonts',
       }, {force: true}),
