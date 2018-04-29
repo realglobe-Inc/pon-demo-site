@@ -35,5 +35,3 @@ tmp
 shim
 var
 public
-
-package-lock.json # Using yarn

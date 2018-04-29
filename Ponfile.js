@@ -7,7 +7,7 @@
 
 const pon = require('pon')
 const {
-  command: {spawn: {git, npx}},
+  command: {spawn: {git, npm, npx}},
   coz,
   env,
   fs: {chmod, concat, cp, del, mkdir, symlink, write},
@@ -18,12 +18,14 @@ const es = require('pon-task-es')
 const pm2 = require('pon-task-pm2')
 const {browser, ccjs, css, map, react} = require('pon-task-web')
 const theAssets = require('the-assets')
+const theBin = require('the-bin/pon')
 const thePS = require('the-ps/pon')
 const {Urls, locales} = require('./conf')
 const Local = require('./Local')
 const ExternalIgnorePatch = require('./misc/browser/ExternalIgnorePatch')
 const Externals = require('./misc/browser/Externals')
 const Containers = require('./misc/docker/Containers')
+const Bins = require('./misc/project/Bins')
 const Directories = require('./misc/project/Directories')
 const Pondoc = require('./misc/project/Pondoc')
 const migration = require('./server/db/migration')
@@ -57,6 +59,13 @@ module.exports = pon(
     ...{
       /** Install asset files */
       'assets:install': () => theAssets().installTo('assets', {copy: true}),
+    },
+
+    // -----------------------------------
+    // Sub Tasks for Check
+    // -----------------------------------
+    ...{
+      'check:bin': theBin.test(Bins),
     },
 
     // -----------------------------------
@@ -146,7 +155,7 @@ module.exports = pon(
       /** Fix package.json */
       'pkg:fix': npx('fixpack'),
       /** Install packages */
-      'pkg:install': npx('yarn', 'install', '--ignore-scripts'),
+      'pkg:install': npm('install', '--ignore-scripts'),
       /** Link self packages */
       'pkg:link': symlink({
         'Local.js': 'node_modules/@self/Local.js',
@@ -245,7 +254,6 @@ module.exports = pon(
         cp({
           'package.json': 'shim/package.json',
         }, {force: true}),
-        del('package-lock.json'), // Using yarn
       ],
       /** Render coz templates */
       'struct:render': [
@@ -319,6 +327,8 @@ module.exports = pon(
       assets: ['assets:*'],
       /** Build all */
       build: ['pkg:link', 'struct', 'format', 'ui'],
+      /** Check bins */
+      check: ['check:*'],
       /** Prepare DB */
       db: ['db:setup', 'db:seed'],
       /** Default for `pon` command */
@@ -333,7 +343,15 @@ module.exports = pon(
       logs: ['pm2:app/logs'],
       /** Prepare project */
       prepare: [
-        'struct:compile', 'pkg:link', 'secret:enc', 'struct', 'assets', 'docker', 'db', 'build',
+        'check',
+        'struct:compile',
+        'pkg:link',
+        'secret:enc',
+        'struct',
+        'assets',
+        'docker',
+        'db',
+        'build',
       ],
       /** Prepare and start on production */
       prod: ['env:prod', 'prod:compile', 'prod:db', 'start'],

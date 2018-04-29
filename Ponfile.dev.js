@@ -10,6 +10,7 @@ const {doc, cwd, tasks} = require('./Ponfile')
 const Local = require('./Local')
 const theCode = require('the-code/pon')
 const {locales} = require('./conf')
+const theSupport = require('the-support/pon')
 const {
   command: {spawn: {npx, npm}, fork},
   fs: {del,},
@@ -125,6 +126,8 @@ module.exports = pon(
       'test:client': mocha('client/test/**/*.js', {timeout: 3000}),
       /** Run server tests */
       'test:server': mocha('server/test/**/*.js', {timeout: 3000}),
+      /** Check compatibility */
+      'test:support': theSupport('public/**/*.js'),
     },
 
     // -----------------------------------
@@ -144,12 +147,13 @@ module.exports = pon(
       /** Prepare project */
       prepare: [
         ...tasks.prepare,
-        ...['pkg:fix', 'doc',]
+        ...['pkg:fix', 'doc',],
+        ...['test:support'],
       ],
       start: ['debug:server'],
       stop: [],
       /** Run all tess */
-      test: ['env:test', 'test:client', 'test:server', () => process.exit(0)],
+      test: ['env:test', 'test:support', 'test:client', 'test:server'],
       /** Run watches */
       watch: ['ui:*', 'ui:*/watch'],
     },

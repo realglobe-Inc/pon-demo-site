@@ -30,6 +30,7 @@
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.2.2",
     "the-assets": "^2.1.0",
+    "the-bin": "^1.2.0",
     "the-check": "^1.1.1",
     "the-client": "^10.1.13",
     "the-component-mixins": "^2.1.0",
@@ -72,11 +73,12 @@
     "the-script-release": "^1.0.6",
     "the-script-share": "^1.0.5",
     "the-script-update": "^1.0.0",
-    "the-seed": "^2.0.6"
+    "the-seed": "^2.0.6",
+    "the-support": "^1.0.2"
   },
   "engines": {
-    "node": ">=8",
-    "npm": ">=4"
+    "node": ">=10",
+    "npm": ">=6"
   },
   "homepage": "https://github.com/realglobe-inc/pon-demo-site#readme",
   "keywords": [
@@ -88,6 +90,7 @@
   "scripts": {
     "build": "pon build",
     "debug": "pon debug",
+    "preinstall": "./misc/scripts/no_more_yarn.js",
     "prepare": "pon prepare",
     "restart": "pon restart",
     "share": "the-script-share",
