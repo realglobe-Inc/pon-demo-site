@@ -25,10 +25,15 @@
     "open:repo": "Open homepage field in package.json",
     "or": "Shortcut for `open` task",
     "prepare": "Prepare project",
+    "start": "Start server",
+    "stop": "Stop server",
     "t": "Shortcut for `test` task",
     "test": "Run all tess",
     "test:client": "Run client tests",
     "test:server": "Run server tests",
+    "test:support": "Check compatibility",
+    "u": "Shortcut for `upgrade` task",
+    "upgrade": "Upgrade package",
     "w": "Shortcut for `watch` task",
     "watch": "Run watches"
   }

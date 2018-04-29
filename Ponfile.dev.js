@@ -148,12 +148,16 @@ module.exports = pon(
       prepare: [
         ...tasks.prepare,
         ...['pkg:fix', 'doc',],
-        ...['test:support'],
+        // ...['test:support'],
       ],
+      /** Start server */
       start: ['debug:server'],
+      /** Stop server */
       stop: [],
       /** Run all tess */
       test: ['env:test', 'test:support', 'test:client', 'test:server'],
+      /** Upgrade package */
+      upgrade: ['pkg:upg', 'pkg:install:force', 'pkg:link', 'build'],
       /** Run watches */
       watch: ['ui:*', 'ui:*/watch'],
     },
@@ -175,6 +179,8 @@ module.exports = pon(
       or: 'open:repo',
       /** Shortcut for `test` task */
       t: 'test',
+      /** Shortcut for `upgrade` task */
+      u: 'upgrade',
       /** Shortcut for `watch` task */
       w: 'watch',
     }

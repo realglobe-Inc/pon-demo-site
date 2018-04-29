@@ -164,6 +164,8 @@ module.exports = pon(
         'shim/conf': 'node_modules/@self/conf',
         'shim/utils': 'node_modules/@self/utils',
       }, {force: true}),
+      /** Upgrade packages package.json */
+      'pkg:upg': npm('upgrade', '--ignore-scripts'),
     },
 
     // -----------------------------------
