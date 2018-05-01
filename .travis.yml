@@ -11,8 +11,8 @@ before_install:
 install:
 - npm install
 script:
-- npm prepare
-- npm build
+- pon prepare
+- pon build
 after_success:
 - ./misc/travis/publish.js
 env:
