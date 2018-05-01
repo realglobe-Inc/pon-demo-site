@@ -1,7 +1,7 @@
 {
   "name": "pon-demo-site",
   "description": "Demo of web site using pon",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "author": {
     "name": "Taka Okunishi",
     "email": "okunishinish@gmail.com",
@@ -32,7 +32,7 @@
     "the-bin": "^1.2.0",
     "the-check": "^1.1.1",
     "the-client": "^10.3.0",
-    "the-component-mixins": "^2.4.1",
+    "the-component-mixins": "^2.4.2",
     "the-components": "^6.0.55",
     "the-controller-base": "^4.0.4",
     "the-date": "^1.4.0",
