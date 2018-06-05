@@ -1,20 +1,18 @@
 {
   "default": {
     "DATABASE": "pondemosite_dev",
-    "DIALECT": "mysql",
+    "DIALECT": "mongo",
     "HOST": "localhost",
-    "PASSWORD": "pondemosite_dev",
-    "PORT": "#{Local.MYSQL_CONTAINER_PORT}",
-    "ROOT_PASSWORD": "root",
-    "ROOT_USERNAME": "root",
-    "USERNAME": "pondemosite_dev"
+    "PORT": "#{Local.MONGO_CONTAINER_PORT}",
+    "USERNAME": "root",
+    "PASSWORD": "root"
   },
   "production": {
     "DATABASE": "pondemosite",
-    "DIALECT": "mysql",
+    "DIALECT": "mongo",
     "HOST": "localhost",
     "PASSWORD": "pondemosite",
-    "PORT": "#{Local.MYSQL_CONTAINER_PORT}",
+    "PORT": "#{Local.MONGO_CONTAINER_PORT}",
     "ROOT_PASSWORD": "root",
     "ROOT_USERNAME": "root",
     "USERNAME": "pondemosite"

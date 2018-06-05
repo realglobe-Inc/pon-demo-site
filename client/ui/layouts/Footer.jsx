@@ -10,7 +10,7 @@ import {
 import { withLoc } from 'the-loc'
 import { Urls } from '@self/conf'
 
-const Footer = ({l }) => {
+const Footer = ({l}) => {
   return (
     <TheFooter className='footer'>
       <TheFooter.CopyRight footer={l('org.ORG_NAME')}

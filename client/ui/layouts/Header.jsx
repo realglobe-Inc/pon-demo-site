@@ -10,7 +10,7 @@ import {
 import { withLoc } from 'the-loc'
 import { Icons, Urls } from '@self/conf'
 
-const Header = ({l }) => {
+const Header = ({l}) => {
   return (
     <TheHeader className='header'>
       <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>

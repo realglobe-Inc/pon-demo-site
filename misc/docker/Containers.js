@@ -11,11 +11,11 @@ const {isMacOS} = require('the-check')
 module.exports = Object.freeze(
   /** @lends Containers */
   {
-    mysql: {
-      name: Local.MYSQL_CONTAINER_NAME,
+    mongo: {
+      name: Local.MONGO_CONTAINER_NAME,
       options: {
-        image: 'mysql:5.7.21',
-        publish: `${Local.MYSQL_CONTAINER_PORT}:3306`
+        image: 'mongo:3.2',
+        publish: `${Local.MONGO_CONTAINER_PORT}:27017`
       }
     },
     redis: {

@@ -15,8 +15,12 @@ describe('db', () => {
   })
 
   it('Do test', async () => {
-    let db = createDB()
+    const db = createDB()
     ok(db)
+
+    const {Room} = db.resources
+    const room = await Room.create({name: 'room-01'})
+    await room.destroy()
 
     await db.close()
   })

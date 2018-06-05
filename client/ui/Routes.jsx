@@ -11,7 +11,7 @@ import {
   HomeView,
 } from './views'
 
-const Routes = ({l }) => (
+const Routes = ({l}) => (
   <TheRoute.Switch>
     <TheRoute component={HomeView} exact path={Urls.TOP_URL}/>
 
