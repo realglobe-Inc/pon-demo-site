@@ -73,14 +73,14 @@ Preparing
 Install CLI packages if you have not
 
 ```bash
-$ npm i yarn pon pm2 -g
+$ npm i pon pm2 -g
 ```
 
 Then, install dependencies and build the project
 
 ```bash
-$ yarn install
-$ yarn prepare
+$ npm install
+$ pon prepare
 ```
 
 <!-- Section from "doc/guides/01.Preparing.md.hbs" End -->
