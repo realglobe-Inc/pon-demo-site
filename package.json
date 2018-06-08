@@ -90,7 +90,7 @@
   "scripts": {
     "build": "pon build",
     "debug": "pon debug",
-    "preinstall": "bash ./misc/scripts/no_more_yarn.js",
+    "preinstall": "node ./misc/scripts/no_more_yarn.js",
     "prepare": "pon prepare",
     "restart": "pon restart",
     "share": "the-script-share",
