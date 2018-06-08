@@ -1,7 +1,7 @@
 'use strict'
 
-const seed = require('the-seed')('en')
 const ObjectID = require('bson-objectid')
+const seed = require('the-seed')('en')
 
 module.exports = seed.explode({
   name: 'room-#{i}',

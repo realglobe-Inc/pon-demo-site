@@ -10,6 +10,7 @@ const _d = (m) => 'default' in m ? m.default : m
 module.exports = {
   get GlobalKeys () { return _d(require('./GlobalKeys')) },
   get Icons () { return _d(require('./Icons')) },
+  get SrcSets () { return _d(require('./SrcSets')) },
   get Styles () { return _d(require('./Styles')) },
   get UI () { return _d(require('./UI')) },
   get Urls () { return _d(require('./Urls')) },
