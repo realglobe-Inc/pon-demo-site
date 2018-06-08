@@ -158,7 +158,7 @@ module.exports = pon(
       'pkg:install': npm('install', '--ignore-scripts'),
       /** Link self packages */
       'pkg:link': symlink({
-        'Local.js': 'node_modules/@self/Local.js',
+        'Local.js': 'node_modules/@self/Local',
         'assets/data': 'node_modules/@self/data',
         'client': 'node_modules/@self/client',
         'shim/conf': 'node_modules/@self/conf',
