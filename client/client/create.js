@@ -7,12 +7,13 @@
 
 const {TheClient} = require('the-client/shim')
 const {unlessProduction} = require('the-check')
+const {version} = require('../constants/AppConsts')
 
 class Client extends TheClient {}
 
 /** @lends create */
 function create (config = {}) {
-  return new Client(config)
+  return new Client({version, ...config})
 }
 
 create.for = (namespace, options = {}) => {
@@ -20,11 +21,14 @@ create.for = (namespace, options = {}) => {
     handle: {connectionRetryScene},
   } = options
   const client = Client.for(namespace, {
+    version,
     onGone: () => {
-      connectionRetryScene.set({active: true, busy: false,})
-      unlessProduction(() =>
-        client.pingPongAnd(() => connectionRetryScene.doExec()),
-      )
+      setTimeout(() => {
+        connectionRetryScene.set({active: true, busy: false,})
+        unlessProduction(() =>
+          client.pingPongAnd(() => connectionRetryScene.doExec()),
+        )
+      }, 1000)
     }
   })
   return client

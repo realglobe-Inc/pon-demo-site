@@ -4,17 +4,26 @@
  */
 'use strict'
 
+const aport = require('aport')
 const {equal, ok} = require('assert')
-const server = require('../server')
+const createDB = require('../db/create')
+const createServer = require('../server/create')
 
 describe('server', () => {
-  before(() => {
+  let port
+  before(async () => {
+    port = await aport()
   })
 
   after(() => {
   })
 
-  it('Do test', () => {
+  it('Do test', async () => {
+    const db = createDB({})
+    const server = createServer({db})
+    await server.listen(port)
+
+    await server.close()
   })
 })
 

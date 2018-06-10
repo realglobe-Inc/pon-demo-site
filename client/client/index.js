@@ -1,3 +1,7 @@
+/**
+ * Client index
+ * @module client
+ */
 'use strict'
 
 const create = require('./create')

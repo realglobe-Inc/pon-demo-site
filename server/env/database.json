@@ -3,9 +3,7 @@
     "DATABASE": "pondemosite_dev",
     "DIALECT": "mongo",
     "HOST": "localhost",
-    "PASSWORD": "root",
-    "PORT": "#{Local.MONGO_CONTAINER_PORT}",
-    "USERNAME": "root"
+    "PORT": "#{Local.MONGO_CONTAINER_PORT}"
   },
   "production": {
     "DATABASE": "pondemosite",

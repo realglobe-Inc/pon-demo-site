@@ -1,0 +1,17 @@
+'use strict'
+
+const pkg = require('../../package')
+
+module.exports = {
+  force: true,
+  mode: '444',
+  tmpl: (d) => JSON.stringify(d, null, 2),
+  data: {
+    name: pkg.name,
+    version: pkg.version,
+  }
+}
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}

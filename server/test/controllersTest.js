@@ -9,7 +9,7 @@ const controllers = require('../controllers')
 const createDB = require('../db/create')
 
 describe('controllers', function () {
-  this.timeout(30 * 1000)
+  this.timeout(5 * 1000)
   before(() => {
   })
 
