@@ -87,7 +87,9 @@
   "scripts": {
     "build": "pon build",
     "debug": "pon debug",
+    "preversion": "pon struct:render f",
     "preinstall": "node ./misc/scripts/no_more_yarn.js",
+    "postversion": "git push --tags",
     "prepare": "pon prepare",
     "restart": "pon restart",
     "share": "the-script-share",
