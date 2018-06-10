@@ -20,7 +20,7 @@
     "deploy": "Deploy project on production",
     "doc": "Generate docs",
     "docker": "Setup docker infra",
-    "docker:mysql": "Prepare mysql docker container",
+    "docker:mongo": "Prepare mongo docker container",
     "docker:nginx": "Prepare nginx docker container",
     "docker:redis": "Prepare redis docker container",
     "env:debug": "Set env variables for debug",
