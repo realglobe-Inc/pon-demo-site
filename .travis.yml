@@ -3,7 +3,7 @@ services:
 - docker
 - mongo
 node_js:
-- '10'
+- '10.0'
 before_install:
 - npm install pm2 pon jsdoc -g
 - npm i npm-cli-login -g
