@@ -1,7 +1,7 @@
 {
   "name": "pon-demo-site",
   "description": "Demo of web site using pon",
-  "version": "4.0.6",
+  "version": "4.0.7",
   "author": {
     "name": "Taka Okunishi",
     "email": "okunishinish@gmail.com",
@@ -65,7 +65,6 @@
     "pon-task-dev": "^1.0.1",
     "pretty-exceptions": "^1.4.0",
     "sqlite3": "^4.0.0",
-    "sugos-travis": "^2.0.7",
     "the-code": "^3.7.9",
     "the-lint": "^1.7.2",
     "the-script-release": "^1.0.6",
