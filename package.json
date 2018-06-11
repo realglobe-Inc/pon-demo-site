@@ -22,7 +22,7 @@
     "pon-task-es": "^4.2.4",
     "pon-task-icon": "^1.0.1",
     "pon-task-pm2": "^2.1.8",
-    "pon-task-web": "^6.0.14",
+    "pon-task-web": "^6.0.16",
     "prop-types": "^15.5.10",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
