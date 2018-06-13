@@ -2,21 +2,19 @@
 
 import React from 'react'
 import { TheRoute } from 'the-components'
-import { withLoc } from 'the-loc'
 import { Urls } from '@self/conf'
-import {
-  AboutPrivacyPolicyView,
-  AboutTermsOfUseView,
-  ErrorNotfoundView,
-  HomeView,
-} from './views'
+import * as v from './views'
 
-const Routes = ({l}) => (
-  <TheRoute.Switch>
-    <TheRoute component={HomeView} exact path={Urls.TOP_URL}/>
+class Routes extends React.Component {
+  render () {
+    return (
+      <TheRoute.Switch>
+        <TheRoute component={v.HomeView} exact path={Urls.TOP_URL}/>
 
-    <TheRoute component={ErrorNotfoundView}/>
-  </TheRoute.Switch>
-)
+        <TheRoute component={v.ErrorNotfoundView}/>
+      </TheRoute.Switch>
+    )
+  }
+}
 
-export default withLoc(Routes)
+export default Routes

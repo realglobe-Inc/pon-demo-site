@@ -15,7 +15,7 @@ const mappings = require('../mappings')
 const conf = require('../../conf')
 const pkg = require('../../package')
 
-const {ControllerMapping, ServiceMapping} = mappings
+const {ControllerMapping} = mappings
 
 /** @lends create */
 function create (config) {
@@ -29,7 +29,6 @@ function create (config) {
     cdnUrl: isProduction() ? Local.APP_CDN_URL : null,
     db,
     locales,
-    services: servicesProxy(ServiceMapping, db),
     version: isProduction() ? pkg.version : String(new Date().getTime()),
   }
 
