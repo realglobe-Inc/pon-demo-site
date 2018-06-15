@@ -23,5 +23,8 @@ http {
     location /fonts/ {
       root ${STATIC_DIR};
     }
+
+    error_page 502 /server-error/server-error.html;
+    error_page 503 /server-error/under-maintenance.html;
   }
 }

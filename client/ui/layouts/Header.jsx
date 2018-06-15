@@ -4,18 +4,23 @@
 'use strict'
 
 import React from 'react'
+import { localized } from 'the-component-mixins'
 import {
   TheHeader,
 } from 'the-components'
 import { withLoc } from 'the-loc'
 import { Icons, Urls } from '@self/conf'
 
-const Header = ({l}) => {
-  return (
-    <TheHeader className='header'>
-      <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>
-    </TheHeader>
-  )
+@localized
+class Header extends React.Component {
+  render () {
+    const {l} = this.props
+    return (
+      <TheHeader className='header'>
+        <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>
+      </TheHeader>
+    )
+  }
 }
 
-export default withLoc(Header)
+export default Header
