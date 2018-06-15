@@ -1,7 +1,7 @@
 'use strict'
 
 const pkg = require('../../../package')
-const {Styles, Urls} = require('../../conf')
+const {Styles, Urls} = require('../../../conf')
 const {errorPage} = require('the-templates')
 
 module.exports = [
