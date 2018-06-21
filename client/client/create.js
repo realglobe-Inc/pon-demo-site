@@ -5,7 +5,7 @@
  */
 'use strict'
 
-const {TheClient} = require('the-client')
+const {TheClient} = require('the-client/shim')
 const {unlessProduction} = require('the-check')
 const {version} = require('../constants/AppConsts')
 
