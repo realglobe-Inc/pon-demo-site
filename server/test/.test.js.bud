@@ -13,7 +13,7 @@ module.exports = test.dir({
     `${__dirname}/../server`
   ],
   dest: __dirname,
-  node: true
+  cjs: true
 })
 
 if (!module.parent) {

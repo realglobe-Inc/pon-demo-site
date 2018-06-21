@@ -6,7 +6,7 @@
 'use strict'
 
 const {isProduction} = require('the-check')
-const theServer = require('the-server').default
+const theServer = require('the-server')
 const {servicesProxy} = require('the-service-base')
 const {Html, createClient, createHandle, createStore} = require('@self/client/shim')
 const Local = require('@self/Local')

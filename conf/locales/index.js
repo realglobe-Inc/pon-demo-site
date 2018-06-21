@@ -1,6 +1,6 @@
 'use strict'
 
-const theLoc = require('the-loc').default
+const theLoc = require('the-loc').create
 
 const env = theLoc({
   en: require('./en')

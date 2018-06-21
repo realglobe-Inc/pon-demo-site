@@ -4,7 +4,7 @@
 
 'use strict'
 
-const { test } = require('the-templates')
+const {test} = require('the-templates')
 
 module.exports = test.dir({
   src: [
@@ -12,7 +12,7 @@ module.exports = test.dir({
     `${__dirname}/../../store`
   ],
   dest: __dirname,
-  node: true
+  cjs: true
 })
 
 if (!module.parent) {

@@ -5,20 +5,18 @@
 
 import React from 'react'
 import { withClient } from 'the-client'
-import { cycled, localized, stateful, titled } from 'the-component-mixins'
+import { cliental, cycled, handling, localized, provided, stateful, titled } from 'the-component-mixins'
 import {
   TheMain,
   TheRoot,
 } from 'the-components'
-import { withBinder } from 'the-handle'
-import { withProvider } from 'the-store'
 import { locales } from '@self/conf'
 import { Dialogs, Footer, Header, Toasts } from './layouts'
 import Routes from './Routes'
 
-@withProvider
-@withBinder
-@withClient.root
+@provided
+@handling
+@cliental.root
 @localized.with(locales)
 @titled.app(({l}) => l('app.APP_NAME'))
 class App extends React.Component {

@@ -5,11 +5,22 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const AppScene_ = require('./AppScene')
+const ConnectionRetryScene_ = require('./ConnectionRetryScene')
+const HomeScene_ = require('./HomeScene')
+const ToastScene_ = require('./ToastScene')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.AppScene = _d(AppScene_)
+exports.ConnectionRetryScene = _d(ConnectionRetryScene_)
+exports.HomeScene = _d(HomeScene_)
+exports.ToastScene = _d(ToastScene_)
 
 module.exports = {
-  get AppScene () { return _d(require('./AppScene')) },
-  get ConnectionRetryScene () { return _d(require('./ConnectionRetryScene')) },
-  get HomeScene () { return _d(require('./HomeScene')) },
-  get ToastScene () { return _d(require('./ToastScene')) },
+  AppScene: _d(AppScene_),
+  ConnectionRetryScene: _d(ConnectionRetryScene_),
+  HomeScene: _d(HomeScene_),
+  ToastScene: _d(ToastScene_),
 }

@@ -5,12 +5,25 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const abstract__ = require('./abstract')
+const app_ = require('./app')
+const connection_ = require('./connection')
+const home_ = require('./home')
+const toast_ = require('./toast')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.abstract = _d(abstract__)
+exports.app = _d(app_)
+exports.connection = _d(connection_)
+exports.home = _d(home_)
+exports.toast = _d(toast_)
 
 module.exports = {
-  get abstract () { return _d(require('./abstract')) },
-  get app () { return _d(require('./app')) },
-  get connection () { return _d(require('./connection')) },
-  get home () { return _d(require('./home')) },
-  get toast () { return _d(require('./toast')) },
+  abstract: _d(abstract__),
+  app: _d(app_),
+  connection: _d(connection_),
+  home: _d(home_),
+  toast: _d(toast_),
 }

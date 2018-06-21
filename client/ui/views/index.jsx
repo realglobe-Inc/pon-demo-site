@@ -9,7 +9,6 @@ import ErrorNotfoundView from './error/ErrorNotfoundView'
 import HomeView from './HomeView'
 
 export {
-  ErrorNotfoundView,
-  HomeView,
+ ErrorNotfoundView,
+ HomeView,
 }
-

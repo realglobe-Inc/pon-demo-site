@@ -9,7 +9,6 @@ import AdminUserRoleForm from './admin/user/AdminUserRoleForm'
 import ConnectionRetryDialog from './connection/ConnectionRetryDialog'
 
 export {
-  AdminUserRoleForm,
-  ConnectionRetryDialog,
+ AdminUserRoleForm,
+ ConnectionRetryDialog,
 }
-

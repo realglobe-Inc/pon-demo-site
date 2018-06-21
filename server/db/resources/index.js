@@ -5,8 +5,13 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const RoomResource_ = require('./RoomResource')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.RoomResource = _d(RoomResource_)
 
 module.exports = {
-  get RoomResource () { return _d(require('./RoomResource')) },
+  RoomResource: _d(RoomResource_),
 }

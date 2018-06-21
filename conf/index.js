@@ -5,14 +5,31 @@
  */
 'use strict'
 
-const _d = (m) => 'default' in m ? m.default : m
+const _d = (m) => (m && 'default' in m) ? m.default : m
+
+const GlobalKeys_ = require('./GlobalKeys')
+const Icons_ = require('./Icons')
+const SrcSets_ = require('./SrcSets')
+const Styles_ = require('./Styles')
+const UI_ = require('./UI')
+const Urls_ = require('./Urls')
+const locales_ = require('./locales')
+
+// `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
+exports.GlobalKeys = _d(GlobalKeys_)
+exports.Icons = _d(Icons_)
+exports.SrcSets = _d(SrcSets_)
+exports.Styles = _d(Styles_)
+exports.UI = _d(UI_)
+exports.Urls = _d(Urls_)
+exports.locales = _d(locales_)
 
 module.exports = {
-  get GlobalKeys () { return _d(require('./GlobalKeys')) },
-  get Icons () { return _d(require('./Icons')) },
-  get SrcSets () { return _d(require('./SrcSets')) },
-  get Styles () { return _d(require('./Styles')) },
-  get UI () { return _d(require('./UI')) },
-  get Urls () { return _d(require('./Urls')) },
-  get locales () { return _d(require('./locales')) },
+  GlobalKeys: _d(GlobalKeys_),
+  Icons: _d(Icons_),
+  SrcSets: _d(SrcSets_),
+  Styles: _d(Styles_),
+  UI: _d(UI_),
+  Urls: _d(Urls_),
+  locales: _d(locales_),
 }
