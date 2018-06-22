@@ -4,7 +4,6 @@
 'use strict'
 
 import React from 'react'
-import { withClient } from 'the-client'
 import { cliental, cycled, handling, localized, provided, stateful, titled } from 'the-component-mixins'
 import {
   TheMain,

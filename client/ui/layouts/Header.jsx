@@ -8,7 +8,6 @@ import { localized } from 'the-component-mixins'
 import {
   TheHeader,
 } from 'the-components'
-import { withLoc } from 'the-loc'
 import { Icons, Urls } from '@self/conf'
 
 @localized

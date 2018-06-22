@@ -5,7 +5,6 @@
   },
   "ext": "json,mjs,js,css",
   "ignore": [
-    "public/the"
   ],
   "noColors": true,
   "verbose": false,
