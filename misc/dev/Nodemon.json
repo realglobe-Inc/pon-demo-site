@@ -4,8 +4,7 @@
     "js": "node --inspect=${INSPECT_PORT} --require pretty-exceptions"
   },
   "ext": "json,mjs,js,css",
-  "ignore": [
-  ],
+  "ignore": [],
   "noColors": true,
   "verbose": false,
   "watch": [

@@ -23,6 +23,13 @@ class AppScene extends AppSceneBase {
     this.mergeQueryToSearch({locale})
   }
 
+  handleLocationChange (location) {
+    this.set({pathname: location.pathname})
+    setTimeout(() => {
+      this.setLocation(location)
+    }, 0) // Wait to router change
+  }
+
   handleRejectionReason (reason) {
     const href = {
       'ForbiddenError': Urls.ERROR_FORBIDDEN_URL,

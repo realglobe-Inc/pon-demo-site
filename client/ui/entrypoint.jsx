@@ -29,11 +29,9 @@ once('DOMContentLoaded', async () => {
   handle.initAll()
 
   const {appScene, toastScene} = handle
-  history.listen((location) => {
-    setTimeout(() => appScene.setLocation(location), 0) // Wait to router change
-  })
-  appScene.set({host: get('location.host'), locale: lang})
+  history.listen((location) => appScene.handleLocationChange(location))
   appScene.setLocation(history.location)
+  appScene.set({host: get('location.host'), locale: lang})
 
   rescue((e) => {
     const handled = appScene.handleRejectionReason(e.reason)
