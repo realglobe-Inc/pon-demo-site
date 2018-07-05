@@ -7,7 +7,6 @@
 
 const {isProduction} = require('the-check')
 const theServer = require('the-server')
-const {servicesProxy} = require('the-service-base')
 const {Html, createClient, createHandle, createStore} = require('@self/client/shim')
 const Local = require('@self/Local')
 const env = require('../env')
@@ -26,10 +25,11 @@ function create (config) {
   } = config
 
   const app = {
+    buildNumber: String(new Date().getTime()),
     cdnUrl: isProduction() ? Local.APP_CDN_URL : null,
     db,
     locales,
-    version: isProduction() ? pkg.version : String(new Date().getTime()),
+    version: pkg.version,
   }
 
   return theServer({

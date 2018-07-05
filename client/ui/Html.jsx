@@ -6,12 +6,13 @@
 import React from 'react'
 import { isProduction } from 'the-check'
 import { TheBody, TheHead, TheHtml, TheRouter } from 'the-components'
-import { GlobalKeys, locales, SrcSets,Styles, UI, Urls } from '@self/conf'
+import { GlobalKeys, locales, SrcSets, Styles, UI, Urls } from '@self/conf'
 import App from './App'
 
 /** @lends Html */
 function Html ({appScope, renderingContext}) {
   const {
+    buildNumber,
     cdnUrl,
     version,
   } = appScope
@@ -40,7 +41,7 @@ function Html ({appScope, renderingContext}) {
         Urls.CSS_BUNDLE_URL
       ]
     )
-]
+  ]
   return (
     <TheHtml>
       <TheHead title={l('app.APP_NAME')}
@@ -49,7 +50,7 @@ function Html ({appScope, renderingContext}) {
                color={Styles.DOMINANT_COLOR}
                globals={{[GlobalKeys.APP]: {}, [GlobalKeys.PROPS]: appProps}}
                icon={Urls.ICON_URL}
-               version={version}
+               version={[version, buildNumber].join('-')}
       >
       </TheHead>
       <TheBody>
