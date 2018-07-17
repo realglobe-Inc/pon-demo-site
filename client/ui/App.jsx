@@ -13,6 +13,19 @@ import { locales } from '@self/conf'
 import { Dialogs, Footer, Header, Toasts } from './layouts'
 import Routes from './Routes'
 
+@stateful(
+  (state) => ({
+    busy: state['app.busy'],
+    pathname: state['app.pathname'],
+  }),
+  ({
+     appScene,
+   }) => ({
+    onMount: async () => {
+    },
+  }),
+  {pure: false},
+)
 @provided
 @handling
 @cliental.root
@@ -35,15 +48,4 @@ class App extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    busy: state['app.busy'],
-    pathname: state['app.pathname'],
-  }),
-  ({
-     appScene,
-   }) => ({
-    onMount: async () => {
-    },
-  })
-)(App)
+export default App
