@@ -37,6 +37,7 @@ const Vars = Object.freeze(
   {
     APP_PORT: portNumberFor(`app@${__dirname}`),
     APP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-app',
+    APP_VERSION: pkg.version,
     BACKUP_PROCESS_NAME: processNameFor(`${pkg.name}@${__dirname}`) + '-backup',
     INSPECT_PORT: portNumberFor(`inspect@${__dirname}`),
     MONGO_CONTAINER_NAME: containerNameFor(`${pkg.name}-mongo@${__dirname}`),

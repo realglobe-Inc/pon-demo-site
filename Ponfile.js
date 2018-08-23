@@ -184,14 +184,11 @@ module.exports = pon(
       /** Compile css files for production */
       'prod:css': css.minify([
         `public${Urls.CSS_BUNDLE_URL}`,
-      ], `public${Urls.PRODUCTION_CSS_URL}`),
+      ], `public${Urls.PROD_CSS_BUNDLE_URL}`),
       /** Prepare database for production */
       'prod:db': ['env:prod', 'db'],
       /** Compile js files for production */
-      'prod:js': ccjs([
-        `public${Urls.JS_EXTERNAL_URL}`,
-        `public${Urls.JS_BUNDLE_URL}`
-      ], `public${Urls.PRODUCTION_JS_URL}`),
+      'prod:js': ccjs.dir(`public/build`, `public${Urls.PROD_ASSET_URL}`, {}),
       /** Delete source map files for production */
       'prod:map': del('public/**/*.map'),
     },
@@ -269,6 +266,8 @@ module.exports = pon(
         browser('./client/shim/ui/entrypoint.js',
           `public${Urls.JS_BUNDLE_URL}`
           , {
+            split: true,
+            splitName: 'external',
             version: Local.APP_VERSION,
           }), {sub: ['watch']}
       ),
@@ -284,7 +283,8 @@ module.exports = pon(
           'client/ui/base.pcss',
           'client/ui/constants/variables.pcss'
         ], 'public/build/bundle.pcss', {}),
-        css('public/build', 'public/build', {pattern: '*.pcss'})
+        css('public/build', 'public/build', {pattern: '*.pcss'}),
+        css('assets/css', 'public/css', {pattern: '*.css'}),
       ],
       /** Run css watch */
       'ui:css/watch': 'ui:css/*/watch',
