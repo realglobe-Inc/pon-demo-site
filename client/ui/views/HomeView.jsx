@@ -8,6 +8,22 @@ import { localized, stateful } from 'the-component-mixins'
 import { TheButton, TheView } from 'the-components'
 import styles from './HomeView.pcss'
 
+@stateful(
+  (state) => ({
+    busy: state['home.busy'],
+    count: state['home.count'],
+  }),
+  ({
+     homeScene,
+     l,
+     toastScene,
+   }) => ({
+    onCountUp: async () => {
+      await homeScene.countUp()
+      await toastScene.showInfo(l('toasts.COUNT_UP_DID_SUCCESS'))
+    },
+  })
+)
 @localized
 class HomeView extends React.Component {
   render () {
@@ -39,19 +55,4 @@ class HomeView extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    busy: state['home.busy'],
-    count: state['home.count'],
-  }),
-  ({
-     homeScene,
-     l,
-     toastScene,
-   }) => ({
-    onCountUp: async () => {
-      await homeScene.countUp()
-      await toastScene.showInfo(l('toasts.COUNT_UP_DID_SUCCESS'))
-    },
-  })
-)(HomeView,)
+export default HomeView
