@@ -1,7 +1,7 @@
 {
   "name": "pon-demo-site",
   "description": "Demo of web site using pon",
-  "version": "5.0.13",
+  "version": "5.0.14",
   "author": {
     "name": "Taka Okunishi",
     "email": "okunishinish@gmail.com",
@@ -36,7 +36,7 @@
     "the-date": "^3.0.12",
     "the-db": "^9.5.24",
     "the-decorators": "^1.0.1",
-    "the-entrypoint": "^2.2.5",
+    "the-entrypoint": "^2.3.1",
     "the-env": "^3.0.4",
     "the-handle": "^4.0.13",
     "the-loc": "^4.0.4",

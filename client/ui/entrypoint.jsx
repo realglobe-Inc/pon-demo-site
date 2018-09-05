@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { isProduction } from 'the-check'
-import { history as historyFor, mount, singleton } from 'the-entrypoint'
+import { history as historyFor, mount, quelize, singleton } from 'the-entrypoint'
 import { get, once, rescue, set } from 'the-window'
 import { GlobalKeys, locales, UI } from '@self/conf'
 import App from './App'
@@ -39,6 +39,10 @@ once('DOMContentLoaded', async () => {
       toastScene.showError(l('errors.UNEXPECTED_ERROR'))
     }
   })
+
+  quelize(() => ({
+    locale: store.state['app.locale'],
+  }))
 
   await mount(app, UI.APP_CONTAINER_ID, {history, router: true})
   console.debug(`The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`, props)

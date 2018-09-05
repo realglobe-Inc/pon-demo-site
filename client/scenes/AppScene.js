@@ -18,16 +18,10 @@ class AppSceneBase extends Scene {}
 /** @lends AppScene */
 class AppScene extends AppSceneBase {
 
-  applyLocaleToSearch () {
-    const locale = this.get('locale')
-    this.mergeQueryToSearch({locale})
-  }
-
   handleLocationChange (location) {
-    this.set({pathname: location.pathname})
     setTimeout(() => {
       this.setLocation(location)
-    }, 0) // Wait to router change
+    }, 1) // Wait to router change
   }
 
   handleRejectionReason (reason) {
@@ -43,9 +37,10 @@ class AppScene extends AppSceneBase {
   }
 
   setLocation ({pathname, search}) {
-    this.set({pathname})
-    this.setQueryBySearch(search)
-    this.applyLocaleToSearch()
+    this.set({
+      pathname,
+      query: this.queryWithSearch(search),
+    })
   }
 
   @withBusy.while
