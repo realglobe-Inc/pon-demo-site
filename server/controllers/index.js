@@ -5,16 +5,14 @@
  */
 'use strict'
 
-const _d = (m) => (m && 'default' in m) ? m.default : m
-
 const AppCtrl_ = require('./AppCtrl')
 const Ctrl_ = require('./Ctrl')
 
 // `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
-exports.AppCtrl = _d(AppCtrl_)
-exports.Ctrl = _d(Ctrl_)
+exports.AppCtrl = AppCtrl_
+exports.Ctrl = Ctrl_
 
 module.exports = {
-  AppCtrl: _d(AppCtrl_),
-  Ctrl: _d(Ctrl_),
+  AppCtrl: AppCtrl_,
+  Ctrl: Ctrl_,
 }

@@ -5,9 +5,7 @@
 
 const {Stateful} = require('the-templates')
 
-module.exports = [
-  'admin/user/AdminUserRoleForm'
-].map((name) => Stateful({
+module.exports = [].map((name) => Stateful({
   name
 }))
 

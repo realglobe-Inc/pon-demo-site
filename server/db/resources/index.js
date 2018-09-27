@@ -5,13 +5,11 @@
  */
 'use strict'
 
-const _d = (m) => (m && 'default' in m) ? m.default : m
-
 const RoomResource_ = require('./RoomResource')
 
 // `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
-exports.RoomResource = _d(RoomResource_)
+exports.RoomResource = RoomResource_
 
 module.exports = {
-  RoomResource: _d(RoomResource_),
+  RoomResource: RoomResource_,
 }

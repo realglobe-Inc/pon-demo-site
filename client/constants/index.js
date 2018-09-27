@@ -5,13 +5,11 @@
  */
 'use strict'
 
-const _d = (m) => (m && 'default' in m) ? m.default : m
-
 const AppConsts_ = require('./AppConsts')
 
 // `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
-exports.AppConsts = _d(AppConsts_)
+exports.AppConsts = AppConsts_
 
 module.exports = {
-  AppConsts: _d(AppConsts_),
+  AppConsts: AppConsts_,
 }
