@@ -312,7 +312,16 @@ module.exports = pon(
       /** Default for `pon` command */
       default: ['build'],
       /** Deploy project on production */
-      deploy: ['maint:on', 'stop', 'git:catchup', 'prod', 'maint:off'],
+      deploy: [
+        'maint:on',
+        'stop',
+        'git:catchup',
+        'pkg:install',
+        'prod',
+        'db:seed',
+        'db:migrate',
+        'maint:off',
+      ],
       /** Generate docs */
       doc: 'doc:*',
       /** Setup docker infra */

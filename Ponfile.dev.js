@@ -138,6 +138,18 @@ module.exports = pon(
       clean: ['clean:shim', 'clean:public', 'clean:cache'],
       /** Start debugging */
       debug: ['ps:debug', 'env:debug', 'build', 'debug:*'],
+      /** Deploy project on development */
+      deploy: [
+        'maint:on',
+        'stop',
+        'git:catchup',
+        'pkg:install',
+        'b',
+        'db:seed',
+        'db:migrate',
+        'start',
+        'maint:off'
+      ],
       /** Format source codes */
       format: [
         'format:conf', 'format:json', 'format:client', 'format:server'
