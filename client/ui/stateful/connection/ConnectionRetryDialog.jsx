@@ -19,6 +19,7 @@ import { Icons } from '@self/conf'
     onReload: async () => {
       await retryScene.doExec()
     },
+    onClose: async () => retryScene.init()
   })
 )
 @localized
@@ -28,11 +29,12 @@ class ConnectionRetryDialog extends React.Component {
       active,
       busy,
       l,
+      onClose,
       onReload,
     } = this.props
 
     return (
-      <TheConnectionRetryDialog {...{active, busy, l, onReload}}
+      <TheConnectionRetryDialog {...{active, busy, l, onReload, onClose}}
                                 reloadIcon={Icons.RELOAD_ICON}
                                 warningIcon={Icons.WARNING_ICON}
       />

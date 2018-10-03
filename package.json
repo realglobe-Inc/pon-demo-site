@@ -44,7 +44,7 @@
     "the-ps": "^1.0.14",
     "the-run": "^1.0.5",
     "the-scene-base": "^2.1.13",
-    "the-scene-mixins": "^1.6.26",
+    "the-scene-mixins": "^1.6.27",
     "the-scope": "^2.2.2",
     "the-seal": "^3.0.0",
     "the-seat": "^3.0.1",
@@ -55,7 +55,7 @@
     "the-site-components": "^3.0.21",
     "the-site-util": "^2.0.0",
     "the-store": "^7.1.1",
-    "the-templates": "^5.0.0",
+    "the-templates": "^5.0.1",
     "the-window": "^7.0.1"
   },
   "devDependencies": {

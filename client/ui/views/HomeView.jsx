@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { localized, stateful } from 'the-component-mixins'
+import { localized, stateful, cycled } from 'the-component-mixins'
 import { TheButton, TheView } from 'the-components'
 import styles from './HomeView.pcss'
 
@@ -24,6 +24,7 @@ import styles from './HomeView.pcss'
     },
   })
 )
+@cycled
 @localized
 class HomeView extends React.Component {
   render () {
