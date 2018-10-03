@@ -8,6 +8,19 @@ import { localized, stateful } from 'the-component-mixins'
 import { TheConnectionRetryDialog } from 'the-site-components'
 import { Icons } from '@self/conf'
 
+@stateful(
+  (state) => ({
+    active: state['connection.retry.active'],
+    busy: state['connection.retry.busy'],
+  }),
+  ({
+     connectionRetryScene: retryScene,
+   }, propsProxy) => ({
+    onReload: async () => {
+      await retryScene.doExec()
+    },
+  })
+)
 @localized
 class ConnectionRetryDialog extends React.Component {
   render () {
@@ -27,16 +40,4 @@ class ConnectionRetryDialog extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-    active: state['connection.retry.active'],
-    busy: state['connection.retry.busy'],
-  }),
-  ({
-     connectionRetryScene: retryScene,
-   }, propsProxy) => ({
-    onReload: async () => {
-      await retryScene.doExec()
-    },
-  })
-)(ConnectionRetryDialog)
+export default ConnectionRetryDialog

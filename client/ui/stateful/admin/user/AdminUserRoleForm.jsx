@@ -6,6 +6,10 @@
 import React from 'react'
 import { localized, stateful } from 'the-component-mixins'
 
+@stateful(
+  (state) => ({}),
+  ({}) => ({}),
+)
 @localized
 class AdminUserRoleForm extends React.Component {
   render () {
@@ -17,10 +21,4 @@ class AdminUserRoleForm extends React.Component {
   }
 }
 
-export default stateful(
-  (state) => ({
-
-  }),
-  ({}) => ({
-  }),
-)(AdminUserRoleForm)
+export default AdminUserRoleForm
