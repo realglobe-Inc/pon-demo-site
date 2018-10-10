@@ -5,7 +5,6 @@
  */
 'use strict'
 
-const cluster = require('cluster')
 const theDB = require('the-db')
 const env = require('../env')
 const {ResourceMapping} = require('../mappings')

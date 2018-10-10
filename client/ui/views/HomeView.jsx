@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { localized, stateful, cycled } from 'the-component-mixins'
+import { cycled, localized, stateful } from 'the-component-mixins'
 import { TheButton, TheView } from 'the-components'
 import styles from './HomeView.pcss'
 

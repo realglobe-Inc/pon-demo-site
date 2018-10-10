@@ -34,7 +34,7 @@ class ConnectionRetryDialog extends React.Component {
     } = this.props
 
     return (
-      <TheConnectionRetryDialog {...{active, busy, l, onReload, onClose}}
+      <TheConnectionRetryDialog {...{active, busy, l, onClose, onReload}}
                                 reloadIcon={Icons.RELOAD_ICON}
                                 warningIcon={Icons.WARNING_ICON}
       />
