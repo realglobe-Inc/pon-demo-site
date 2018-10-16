@@ -9,7 +9,6 @@ const {
 } = require('the-resource-base')
 
 class RoomResource extends TheResource {
-
   static get policy () {
     return {
       name: {

@@ -57,7 +57,6 @@ class Scene extends SceneBase {
       app.busy.false()
     }
   }
-
 }
 
 module.exports = Scene

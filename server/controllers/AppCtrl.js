@@ -8,7 +8,6 @@ const Ctrl = require('./Ctrl')
 
 /** @lends AppCtrl */
 class AppCtrl extends Ctrl {
-
   // TODO Remove this
   // Just an example
   async countUp () {

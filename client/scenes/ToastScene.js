@@ -13,7 +13,6 @@ class ToastSceneBase extends Scene {}
 
 /** @lends ToastScene */
 class ToastScene extends ToastSceneBase {
-
 }
 
 module.exports = ToastScene

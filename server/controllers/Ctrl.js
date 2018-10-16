@@ -12,7 +12,6 @@ const CtrBase = compose(
 
 /** @lends Ctrl */
 class Ctrl extends CtrBase {
-
   get resources () {
     return this.app.db.resources
   }

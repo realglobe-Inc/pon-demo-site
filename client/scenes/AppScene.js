@@ -17,7 +17,6 @@ class AppSceneBase extends Scene {}
 
 /** @lends AppScene */
 class AppScene extends AppSceneBase {
-
   handleLocationChange (location) {
     setTimeout(() => {
       this.setLocation(location)

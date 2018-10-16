@@ -13,7 +13,6 @@ class HomeSceneBase extends Scene {}
 
 /** @lends HomeScene */
 class HomeScene extends HomeSceneBase {
-
   // TODO Remove this
   // Just an example
   @withBusy.while
@@ -22,7 +21,6 @@ class HomeScene extends HomeSceneBase {
     const count = await appCtrl.countUp()
     this.set({count})
   }
-
 }
 
 module.exports = HomeScene
