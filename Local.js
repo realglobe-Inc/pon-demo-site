@@ -7,8 +7,8 @@
 const theSeat = require('the-seat')
 const theSecret = require('the-secret')
 const theSetting = require('the-setting')
-const {seatAccess} = require('the-site-util')
-const {inspect} = require('util')
+const { seatAccess } = require('the-site-util')
+const { inspect } = require('util')
 const pkg = require('./package')
 
 const MASTER_PASSWORD = 'xxxxxxxxxxxxxxxxxx' // TODO

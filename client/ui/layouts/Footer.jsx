@@ -13,7 +13,7 @@ import { Urls } from '@self/conf'
 @localized
 class Footer extends React.Component {
   render () {
-    const {l} = this.props
+    const { l } = this.props
     return (
       <TheFooter className='footer'>
         <TheFooter.CopyRight footer={l('org.ORG_NAME')}

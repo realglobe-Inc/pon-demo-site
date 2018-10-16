@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {bindScope, withBusy} = require('the-scene-mixins/shim')
+const { bindScope, withBusy } = require('the-scene-mixins/shim')
 const Scene = require('./abstract/Scene')
 
 @withBusy
@@ -17,9 +17,9 @@ class HomeScene extends HomeSceneBase {
   // Just an example
   @withBusy.while
   async countUp () {
-    const {appCtrl} = this.controllers
+    const { appCtrl } = this.controllers
     const count = await appCtrl.countUp()
-    this.set({count})
+    this.set({ count })
   }
 }
 

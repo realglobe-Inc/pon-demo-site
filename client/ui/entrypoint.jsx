@@ -22,18 +22,18 @@ once('DOMContentLoaded', async () => {
   const {
     lang = (get('navigator.language')).split('-')[0],
   } = props
-  const app = (<App {...props} {...{client, handle, store}}/>)
+  const app = (<App {...props} {...{ client, handle, store }}/>)
   const l = locales.bind(lang)
-  const controllers = await client.useAll({debug: !isProduction()})
+  const controllers = await client.useAll({ debug: !isProduction() })
 
   const history = historyFor()
-  handle.setAttributes({client, controllers, history, l, lang, store})
+  handle.setAttributes({ client, controllers, history, l, lang, store })
   handle.initAll()
 
-  const {appScene, toastScene} = handle
+  const { appScene, toastScene } = handle
   history.listen((location) => appScene.handleLocationChange(location))
   appScene.setLocation(history.location)
-  appScene.set({host: get('location.host'), locale: lang})
+  appScene.set({ host: get('location.host'), locale: lang })
 
   rescue((e) => {
     const handled = appScene.handleRejectionReason(e.reason)
@@ -46,7 +46,7 @@ once('DOMContentLoaded', async () => {
     locale: store.state['app.locale'],
   }))
 
-  await mount(app, UI.APP_CONTAINER_ID, {history, router: true})
+  await mount(app, UI.APP_CONTAINER_ID, { history, router: true })
   console.debug(`The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`, props)
 
   set(GlobalKeys.STAGE, 'mounted')

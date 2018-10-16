@@ -6,14 +6,14 @@
 'use strict'
 
 const pon = require('pon')
-const {doc, cwd, tasks} = require('./Ponfile')
+const { doc, cwd, tasks } = require('./Ponfile')
 const Local = require('./Local')
 const theCode = require('the-code/pon')
-const {locales} = require('./conf')
+const { locales } = require('./conf')
 const theSupport = require('the-support/pon')
 const {
-  command: {spawn: {npx, npm}, fork},
-  fs: {del,},
+  command: { spawn: { npx, npm }, fork },
+  fs: { del, },
   open,
 } = require('pon-task-basic')
 const {
@@ -31,7 +31,7 @@ module.exports = pon(
     // -----------------------------------
     ...{
       $cwd: cwd,
-      $doc: {...doc, ...PondocDev},
+      $doc: { ...doc, ...PondocDev },
       $dev: true,
     },
     // -----------------------------------
@@ -93,9 +93,9 @@ module.exports = pon(
         'client/ui/**/*.pcss',
         'client/ui/**/*.jsx',
         'client/scenes/**/*.js',
-      ], {ignore: 'client/**/index.*'}),
+      ], { ignore: 'client/**/index.*' }),
       /** Format conf files */
-      'format:conf': theCode(['Local.js', 'Ponfile.js', 'conf/*.js'], {ignore: 'conf/index.js'}),
+      'format:conf': theCode(['Local.js', 'Ponfile.js', 'conf/*.js'], { ignore: 'conf/index.js' }),
       /** Format json files */
       'format:json': fmtjson([
         'conf/**/*.json',
@@ -103,7 +103,7 @@ module.exports = pon(
         'server/**/*.json',
         'misc/**/*.json',
         'secrets.json',
-      ], {sort: true}),
+      ], { sort: true }),
       /** Format server files */
       'format:server': theCode('server/**/*.js', {}),
     },
@@ -123,9 +123,9 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Run client tests */
-      'test:client': mocha('client/test/**/*.js', {timeout: 3000}),
+      'test:client': mocha('client/test/**/*.js', { timeout: 3000 }),
       /** Run server tests */
-      'test:server': mocha('server/test/**/*.js', {timeout: 3000}),
+      'test:server': mocha('server/test/**/*.js', { timeout: 3000 }),
       /** Check compatibility */
       'test:support': theSupport('public/**/*.js'),
     },
@@ -134,6 +134,8 @@ module.exports = pon(
     // Main Tasks
     // -----------------------------------
     ...{
+      /** Build project */
+      build: [...tasks.build, 'format',],
       /** Clean all */
       clean: ['clean:shim', 'clean:public', 'clean:cache'],
       /** Start debugging */

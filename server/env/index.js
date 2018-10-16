@@ -8,7 +8,7 @@ const config = {
   redis: require('./redis'),
 }
 
-const vars = {Local}
+const vars = { Local }
 
-const env = theEnv(config, {vars}).forEnv()
+const env = theEnv(config, { vars }).forEnv()
 module.exports = env

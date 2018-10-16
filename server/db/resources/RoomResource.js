@@ -4,7 +4,7 @@
 'use strict'
 
 const {
-  DataTypes: {STRING},
+  DataTypes: { STRING },
   TheResource,
 } = require('the-resource-base')
 

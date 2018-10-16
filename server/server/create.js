@@ -5,16 +5,16 @@
  */
 'use strict'
 
-const {isProduction} = require('the-check')
+const { isProduction } = require('the-check')
 const theServer = require('the-server')
-const {Html, createClient, createHandle, createStore} = require('@self/client/shim')
+const { Html, createClient, createHandle, createStore } = require('@self/client/shim')
 const Local = require('@self/Local')
 const env = require('../env')
 const mappings = require('../mappings')
 const conf = require('../../conf')
 const pkg = require('../../package')
 
-const {ControllerMapping} = mappings
+const { ControllerMapping } = mappings
 
 /** @lends create */
 function create (config) {

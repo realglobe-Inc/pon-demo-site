@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {equal, ok} = require('assert')
+const { equal, ok } = require('assert')
 const controllers = require('../controllers')
 const createDB = require('../db/create')
 
@@ -19,11 +19,11 @@ describe('controllers', function () {
   // TODO Remove this
   // Just an example
   it('App Ctrl', async () => {
-    const {AppCtrl} = controllers
+    const { AppCtrl } = controllers
     const session = {}
     const db = createDB({})
     const appCtrl = new AppCtrl({
-      app: {db},
+      app: { db },
       client: {},
       session,
     })

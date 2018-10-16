@@ -7,27 +7,27 @@
 
 const pon = require('pon')
 const {
-  command: {spawn: {git, npm, npx}},
+  command: { spawn: { git, npm, npx } },
   coz,
   env,
-  fs: {chmod, concat, cp, del, mkdir, symlink, write},
+  fs: { chmod, concat, cp, del, mkdir, symlink, write },
 } = require('pon-task-basic')
 const db = require('pon-task-db')
-const {mongo, nginx, redis} = require('pon-task-docker')
+const { mongo, nginx, redis } = require('pon-task-docker')
 const es = require('pon-task-es')
 const pm2 = require('pon-task-pm2')
-const {browser, ccjs, css, map, react} = require('pon-task-web')
+const { browser, ccjs, css, map, react } = require('pon-task-web')
 const theAssets = require('the-assets')
 const theBin = require('the-bin/pon')
 const thePS = require('the-ps/pon')
-const {Urls, locales} = require('./conf')
+const { Urls, locales } = require('./conf')
 const Local = require('./Local')
 const Containers = require('./misc/docker/Containers')
 const Bins = require('./misc/project/Bins')
 const Directories = require('./misc/project/Directories')
 const Pondoc = require('./misc/project/Pondoc')
 const migration = require('./server/db/migration')
-const {secret, setting} = Local
+const { secret, setting } = Local
 const createDB = () => require('./server/db/create').forTask()
 
 module.exports = pon(
@@ -55,7 +55,7 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Install asset files */
-      'assets:install': () => theAssets().installTo('assets', {copy: true}),
+      'assets:install': () => theAssets().installTo('assets', { copy: true }),
     },
 
     // -----------------------------------
@@ -74,11 +74,11 @@ module.exports = pon(
       /** Drop database */
       'db:drop': ['assert:not-prod', db.drop(createDB)],
       /** Dump data */
-      'db:dump': db.dump(createDB, 'var/backup/dump', {max: Local.DUMP_ROTATION}),
+      'db:dump': db.dump(createDB, 'var/backup/dump', { max: Local.DUMP_ROTATION }),
       /** Load data from dum */
       'db:load': db.load.ask(createDB),
       /** Migrate data */
-      'db:migrate': db.migrate(createDB, migration, {snapshot: 'var/migration/snapshots'}),
+      'db:migrate': db.migrate(createDB, migration, { snapshot: 'var/migration/snapshots' }),
       /** Drop and setup database again */
       'db:reset': ['assert:not-prod', 'db:drop', 'db:setup', 'db:seed'],
       /** Generate test data */
@@ -104,7 +104,7 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Set env variables for debug */
-      'env:debug': env('development', {DEBUG: 'app:*', ...Local}),
+      'env:debug': env('development', { DEBUG: 'app:*', ...Local }),
       /** Set env variables for production */
       'env:prod': env('production'),
       /** Set env variables for test */
@@ -160,7 +160,7 @@ module.exports = pon(
         'client': 'node_modules/@self/client',
         'shim/conf': 'node_modules/@self/conf',
         'shim/utils': 'node_modules/@self/utils',
-      }, {force: true}),
+      }, { force: true }),
       /** Upgrade packages package.json */
       'pkg:upg': npm('upgrade', '--ignore-scripts'),
     },
@@ -170,9 +170,9 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Run app with pm2 */
-      'pm2:app': pm2('./bin/app.js', {name: Local.APP_PROCESS_NAME}),
+      'pm2:app': pm2('./bin/app.js', { name: Local.APP_PROCESS_NAME }),
       /** Run backup cron with pm2 */
-      'pm2:backup:dump': pm2.pon('db:dump', {cron: Local.DUMP_SCHEDULE, name: `${Local.BACKUP_PROCESS_NAME}:dump`}),
+      'pm2:backup:dump': pm2.pon('db:dump', { cron: Local.DUMP_SCHEDULE, name: `${Local.BACKUP_PROCESS_NAME}:dump` }),
     },
 
     // -----------------------------------
@@ -226,8 +226,8 @@ module.exports = pon(
       }),
       /** Compile files */
       'struct:compile': [
-        es('conf', 'shim/conf', {sourceRoot: '../../../../conf'}),
-        es('utils', 'shim/utils', {sourceRoot: '../../../../conf'}),
+        es('conf', 'shim/conf', { sourceRoot: '../../../../conf' }),
+        es('utils', 'shim/utils', { sourceRoot: '../../../../conf' }),
       ],
       /** Execute file copy */
       'struct:cp': cp({
@@ -237,7 +237,7 @@ module.exports = pon(
         'assets/js': 'public/js',
         'assets/text': 'public',
         'assets/webfonts': 'public/webfonts',
-      }, {force: true}),
+      }, { force: true }),
       /** Generate project directories */
       'struct:mkdir': mkdir([
         ...Object.keys(Directories)
@@ -246,7 +246,7 @@ module.exports = pon(
       'struct:pkg': [
         cp({
           'package.json': 'shim/package.json',
-        }, {force: true}),
+        }, { force: true }),
       ],
       /** Render coz templates */
       'struct:render': [
@@ -269,7 +269,7 @@ module.exports = pon(
             split: true,
             splitName: 'external',
             version: Local.APP_VERSION,
-          }), {sub: ['watch']}
+          }), { sub: ['watch'] }
       ),
       /** Compile stylesheets */
       'ui:css': [
@@ -283,8 +283,8 @@ module.exports = pon(
           'client/ui/base.pcss',
           'client/ui/constants/variables.pcss'
         ], 'public/build/bundle.pcss', {}),
-        css('public/build', 'public/build', {pattern: '*.pcss'}),
-        css('assets/css', 'public/css', {pattern: '*.css'}),
+        css('public/build', 'public/build', { pattern: '*.pcss' }),
+        css('assets/css', 'public/css', { pattern: '*.css' }),
       ],
       /** Run css watch */
       'ui:css/watch': 'ui:css/*/watch',
@@ -304,7 +304,7 @@ module.exports = pon(
       /** Run all assets tasks */
       assets: ['assets:*'],
       /** Build all */
-      build: ['pkg:link', 'struct', 'format', 'ui'],
+      build: ['pkg:link', 'struct','ui'],
       /** Check bins */
       check: ['check:*'],
       /** Prepare DB */

@@ -5,7 +5,7 @@
 'use strict'
 
 const aport = require('aport')
-const {equal, ok} = require('assert')
+const { equal, ok } = require('assert')
 const createDB = require('../db/create')
 const createServer = require('../server/create')
 
@@ -20,7 +20,7 @@ describe('server', () => {
 
   it('Do test', async () => {
     const db = createDB({})
-    const server = createServer({db})
+    const server = createServer({ db })
     await server.listen(port)
 
     await server.close()

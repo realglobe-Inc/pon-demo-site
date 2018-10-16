@@ -4,7 +4,7 @@
  */
 'use strict'
 
-const {equal, ok} = require('assert')
+const { equal, ok } = require('assert')
 const createDB = require('../db/create')
 
 describe('db', () => {
@@ -18,8 +18,8 @@ describe('db', () => {
     const db = createDB()
     ok(db)
 
-    const {Room} = db.resources
-    const room = await Room.create({name: 'room-01'})
+    const { Room } = db.resources
+    const room = await Room.create({ name: 'room-01' })
     await room.destroy()
 
     await db.close()

@@ -13,7 +13,7 @@ import { Icons, Urls } from '@self/conf'
 @localized
 class Header extends React.Component {
   render () {
-    const {l} = this.props
+    const { l } = this.props
     return (
       <TheHeader className='header'>
         <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>
