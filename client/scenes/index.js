@@ -9,16 +9,19 @@ const AppScene_ = require('./AppScene')
 const ConnectionRetryScene_ = require('./ConnectionRetryScene')
 const HomeScene_ = require('./HomeScene')
 const ToastScene_ = require('./ToastScene')
+const abstract__ = require('./abstract')
 
 // `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
 exports.AppScene = AppScene_
 exports.ConnectionRetryScene = ConnectionRetryScene_
 exports.HomeScene = HomeScene_
 exports.ToastScene = ToastScene_
+exports.abstract = abstract__
 
 module.exports = {
   AppScene: AppScene_,
   ConnectionRetryScene: ConnectionRetryScene_,
   HomeScene: HomeScene_,
   ToastScene: ToastScene_,
+  abstract: abstract__,
 }
