@@ -263,13 +263,13 @@ module.exports = pon(
     // -----------------------------------
     ...{
       'ui:browser': env.dynamic(() =>
-        browser('./client/shim/ui/entrypoint.js',
-          `public${Urls.JS_BUNDLE_URL}`
-          , {
-            split: true,
-            splitName: 'external',
-            version: Local.APP_VERSION,
-          }), { sub: ['watch'] }
+        browser({
+          bundle: './client/shim/ui/entrypoint.js',
+        }, `public/build/[name].js`, {
+          split: true,
+          splitName: 'external',
+          version: Local.APP_VERSION,
+        }), { sub: ['watch'] }
       ),
       /** Compile stylesheets */
       'ui:css': [
@@ -304,7 +304,7 @@ module.exports = pon(
       /** Run all assets tasks */
       assets: ['assets:*'],
       /** Build all */
-      build: ['pkg:link', 'struct','ui'],
+      build: ['pkg:link', 'struct', 'ui'],
       /** Check bins */
       check: ['check:*'],
       /** Prepare DB */
