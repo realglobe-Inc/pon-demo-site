@@ -7,7 +7,7 @@
 
 const { TheScene } = require('the-scene-base/shim')
 const { withLocation } = require('the-scene-mixins/shim')
-const { resolveUrl } = require('the-site-util')
+const { addUrlQuery, formatUrl } = require('the-url')
 
 class SceneBase extends TheScene {}
 
@@ -45,7 +45,7 @@ class Scene extends SceneBase {
 
   async goTo (url, params = {}, options = {}) {
     const { query = {}, reload = false } = options
-    const href = resolveUrl(url, params, { query })
+    const href = addUrlQuery(formatUrl(url, params), query)
     const { app } = this.store
     app.busy.true()
     try {
