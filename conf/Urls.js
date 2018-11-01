@@ -38,7 +38,7 @@ module.exports = Object.freeze(
     // JS
     // -----------------------------------
     JS_BUNDLE_URL: '/build/bundle.js',
-    JS_EXTERNAL_URL: '/build/external.bundle.js',
+    JS_EXTERNAL_URL: '/build/external.js',
     JS_SHIM_URL: '/js/es5-shim.min.js',
 
     // -----------------------------------
