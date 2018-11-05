@@ -6,7 +6,7 @@
 
 const Local = require('../../Local')
 const pkg = require('../../package')
-const {Styles} = require('../../conf')
+const { Styles } = require('../../conf')
 
 const FONT_THEME = 'a'
 
@@ -16,7 +16,7 @@ module.exports = Object.freeze(
     appIcon: {
       text: pkg.name[0],
       font: FONT_THEME,
-      shape: 'b',
+      shape: 'g',
       color: Styles.DOMINANT_COLOR
     },
     fbAppIcon: {
