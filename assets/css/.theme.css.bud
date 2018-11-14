@@ -3,7 +3,7 @@
  */
 'use strict'
 
-const {TheThemeStyle} = require('the-components')
+const {TheThemeStyle} = require('the-theme-style')
 const {Styles} = require('../../conf')
 
 module.exports = {
