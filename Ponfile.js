@@ -286,7 +286,7 @@ module.exports = pon(
         css('public/build', 'public/build', { pattern: '*.pcss' }),
         css('assets/css', 'public/css', { pattern: '*.css' }),
       ],
-      /** Run css watch */
+      /** Run ws css watch */
       'ui:css/watch': 'ui:css/*/watch',
       /** Compile react components */
       'ui:react': react('client', 'client/shim', {
@@ -295,6 +295,11 @@ module.exports = pon(
         sourceRoot: '..',
         watchTargets: 'client/ui/**/*.pcss',
       }),
+      'ui:workers': env.dynamic(({ isProduction }) =>
+        browser.all('./client/shim/workers', `public`, {
+          version: Local.APP_VERSION,
+        }), { sub: ['watch'] }
+      ),
     },
 
     // -----------------------------------
@@ -355,7 +360,7 @@ module.exports = pon(
       /** Run all struct tasks */
       struct: ['struct:mkdir', 'struct:compile', 'struct:cp', 'struct:pkg', 'struct:render', 'struct:chmod',],
       /** Run all ui tasks */
-      ui: ['ui:css', 'ui:react', 'ui:browser'],
+      ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:workers'],
     },
 
     // -----------------------------------

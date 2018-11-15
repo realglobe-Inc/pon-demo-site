@@ -1,0 +1,19 @@
+/**
+ * Bundle Sizeをへらすため、confを一度jsonにする
+ */
+'use strict'
+
+const { Urls, SrcSets } = require('@self/conf')
+
+module.exports = {
+  force: true,
+  mode: '444',
+  data: {
+    Urls,
+    SrcSets,
+  }
+}
+
+if (!module.parent) {
+  require('coz').render(__filename)
+}
