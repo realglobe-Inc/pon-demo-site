@@ -323,8 +323,8 @@ module.exports = pon(
         'git:catchup',
         'pkg:install',
         'prod',
-        'db:seed',
         'db:migrate',
+        'db:seed',
         'maint:off',
       ],
       /** Generate docs */
