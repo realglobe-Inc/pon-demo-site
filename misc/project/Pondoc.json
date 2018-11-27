@@ -65,7 +65,7 @@
     "struct:render": "Render coz templates",
     "ui": "Run all ui tasks",
     "ui:css": "Compile stylesheets",
-    "ui:css/watch": "Run css watch",
+    "ui:css/watch": "Run ws css watch",
     "ui:react": "Compile react components"
   }
 }
