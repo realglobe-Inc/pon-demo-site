@@ -3,23 +3,23 @@
  */
 'use strict'
 
-const {camelcase} = require('stringcase')
-const path = require('path')
 const aglob = require('aglob')
-const {mapping} = require('the-templates')
+const path = require('path')
+const { camelcase } = require('stringcase')
+const { mapping } = require('the-templates')
 
 module.exports = [
   {
-    name: 'SceneMapping',
-    requirePath: '../scenes',
-    requireAs: 'sc',
+    cjs: true,
     mapping: aglob.sync(`${__dirname}/../scenes/*Scene.js`)
       .map((filename) => path.basename(filename, '.js'))
       .map((name) => ({
+        className: name,
         instanceName: camelcase(name),
-        className: name
       })),
-    cjs: true
+    name: 'SceneMapping',
+    requireAs: 'sc',
+    requirePath: '../scenes',
   }
 ].map(mapping)
 

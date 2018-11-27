@@ -3,15 +3,15 @@
  */
 'use strict'
 
-const { Urls, SrcSets } = require('@self/conf')
+const { SrcSets, Urls } = require('@self/conf')
 
 module.exports = {
+  data: {
+    SrcSets,
+    Urls,
+  },
   force: true,
   mode: '444',
-  data: {
-    Urls,
-    SrcSets,
-  }
 }
 
 if (!module.parent) {

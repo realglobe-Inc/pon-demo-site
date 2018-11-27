@@ -3,7 +3,7 @@
  */
 'use strict'
 
-const {Wrap} = require('the-templates')
+const { Wrap } = require('the-templates')
 
 module.exports = [
 ].map((name) => Wrap({
@@ -13,4 +13,3 @@ module.exports = [
 if (!module.parent) {
   require('coz').render(__filename)
 }
-

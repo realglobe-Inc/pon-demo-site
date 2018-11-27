@@ -1,13 +1,13 @@
 'use strict'
 
-const {dir} = require('the-templates')
+const { dir } = require('the-templates')
 
 module.exports = dir.recursive({
-  dirname: __dirname,
-  name: 'constants',
+  cjs: true,
   description: 'Constant variables',
+  dirname: __dirname,
   ignore: [],
-  cjs: true
+  name: 'constants',
 })
 
 if (!module.parent) {

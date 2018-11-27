@@ -1,4 +1,18 @@
 {
+    "SrcSets": {
+        "cssSet": [
+            "/css/theme.css",
+            "/css/normalize.css",
+            "/css/fontawesome-all.css",
+            "/css/flatpickr.min.css",
+            "/build/bundle.css"
+        ],
+        "jsSet": [
+            "/js/es5-shim.min.js",
+            "/build/external.js",
+            "/build/bundle.js"
+        ]
+    },
     "Urls": {
         "CSS_BUNDLE_URL": "/build/bundle.css",
         "CSS_FLATPICKR_URL": "/css/flatpickr.min.css",
@@ -17,19 +31,5 @@
         "PROD_JS_BUNDLE_URL": "/v5.0.27/bundle.js",
         "PROD_JS_EXTERNAL_URL": "/v5.0.27/external.bundle.js",
         "TOP_URL": "/"
-    },
-    "SrcSets": {
-        "cssSet": [
-            "/css/theme.css",
-            "/css/normalize.css",
-            "/css/fontawesome-all.css",
-            "/css/flatpickr.min.css",
-            "/build/bundle.css"
-        ],
-        "jsSet": [
-            "/js/es5-shim.min.js",
-            "/build/external.js",
-            "/build/bundle.js"
-        ]
     }
 }

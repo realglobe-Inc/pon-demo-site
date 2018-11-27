@@ -1,12 +1,12 @@
 'use strict'
 
-const {dir} = require('the-templates')
+const { dir } = require('the-templates')
 
 module.exports = dir({
-  dirname: __dirname,
-  name: 'layouts',
   description: 'Layout Components',
+  dirname: __dirname,
   ext: '.jsx',
+  name: 'layouts',
 })
 
 if (!module.parent) {

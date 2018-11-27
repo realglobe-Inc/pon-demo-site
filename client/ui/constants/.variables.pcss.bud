@@ -3,11 +3,11 @@
  */
 'use strict'
 
-const {pcssVars} = require('the-templates')
+const { pcssVars } = require('the-templates')
 
 module.exports = pcssVars({
   src: 'conf/Styles.js',
-  values: require('../../../conf').Styles
+  values: require('../../../conf').Styles,
 })
 
 if (!module.parent) {

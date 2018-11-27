@@ -1,12 +1,12 @@
 'use strict'
 
-const {dir} = require('the-templates')
+const { dir } = require('the-templates')
 
 module.exports = dir.recursive({
-  dirname: __dirname,
-  name: 'stateful',
   description: 'Stateful components',
+  dirname: __dirname,
   ext: '.jsx',
+  name: 'stateful',
 })
 
 if (!module.parent) {

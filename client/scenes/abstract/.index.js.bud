@@ -1,12 +1,12 @@
 'use strict'
 
-const {dir} = require('the-templates')
+const { dir } = require('the-templates')
 
 module.exports = [true].map((cjs) => dir({
-  dirname: __dirname,
   cjs,
+  description: 'Abstract scenes',
+  dirname: __dirname,
   name: 'scenes',
-  description: 'Abstract scenes'
 }))
 
 if (!module.parent) {

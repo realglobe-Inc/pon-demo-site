@@ -93,6 +93,7 @@ module.exports = pon(
         'client/ui/**/*.pcss',
         'client/ui/**/*.jsx',
         'client/scenes/**/*.js',
+        'client/**/.*.bud',
       ], { ignore: 'client/**/index.*' }),
       /** Format conf files */
       'format:conf': theCode(['Local.js', 'Ponfile.js', 'conf/*.js'], { ignore: 'conf/index.js' }),

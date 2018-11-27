@@ -1,12 +1,12 @@
 'use strict'
 
-const {dir} = require('the-templates')
+const { dir } = require('the-templates')
 
 module.exports = dir({
+  cjs: true,
+  description: 'Scene classes',
   dirname: __dirname,
   name: 'scenes',
-  description: 'Scene classes',
-  cjs: true
 })
 
 if (!module.parent) {

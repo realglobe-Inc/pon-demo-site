@@ -1,8 +1,8 @@
 'use strict'
 
-const {Scene} = require('the-templates')
+const { pascalcase } = require('stringcase')
+const { Scene } = require('the-templates')
 const scopes = require('../store/scopes')
-const {pascalcase} = require('stringcase')
 const names = Object.keys(scopes)
   .filter((name) => !/^_/.test(name))
   .filter((name) => !/^abstract/.test(name))
@@ -13,9 +13,8 @@ const names = Object.keys(scopes)
     )
   }).filter((v, i, arr) => arr.indexOf(v) === i)
 
-module.exports = names.map((name) => Scene({cjs: true, name}))
+module.exports = names.map((name) => Scene({ cjs: true, name }))
 
 if (!module.parent) {
   require('coz').render(__filename)
 }
-
