@@ -6,34 +6,36 @@
 'use strict'
 
 const pon = require('pon')
-const { doc, cwd, tasks } = require('./Ponfile')
-const Local = require('./Local')
-const theCode = require('the-code/pon')
-const { locales } = require('./conf')
-const theSupport = require('the-support/pon')
 const {
-  command: { spawn: { npx, npm }, fork },
-  fs: { del, },
+  command: { fork, spawn: { npm, npx } },
+  fs: { del },
   open,
 } = require('pon-task-basic')
 const {
-  mocha, fmtjson, pondoc
+  fmtjson, mocha, pondoc,
 } = require('pon-task-dev')
-const Drawings = require('./misc/icon/Drawings')
 const icon = require('pon-task-icon')
+const theCode = require('the-code/pon')
+const theSupport = require('the-support/pon')
+const { locales } = require('./conf')
+const Local = require('./Local')
+const Drawings = require('./misc/icon/Drawings')
 const PondocDev = require('./misc/project/Pondoc.dev')
+const { cwd, doc, tasks } = require('./Ponfile')
 
 module.exports = pon(
   /** @module tasks */
   {
+
     // -----------------------------------
     // Meta info
     // -----------------------------------
     ...{
       $cwd: cwd,
-      $doc: { ...doc, ...PondocDev },
       $dev: true,
+      $doc: { ...doc, ...PondocDev },
     },
+
     // -----------------------------------
     // From Ponfile.js
     // -----------------------------------
@@ -96,7 +98,13 @@ module.exports = pon(
         'client/+(mappings|ui|scenes|scopes|client|workers)/**/.*.bud',
       ], { ignore: 'client/**/index.*' }),
       /** Format conf files */
-      'format:conf': theCode(['Local.js', 'Ponfile.js', 'conf/*.js'], { ignore: 'conf/index.js' }),
+      'format:conf': theCode([
+        'Local.js',
+        'Ponfile.js',
+        'Ponfile.*.js',
+        'conf/*.js',
+        'conf/.*.bud',
+      ], { ignore: 'conf/index.js' }),
       /** Format json files */
       'format:json': fmtjson([
         'conf/**/*.json',
@@ -180,6 +188,7 @@ module.exports = pon(
       /** Run watches */
       watch: ['ui:*', 'ui:*/watch'],
     },
+
     // -----------------------------------
     // Aliases
     // -----------------------------------
@@ -202,6 +211,6 @@ module.exports = pon(
       u: 'upgrade',
       /** Shortcut for `watch` task */
       w: 'watch',
-    }
+    },
   }
 )
