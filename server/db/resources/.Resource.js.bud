@@ -6,12 +6,12 @@
 module.exports = [
   'RoomResource'
 ].map((name) => ({
+  data: {
+    name,
+  },
   force: false,
   mode: '644',
   path: `${name}.js`,
-  data: {
-    name
-  }
 }))
 
 if (!module.parent) {

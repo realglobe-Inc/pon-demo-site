@@ -3,34 +3,33 @@
  */
 'use strict'
 
+const { camelcase } = require('stringcase')
+const { mapping } = require('the-templates')
 const c = require('../controllers')
 const r = require('../db/resources')
 
-const {camelcase} = require('stringcase')
-const {mapping} = require('the-templates')
-
 module.exports = [
   {
-    name: 'ControllerMapping',
-    requirePath: '../controllers',
-    requireAs: 'c',
+    cjs: true,
     mapping: Object.keys(c)
       .filter((name) => !['Ctrl'].includes(name))
       .map((name) => ({
+        className: name,
         instanceName: camelcase(name),
-        className: name
       })),
-    cjs: true
+    name: 'ControllerMapping',
+    requireAs: 'c',
+    requirePath: '../controllers',
   },
   {
-    name: 'ResourceMapping',
-    requirePath: '../db/resources',
-    requireAs: 'r',
+    cjs: true,
     mapping: Object.keys(r).map((name) => ({
+      className: name,
       instanceName: name.replace(/Resource$/, ''),
-      className: name
     })),
-    cjs: true
+    name: 'ResourceMapping',
+    requireAs: 'r',
+    requirePath: '../db/resources',
   },
 ].map(mapping)
 

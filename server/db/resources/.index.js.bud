@@ -3,10 +3,10 @@
 const { dir } = require('the-templates')
 
 module.exports = dir({
-  dirname: __dirname,
   cjs: true,
+  description: 'Db resource classes',
+  dirname: __dirname,
   name: 'resources',
-  description: 'Db resource classes'
 })
 
 if (!module.parent) {

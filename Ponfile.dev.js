@@ -93,7 +93,7 @@ module.exports = pon(
         'client/ui/**/*.pcss',
         'client/ui/**/*.jsx',
         'client/scenes/**/*.js',
-        'client/**/.*.bud',
+        'client/+(mappings|ui|scenes|scopes|client|workers)/**/.*.bud',
       ], { ignore: 'client/**/index.*' }),
       /** Format conf files */
       'format:conf': theCode(['Local.js', 'Ponfile.js', 'conf/*.js'], { ignore: 'conf/index.js' }),
@@ -106,7 +106,11 @@ module.exports = pon(
         'secrets.json',
       ], { sort: true }),
       /** Format server files */
-      'format:server': theCode('server/**/*.js', {}),
+      /** Format server files */
+      'format:server': theCode([
+        'server/**/*.js',
+        'server/**/.*.bud',
+      ], {}),
     },
 
     // -----------------------------------

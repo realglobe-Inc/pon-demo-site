@@ -3,16 +3,15 @@
  */
 'use strict'
 
-const {Ctrl} = require('the-templates')
+const { Ctrl } = require('the-templates')
 
 module.exports = [
   'AppCtrl',
 ].map((name) => Ctrl({
-  name,
   cjs: true,
+  name,
 }))
 
 if (!module.parent) {
   require('coz').render(__filename)
 }
-
