@@ -163,7 +163,7 @@ module.exports = pon(
       prepare: [
         ...tasks.prepare,
         ...['pkg:fix', 'doc',],
-        // ...['test:support'],
+        ...['test:support'],
       ],
       /** Start server */
       start: ['debug:server'],

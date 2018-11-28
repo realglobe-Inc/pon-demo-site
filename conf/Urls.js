@@ -48,7 +48,7 @@ module.exports = Object.freeze(
     PROD_ASSET_URL: prodAssetURL,
     PROD_CSS_BUNDLE_URL: `${prodAssetURL}/bundle.css`,
     PROD_JS_BUNDLE_URL: `${prodAssetURL}/bundle.js`,
-    PROD_JS_EXTERNAL_URL: `${prodAssetURL}/external.bundle.js`,
+    PROD_JS_EXTERNAL_URL: `${prodAssetURL}/external.js`,
 
     // -----------------------------------
     // Top
