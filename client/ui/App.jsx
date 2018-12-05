@@ -24,13 +24,12 @@ import Routes from './Routes'
     onMount: async () => {
     },
   }),
-  {pure: false},
 )
 @provided
 @handling
 @cliental.root
 @localized.with(locales)
-@titled.app(({l}) => l('app.APP_NAME'))
+@titled.app(({ l }) => l('app.APP_NAME'))
 class App extends React.Component {
   render () {
     const { busy } = this.props
