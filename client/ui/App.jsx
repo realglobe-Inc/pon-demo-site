@@ -4,7 +4,14 @@
 'use strict'
 
 import React from 'react'
-import { cliental, cycled, handling, localized, provided, stateful, titled } from 'the-component-mixins'
+import {
+  cliental,
+  cycled,
+  handling,
+  localized,
+  stateful,
+  titled,
+} from 'the-component-mixins'
 import {
   TheMain,
   TheRoot,
@@ -13,6 +20,7 @@ import { locales } from '@self/conf'
 import { Dialogs, Footer, Header, Toasts } from './layouts'
 import Routes from './Routes'
 
+@stateful.root
 @stateful(
   (state) => ({
     busy: state['app.busy'],
@@ -25,10 +33,10 @@ import Routes from './Routes'
     },
   }),
 )
-@provided
 @handling
 @cliental.root
 @localized.with(locales)
+@cycled
 @titled.app(({ l }) => l('app.APP_NAME'))
 class App extends React.Component {
   render () {

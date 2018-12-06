@@ -9,7 +9,7 @@ const app_ = require('./app')
 const buttons_ = require('./buttons')
 const errors_ = require('./errors')
 const messages_ = require('./messages')
-const orgs_ = require('./orgs')
+const org_ = require('./org')
 const titles_ = require('./titles')
 const toasts_ = require('./toasts')
 
@@ -18,7 +18,7 @@ exports.app = app_
 exports.buttons = buttons_
 exports.errors = errors_
 exports.messages = messages_
-exports.orgs = orgs_
+exports.org = org_
 exports.titles = titles_
 exports.toasts = toasts_
 
@@ -27,7 +27,7 @@ module.exports = {
   buttons: buttons_,
   errors: errors_,
   messages: messages_,
-  orgs: orgs_,
+  org: org_,
   titles: titles_,
   toasts: toasts_,
 }

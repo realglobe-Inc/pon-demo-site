@@ -7,6 +7,7 @@ import { history as historyFor, mount, patch, quelize, singleton, workers } from
 import { get, once, rescue, set } from 'the-window'
 import { GlobalKeys, locales, UI, Urls } from '@self/conf'
 import App from './App'
+import metrics from './metrics'
 import client from '../client'
 import handle from '../handle'
 import store from '../store'
@@ -20,17 +21,18 @@ void workers({
 })
 
 once('DOMContentLoaded', async () => {
+  const debugMode = !isProduction()
   set(GlobalKeys.STAGE, 'mounting')
 
   const props = get(GlobalKeys.PROPS)
   const {
     lang = (get('navigator.language')).split('-')[0],
   } = props
-  const app = (<App {...props} {...{ client, handle, store }}/>)
-  const l = locales.bind(lang)
-  const controllers = await client.useAll({ debug: !isProduction() })
-
   const history = historyFor()
+  const app = (<App {...props} {...{ client, handle, history, store }}/>)
+  const l = locales.bind(lang)
+  const controllers = await client.useAll({ debug: debugMode })
+
   handle.setAttributes({ client, controllers, history, l, lang, store })
   handle.initAll()
 
@@ -56,4 +58,8 @@ once('DOMContentLoaded', async () => {
   set(GlobalKeys.STAGE, 'mounted')
   set(GlobalKeys.HANDLE, handle)
   set(GlobalKeys.STORE, store)
+
+  if (!debugMode) {
+    metrics()
+  }
 })

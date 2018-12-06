@@ -16,10 +16,10 @@ import { Icons } from '@self/conf'
   ({
      connectionRetryScene: retryScene,
    }, propsProxy) => ({
+    onClose: async () => retryScene.init(),
     onReload: async () => {
       await retryScene.doExec()
     },
-    onClose: async () => retryScene.init()
   })
 )
 @localized
