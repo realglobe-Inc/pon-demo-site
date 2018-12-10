@@ -13,7 +13,7 @@ const {
   fs: { chmod, concat, cp, del, mkdir, symlink, write },
 } = require('pon-task-basic')
 const db = require('pon-task-db')
-const { mongo, nginx, redis } = require('pon-task-docker')
+const docker = require('pon-task-docker')
 const es = require('pon-task-es')
 const pm2 = require('pon-task-pm2')
 const { browser, ccjs, css, map, react } = require('pon-task-web')
@@ -91,12 +91,12 @@ module.exports = pon(
     // Sub Tasks for Docker
     // -----------------------------------
     ...{
-      /** Prepare mongo docker container */
-      'docker:mongo': mongo(Containers.mongo.name, Containers.mongo.options),
+      /** Prepare mysql docker container */
+      'docker:mysql': docker.mysql(Containers.mysql.name, Containers.mysql.options),
       /** Prepare nginx docker container */
-      'docker:nginx': nginx(Containers.nginx.name, Containers.nginx.options),
+      'docker:nginx': docker.nginx(Containers.nginx.name, Containers.nginx.options),
       /** Prepare redis docker container */
-      'docker:redis': redis(Containers.redis.name, Containers.redis.options),
+      'docker:redis': docker.redis(Containers.redis.name, Containers.redis.options),
     },
 
     // -----------------------------------
@@ -330,7 +330,7 @@ module.exports = pon(
       /** Generate docs */
       doc: 'doc:*',
       /** Setup docker infra */
-      docker: ['docker:redis/run', 'docker:mongo/run', 'docker:nginx/run'],
+      docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
       /** Show app daemon logs */
       logs: ['pm2:app/logs'],
       /** Prepare project */

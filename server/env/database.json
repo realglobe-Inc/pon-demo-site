@@ -1,22 +1,26 @@
 {
   "default": {
-    "DATABASE": "pondemosite_dev",
-    "DIALECT": "mongo",
-    "HOST": "localhost",
-    "PORT": "#{Local.MONGO_CONTAINER_PORT}"
-  },
-  "production": {
-    "DATABASE": "pondemosite",
-    "DIALECT": "mongo",
-    "HOST": "localhost",
-    "PASSWORD": "pondemosite",
-    "PORT": "#{Local.MONGO_CONTAINER_PORT}",
+    "DATABASE": "pondemosite_dev2",
+    "DIALECT": "rdb/mysql",
+    "HOST": "0.0.0.0",
+    "PASSWORD": "pondemosite_dev",
+    "PORT": "#{Local.MYSQL_CONTAINER_PORT}",
     "ROOT_PASSWORD": "root",
     "ROOT_USERNAME": "root",
-    "USERNAME": "pondemosite"
+    "USERNAME": "pondemosite_dev"
+  },
+  "production": {
+    "DATABASE": "#{Local.DB_SCHEMA}",
+    "DIALECT": "rdb/mysql",
+    "HOST": "#{Local.DB_HOST}",
+    "PASSWORD": "#{Local.DB_PASSWORD}",
+    "PORT": "#{Local.DB_PORT}",
+    "ROOT_PASSWORD": "#{Local.DB_ROOT_PASSWORD}",
+    "ROOT_USERNAME": "#{Local.DB_ROOT_USER}",
+    "USERNAME": "#{Local.DB_USER}"
   },
   "test": {
     "DIALECT": "sqlite",
-    "STORAGE": "var/storage/pon-demo-site.db"
+    "STORAGE": "var/storage/drone-scope-here.db"
   }
 }

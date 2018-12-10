@@ -6,17 +6,17 @@
 
 const Local = require('../../Local')
 const path = require('path')
-const {isMacOS} = require('the-check')
+const { isMacOS } = require('the-check')
 
 module.exports = Object.freeze(
   /** @lends Containers */
   {
-    mongo: {
-      name: Local.MONGO_CONTAINER_NAME,
+    mysql: {
+      name: Local.MYSQL_CONTAINER_NAME,
       options: {
-        image: 'mongo:3.2',
-        publish: `${Local.MONGO_CONTAINER_PORT}:27017`
-      }
+        image: 'mysql:5.7.21',
+        publish: `${Local.MYSQL_CONTAINER_PORT}:3306`,
+      },
     },
     redis: {
       name: Local.REDIS_CONTAINER_NAME,
