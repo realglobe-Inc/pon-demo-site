@@ -11,7 +11,7 @@ const { seatAccess } = require('the-site-util')
 const { inspect } = require('util')
 const pkg = require('./package')
 
-const MASTER_PASSWORD = 'xxxxxxxxxxxxxxxxxx' // TODO
+const MASTER_PASSWORD = `${pkg.name}-xxxxxxxxxxxxxxxxxx` // TODO
 const secret = theSecret(`${__dirname}/secrets.json`, MASTER_PASSWORD)
 const seat = theSeat()
 const {
