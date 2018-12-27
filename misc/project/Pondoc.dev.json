@@ -13,6 +13,8 @@
     "debug:watch": "Watch files for debug",
     "deploy": "Deploy project on development",
     "doc:pondoc": "Generate pondoc file",
+    "docker": "Docker tasks",
+    "docker:mysql": "Prepare mysql docker container",
     "ds": "Shortcut for `debug:server` task",
     "f": "Shortcut for `format` task",
     "format": "Format source codes",

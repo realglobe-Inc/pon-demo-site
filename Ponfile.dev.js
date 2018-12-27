@@ -14,11 +14,12 @@ const {
 const {
   fmtjson, mocha, pondoc,
 } = require('pon-task-dev')
+const docker = require('pon-task-docker')
 const icon = require('pon-task-icon')
 const theCode = require('the-code/pon')
 const theSupport = require('the-support/pon')
-const { locales } = require('./conf')
 const Local = require('./Local')
+const Containers = require('./misc/docker/Containers')
 const Drawings = require('./misc/icon/Drawings')
 const PondocDev = require('./misc/project/Pondoc.dev')
 const { cwd, doc, tasks } = require('./Ponfile')
@@ -144,6 +145,14 @@ module.exports = pon(
     },
 
     // -----------------------------------
+    // Sub Tasks for Docker
+    // -----------------------------------
+    ...{
+      /** Prepare mysql docker container */
+      'docker:mysql': docker.mysql(Containers.mysql.name, Containers.mysql.options),
+    },
+
+    // -----------------------------------
     // Main Tasks
     // -----------------------------------
     ...{
@@ -165,6 +174,8 @@ module.exports = pon(
         'start',
         'maint:off'
       ],
+      /** Docker tasks */
+      docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
       /** Format source codes */
       format: [
         'format:conf', 'format:json', 'format:client', 'format:server'

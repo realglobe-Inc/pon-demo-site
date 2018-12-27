@@ -91,8 +91,6 @@ module.exports = pon(
     // Sub Tasks for Docker
     // -----------------------------------
     ...{
-      /** Prepare mysql docker container */
-      'docker:mysql': docker.mysql(Containers.mysql.name, Containers.mysql.options),
       /** Prepare nginx docker container */
       'docker:nginx': docker.nginx(Containers.nginx.name, Containers.nginx.options),
       /** Prepare redis docker container */
@@ -171,8 +169,6 @@ module.exports = pon(
     ...{
       /** Run app with pm2 */
       'pm2:app': pm2('./bin/app.js', { name: Local.APP_PROCESS_NAME }),
-      /** Run backup cron with pm2 */
-      'pm2:backup:dump': pm2.pon('db:dump', { cron: Local.DUMP_SCHEDULE, name: `${Local.BACKUP_PROCESS_NAME}:dump` }),
     },
 
     // -----------------------------------
@@ -330,7 +326,7 @@ module.exports = pon(
       /** Generate docs */
       doc: 'doc:*',
       /** Setup docker infra */
-      docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
+      docker: ['docker:redis/run', 'docker:nginx/run'],
       /** Show app daemon logs */
       logs: ['pm2:app/logs'],
       /** Prepare project */
@@ -348,15 +344,15 @@ module.exports = pon(
       /** Prepare and start on production */
       prod: ['env:prod', 'prod:compile', 'prod:db', 'start'],
       /** Restart app as daemon */
-      restart: ['pm2:app/restart', 'pm2:backup:*/restart'],
+      restart: ['pm2:app/restart'],
       /** Update project settings with interactive shell */
       setting: () => setting.ask(),
       /** Show app daemon status */
       show: ['pm2:app/show'],
       /** Start app as daemon */
-      start: ['pm2:app/start', 'pm2:backup:*/start'],
+      start: ['pm2:app/start'],
       /** Stop app as daemon */
-      stop: ['pm2:app/stop', 'pm2:backup:*/stop'],
+      stop: ['pm2:app/stop'],
       /** Run all struct tasks */
       struct: ['struct:mkdir', 'struct:compile', 'struct:cp', 'struct:pkg', 'struct:render', 'struct:chmod',],
       /** Run all ui tasks */
