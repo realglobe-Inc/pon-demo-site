@@ -5,7 +5,6 @@
 
 import React from 'react'
 import {
-  cliental,
   cycled,
   handling,
   localized,
@@ -34,7 +33,6 @@ import Routes from './Routes'
   }),
 )
 @handling
-@cliental.root
 @localized.with(locales)
 @cycled
 @titled.app(({ l }) => l('app.APP_NAME'))
