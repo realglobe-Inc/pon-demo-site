@@ -14,7 +14,6 @@ import store from '../store'
 
 singleton()
 patch()
-set(GlobalKeys.STAGE, 'registering')
 
 void workers({
   '/': Urls.JS_ROOT_SERVICE_WORKER_URL,
@@ -22,7 +21,6 @@ void workers({
 
 once('DOMContentLoaded', async () => {
   const debugMode = !isProduction()
-  set(GlobalKeys.STAGE, 'mounting')
 
   const props = get(GlobalKeys.PROPS)
   const {
@@ -55,7 +53,6 @@ once('DOMContentLoaded', async () => {
   await mount(app, UI.APP_CONTAINER_ID, { history, router: true })
   console.debug(`The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`, props)
 
-  set(GlobalKeys.STAGE, 'mounted')
   set(GlobalKeys.HANDLE, handle)
   set(GlobalKeys.STORE, store)
 

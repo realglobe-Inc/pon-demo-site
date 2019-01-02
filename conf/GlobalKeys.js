@@ -13,8 +13,6 @@ module.exports = Object.freeze(
     HANDLE: 'app.handle',
     /** Key of app props */
     PROPS: 'app.props',
-    /** Key of app stage */
-    STAGE: 'app.stage',
     /** Key of app store */
     STORE: 'app.store',
   }
