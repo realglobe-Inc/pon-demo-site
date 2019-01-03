@@ -7,6 +7,7 @@ import { history as historyFor, mount, patch, quelize, singleton, workers } from
 import { get, once, rescue, set } from 'the-window'
 import { GlobalKeys, locales, UI, Urls } from '@self/conf'
 import App from './App'
+import context from './context'
 import metrics from './metrics'
 import client from '../client'
 import handle from '../handle'
@@ -29,6 +30,7 @@ once('DOMContentLoaded', async () => {
   const history = historyFor()
   const app = (<App {...props} {...{ client, handle, history, store }}/>)
   const l = locales.bind(lang)
+  context.set({ l, lang })
   const controllers = await client.useAll({ debug: debugMode })
 
   handle.setAttributes({ client, controllers, history, l, lang, store })

@@ -4,9 +4,10 @@
 'use strict'
 
 import React from 'react'
-import { localized, stateful } from 'the-component-mixins'
+import { stateful } from 'the-component-mixins'
 import { TheConnectionRetryDialog } from 'the-site-components'
 import { Icons } from '@self/conf'
+import context from '../../context'
 
 @stateful(
   (state) => ({
@@ -22,13 +23,12 @@ import { Icons } from '@self/conf'
     },
   })
 )
-@localized
 class ConnectionRetryDialog extends React.Component {
   render () {
+    const { l } = context.value
     const {
       active,
       busy,
-      l,
       onClose,
       onReload,
     } = this.props

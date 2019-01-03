@@ -4,16 +4,14 @@
 'use strict'
 
 import React from 'react'
-import { localized } from 'the-component-mixins'
 import {
   TheFooter,
 } from 'the-components'
-import { Urls } from '@self/conf'
+import context from '../context'
 
-@localized
 class Footer extends React.Component {
   render () {
-    const { l } = this.props
+    const { l } = context.value
     return (
       <TheFooter className='footer'>
         <TheFooter.CopyRight footer={l('org.ORG_NAME')}

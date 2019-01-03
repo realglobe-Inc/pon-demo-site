@@ -4,9 +4,10 @@
 'use strict'
 
 import React from 'react'
-import { cycled, localized, stateful } from 'the-component-mixins'
+import { cycled, stateful } from 'the-component-mixins'
 import { TheButton, TheMeta, TheView } from 'the-components'
 import styles from './HomeView.pcss'
+import context from '../context'
 
 @stateful(
   (state) => ({
@@ -15,43 +16,46 @@ import styles from './HomeView.pcss'
   }),
   ({
      homeScene,
-     l,
      toastScene,
    }) => ({
     onCountUp: async () => {
+      const { l } = context.value
       await homeScene.countUp()
       await toastScene.showInfo(l('toasts.COUNT_UP_DID_SUCCESS'))
     },
   })
 )
 @cycled
-@localized
 class HomeView extends React.Component {
   render () {
+    const { l } = context.value
     const {
       busy,
       count,
-      l,
       onCountUp,
     } = this.props
     return (
-      <TheMeta title={null}>
-        <TheView className={styles.self}>
-          <TheView.Header icon={null}
-                          text={null}
-          />
-          <TheView.Body>
-            <p>
-              <span>Count={count}</span>
-              <TheButton onClick={onCountUp}
-                         spinning={busy}
-              >
-                {l('buttons.DO_COUNT_UP')}
-              </TheButton>
-            </p>
-          </TheView.Body>
-        </TheView>
-      </TheMeta>
+      <context.Entry>
+        {({}) => (
+          <TheMeta title={null}>
+            <TheView className={styles.self}>
+              <TheView.Header icon={null}
+                              text={null}
+              />
+              <TheView.Body>
+                <p>
+                  <span>Count={count}</span>
+                  <TheButton onClick={onCountUp}
+                             spinning={busy}
+                  >
+                    {l('buttons.DO_COUNT_UP')}
+                  </TheButton>
+                </p>
+              </TheView.Body>
+            </TheView>
+          </TheMeta>
+        )}
+      </context.Entry>
     )
   }
 }

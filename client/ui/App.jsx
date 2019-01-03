@@ -7,7 +7,6 @@ import React from 'react'
 import {
   cycled,
   handling,
-  localized,
   stateful,
 } from 'the-component-mixins'
 import {
@@ -15,7 +14,7 @@ import {
   TheMeta,
   TheRoot,
 } from 'the-components'
-import { locales } from '@self/conf'
+import context from './context'
 import { Dialogs, Footer, Header, Toasts } from './layouts'
 import Routes from './Routes'
 
@@ -33,23 +32,25 @@ import Routes from './Routes'
   }),
 )
 @handling
-@localized.with(locales)
 @cycled
 class App extends React.Component {
   render () {
-    const { busy, l } = this.props
+    const { l } = context.value
+    const { busy } = this.props
     return (
-      <TheMeta.Root title={l('app.APP_NAME')}>
-        <TheRoot>
-          <Header/>
-          <Toasts/>
-          <TheMain spinning={busy}>
-            <Routes/>
-          </TheMain>
-          <Footer/>
-          <Dialogs/>
-        </TheRoot>
-      </TheMeta.Root>
+      <context.Root>
+        <TheMeta.Root title={l && l('app.APP_NAME')}>
+          <TheRoot>
+            <Header/>
+            <Toasts/>
+            <TheMain spinning={busy}>
+              <Routes/>
+            </TheMain>
+            <Footer/>
+            <Dialogs/>
+          </TheRoot>
+        </TheMeta.Root>
+      </context.Root>
     )
   }
 }

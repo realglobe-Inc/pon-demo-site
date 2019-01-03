@@ -7,6 +7,7 @@ import React from 'react'
 import { TheBody, TheHead, TheHtml, TheRouter } from 'the-components'
 import { GlobalKeys, locales, SrcSets, Styles, UI, Urls } from '@self/conf'
 import App from './App'
+import context from './context'
 
 /** @lends Html */
 function Html ({ appScope, renderingContext }) {
@@ -18,6 +19,7 @@ function Html ({ appScope, renderingContext }) {
   const { client, handle, lang, path, store } = renderingContext
   const l = locales.bind(lang)
   handle.setAttributes({ client, l, lang, store })
+  context.set({ l, lang })
   const appProps = {
     lang,
   }

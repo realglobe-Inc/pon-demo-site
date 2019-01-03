@@ -4,16 +4,14 @@
 'use strict'
 
 import React from 'react'
-import { localized } from 'the-component-mixins'
 import {
   TheHeader,
 } from 'the-components'
-import { Icons, Urls } from '@self/conf'
+import context from '../context'
 
-@localized
 class Header extends React.Component {
   render () {
-    const { l } = this.props
+    const { l } = context.value
     return (
       <TheHeader className='header'>
         <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>

@@ -4,9 +4,10 @@
 'use strict'
 
 import React from 'react'
-import { localized, stateful } from 'the-component-mixins'
+import { stateful } from 'the-component-mixins'
 import { TheSiteToasts } from 'the-site-components'
 import { UI } from '@self/conf'
+import context from '../context'
 
 @stateful(
   (state) => ({
@@ -20,7 +21,6 @@ import { UI } from '@self/conf'
     onReset: (queues) => toastScene.reset(queues),
   })
 )
-@localized
 class Toasts extends React.Component {
   render () {
     const {
