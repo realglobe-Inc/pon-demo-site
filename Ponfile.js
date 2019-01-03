@@ -264,7 +264,6 @@ module.exports = pon(
         }, `public/build/[name].js`, {
           split: true,
           splitName: 'external',
-          version: Local.APP_VERSION,
         }), { sub: ['watch'] }
       ),
       /** Compile stylesheets */
@@ -292,9 +291,7 @@ module.exports = pon(
         watchTargets: 'client/ui/**/*.pcss',
       }),
       'ui:workers': env.dynamic(({ isProduction }) =>
-        browser.all('./client/shim/workers', `public`, {
-          version: Local.APP_VERSION,
-        }), { sub: ['watch'] }
+        browser.all('./client/shim/workers', `public`, {}), { sub: ['watch'] }
       ),
     },
 

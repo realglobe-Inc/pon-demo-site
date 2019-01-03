@@ -59,7 +59,7 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Cleanup cache files */
-      'clean:cache': del('tmp/cache/**/*.*'),
+      'clean:cache': del('tmp/cache/**/*.*', 'node_modules/.cache/**/*.*'),
       /** Cleanup public files */
       'clean:public': del('public/build/*.*'),
       /** Cleanup shim files */

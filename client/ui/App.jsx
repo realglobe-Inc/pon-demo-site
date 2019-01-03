@@ -9,10 +9,10 @@ import {
   handling,
   localized,
   stateful,
-  titled,
 } from 'the-component-mixins'
 import {
   TheMain,
+  TheMeta,
   TheRoot,
 } from 'the-components'
 import { locales } from '@self/conf'
@@ -35,20 +35,21 @@ import Routes from './Routes'
 @handling
 @localized.with(locales)
 @cycled
-@titled.app(({ l }) => l('app.APP_NAME'))
 class App extends React.Component {
   render () {
-    const { busy } = this.props
+    const { busy, l } = this.props
     return (
-      <TheRoot>
-        <Header/>
-        <Toasts/>
-        <TheMain spinning={busy}>
-          <Routes/>
-        </TheMain>
-        <Footer/>
-        <Dialogs/>
-      </TheRoot>
+      <TheMeta.Root title={l('app.APP_NAME')}>
+        <TheRoot>
+          <Header/>
+          <Toasts/>
+          <TheMain spinning={busy}>
+            <Routes/>
+          </TheMain>
+          <Footer/>
+          <Dialogs/>
+        </TheRoot>
+      </TheMeta.Root>
     )
   }
 }
