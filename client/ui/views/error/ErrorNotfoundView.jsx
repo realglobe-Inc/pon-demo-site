@@ -9,19 +9,20 @@ import { TheButton, TheButtonGroup, TheMeta, TheRoute, TheView } from 'the-compo
 import styles from './ErrorNotfoundView.pcss'
 import context from '../../context'
 
-@stateful(
-  (state) => ({}),
-  ({}) => ({}),
-)
 @cycled
 class ErrorNotfoundView extends React.Component {
+  #initEntry = ({ l }) => ({
+    l
+  })
+  #pipeEntry = ({ l, }) => ({})
+
   render () {
-    const { l } = context.value
-    const title = l('titles.ERROR_NOTFOUND_TITLE')
     return (
-      <context.Entry>
-        {({}) => (
-          <TheMeta title={title}>
+      <context.Entry init={this.#initEntry}
+                     pipe={this.#pipeEntry}
+      >
+        {({ l }) => (
+          <TheMeta title={l('titles.ERROR_NOTFOUND_TITLE')}>
             <TheView className={styles.self}>
               <TheView.Body>
                 <TheRoute.Status code={404}>

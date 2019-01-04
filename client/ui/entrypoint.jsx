@@ -30,7 +30,8 @@ once('DOMContentLoaded', async () => {
   const history = historyFor()
   const app = (<App {...props} {...{ client, handle, history, store }}/>)
   const l = locales.bind(lang)
-  context.set({ l, lang })
+  context.set({ handle, l, lang, state: store.state })
+  store.subscribe(() => context.set({ state: store.state }))
   const controllers = await client.useAll({ debug: debugMode })
 
   handle.setAttributes({ client, controllers, history, l, lang, store })
