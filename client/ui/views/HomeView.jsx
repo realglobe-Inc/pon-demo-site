@@ -29,37 +29,37 @@ class HomeView extends React.Component {
     count: state['home.count'],
   })
 
-  #renderEntry = ({
-                    busy,
-                    count,
-                    l,
-                    onCountUp,
-                  }) => (
-    <TheMeta title={null}>
-      <TheView className={styles.self}>
-        <TheView.Header icon={null}
-                        text={null}
-        />
-        <TheView.Body>
-          <p>
-            <span>Count={count}</span>
-            <TheButton onClick={onCountUp}
-                       spinning={busy}
-            >
-              {l('buttons.DO_COUNT_UP')}
-            </TheButton>
-          </p>
-        </TheView.Body>
-      </TheView>
-    </TheMeta>
-  )
-
   render () {
     return (
       <context.Entry init={this.#initEntry}
                      pipe={this.#pipeEntry}
       >
-        {this.#renderEntry}
+        {
+          ({
+             busy,
+             count,
+             l,
+             onCountUp,
+           }) => (
+            <TheMeta title={null}>
+              <TheView className={styles.self}>
+                <TheView.Header icon={null}
+                                text={null}
+                />
+                <TheView.Body>
+                  <p>
+                    <span>Count={count}</span>
+                    <TheButton onClick={onCountUp}
+                               spinning={busy}
+                    >
+                      {l('buttons.DO_COUNT_UP')}
+                    </TheButton>
+                  </p>
+                </TheView.Body>
+              </TheView>
+            </TheMeta>
+          )
+        }
       </context.Entry>
     )
   }

@@ -10,8 +10,10 @@ import context from '../../context'
 
 class ConnectionRetryDialog extends React.Component {
   #initEntry = ({
+                  l,
                   handle: { connectionRetryScene: retryScene, }
                 }) => ({
+    l,
     onClose: async () => retryScene.init(),
     onReload: async () => {
       await retryScene.doExec()

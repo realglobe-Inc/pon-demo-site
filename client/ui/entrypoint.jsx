@@ -28,11 +28,12 @@ once('DOMContentLoaded', async () => {
     lang = (get('navigator.language')).split('-')[0],
   } = props
   const history = historyFor()
-  const app = (<App {...props} {...{ client, handle, history, store }}/>)
   const l = locales.bind(lang)
   context.set({ handle, l, lang, state: store.state })
   store.subscribe(() => context.set({ state: store.state }))
   const controllers = await client.useAll({ debug: debugMode })
+
+  const app = (<App {...props} {...{ client, handle, history, store }}/>)
 
   handle.setAttributes({ client, controllers, history, l, lang, store })
   handle.initAll()
