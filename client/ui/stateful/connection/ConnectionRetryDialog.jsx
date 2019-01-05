@@ -9,43 +9,37 @@ import { Icons } from '@self/conf'
 import context from '../../context'
 
 class ConnectionRetryDialog extends React.Component {
-  #initEntry = ({
-                  l,
-                  handle: { connectionRetryScene: retryScene, }
-                }) => ({
-    l,
-    onClose: async () => retryScene.init(),
-    onReload: async () => {
-      await retryScene.doExec()
-    },
-  })
-  #pipeEntry = ({
-                  state,
-                }) => ({
-    active: state['connection.retry.active'],
-    busy: state['connection.retry.busy'],
-  })
+  #stateful = context.stateful(
+    (state) => ({
+      active: state['connection.retry.active'],
+      busy: state['connection.retry.busy'],
+    }),
+    ({
+       l,
+       connectionRetryScene: retryScene,
+     }) => ({
+      l,
+      onClose: async () => retryScene.init(),
+      onReload: async () => {
+        await retryScene.doExec()
+      },
+    })
+  )
 
   render () {
-    return (
-      <context.Entry init={this.#initEntry}
-                     pipe={this.#pipeEntry}
-      >
-        {
-          ({
-             active,
-             busy,
-             l,
-             onClose,
-             onReload,
-           }) => (
-            <TheConnectionRetryDialog {...{ active, busy, l, onClose, onReload }}
-                                      reloadIcon={Icons.RELOAD_ICON}
-                                      warningIcon={Icons.WARNING_ICON}
-            />
-          )
-        }
-      </context.Entry>
+    return this.#stateful(
+      ({
+         active,
+         busy,
+         l,
+         onClose,
+         onReload,
+       }) => (
+        <TheConnectionRetryDialog {...{ active, busy, l, onClose, onReload }}
+                                  reloadIcon={Icons.RELOAD_ICON}
+                                  warningIcon={Icons.WARNING_ICON}
+        />
+      )
     )
   }
 }
