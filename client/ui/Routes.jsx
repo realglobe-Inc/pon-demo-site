@@ -10,7 +10,6 @@ class Routes extends React.Component {
     return (
       <TheRoute.Switch>
         <TheRoute component={v.HomeView} exact path={Urls.TOP_URL}/>
-
         <TheRoute component={v.ErrorNotfoundView}/>
       </TheRoute.Switch>
     )

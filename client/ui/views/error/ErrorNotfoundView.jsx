@@ -4,12 +4,10 @@
 'use strict'
 
 import React from 'react'
-import { cycled } from 'the-component-mixins'
 import { TheButton, TheButtonGroup, TheMeta, TheRoute, TheView } from 'the-components'
 import styles from './ErrorNotfoundView.pcss'
 import context from '../../context'
 
-@cycled
 class ErrorNotfoundView extends React.Component {
   #stateful = context.stateful(
     () => ({}),

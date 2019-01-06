@@ -5,10 +5,6 @@
 
 import React from 'react'
 import {
-  cycled,
-  handling,
-} from 'the-component-mixins'
-import {
   TheMain,
   TheMeta,
   TheRoot,
@@ -17,8 +13,6 @@ import context from './context'
 import { Dialogs, Footer, Header, Toasts } from './layouts'
 import Routes from './Routes'
 
-@handling
-@cycled
 class App extends React.Component {
   #stateful = context.stateful(
     (state) => ({

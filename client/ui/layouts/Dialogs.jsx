@@ -5,7 +5,6 @@
 'use strict'
 
 import React from 'react'
-import { stateful } from 'the-component-mixins'
 import {
   ConnectionRetryDialog,
 } from '../stateful'
