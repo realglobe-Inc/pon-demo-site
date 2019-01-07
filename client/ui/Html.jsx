@@ -8,7 +8,6 @@ import { TheBody, TheHead, TheHtml, TheRouter } from 'the-components'
 import { GlobalKeys, locales, SrcSets, Styles, UI, Urls } from '@self/conf'
 import App from './App'
 import context from './context'
-import store from '../store'
 
 /** @lends Html */
 function Html ({ appScope, renderingContext }) {
