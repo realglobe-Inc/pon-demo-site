@@ -18,10 +18,11 @@ class HomeView extends React.Component {
        l,
        toastScene,
        homeScene
-     }) => ({
+     }, pipedProxy) => ({
       onCountUp: async () => {
         await homeScene.countUp()
         await toastScene.showInfo(l('toasts.COUNT_UP_DID_SUCCESS'))
+        console.log('new Count:', pipedProxy.count)
       },
       onReceive: async (received) => {
 

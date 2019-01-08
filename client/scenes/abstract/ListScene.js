@@ -30,6 +30,8 @@ class ListSceneBase extends Scene {}
 
 /** @lends ListScene */
 class ListScene extends ListSceneBase {
+  static qField = ['name']
+
   addFilter (filter = {}) {
     this.set({
       filter: {
@@ -117,8 +119,6 @@ class ListScene extends ListSceneBase {
       this.updateEntity(one)
     }
   }
-
-  static qField = ['name']
 }
 
 module.exports = ListScene

@@ -15,6 +15,8 @@ class InputSceneBase extends Scene {}
 
 /** @lends InputScene */
 class InputScene extends InputSceneBase {
+  static entitySkipFields = [/^\$/]
+
   setEntryErrors (e) {
     console.error('entry error', e)
     this.setEntryErrors.set(e)
@@ -38,8 +40,6 @@ class InputScene extends InputSceneBase {
       this.dealWith(values)
     )
   }
-
-  static entitySkipFields = [/^\$/]
 }
 
 module.exports = InputScene

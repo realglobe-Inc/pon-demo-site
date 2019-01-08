@@ -25,7 +25,7 @@ context.stateless = function stateless () {
 /** Create stateful renderer */
 context.stateful = function stateful (reduceState, reduceHandle) {
   assert(arguments.length === 2, 'Takes exactly two arguments')
-  const init = ({ handle, l }) => ({ ...reduceHandle(handle), l })
+  const init = ({ handle, l }, pipedProxy) => ({ ...reduceHandle(handle, pipedProxy), l })
   const pipe = ({ state }) => reduceState(state)
   return (renderer) => (
     <context.Entry init={init}

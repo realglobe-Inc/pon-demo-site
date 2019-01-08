@@ -29,7 +29,7 @@ once('DOMContentLoaded', async () => {
   } = props
   const history = historyFor()
   const l = locales.bind(lang)
-  context.set({ handle, l, lang, state: store.state })
+  context.set({ handle, history, l, lang, state: store.state })
   store.subscribe(() => context.set({ state: store.state }))
   const controllers = await client.useAll({ debug: debugMode })
 
