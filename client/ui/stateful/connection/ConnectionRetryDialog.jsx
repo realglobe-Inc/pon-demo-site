@@ -35,8 +35,11 @@ class ConnectionRetryDialog extends React.Component {
          onClose,
          onReload,
        }) => (
-        <TheConnectionRetryDialog {...{ active, busy, l, onClose, onReload }}
+        <TheConnectionRetryDialog {...{ active, busy, onClose, onReload }}
+                                  lead={l('messages.CONNECTION_SEEMS_TO_BE_LOST')}
                                   reloadIcon={Icons.RELOAD_ICON}
+                                  submitText={l('buttons.DO_RELOAD')}
+                                  title={l('titles.CONNECTION_RETRY_TITLE')}
                                   warningIcon={Icons.WARNING_ICON}
         />
       )

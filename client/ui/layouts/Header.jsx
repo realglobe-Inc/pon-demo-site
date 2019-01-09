@@ -10,13 +10,19 @@ import {
 import context from '../context'
 
 class Header extends React.Component {
+  #stateful = context.stateful(
+    () => ({}),
+    () => ({}),
+  )
+
   render () {
-    const { l } = context.value
-    return (
-      <TheHeader className='header'>
-        <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>
-      </TheHeader>
-    )
+    return this.#stateful(({ l }) => {
+      return (
+        <TheHeader className='header'>
+          <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>
+        </TheHeader>
+      )
+    })
   }
 }
 

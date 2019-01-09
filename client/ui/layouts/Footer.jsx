@@ -10,16 +10,22 @@ import {
 import context from '../context'
 
 class Footer extends React.Component {
+  #stateful = context.stateful(
+    () => ({}),
+    () => ({}),
+  )
+
   render () {
-    const { l } = context.value
-    return (
-      <TheFooter className='footer'>
-        <TheFooter.CopyRight footer={l('org.ORG_NAME')}
-        />
-        <TheFooter.Links className='footerLinks'>
-        </TheFooter.Links>
-      </TheFooter>
-    )
+    return this.#stateful(({ l }) => {
+      return (
+        <TheFooter className='footer'>
+          <TheFooter.CopyRight footer={l('org.ORG_NAME')}
+          />
+          <TheFooter.Links className='footerLinks'>
+          </TheFooter.Links>
+        </TheFooter>
+      )
+    })
   }
 }
 
