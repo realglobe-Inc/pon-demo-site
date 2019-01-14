@@ -7,10 +7,12 @@ const {
   DataTypes: { STRING },
   TheResource,
 } = require('the-resource-base')
+const atPolicy = require('./concerns/policies/atPolicy')
 
 class RoomResource extends TheResource {
   static get policy () {
     return {
+      createdAt: { ...atPolicy.createdAt },
       name: {
         description: 'Name of room',
         minLength: 4,

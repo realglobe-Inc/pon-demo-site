@@ -3,16 +3,23 @@
  */
 'use strict'
 
-const {TheThemeStyle} = require('the-theme-style')
-const {Styles} = require('../../conf')
+const { TheThemeStyle } = require('the-theme-style')
+const { TheStyle } = require('the-components')
+const { Styles } = require('../../conf')
+const { EOL } = require('os')
 
 module.exports = {
   force: true,
   mode: '444',
   data: {
-    css: TheThemeStyle.cssString({
-      dominantColor: Styles.DOMINANT_COLOR
-    })
+    css: [
+      [
+        TheThemeStyle,
+      ].map((Style) => {
+        const styles = Style.data({ dominantColor: Styles.DOMINANT_COLOR })
+        return TheStyle.styleStringFromStyles(styles)
+      }).join(EOL),
+    ]
   },
   tmpl: `/** App Theme Style */
 

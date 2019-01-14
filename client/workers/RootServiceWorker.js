@@ -15,8 +15,7 @@ const pathsToCache = [
   ...SrcSets.cssSet,
   Urls.ICON_URL,
 ]
-const urlsToCache = [
-]
+const urlsToCache = []
 
 const patternsToCache = [
   /^\/webfonts\//,

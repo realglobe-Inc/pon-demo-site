@@ -5,8 +5,8 @@
  */
 'use strict'
 
-const {TheHandle} = require('the-handle/shim')
-const {SceneMapping,} = require('../mappings')
+const { TheHandle } = require('the-handle/shim')
+const { SceneMapping, } = require('../mappings')
 
 /** @lends create */
 module.exports = function create () {

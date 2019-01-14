@@ -16,7 +16,7 @@ function Html ({ appScope, renderingContext }) {
     cdnUrl,
     version,
   } = appScope
-  const { client, handle, history, lang, path, store } = renderingContext
+  const { client, handle, lang, path, store } = renderingContext
   const l = locales.bind(lang)
   handle.setAttributes({ client, l, lang, store })
   context.set({ handle, l, lang, state: store.state })
