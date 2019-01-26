@@ -31,7 +31,7 @@
     "the-bin": "^1.4.6",
     "the-check": "^2.0.18",
     "the-client": "^14.0.4",
-    "the-components": "^11.1.11",
+    "the-components": "^11.1.13",
     "the-context": "^2.1.14",
     "the-controller-base": "^4.0.13",
     "the-date": "^3.0.20",
@@ -51,7 +51,7 @@
     "the-scope": "^3.0.1",
     "the-seal": "^3.0.0",
     "the-seat": "^3.0.1",
-    "the-secret": "^3.0.0",
+    "the-secret": "^3.0.1",
     "the-server": "^14.0.9",
     "the-service-base": "^1.0.4",
     "the-setting": "^3.0.5",
@@ -63,7 +63,7 @@
     "the-window": "^7.0.2"
   },
   "devDependencies": {
-    "@babel/runtime": "*",
+    "@babel/runtime": "^7.3.1",
     "arequest": "^3.0.1",
     "eslint": "^5.12.1",
     "git-hooks": "^1.1.10",
