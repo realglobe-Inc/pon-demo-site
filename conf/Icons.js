@@ -5,7 +5,7 @@
 'use strict'
 
 const { isProduction } = require('the-check')
-const { hashProxy } = require('the-site-util')
+const theHash = require('the-hash')
 
 module.exports = Object.freeze(
   /** @lends Icons */
@@ -32,5 +32,5 @@ module.exports = Object.freeze(
 )
 
 if (!isProduction()) {
-  module.exports = hashProxy(module.exports, { name: 'Icons', unknownCheck: true })
+  module.exports = theHash.proxy(module.exports, { name: 'Icons', unknownCheck: true })
 }

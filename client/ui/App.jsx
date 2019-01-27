@@ -27,7 +27,7 @@ class App extends React.Component {
       <context.Root>
         {this.#stateful(
           ({ busy, l }) => (
-            <TheMeta.Root title={l && l('app.APP_NAME')}>
+            <TheMeta.Root title={l('app.APP_NAME')}>
               <TheRoot>
                 <Header/>
                 <Toasts/>

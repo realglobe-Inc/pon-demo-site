@@ -39,6 +39,7 @@
     "the-decorators": "^1.0.2",
     "the-entrypoint": "^2.3.5",
     "the-handle": "^5.0.5",
+    "the-hash": "^1.1.0",
     "the-loc": "^4.0.5",
     "the-metrics": "^1.0.12",
     "the-metrics-presets": "^1.0.0",

@@ -59,6 +59,7 @@ once('DOMContentLoaded', async () => {
 
   set(GlobalKeys.HANDLE, handle)
   set(GlobalKeys.STORE, store)
+  set(GlobalKeys.CONTEXT, context)
 
   if (!debugMode) {
     metrics()

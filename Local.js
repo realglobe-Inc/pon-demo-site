@@ -5,10 +5,10 @@
 'use strict'
 
 const { isProduction } = require('the-check')
+const theHash = require('the-hash')
 const directorySeat = require('the-seat/handy/directorySeat')
 const theSecret = require('the-secret')
 const theSetting = require('the-setting')
-const { hashProxy } = require('the-site-util')
 const { inspect } = require('util')
 const pkg = require('./package')
 
@@ -115,7 +115,7 @@ const Local = Object.freeze(
 module.exports = Local
 
 if (!isProduction()) {
-  module.exports = hashProxy(module.exports, { name: 'Local', unknownCheck: true })
+  module.exports = theHash.proxy(module.exports, { name: 'Local', unknownCheck: true })
 }
 
 if (!module.parent) {
