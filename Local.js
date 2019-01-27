@@ -5,12 +5,12 @@
 'use strict'
 
 const { isProduction } = require('the-check')
+const directorySeat = require('the-seat/handy/directorySeat')
 const theSecret = require('the-secret')
 const theSetting = require('the-setting')
 const { hashProxy } = require('the-site-util')
 const { inspect } = require('util')
 const pkg = require('./package')
-const directorySeat = require('../the-seat/handy/directorySeat')
 
 const SECRET_MASTER_PASSWORD = `${pkg.name}-xxxxxxxxxxxxxxxxxx` // TODO
 const secret = theSecret(`${__dirname}/secrets.json`, SECRET_MASTER_PASSWORD)
