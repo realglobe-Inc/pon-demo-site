@@ -11,7 +11,6 @@
   "conf": "Configuration of project",
   "doc": "Documents",
   "doc/guides": "Guides for README",
-  "e2e": "End-to-end testing scripts",
   "misc": "Misc files",
   "public": "Public directory to serve static files. Auto-generated",
   "server": "Server side scripts",

@@ -6,17 +6,28 @@
 'use strict'
 
 const theDB = require('the-db')
-const env = require('../env')
 const { ResourceMapping } = require('../mappings')
+const Local = require('../../Local')
+
+const defaultConfig = {
+  database: Local.DB_DATABASE,
+  dialect: Local.DB_DIALECT,
+  host: Local.DB_HOST,
+  password: Local.DB_PASSWORD,
+  port: Local.DB_PORT,
+  rootPassword: Local.DB_ROOT_PASSWORD,
+  rootUsername: Local.DB_ROOT_USERNAME,
+  username: Local.DB_USERNAME,
+}
 
 /** @lends create */
-function create (config = env.database) {
+function create (config = defaultConfig) {
   return theDB({
     resources: ResourceMapping,
     ...config,
   }).unref()
 }
 
-create.forTask = () => create(env.database, { enableHooks: false })
+create.forTask = () => create(defaultConfig, { enableHooks: false })
 
 module.exports = create

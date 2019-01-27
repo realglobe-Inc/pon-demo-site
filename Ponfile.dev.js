@@ -72,7 +72,7 @@ module.exports = pon(
     ...{
       /** Run server for debug */
       'debug:server': [
-        'ps:debug', 'env:debug', npx('nodemon', '--config', 'misc/dev/Nodemon.json', 'bin/app.js')
+        'ps:debug', 'env:debug', npx('nodemon', '--config', 'misc/dev/Nodemon.json', `--inspect=${Local.APP_INSPECT_PORT}`, 'bin/app.js')
       ],
       /** Watch files for debug */
       'debug:watch': ['env:debug', 'ui:*/watch'],
@@ -127,7 +127,7 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Open app in browser */
-      'open:app': open(`http://localhost:${Local.NGINX_CONTAINER_PORT}`),
+      'open:app': open(`http://localhost:${Local.DOCKER_NGINX_CONTAINER_PORT}`),
       /** Open homepage field in package.json */
       'open:repo': npm('docs'),
     },

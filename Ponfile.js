@@ -74,7 +74,7 @@ module.exports = pon(
       /** Drop database */
       'db:drop': ['assert:not-prod', db.drop(createDB)],
       /** Dump data */
-      'db:dump': db.dump(createDB, 'var/backup/dump', { max: Local.DUMP_ROTATION }),
+      'db:dump': db.dump(createDB, 'var/backup/dump', { max: 3 }),
       /** Load data from dum */
       'db:load': db.load.ask(createDB),
       /** Migrate data */

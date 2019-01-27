@@ -9,19 +9,23 @@ const { isProduction } = require('the-check')
 const theServer = require('the-server')
 const { Html, createClient, createHandle, createStore } = require('@self/client/shim')
 const Local = require('@self/Local')
-const env = require('../env')
 const mappings = require('../mappings')
 const conf = require('../../conf')
 const pkg = require('../../package')
 
 const { ControllerMapping } = mappings
+const defaultRedisConfig = {
+  db: Local.REDIS_DB,
+  host: Local.REDIS_HOST,
+  port: Local.REDIS_PORT,
+}
 
 /** @lends create */
 function create (config) {
   const {
     db,
     locales = conf.locales,
-    redisConfig = env.redis,
+    redisConfig = defaultRedisConfig,
   } = config
 
   const app = {
@@ -45,7 +49,7 @@ function create (config) {
     langs: Object.keys(locales),
     redis: redisConfig,
     scope: app,
-    static: isProduction() ? [] : [Local.PUBLIC_DIR],
+    static: isProduction() ? [] : [Local.APP_PUBLIC_DIR],
   })
 }
 
