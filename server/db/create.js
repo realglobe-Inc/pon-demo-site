@@ -21,7 +21,7 @@ const defaultConfig = {
 }
 
 /** @lends create */
-function create (config = defaultConfig) {
+function create (config = defaultConfig, options = {}) {
   return theDB({
     resources: ResourceMapping,
     ...config,
