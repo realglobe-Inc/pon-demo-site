@@ -20,7 +20,7 @@ describe('server', () => {
   })
 
   it('Do test', async () => {
-    const db = createDB({})
+    const db = createDB.forTask()
     const server = createServer({ db })
     await server.listen(port)
     {

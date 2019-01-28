@@ -29,5 +29,6 @@ function create (config = defaultConfig, options = {}) {
 }
 
 create.forTask = () => create(defaultConfig, { enableHooks: false })
+create.forTest = () => create({ dialect: 'memory' }, { enableHooks: false })
 
 module.exports = create

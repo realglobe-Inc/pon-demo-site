@@ -15,7 +15,7 @@ describe('db', () => {
   })
 
   it('Do test', async () => {
-    const db = createDB()
+    const db = createDB.forTest()
     ok(db)
 
     const { Room } = db.resources

@@ -21,7 +21,7 @@ describe('controllers', function () {
   it('App Ctrl', async () => {
     const { AppCtrl } = controllers
     const session = {}
-    const db = createDB({})
+    const db = createDB.forTest()
     const appCtrl = new AppCtrl({
       app: { db },
       client: {},

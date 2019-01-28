@@ -91,15 +91,6 @@ const Local = Object.freeze(
     }),
 
     // -----------------------------------
-    // Redis
-    // -----------------------------------
-    ...{
-      REDIS_DB: '1',
-      REDIS_HOST: '127.0.0.1',
-      REDIS_PORT: seated.DOCKER_REDIS_CONTAINER_PORT,
-    },
-
-    // -----------------------------------
     // Docker
     // -----------------------------------
     ...{
@@ -110,6 +101,17 @@ const Local = Object.freeze(
       DOCKER_REDIS_CONTAINER_NAME: seated.DOCKER_REDIS_CONTAINER_NAME,
       DOCKER_REDIS_CONTAINER_PORT: seated.DOCKER_REDIS_CONTAINER_PORT,
     },
+
+    // -----------------------------------
+    // Redis
+    // -----------------------------------
+    ...{
+      REDIS_DB: '1',
+      REDIS_HOST: '127.0.0.1',
+      REDIS_PORT: seated.DOCKER_REDIS_CONTAINER_PORT,
+    },
+
+
   })
 
 module.exports = Local
