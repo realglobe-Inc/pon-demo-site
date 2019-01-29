@@ -17,8 +17,8 @@ class CallScene extends CallSceneBase {
   }
 
   @withBusy.while
-  async doExec () {
-    return await this.dealWith()
+  async doExec (value) {
+    return await this.dealWith(value)
   }
 }
 
