@@ -12,7 +12,6 @@ const Scene = require('./abstract/Scene')
 class ToastSceneBase extends Scene {}
 
 /** @lends ToastScene */
-class ToastScene extends ToastSceneBase {
-}
+class ToastScene extends ToastSceneBase {}
 
 module.exports = ToastScene

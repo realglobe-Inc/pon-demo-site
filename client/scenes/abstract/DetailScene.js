@@ -16,19 +16,19 @@ class DetailSceneBase extends Scene {}
 
 /** @lends DetailScene */
 class DetailScene extends DetailSceneBase {
-  async dealWith (id) {
+  async dealWith(id) {
     throw new Error(`Not implemented`)
   }
 
   @withBusy.while
   @withReady.when
-  async doSync () {
+  async doSync() {
     const id = this.get('id')
     const entity = await this.dealWith(id)
     this.set({ entity, missing: !entity })
   }
 
-  async requestToSyncFor (id) {
+  async requestToSyncFor(id) {
     await this.waitWhileBusy()
     if (this.isKnownId(id)) {
       return null
@@ -38,7 +38,7 @@ class DetailScene extends DetailSceneBase {
     return this.get('entity')
   }
 
-  async reSyncIfCurrent (id) {
+  async reSyncIfCurrent(id) {
     if (this.isKnownId(id)) {
       await this.doSync()
     }

@@ -14,55 +14,31 @@ class HomeView extends React.Component {
       busy: state['home.busy'],
       count: state['home.count'],
     }),
-    ({
-       l,
-       toastScene,
-       homeScene
-     }, pipedProxy) => ({
+    ({ l, toastScene, homeScene }, pipedProxy) => ({
       onCountUp: async () => {
         await homeScene.countUp()
         await toastScene.showInfo(l('toasts.COUNT_UP_DID_SUCCESS'))
         console.log('new Count:', pipedProxy.count)
       },
-      onReceive: async (received) => {
-
-      },
-      onMount: async () => {
-
-      },
-      onUnmount: async () => {
-
-      }
+      onReceive: async (received) => {},
+      onMount: async () => {},
+      onUnmount: async () => {},
     }),
   )
 
-  render () {
+  render() {
     return this.#stateful(
-      ({
-         busy,
-         count,
-         l,
-         onCountUp,
-         onMount,
-         onReceive,
-         onUnmount,
-       }) => {
+      ({ busy, count, l, onCountUp, onMount, onReceive, onUnmount }) => {
         const title = null
         return (
-          <TheCycle {...{ onMount, onReceive, onUnmount }}
-                    values={{}}
-          >
+          <TheCycle {...{ onMount, onReceive, onUnmount }} values={{}}>
             <TheMeta title={title}>
               <TheView className={styles.self}>
-                <TheView.Header icon={null}
-                                text={title}
-                />
+                <TheView.Header icon={null} text={title} />
                 <TheView.Body>
                   <p>
                     <span>Count={count}</span>
-                    <TheButton onClick={onCountUp}
-                               spinning={busy}
-                    >
+                    <TheButton onClick={onCountUp} spinning={busy}>
                       {l('buttons.DO_COUNT_UP')}
                     </TheButton>
                   </p>
@@ -71,7 +47,8 @@ class HomeView extends React.Component {
             </TheMeta>
           </TheCycle>
         )
-      })
+      },
+    )
   }
 }
 

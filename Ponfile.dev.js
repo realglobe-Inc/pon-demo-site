@@ -7,13 +7,14 @@
 
 const pon = require('pon')
 const {
-  command: { fork, spawn: { npm, npx } },
+  command: {
+    fork,
+    spawn: { npm, npx },
+  },
   fs: { del },
   open,
 } = require('pon-task-basic')
-const {
-  fmtjson, mocha, pondoc,
-} = require('pon-task-dev')
+const { fmtjson, mocha, pondoc } = require('pon-task-dev')
 const docker = require('pon-task-docker')
 const icon = require('pon-task-icon')
 const theCode = require('the-code/pon')
@@ -27,7 +28,6 @@ const { cwd, doc, tasks } = require('./Ponfile')
 module.exports = pon(
   /** @module tasks */
   {
-
     // -----------------------------------
     // Meta info
     // -----------------------------------
@@ -48,9 +48,15 @@ module.exports = pon(
     ...{
       /** Generate icons */
       'icon:gen': [
-        Drawings.appIcon && icon('assets/images/app-icon.png', Drawings.appIcon),
-        Drawings.fbAppIcon && icon('assets/images/fb/fb-app-icon.png', Drawings.fbAppIcon),
-        Drawings.officialAccountIcon && icon('assets/images/accounts/official-account-icon.png', Drawings.officialAccountIcon),
+        Drawings.appIcon &&
+          icon('assets/images/app-icon.png', Drawings.appIcon),
+        Drawings.fbAppIcon &&
+          icon('assets/images/fb/fb-app-icon.png', Drawings.fbAppIcon),
+        Drawings.officialAccountIcon &&
+          icon(
+            'assets/images/accounts/official-account-icon.png',
+            Drawings.officialAccountIcon,
+          ),
       ].filter(Boolean),
     },
 
@@ -72,7 +78,15 @@ module.exports = pon(
     ...{
       /** Run server for debug */
       'debug:server': [
-        'ps:debug', 'env:debug', npx('nodemon', '--config', 'misc/dev/Nodemon.json', `--inspect=${Local.APP_INSPECT_PORT}`, 'bin/app.js')
+        'ps:debug',
+        'env:debug',
+        npx(
+          'nodemon',
+          '--config',
+          'misc/dev/Nodemon.json',
+          `--inspect=${Local.APP_INSPECT_PORT}`,
+          'bin/app.js',
+        ),
       ],
       /** Watch files for debug */
       'debug:watch': ['env:debug', 'ui:*/watch'],
@@ -84,7 +98,10 @@ module.exports = pon(
     ...{
       /** Generate pondoc file */
       'doc:pondoc': pondoc('Ponfile.js', 'misc/project/Pondoc.json'),
-      'doc:pondoc:dev': pondoc('Ponfile.dev.js', 'misc/project/Pondoc.dev.json'),
+      'doc:pondoc:dev': pondoc(
+        'Ponfile.dev.js',
+        'misc/project/Pondoc.dev.json',
+      ),
     },
 
     // -----------------------------------
@@ -92,34 +109,34 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Format client files */
-      'format:client': theCode([
-        'client/ui/**/*.pcss',
-        'client/ui/**/*.jsx',
-        'client/scenes/**/*.js',
-        'client/+(mappings|ui|scenes|scopes|client|workers)/**/.*.bud',
-      ], { ignore: 'client/**/index.*' }),
+      'format:client': theCode(
+        [
+          'client/ui/**/*.pcss',
+          'client/ui/**/*.jsx',
+          'client/scenes/**/*.js',
+          'client/+(mappings|ui|scenes|scopes|client|workers)/**/.*.bud',
+        ],
+        { ignore: 'client/**/index.*' },
+      ),
       /** Format conf files */
-      'format:conf': theCode([
-        'Local.js',
-        'Ponfile.js',
-        'Ponfile.*.js',
-        'conf/*.js',
-        'conf/.*.bud',
-      ], { ignore: 'conf/index.js' }),
+      'format:conf': theCode(
+        ['Local.js', 'Ponfile.js', 'Ponfile.*.js', 'conf/*.js', 'conf/.*.bud'],
+        { ignore: 'conf/index.js' },
+      ),
       /** Format json files */
-      'format:json': fmtjson([
-        'conf/**/*.json',
-        'client/**/*.json',
-        'server/**/*.json',
-        'misc/**/*.json',
-        'secrets.json',
-      ], { sort: true }),
+      'format:json': fmtjson(
+        [
+          'conf/**/*.json',
+          'client/**/*.json',
+          'server/**/*.json',
+          'misc/**/*.json',
+          'secrets.json',
+        ],
+        { sort: true },
+      ),
       /** Format server files */
       /** Format server files */
-      'format:server': theCode([
-        'server/**/*.js',
-        'server/**/.*.bud',
-      ], {}),
+      'format:server': theCode(['server/**/*.js', 'server/**/.*.bud'], {}),
     },
 
     // -----------------------------------
@@ -149,7 +166,10 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Prepare mysql docker container */
-      'docker:mysql': docker.mysql(Containers.mysql.name, Containers.mysql.options),
+      'docker:mysql': docker.mysql(
+        Containers.mysql.name,
+        Containers.mysql.options,
+      ),
     },
 
     // -----------------------------------
@@ -157,7 +177,7 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Build project */
-      build: [...tasks.build, 'format',],
+      build: [...tasks.build, 'format'],
       /** Clean all */
       clean: ['clean:shim', 'clean:public', 'clean:cache'],
       /** Start debugging */
@@ -172,20 +192,18 @@ module.exports = pon(
         'db:seed',
         'db:migrate',
         'start',
-        'maint:off'
+        'maint:off',
       ],
       /** Docker tasks */
       docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
       /** Format source codes */
-      format: [
-        'format:conf', 'format:json', 'format:client', 'format:server'
-      ],
+      format: ['format:conf', 'format:json', 'format:client', 'format:server'],
       /** Open project */
       open: 'open:app',
       /** Prepare project */
       prepare: [
         ...tasks.prepare,
-        ...['format', 'pkg:fix', 'doc',],
+        ...['format', 'pkg:fix', 'doc'],
         ...['test:support'],
       ],
       /** Start server */
@@ -223,5 +241,5 @@ module.exports = pon(
       /** Shortcut for `watch` task */
       w: 'watch',
     },
-  }
+  },
 )

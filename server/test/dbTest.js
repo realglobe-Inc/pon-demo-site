@@ -8,11 +8,9 @@ const { equal, ok } = require('assert')
 const createDB = require('../db/create')
 
 describe('db', () => {
-  before(() => {
-  })
+  before(() => {})
 
-  after(() => {
-  })
+  after(() => {})
 
   it('Do test', async () => {
     const db = createDB.forTest()

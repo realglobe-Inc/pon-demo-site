@@ -20,9 +20,12 @@ module.exports = Object.freeze(
     PROPS: 'app.props',
     /** Key of app store */
     STORE: 'app.store',
-  }
+  },
 )
 
 if (!isProduction()) {
-  module.exports = theHash.proxy(module.exports, { name: 'GlobalKeys', unknownCheck: true })
+  module.exports = theHash.proxy(module.exports, {
+    name: 'GlobalKeys',
+    unknownCheck: true,
+  })
 }

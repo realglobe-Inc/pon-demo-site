@@ -7,7 +7,12 @@
 
 const { isProduction } = require('the-check')
 const theServer = require('the-server')
-const { Html, createClient, createHandle, createStore } = require('@self/client/shim')
+const {
+  Html,
+  createClient,
+  createHandle,
+  createStore,
+} = require('@self/client/shim')
 const Local = require('@self/Local')
 const mappings = require('../mappings')
 const conf = require('../../conf')
@@ -21,7 +26,7 @@ const defaultRedisConfig = {
 }
 
 /** @lends create */
-function create (config) {
+function create(config) {
   const {
     db,
     locales = conf.locales,

@@ -20,5 +20,5 @@ module.exports = Object.freeze(
       description: 'Date updated',
       type: DATE,
     },
-  }
+  },
 )

@@ -11,7 +11,7 @@ module.exports = test.dir({
   src: [
     `${__dirname}/../controllers`,
     `${__dirname}/../db`,
-    `${__dirname}/../server`
+    `${__dirname}/../server`,
   ],
 })
 

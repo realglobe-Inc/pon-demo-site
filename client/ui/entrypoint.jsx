@@ -3,7 +3,14 @@
 import 'the-polyfill/apply'
 import React from 'react'
 import { isProduction } from 'the-check'
-import { history as historyFor, mount, patch, quelize, singleton, workers } from 'the-entrypoint'
+import {
+  history as historyFor,
+  mount,
+  patch,
+  quelize,
+  singleton,
+  workers,
+} from 'the-entrypoint'
 import { get, once, rescue, set } from 'the-window'
 import { GlobalKeys, locales, UI, Urls } from '@self/conf'
 import App from './App'
@@ -24,16 +31,14 @@ once('DOMContentLoaded', async () => {
   const debugMode = !isProduction()
 
   const props = get(GlobalKeys.PROPS)
-  const {
-    lang = (get('navigator.language')).split('-')[0],
-  } = props
+  const { lang = get('navigator.language').split('-')[0] } = props
   const history = historyFor()
   const l = locales.bind(lang)
   context.set({ handle, history, l, lang, state: store.state })
   store.subscribe(() => context.set({ state: store.state }))
   const controllers = await client.useAll({ debug: debugMode })
 
-  const app = (<App {...props} {...{ client, handle, history, store }}/>)
+  const app = <App {...props} {...{ client, handle, history, store }} />
 
   handle.setAttributes({ client, controllers, history, l, lang, store })
   handle.initAll()
@@ -55,7 +60,10 @@ once('DOMContentLoaded', async () => {
   }))
 
   await mount(app, UI.APP_CONTAINER_ID, { history, router: true })
-  console.debug(`The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`, props)
+  console.debug(
+    `The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`,
+    props,
+  )
 
   set(GlobalKeys.HANDLE, handle)
   set(GlobalKeys.STORE, store)

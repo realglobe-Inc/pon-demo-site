@@ -10,7 +10,7 @@ const {
 const atPolicy = require('./concerns/policies/atPolicy')
 
 class RoomResource extends TheResource {
-  static get policy () {
+  static get policy() {
     return {
       createdAt: { ...atPolicy.createdAt },
       name: {
@@ -24,10 +24,9 @@ class RoomResource extends TheResource {
     }
   }
 
-  static entityClass (ResourceEntity) {
+  static entityClass(ResourceEntity) {
     /** @class */
-    class TheRoomResourceEntity extends ResourceEntity {
-    }
+    class TheRoomResourceEntity extends ResourceEntity {}
 
     return TheRoomResourceEntity
   }

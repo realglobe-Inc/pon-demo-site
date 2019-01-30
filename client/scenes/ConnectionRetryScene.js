@@ -15,7 +15,7 @@ class ConnectionRetrySceneBase extends Scene {}
 /** @lends ConnectionRetryScene */
 class ConnectionRetryScene extends ConnectionRetrySceneBase {
   @withBusy.while
-  async doExec () {
+  async doExec() {
     await this.reloadLocation()
   }
 }

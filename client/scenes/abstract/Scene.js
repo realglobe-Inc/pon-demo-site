@@ -14,7 +14,7 @@ class SceneBase extends TheScene {}
 /** @lends Scene */
 @withLocation
 class Scene extends SceneBase {
-  catchEntryError (e) {
+  catchEntryError(e) {
     try {
       return super.catchEntryError(e)
     } catch (e) {
@@ -34,7 +34,7 @@ class Scene extends SceneBase {
     }
   }
 
-  catchError (e) {
+  catchError(e) {
     const { l, store } = this
     try {
       return super.catchError(e)
@@ -43,7 +43,7 @@ class Scene extends SceneBase {
     }
   }
 
-  async goTo (url, params = {}, options = {}) {
+  async goTo(url, params = {}, options = {}) {
     const { query = {}, reload = false } = options
     const href = addUrlQuery(formatUrl(url, params), query)
     const { app } = this.store

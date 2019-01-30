@@ -6,11 +6,11 @@ import { Urls } from '@self/conf'
 import * as v from './views'
 
 class Routes extends React.Component {
-  render () {
+  render() {
     return (
       <TheRoute.Switch>
-        <TheRoute component={v.HomeView} exact path={Urls.TOP_URL}/>
-        <TheRoute component={v.ErrorNotfoundView}/>
+        <TheRoute component={v.HomeView} exact path={Urls.TOP_URL} />
+        <TheRoute component={v.ErrorNotfoundView} />
       </TheRoute.Switch>
     )
   }

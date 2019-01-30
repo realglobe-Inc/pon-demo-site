@@ -15,26 +15,18 @@ class Toasts extends React.Component {
       info: state['toast.info'],
       warn: state['toast.warn'],
     }),
-    ({
-       toastScene
-     }) => ({
+    ({ toastScene }) => ({
       onReset: (queues) => toastScene.reset(queues),
-    })
+    }),
   )
 
-  render () {
-    return this.#stateful(
-      ({
-         error,
-         info,
-         onReset,
-         warn,
-       }) => (
-        <TheSiteToasts {...{ error, info, onReset, warn }}
-                       duration={UI.TOAST_DURATION}
-        />
-      )
-    )
+  render() {
+    return this.#stateful(({ error, info, onReset, warn }) => (
+      <TheSiteToasts
+        {...{ error, info, onReset, warn }}
+        duration={UI.TOAST_DURATION}
+      />
+    ))
   }
 }
 

@@ -13,7 +13,6 @@ const prodAssetURL = `/v${pkg.version}`
 module.exports = Object.freeze(
   /** @lends Urls */
   {
-
     // -----------------------------------
     // Css
     // -----------------------------------
@@ -66,9 +65,12 @@ module.exports = Object.freeze(
     ...{
       TOP_URL: '/',
     },
-  }
+  },
 )
 
 if (!isProduction()) {
-  module.exports = theHash.proxy(module.exports, { name: 'Urls', unknownCheck: true })
+  module.exports = theHash.proxy(module.exports, {
+    name: 'Urls',
+    unknownCheck: true,
+  })
 }

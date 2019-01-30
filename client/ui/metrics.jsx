@@ -9,7 +9,7 @@ import * as stateful from './stateful'
 import * as v from './views'
 
 /** @lends metrics */
-function metrics () {
+function metrics() {
   // Count renders of react
   {
     const Components = { ...v, ...stateful }

@@ -11,7 +11,8 @@ const { mapping } = require('the-templates')
 module.exports = [
   {
     cjs: true,
-    mapping: aglob.sync(`${__dirname}/../scenes/*Scene.js`)
+    mapping: aglob
+      .sync(`${__dirname}/../scenes/*Scene.js`)
       .map((filename) => path.basename(filename, '.js'))
       .map((name) => ({
         className: name,
@@ -20,7 +21,7 @@ module.exports = [
     name: 'SceneMapping',
     requireAs: 'sc',
     requirePath: '../scenes',
-  }
+  },
 ].map(mapping)
 
 if (!module.parent) {

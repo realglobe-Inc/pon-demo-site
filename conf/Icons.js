@@ -10,7 +10,6 @@ const theHash = require('the-hash')
 module.exports = Object.freeze(
   /** @lends Icons */
   {
-
     ACCOUNT_ICON: 'fas fa-user',
     ADD_ICON: 'fas fa-plus',
     ADMIN_ICON: 'fas fa-cogs',
@@ -28,9 +27,12 @@ module.exports = Object.freeze(
     TAB_ADMIN_ICON: 'fas fa-cogs',
     USERS_ICON: 'fas fa-users',
     WARNING_ICON: 'fas fa-exclamation-triangle',
-  }
+  },
 )
 
 if (!isProduction()) {
-  module.exports = theHash.proxy(module.exports, { name: 'Icons', unknownCheck: true })
+  module.exports = theHash.proxy(module.exports, {
+    name: 'Icons',
+    unknownCheck: true,
+  })
 }

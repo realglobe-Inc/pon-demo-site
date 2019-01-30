@@ -16,8 +16,7 @@ describe('server', () => {
     port = await aport()
   })
 
-  after(() => {
-  })
+  after(() => {})
 
   it('Do test', async () => {
     const db = createDB.forTask()

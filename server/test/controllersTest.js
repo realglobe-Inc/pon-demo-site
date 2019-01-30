@@ -8,13 +8,11 @@ const { equal, ok } = require('assert')
 const controllers = require('../controllers')
 const createDB = require('../db/create')
 
-describe('controllers', function () {
+describe('controllers', function() {
   this.timeout(5 * 1000)
-  before(() => {
-  })
+  before(() => {})
 
-  after(() => {
-  })
+  after(() => {})
 
   // TODO Remove this
   // Just an example

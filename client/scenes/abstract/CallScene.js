@@ -12,12 +12,12 @@ class CallSceneBase extends Scene {}
 
 /** @lends CallScene */
 class CallScene extends CallSceneBase {
-  async dealWith () {
+  async dealWith() {
     throw new Error(`Not implemented`)
   }
 
   @withBusy.while
-  async doExec (value) {
+  async doExec(value) {
     return await this.dealWith(value)
   }
 }
