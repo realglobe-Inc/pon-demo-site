@@ -5,14 +5,12 @@
 'use strict'
 
 const store = require('../store')
-const {ok, equal} = require('assert')
+const { ok } = require('assert').strict
 
 describe('store', () => {
-  before(() => {
-  })
+  before(() => {})
 
-  after(() => {
-  })
+  after(() => {})
 
   it('Store test', () => {
     ok(store)

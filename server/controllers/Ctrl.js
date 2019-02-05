@@ -4,7 +4,7 @@
  * @class Ctrl
  */
 const { TheCtrl } = require('the-controller-base')
-const { compose, withClient, withDebug } = require('the-controller-mixins')
+const { compose, withDebug } = require('the-controller-mixins')
 
 const CtrBase = compose(withDebug)(TheCtrl)
 

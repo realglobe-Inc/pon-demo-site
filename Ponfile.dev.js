@@ -8,7 +8,6 @@
 const pon = require('pon')
 const {
   command: {
-    fork,
     spawn: { npm, npx },
   },
   fs: { del },
@@ -198,6 +197,8 @@ module.exports = pon(
       docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
       /** Format source codes */
       format: ['format:conf', 'format:json', 'format:client', 'format:server'],
+      /** Apply lint */
+      lint: npx('eslint', '--fix', '--ext', '.js,.jsx', '.'),
       /** Open project */
       open: 'open:app',
       /** Prepare project */

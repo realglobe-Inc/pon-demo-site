@@ -6,7 +6,7 @@
 
 const aport = require('aport')
 const arequest = require('arequest')
-const { equal, ok } = require('assert')
+const { ok } = require('assert').strict
 const createDB = require('../db/create')
 const createServer = require('../server/create')
 

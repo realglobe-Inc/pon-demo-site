@@ -15,7 +15,7 @@ class App extends React.Component {
       busy: state['app.busy'],
       pathname: state['app.pathname'],
     }),
-    ({}) => ({}),
+    () => ({}),
   )
 
   render() {

@@ -5,14 +5,12 @@
 'use strict'
 
 const create = require('../client/create')
-const {ok, equal} = require('assert')
+const { ok } = require('assert').strict
 
 describe('client', () => {
-  before(() => {
-  })
+  before(() => {})
 
-  after(() => {
-  })
+  after(() => {})
 
   it('Create test', () => {
     ok(create)

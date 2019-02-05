@@ -4,7 +4,7 @@
 'use strict'
 
 const {
-  DataTypes: { BOOLEAN, DATE },
+  DataTypes: { DATE },
 } = require('the-resource-base')
 
 module.exports = Object.freeze(
