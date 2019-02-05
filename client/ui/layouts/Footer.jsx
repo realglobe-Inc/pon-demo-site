@@ -13,9 +13,9 @@ class Footer extends React.Component {
   render() {
     return this.#stateful(({ l }) => {
       return (
-        <TheFooter className="footer">
+        <TheFooter className='footer'>
           <TheFooter.CopyRight footer={l('org.ORG_NAME')} />
-          <TheFooter.Links className="footerLinks" />
+          <TheFooter.Links className='footerLinks' />
         </TheFooter>
       )
     })

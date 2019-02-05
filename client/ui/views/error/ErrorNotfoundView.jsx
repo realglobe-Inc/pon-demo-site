@@ -28,7 +28,7 @@ class ErrorNotfoundView extends React.Component {
               <br />
               <div>
                 <TheButtonGroup>
-                  <TheButton href="/">{l('buttons.SHOW_TOP_AGAIN')}</TheButton>
+                  <TheButton href='/'>{l('buttons.SHOW_TOP_AGAIN')}</TheButton>
                 </TheButtonGroup>
               </div>
             </TheRoute.Status>

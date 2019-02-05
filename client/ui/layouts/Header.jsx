@@ -13,7 +13,7 @@ class Header extends React.Component {
   render() {
     return this.#stateful(({ l }) => {
       return (
-        <TheHeader className="header">
+        <TheHeader className='header'>
           <TheHeader.Logo>{l('app.APP_NAME')}</TheHeader.Logo>
         </TheHeader>
       )
