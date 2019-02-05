@@ -23,8 +23,8 @@ module.exports = Object.freeze(
       options: {
         conf: path.resolve(__dirname, 'redis.conf'),
         image: 'redis:4',
-        publish: `${Local.DOCKER_REDIS_CONTAINER_PORT}:6379`
-      }
+        publish: `${Local.DOCKER_REDIS_CONTAINER_PORT}:6379`,
+      },
     },
     nginx: {
       name: Local.DOCKER_NGINX_CONTAINER_NAME,
@@ -35,9 +35,9 @@ module.exports = Object.freeze(
         template: path.resolve(__dirname, 'nginx.conf.template'),
         env: {
           HOST_IP: isMacOS() ? 'docker.for.mac.localhost' : '172.17.0.1',
-          APP_PORT: Local.APP_PORT
-        }
-      }
-    }
-  }
+          APP_PORT: Local.APP_PORT,
+        },
+      },
+    },
+  },
 )

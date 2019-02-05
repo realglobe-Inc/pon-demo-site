@@ -5,8 +5,6 @@
 'use strict'
 
 const { withBusy, withId, withReady } = require('the-scene-mixins/shim')
-const { formatUrl } = require('the-url')
-const { Urls } = require('@self/conf')
 const Scene = require('./Scene')
 
 @withId
