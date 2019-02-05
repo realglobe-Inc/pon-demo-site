@@ -8,7 +8,7 @@ const Local = require('../../Local')
 const pkg = require('../../package')
 const { Styles } = require('../../conf')
 
-const FONT_THEME = 'a'
+const FONT_THEME = 'c'
 
 module.exports = Object.freeze(
   /** @lends Drawings */

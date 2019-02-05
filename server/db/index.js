@@ -6,7 +6,7 @@
 
 const create = require('./create')
 
-const singleton = create()
+const singleton = create({})
 Object.assign(singleton, {
   create,
 })
