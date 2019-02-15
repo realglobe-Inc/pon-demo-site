@@ -23,6 +23,7 @@
     "format:json": "Format json files",
     "format:server": "Format server files",
     "icon:gen": "Generate icons",
+    "lint": "Apply lint",
     "o": "Shortcut for `open` task",
     "open": "Open project",
     "open:app": "Open app in browser",

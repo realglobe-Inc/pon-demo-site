@@ -59,7 +59,11 @@ once('DOMContentLoaded', async () => {
     locale: store.state['app.locale'],
   }))
 
-  await mount(app, UI.APP_CONTAINER_ID, { history, router: true })
+  await mount(app, UI.APP_CONTAINER_ID, {
+    history,
+    router: true,
+    strictMode: true,
+  })
   console.debug(
     `The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`,
     props,
