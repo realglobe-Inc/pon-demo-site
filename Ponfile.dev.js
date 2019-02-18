@@ -129,7 +129,14 @@ module.exports = pon(
       ),
       /** Format conf files */
       'format:conf': theCode(
-        ['Local.js', 'Ponfile.js', 'Ponfile.*.js', 'conf/*.js', 'conf/.*.bud'],
+        [
+          'Local.js',
+          'Ponfile.js',
+          'Ponfile.*.js',
+          'conf/*.js',
+          'conf/.*.bud',
+          '.*.bud',
+        ],
         { ignore: 'conf/index.js' },
       ),
       /** Format json files */

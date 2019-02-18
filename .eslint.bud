@@ -1,15 +1,11 @@
 /**
  * Bud file for lint
  */
-
 'use strict'
 
-const { eslintrc, eslintignore } = require('the-templates')
+const { eslintignore, eslintrc } = require('the-templates')
 
-module.exports = [
-  eslintrc(),
-  eslintignore(),
-]
+module.exports = [eslintrc(), eslintignore()]
 
 if (!module.parent) {
   require('coz').render(__filename)
