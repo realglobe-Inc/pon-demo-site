@@ -104,6 +104,14 @@ module.exports = pon(
     },
 
     // -----------------------------------
+    // Sub Tasks for ESLint
+    // -----------------------------------
+    ...{
+      'eslint:check': npx('eslint', '--ext', '.js,.jsx', '.'),
+      'eslint:fix': npx('eslint', '--fix', '--ext', '.js,.jsx', '.'),
+    },
+
+    // -----------------------------------
     // Sub Tasks for Format
     // -----------------------------------
     ...{
@@ -112,7 +120,7 @@ module.exports = pon(
         [
           'client/ui/**/*.pcss',
           'client/ui/**/*.jsx',
-          'client/scenes/**/*.js',
+          'client/+(client|handle|helpers|scenes|store|test)/**/*.js',
           'client/+(mappings|ui|scenes|scopes|client|workers)/**/.*.bud',
         ],
         { ignore: 'client/**/index.*' },
@@ -198,7 +206,7 @@ module.exports = pon(
       /** Format source codes */
       format: ['format:conf', 'format:json', 'format:client', 'format:server'],
       /** Apply lint */
-      lint: npx('eslint', '--fix', '--ext', '.js,.jsx', '.'),
+      lint: ['eslint:fix', 'eslint:check'],
       /** Open project */
       open: 'open:app',
       /** Prepare project */

@@ -1,7 +1,7 @@
 'use strict'
 
-const create = require('./create')
 const { inject } = require('the-handle')
+const create = require('./create')
 
 const singleton = create()
 

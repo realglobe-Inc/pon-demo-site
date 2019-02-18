@@ -5,8 +5,8 @@
  */
 'use strict'
 
-const { TheClient } = require('the-client/shim')
 const { unlessProduction } = require('the-check')
+const { TheClient } = require('the-client/shim')
 const { version } = require('../constants/AppConsts')
 
 class Client extends TheClient {}
@@ -21,7 +21,6 @@ create.for = (namespace, options = {}) => {
     handle: { connectionRetryScene },
   } = options
   const client = Client.for(namespace, {
-    version,
     onGone: () => {
       setTimeout(() => {
         connectionRetryScene.set({ active: true, busy: false })
@@ -30,6 +29,7 @@ create.for = (namespace, options = {}) => {
         )
       }, 1000)
     },
+    version,
   })
   return client
 }

@@ -5,15 +5,15 @@
  */
 'use strict'
 
-const { TheStore } = require('the-store')
 const {
-  ObjectScope,
   ArrayScope,
   BooleanScope,
+  NumberScope,
+  ObjectScope,
   StringScope,
   ValueScope,
-  NumberScope,
 } = require('the-scope/shim/scopes')
+const { TheStore } = require('the-store')
 const scopes = require('./scopes')
 
 /** @lends create */
@@ -23,12 +23,12 @@ module.exports = function create() {
     persists: [],
     scopes,
     types: {
-      OBJ: ObjectScope,
       ARR: ArrayScope,
       BOOL: BooleanScope,
+      NUM: NumberScope,
+      OBJ: ObjectScope,
       STR: StringScope,
       VAL: ValueScope,
-      NUM: NumberScope,
     },
   })
 }

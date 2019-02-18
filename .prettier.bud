@@ -4,11 +4,10 @@
 
 'use strict'
 
-const { eslintrc, eslintignore } = require('the-templates')
+const { prettierrc } = require('the-templates')
 
 module.exports = [
-  eslintrc(),
-  eslintignore(),
+  prettierrc(),
 ]
 
 if (!module.parent) {

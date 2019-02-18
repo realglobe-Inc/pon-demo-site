@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const create = require('../client/create')
 const { ok } = require('assert').strict
+const create = require('../client/create')
 
 describe('client', () => {
   before(() => {})
