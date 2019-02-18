@@ -21,7 +21,7 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('fetch', (event) => {
   const { url } = event.request
-  const { pathname, host } = parseUrl(url)
+  const { host, pathname } = parseUrl(url)
   const isOwn = host === location.host
   const shouldCache =
     urlsToCache.includes(url) ||

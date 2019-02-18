@@ -120,10 +120,12 @@ module.exports = pon(
         [
           'client/ui/**/*.pcss',
           'client/ui/**/*.jsx',
-          'client/+(client|handle|helpers|scenes|store|test)/**/*.js',
-          'client/+(mappings|ui|scenes|scopes|client|workers)/**/.*.bud',
+          'client/**/.*.bud',
+          'client/**/*.js',
         ],
-        { ignore: 'client/**/index.*' },
+        {
+          ignore: ['client/**/index.*', 'client/shim/**/*.*'],
+        },
       ),
       /** Format conf files */
       'format:conf': theCode(

@@ -4,8 +4,9 @@
  */
 'use strict'
 
-const create = require('./create')
-const handle = require('../handle')
+import create from './create'
+import handle from '../handle'
+
 const singleton = create.for('singleton', { handle })
 
-module.exports = singleton
+export default singleton
