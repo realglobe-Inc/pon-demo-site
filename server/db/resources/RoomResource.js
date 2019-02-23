@@ -10,7 +10,7 @@ const {
 const atPolicy = require('./concerns/policies/atPolicy')
 
 class RoomResource extends TheResource {
-  static get policy() {
+  static get schema() {
     return {
       createdAt: { ...atPolicy.createdAt },
       name: {

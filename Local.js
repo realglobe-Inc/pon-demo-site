@@ -4,6 +4,7 @@
  */
 'use strict'
 
+const { snakecase } = require('stringcase')
 const { isProduction } = require('the-check')
 const theHash = require('the-hash')
 const directorySeat = require('the-seat/handy/directorySeat')
@@ -67,8 +68,8 @@ const Local = Object.freeze(
     // -----------------------------------
     ...(isProduction()
       ? {
-          DB_DATABASE: `${pkg.name}`,
-          DB_DIALECT: 'rdb/mysql',
+          DB_DATABASE: `${snakecase(pkg.name)}`,
+          DB_DIALECT: 'sequelize/mysql',
           DB_HOST: secret.get('DB_HOST'),
           DB_PASSWORD: secret.get('DB_PASSWORD'),
           DB_PORT: secret.get('DB_PORT'),
@@ -77,14 +78,14 @@ const Local = Object.freeze(
           DB_USERNAME: secret.get('DB_USERNAME'),
         }
       : {
-          DB_DATABASE: `${pkg.name}-dev`,
-          DB_DIALECT: 'rdb/mysql',
+          DB_DATABASE: `${snakecase(pkg.name)}_dev`,
+          DB_DIALECT: 'sequelize/mysql',
           DB_HOST: '0.0.0.0',
-          DB_PASSWORD: `${pkg.name}-dev`,
+          DB_PASSWORD: `${snakecase(pkg.name)}_dev`,
           DB_PORT: seated.DOCKER_MYSQL_CONTAINER_PORT,
           DB_ROOT_PASSWORD: 'root',
           DB_ROOT_USERNAME: 'root',
-          DB_USERNAME: `${pkg.name}-dev`,
+          DB_USERNAME: `${snakecase(pkg.name)}_dev`,
         }),
 
     // -----------------------------------

@@ -263,11 +263,14 @@ module.exports = pon(
       ],
       /** Render coz templates */
       'struct:render': [
-        coz([
-          '+(conf|client|server)/**/.index.*.bud',
-          '+(assets|e2e|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud',
-          '.*.bud',
-        ]),
+        coz(
+          [
+            '+(conf|client|server)/**/.index.*.bud',
+            '+(assets|e2e|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud',
+            '.*.bud',
+          ],
+          {},
+        ),
       ],
     },
 
