@@ -32,7 +32,7 @@
     "the-bin": "^1.4.6",
     "the-check": "^2.0.23",
     "the-client": "^14.0.8",
-    "the-components": "^11.1.29",
+    "the-components": "^11.1.30",
     "the-context": "^2.1.15",
     "the-controller-base": "^4.0.14",
     "the-date": "^3.0.20",
@@ -59,8 +59,9 @@
     "the-site-components": "^4.0.5",
     "the-site-util": "^3.0.0",
     "the-store": "^7.1.12",
+    "the-style-util": "^1.0.2",
     "the-sw-util": "^2.1.1",
-    "the-theme-style": "^3.0.1",
+    "the-theme-style": "^3.0.3",
     "the-window": "^7.0.3"
   },
   "devDependencies": {
