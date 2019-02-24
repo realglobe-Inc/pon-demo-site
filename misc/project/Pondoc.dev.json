@@ -1,6 +1,7 @@
 {
   "ponfile": "Ponfile.dev.js",
   "tasks": {
+    "analyze": "Analyze packages",
     "build": "Build project",
     "c": "Shortcut for `clean` task",
     "clean": "Clean all",
