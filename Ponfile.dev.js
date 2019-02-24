@@ -42,6 +42,13 @@ module.exports = pon(
     ...tasks,
 
     // -----------------------------------
+    // Sub Tasks for Analyze
+    // -----------------------------------
+    ...{
+      'analyze:ui': ['ui:*/analyze'],
+    },
+
+    // -----------------------------------
     // Sub Tasks for Icon
     // -----------------------------------
     ...{
@@ -192,6 +199,8 @@ module.exports = pon(
     // Main Tasks
     // -----------------------------------
     ...{
+      /** Analyze packages */
+      analyze: ['analyze:*'],
       /** Build project */
       build: [...tasks.build, 'format'],
       /** Clean all */
@@ -223,6 +232,7 @@ module.exports = pon(
         ...tasks.prepare,
         ...['format', 'pkg:fix', 'doc'],
         ...['test:support'],
+        ...['analyze'],
       ],
       /** Start server */
       start: ['debug:server'],

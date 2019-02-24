@@ -290,7 +290,7 @@ module.exports = pon(
               splitName: 'external',
             },
           ),
-        { sub: ['watch'] },
+        { sub: ['watch', 'analyze'] },
       ),
       /** Compile stylesheets */
       'ui:css': [
@@ -326,7 +326,7 @@ module.exports = pon(
       'ui:workers': env.dynamic(
         ({ isProduction }) =>
           browser.all('./client/shim/workers', `public`, {}),
-        { sub: ['watch'] },
+        { sub: ['watch', 'analyze'] },
       ),
     },
 
