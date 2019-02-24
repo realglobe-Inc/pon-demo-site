@@ -1,7 +1,7 @@
 {
   "name": "pon-demo-site",
   "description": "Demo of web site using pon",
-  "version": "7.0.1",
+  "version": "7.1.0",
   "author": {
     "name": "Taka Okunishi",
     "email": "okunishinish@gmail.com",
@@ -12,13 +12,13 @@
   },
   "dependencies": {
     "asleep": "^1.0.3",
-    "coz": "^7.0.8",
+    "coz": "^7.0.9",
     "pon": "^5.2.11",
     "pon-task-basic": "^4.2.6",
     "pon-task-changelog": "^2.0.7",
     "pon-task-db": "^2.3.18",
     "pon-task-docker": "^3.1.12",
-    "pon-task-es": "^5.0.8",
+    "pon-task-es": "^6.0.3",
     "pon-task-icon": "^1.0.6",
     "pon-task-pm2": "^2.2.8",
     "pon-task-web": "^9.0.13",
@@ -34,7 +34,7 @@
     "the-client": "^14.0.7",
     "the-components": "^11.1.29",
     "the-context": "^2.1.15",
-    "the-controller-base": "^4.0.13",
+    "the-controller-base": "^4.0.14",
     "the-date": "^3.0.20",
     "the-db": "^11.0.2",
     "the-decorators": "^1.0.2",
@@ -61,11 +61,11 @@
     "the-store": "^7.1.11",
     "the-sw-util": "^2.1.1",
     "the-theme-style": "^3.0.0",
-    "the-window": "^7.0.2"
+    "the-window": "^7.0.3"
   },
   "devDependencies": {
     "@babel/runtime": "^7.3.1",
-    "arequest": "^3.0.1",
+    "arequest": "^3.0.2",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.14.1",
     "eslint-config-prettier": "^4.0.0",
@@ -83,7 +83,7 @@
     "the-code": "^5.0.9",
     "the-lint": "^1.7.5",
     "the-script-release": "^1.0.8",
-    "the-script-share": "^1.0.5",
+    "the-script-share": "^1.0.6",
     "the-script-update": "^2.0.0",
     "the-seed": "^2.0.9",
     "the-support": "^2.0.0",
