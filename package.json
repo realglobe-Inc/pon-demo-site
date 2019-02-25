@@ -61,7 +61,7 @@
     "the-store": "^7.1.12",
     "the-style-util": "^1.0.2",
     "the-sw-util": "^2.1.1",
-    "the-theme-style": "^3.0.3",
+    "the-theme-style": "^3.0.4",
     "the-window": "^7.0.3"
   },
   "devDependencies": {

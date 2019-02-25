@@ -208,8 +208,6 @@ module.exports = pon(
     ...{
       /** Process check for debug */
       'ps:debug': thePS('var/app/debug.pid'),
-      /** Process check for e2e */
-      'ps:e2e': thePS('var/app/e2e.pid'),
     },
 
     // -----------------------------------
@@ -266,7 +264,7 @@ module.exports = pon(
         coz(
           [
             '+(conf|client|server)/**/.index.*.bud',
-            '+(assets|e2e|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud',
+            '+(assets|bin|client|conf|doc|misc|server|test|utils)/**/.*.bud',
             '.*.bud',
           ],
           {},
