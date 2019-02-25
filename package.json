@@ -21,7 +21,7 @@
     "pon-task-es": "^6.0.3",
     "pon-task-icon": "^1.0.7",
     "pon-task-pm2": "^2.2.9",
-    "pon-task-web": "^9.0.17",
+    "pon-task-web": "^9.0.18",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",

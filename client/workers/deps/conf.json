@@ -22,6 +22,7 @@
     "ERROR_NOTFOUND_URL": "/errors/not-found",
     "ICON_URL": "/images/app-icon.png",
     "JS_BUNDLE_URL": "/build/bundle.js",
+    "JS_CHUNK_BASE_URL": "/build",
     "JS_ROOT_SERVICE_WORKER_URL": "/RootServiceWorker.js",
     "JS_SHIM_URL": "/js/es5-shim.min.js",
     "PROD_ASSET_URL": "/v7.1.1",

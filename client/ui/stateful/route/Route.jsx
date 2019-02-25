@@ -6,20 +6,20 @@
 import React, { Suspense } from 'react'
 import { isBrowser } from 'the-check'
 import { TheRoute } from 'the-components'
-import RouteFallback from './RouteFallback'
+import Fallback from '../fallback/Fallback'
 import context from '../../context'
 
 class Route extends React.Component {
   #stateful = context.stateful((state) => ({}), () => ({}))
 
   render() {
+    if (!isBrowser()) {
+      // TODO remove ( ReactDOMServer does not yet support Suspense. )
+      return <Fallback />
+    }
     return this.#stateful(({ l }) => {
-      if (!isBrowser()) {
-        // TODO remove ( ReactDOMServer does not yet support Suspense. )
-        return <RouteFallback />
-      }
       return (
-        <Suspense fallback={<RouteFallback />}>
+        <Suspense fallback={<Fallback />}>
           <TheRoute {...this.props} />
         </Suspense>
       )

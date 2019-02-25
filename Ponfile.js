@@ -284,8 +284,7 @@ module.exports = pon(
             },
             `public/build/[name].js`,
             {
-              split: false,
-              // splitName: 'external',
+              publicPath: `${Urls.JS_CHUNK_BASE_URL}/`,
             },
           ),
         { sub: ['watch', 'analyze'] },

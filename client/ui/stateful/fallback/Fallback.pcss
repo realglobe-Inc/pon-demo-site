@@ -1,13 +1,21 @@
 .self {
   align-items: center;
+  bottom: 0;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+  left: 0;
   padding: 50px;
+  position: fixed;
+  right: 0;
+  top: 0;
   width: 100%;
 }
 
 .spin:global(.the-spin) {
-  font-size: 2em;
+  & :global(.the-spin-icon) {
+    font-size: 2em;
+  }
+
   opacity: 0.33;
 }

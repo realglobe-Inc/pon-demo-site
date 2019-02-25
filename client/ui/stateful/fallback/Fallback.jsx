@@ -1,14 +1,14 @@
 /**
- * RouteFallback component
+ * Fallback component
  */
 'use strict'
 
 import React from 'react'
 import { TheSpin } from 'the-components'
-import styles from './RouteFallback.pcss'
+import styles from './Fallback.pcss'
 import context from '../../context'
 
-class RouteFallback extends React.Component {
+class Fallback extends React.Component {
   #stateful = context.stateful((state) => ({}), () => ({}))
 
   render() {
@@ -22,4 +22,4 @@ class RouteFallback extends React.Component {
   }
 }
 
-export default RouteFallback
+export default Fallback
