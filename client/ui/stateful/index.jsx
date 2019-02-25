@@ -6,7 +6,11 @@
 'use strict'
 
 import ConnectionRetryDialog from './connection/ConnectionRetryDialog'
+import Route from './route/Route'
+import RouteFallback from './route/RouteFallback'
 
 export {
  ConnectionRetryDialog,
+ Route,
+ RouteFallback,
 }

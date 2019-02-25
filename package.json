@@ -21,7 +21,7 @@
     "pon-task-es": "^6.0.3",
     "pon-task-icon": "^1.0.7",
     "pon-task-pm2": "^2.2.9",
-    "pon-task-web": "^9.0.16",
+    "pon-task-web": "^9.0.17",
     "prop-types": "^15.7.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
@@ -36,9 +36,9 @@
     "the-context": "^2.1.15",
     "the-controller-base": "^4.0.14",
     "the-date": "^3.0.20",
-    "the-db": "^11.0.4",
+    "the-db": "^11.0.6",
     "the-decorators": "^1.0.2",
-    "the-entrypoint": "^2.3.8",
+    "the-entrypoint": "^2.3.9",
     "the-handle": "^5.0.5",
     "the-hash": "^1.1.0",
     "the-loc": "^4.0.6",
@@ -88,7 +88,7 @@
     "the-script-update": "^2.0.1",
     "the-seed": "^2.0.10",
     "the-support": "^2.0.0",
-    "the-templates": "^6.0.7"
+    "the-templates": "^6.0.8"
   },
   "engines": {
     "node": ">=10",

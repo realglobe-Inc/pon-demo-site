@@ -44,7 +44,6 @@ module.exports = Object.freeze(
     // -----------------------------------
     ...{
       JS_BUNDLE_URL: '/build/bundle.js',
-      JS_EXTERNAL_URL: '/build/external.js',
       JS_ROOT_SERVICE_WORKER_URL: '/RootServiceWorker.js',
       JS_SHIM_URL: '/js/es5-shim.min.js',
     },
@@ -56,7 +55,6 @@ module.exports = Object.freeze(
       PROD_ASSET_URL: prodAssetURL,
       PROD_CSS_BUNDLE_URL: `${prodAssetURL}/bundle.css`,
       PROD_JS_BUNDLE_URL: `${prodAssetURL}/bundle.js`,
-      PROD_JS_EXTERNAL_URL: `${prodAssetURL}/external.js`,
     },
 
     // -----------------------------------

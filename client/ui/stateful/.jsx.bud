@@ -5,7 +5,7 @@
 
 const { Stateful } = require('the-templates')
 
-module.exports = [].map((name) =>
+module.exports = ['route/Route', 'route/RouteFallback'].map((name) =>
   Stateful({
     name,
   }),

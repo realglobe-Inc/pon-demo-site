@@ -284,8 +284,8 @@ module.exports = pon(
             },
             `public/build/[name].js`,
             {
-              split: true,
-              splitName: 'external',
+              split: false,
+              // splitName: 'external',
             },
           ),
         { sub: ['watch', 'analyze'] },
