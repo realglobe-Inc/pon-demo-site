@@ -3,6 +3,7 @@
  */
 'use strict'
 
+import c from 'classnames'
 import React from 'react'
 import { TheSpin } from 'the-components'
 import styles from './Fallback.pcss'
@@ -12,9 +13,10 @@ class Fallback extends React.Component {
   #stateful = context.stateful((state) => ({}), () => ({}))
 
   render() {
+    const { className } = this.props
     return this.#stateful(({ l }) => {
       return (
-        <div className={styles.self}>
+        <div className={c(styles.self, className)}>
           <TheSpin className={styles.spin} enabled />
         </div>
       )
