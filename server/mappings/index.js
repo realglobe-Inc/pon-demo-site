@@ -7,15 +7,12 @@
 
 const ControllerMapping_ = require('./ControllerMapping')
 const ResourceMapping_ = require('./ResourceMapping')
-const mapping_ = require('./mapping')
 
 // `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
 exports.ControllerMapping = ControllerMapping_
 exports.ResourceMapping = ResourceMapping_
-exports.mapping = mapping_
 
 module.exports = {
   ControllerMapping: ControllerMapping_,
   ResourceMapping: ResourceMapping_,
-  mapping: mapping_,
 }

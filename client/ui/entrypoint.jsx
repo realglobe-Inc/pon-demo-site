@@ -15,9 +15,6 @@ import { get, once, rescue, set } from 'the-window'
 import { GlobalKeys, locales, UI, Urls } from '@self/conf'
 import context from './context'
 import Fallback from './stateful/fallback/Fallback'
-import client from '../client'
-import handle from '../handle'
-import store from '../store'
 
 singleton()
 patch()
@@ -30,6 +27,10 @@ const App = lazy(() => import('./App'))
 
 once('DOMContentLoaded', async () => {
   const debugMode = !isProduction()
+
+  const { default: client } = await import('../client')
+  const { default: handle } = await import('../handle')
+  const { default: store } = await import('../store')
 
   const props = get(GlobalKeys.PROPS)
   const { lang = get('navigator.language').split('-')[0] } = props
