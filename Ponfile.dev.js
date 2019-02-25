@@ -230,9 +230,7 @@ module.exports = pon(
       /** Prepare project */
       prepare: [
         ...tasks.prepare,
-        ...['format', 'pkg:fix', 'doc'],
-        ...['test:support'],
-        ...['analyze'],
+        ...['format', 'pkg:fix', 'doc', 'test:support', 'analyze'],
       ],
       /** Start server */
       start: ['debug:server'],
