@@ -1,6 +1,6 @@
 'use strict'
 
-import React, { Suspense } from 'react'
+import React from 'react'
 import { TheRoute } from 'the-components'
 import { Urls } from '@self/conf'
 import { Route } from './stateful'

@@ -76,7 +76,7 @@ once('DOMContentLoaded', async () => {
   set(GlobalKeys.STORE, store)
   set(GlobalKeys.CONTEXT, context)
 
-  if (!!debugMode) {
+  if (debugMode) {
     const { default: metrics } = await import('./metrics')
     metrics()
   }
