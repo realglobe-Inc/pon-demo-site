@@ -33,8 +33,9 @@ function create(config) {
     redisConfig = defaultRedisConfig,
   } = config
 
+  const buildNumber = isProduction() ? 0 : String(new Date().getTime())
   const app = {
-    buildNumber: String(new Date().getTime()),
+    buildNumber,
     cdnUrl: isProduction() ? Local.APP_CDN_URL : null,
     db,
     locales,
@@ -45,6 +46,7 @@ function create(config) {
     cacheDir: 'tmp/cache',
     controllers: ControllerMapping,
     html: Html,
+    info: { buildNumber },
     injectors: {
       app: (ctx) => app,
       client: (ctx) => createClient(),

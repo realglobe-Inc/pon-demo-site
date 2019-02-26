@@ -280,10 +280,11 @@ module.exports = pon(
         () =>
           browser(
             {
-              bundle: './client/shim/ui/entrypoint.js',
+              bundle: 'ui/entrypoint.js',
             },
             `public/build/[name].js`,
             {
+              context: `${__dirname}/client/shim`,
               publicPath: `${Urls.JS_CHUNK_BASE_URL}/`,
             },
           ),
@@ -322,7 +323,9 @@ module.exports = pon(
       }),
       'ui:workers': env.dynamic(
         ({ isProduction }) =>
-          browser.all('./client/shim/workers', `public`, {}),
+          browser.all('workers', `public`, {
+            context: `${__dirname}/client/shim`,
+          }),
         { sub: ['watch', 'analyze'] },
       ),
     },
