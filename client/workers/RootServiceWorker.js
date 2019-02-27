@@ -4,7 +4,7 @@
 'use strict'
 
 import conf from './deps/conf'
-import { parse as parseUrl } from 'url'
+import URL from 'url-parse'
 import AppConsts from '../constants/AppConsts'
 import { appCache, cachingFetch } from 'the-sw-util'
 
@@ -19,7 +19,7 @@ let buildNumber
 self.addEventListener('install', (event) => {
   event.waitUntil(
     (async function() {
-      const data = await fetch('/the/info')
+      const data = await self.fetch('/the/info')
       const info = await data.json()
       buildNumber = info.buildNumber
     })(),
@@ -28,7 +28,7 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('fetch', (event) => {
   const { url } = event.request
-  const { host, pathname } = parseUrl(url)
+  const { host, pathname } = new URL(url)
   const isOwn = host === location.host
   const shouldCache =
     urlsToCache.includes(url) ||

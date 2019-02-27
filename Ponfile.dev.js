@@ -17,10 +17,13 @@ const { fmtjson, mocha, pondoc } = require('pon-task-dev')
 const docker = require('pon-task-docker')
 const icon = require('pon-task-icon')
 const theCode = require('the-code/pon')
+const theLint = require('the-lint/pon')
 const theSupport = require('the-support/pon')
+const locales = require('./conf/locales')
 const Local = require('./Local')
 const Containers = require('./misc/docker/Containers')
 const Drawings = require('./misc/icon/Drawings')
+const Rules = require('./misc/lint/Rules')
 const PondocDev = require('./misc/project/Pondoc.dev')
 const { cwd, doc, tasks } = require('./Ponfile')
 
@@ -163,6 +166,16 @@ module.exports = pon(
     },
 
     // -----------------------------------
+    // Sub Tasks for Lint
+    // -----------------------------------
+    ...{
+      /** Validate locales */
+      'lint:loc': () => locales.validate(),
+      /** Lint by rules */
+      'lint:rules': theLint(Rules),
+    },
+
+    // -----------------------------------
     // Sub Tasks for Open
     // -----------------------------------
     ...{
@@ -224,7 +237,7 @@ module.exports = pon(
       /** Format source codes */
       format: ['format:conf', 'format:json', 'format:client', 'format:server'],
       /** Apply lint */
-      lint: ['eslint:fix', 'eslint:check'],
+      lint: ['lint:loc', 'lint:rules', 'eslint:fix', 'eslint:check'],
       /** Open project */
       open: 'open:app',
       /** Prepare project */
