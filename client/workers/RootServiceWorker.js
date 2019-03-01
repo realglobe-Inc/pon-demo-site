@@ -3,10 +3,8 @@
  */
 'use strict'
 
-import conf from './deps/conf'
+import { SrcSets, Urls } from '@self/conf'
 import { appCache, cachingFetch, parseUrl } from 'the-sw-util'
-
-const { SrcSets, Urls } = conf
 
 const pathnamesToCache = [
   ...SrcSets.jsSet,
@@ -20,8 +18,8 @@ const pathnamesToCache = [
 self.addEventListener('install', (event) => {})
 
 self.addEventListener('fetch', (event) => {
-  const requestURL = parseUrl(event.request.url, true)
-  const scriptURL = parseUrl(self.registration.active.scriptURL, true)
+  const requestURL = parseUrl(event.request.url)
+  const scriptURL = parseUrl(self.registration.active.scriptURL)
   const isOwn = requestURL.host === scriptURL.host
   const shouldCache =
     isOwn &&

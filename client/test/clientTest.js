@@ -5,7 +5,7 @@
 'use strict'
 
 const { ok } = require('assert').strict
-const create = require('../client/create')
+const create = require('../shim/client/create')
 
 describe('client', () => {
   before(() => {})

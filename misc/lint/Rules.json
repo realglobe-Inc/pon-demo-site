@@ -49,6 +49,15 @@
       }
     }
   },
+  "client/ui/+(stateful|stateless)/**/!(index).jsx": {
+    "usageRule": {
+      "ignore": [
+        "client/shim",
+        "client/ui/**/index.jsx"
+      ],
+      "usedIn": "client/ui/**/*.jsx"
+    }
+  },
   "client/ui/views/**/!(index).jsx": {
     "filenameRule": {
       "endsWith": "View.jsx"
