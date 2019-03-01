@@ -12,38 +12,33 @@ import {
   workers,
 } from 'the-entrypoint'
 import { get, once, rescue, set } from 'the-window'
-import { GlobalKeys, locales, UI, Urls } from '@self/conf'
+import { GlobalKeys, locales, UI } from '@self/conf'
 import context from './context'
 import Fallback from './stateful/fallback/Fallback'
+
+const App = lazy(() => import('./App'))
 
 singleton()
 patch()
 
-void workers({
-  '/': Urls.JS_ROOT_SERVICE_WORKER_URL,
-})
-
-const App = lazy(() => import('./App'))
-
 once('DOMContentLoaded', async () => {
   const debugMode = !isProduction()
+
+  const props = get(GlobalKeys.PROPS)
+  const { lang = get('navigator.language').split('-')[0], workerScopes } = props
+  await workers(workerScopes)
 
   const { default: client } = await import('../client')
   const { default: handle } = await import('../handle')
   const { default: store } = await import('../store')
 
-  const props = get(GlobalKeys.PROPS)
-  const { lang = get('navigator.language').split('-')[0] } = props
-  const history = historyFor()
   const l = locales.bind(lang)
-  context.set({ handle, history, l, lang, state: store.state })
+  context.set({ handle, l, lang, state: store.state })
   store.subscribe(() => context.set({ state: store.state }))
-  const controllers = await client.useAll({ debug: debugMode })
-  const app = (
-    <Suspense fallback={<Fallback />}>
-      <App {...props} {...{ client, handle, history, store }} />
-    </Suspense>
-  )
+
+  const controllers = await client.useAll({ debug: !isProduction() })
+
+  const history = historyFor()
   handle.setAttributes({ client, controllers, history, l, lang, store })
   handle.initAll()
 
@@ -63,11 +58,17 @@ once('DOMContentLoaded', async () => {
     locale: store.state['app.locale'],
   }))
 
+  const app = (
+    <Suspense fallback={<Fallback />}>
+      <App {...props} {...{ client, handle, history, store }} />
+    </Suspense>
+  )
   await mount(app, UI.APP_CONTAINER_ID, {
     history,
     router: true,
     strictMode: true,
   })
+
   console.debug(
     `The app mounted on "#${UI.APP_CONTAINER_ID}" with props:`,
     props,

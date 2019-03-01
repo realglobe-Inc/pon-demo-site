@@ -5,42 +5,35 @@
 
 import conf from './deps/conf'
 import URL from 'url-parse'
-import AppConsts from '../constants/AppConsts'
 import { appCache, cachingFetch } from 'the-sw-util'
 
 const { SrcSets, Urls } = conf
 
-const pathsToCache = [...SrcSets.jsSet, ...SrcSets.cssSet, Urls.ICON_URL]
-const urlsToCache = []
+const pathnamesToCache = [
+  ...SrcSets.jsSet,
+  ...SrcSets.cssSet,
+  Urls.ICON_URL,
+  /^\/webfonts\//,
+  /^\/images\//,
+  /\.chunk\.js/,
+]
 
-const patternsToCache = [/^\/webfonts\//, /^\/images\//, /\.chunk\.js/]
-
-let info
-const ready = (async function() {
-  const data = await self.fetch('/the/info')
-  info = await data.json()
-})()
-
-self.addEventListener('install', (event) => {
-  event.waitUntil(ready)
-})
+self.addEventListener('install', (event) => {})
 
 self.addEventListener('fetch', (event) => {
-  const { url } = event.request
-  const { host, pathname } = new URL(url)
-  const isOwn = host === location.host
+  const requestURL = new URL(event.request.url)
+  const scriptURL = new URL(self.registration.active)
+  const isOwn = requestURL.host === scriptURL.host
   const shouldCache =
-    urlsToCache.includes(url) ||
-    ((isOwn && pathsToCache.includes(pathname)) ||
-      patternsToCache.some((pattern) => pattern.test(pathname)))
+    isOwn &&
+    pathnamesToCache.some((pathname) => !!requestURL.pathname.match(pathname))
   if (!shouldCache) {
     return
   }
+
   event.respondWith(
     (async function() {
-      await ready
-      const version = [AppConsts.version, info.buildNumber].join('-')
-      const cache = await appCache(AppConsts.name, version, {
+      const cache = await appCache(scriptURL.host, scriptURL.query.v, {
         scope: 'static-files',
       })
       return cachingFetch(cache, event.request)

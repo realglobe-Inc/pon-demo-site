@@ -5,6 +5,7 @@
 
 import React from 'react'
 import { TheBody, TheHead, TheHtml, TheRouter } from 'the-components'
+import { addUrlQuery } from 'the-url'
 import { GlobalKeys, locales, SrcSets, Styles, UI, Urls } from '@self/conf'
 import App from './App'
 import context from './context'
@@ -13,11 +14,18 @@ import context from './context'
 function Html({ appScope, renderingContext }) {
   const { buildNumber, cdnUrl, version } = appScope
   const { client, handle, lang, path, store } = renderingContext
+  const v = [version, buildNumber].join('-')
   const l = locales.bind(lang)
+  const workerScopes = {
+    '/': addUrlQuery(Urls.JS_ROOT_SERVICE_WORKER_URL, { v }),
+  }
   handle.setAttributes({ client, l, lang, store })
   context.set({ handle, l, lang, state: store.state })
+
   const appProps = {
     lang,
+    v,
+    workerScopes,
   }
   return (
     <TheHtml>
@@ -29,7 +37,7 @@ function Html({ appScope, renderingContext }) {
         icon={Urls.ICON_URL}
         js={SrcSets.jsSet}
         title={l('app.APP_NAME')}
-        version={[version, buildNumber].join('-')}
+        version={v}
       />
       <TheBody>
         <div id={UI.APP_CONTAINER_ID}>

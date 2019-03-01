@@ -25,9 +25,9 @@
     "JS_CHUNK_BASE_URL": "/build",
     "JS_ROOT_SERVICE_WORKER_URL": "/RootServiceWorker.js",
     "JS_SHIM_URL": "/js/es5-shim.min.js",
-    "PROD_ASSET_URL": "/v7.1.4",
-    "PROD_CSS_BUNDLE_URL": "/v7.1.4/bundle.css",
-    "PROD_JS_BUNDLE_URL": "/v7.1.4/bundle.js",
+    "PROD_ASSET_URL": "/v7.1.5",
+    "PROD_CSS_BUNDLE_URL": "/v7.1.5/bundle.css",
+    "PROD_JS_BUNDLE_URL": "/v7.1.5/bundle.js",
     "TOP_URL": "/"
   }
 }
