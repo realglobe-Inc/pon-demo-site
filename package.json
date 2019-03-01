@@ -37,7 +37,7 @@
     "the-context": "^2.1.15",
     "the-controller-base": "^4.0.14",
     "the-date": "^3.0.20",
-    "the-db": "^11.0.8",
+    "the-db": "^11.0.9",
     "the-decorators": "^1.0.2",
     "the-entrypoint": "^2.3.9",
     "the-handle": "^5.0.5",
@@ -62,7 +62,7 @@
     "the-spin": "^3.1.12",
     "the-store": "^7.1.12",
     "the-style-util": "^1.0.2",
-    "the-sw-util": "^2.1.4",
+    "the-sw-util": "^2.3.0",
     "the-theme-style": "^3.0.4",
     "the-window": "^7.0.3",
     "url-parse": "^1.4.4"

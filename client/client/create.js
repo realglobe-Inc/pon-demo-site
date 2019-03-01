@@ -5,15 +5,20 @@
  */
 'use strict'
 
-const { unlessProduction } = require('the-check')
-const { TheClient } = require('the-client/shim')
-const { version } = require('../constants/AppConsts')
+import { unlessProduction } from 'the-check'
+import { TheClient } from 'the-client/shim'
+import { GlobalKeys } from '@self/conf'
+import { get } from 'the-window'
 
 class Client extends TheClient {}
 
 /** @lends create */
 function create(config = {}) {
-  return new Client({ version, ...config })
+  const { v } = get(GlobalKeys.PROPS) || {}
+  return new Client({
+    version: v,
+    ...config,
+  })
 }
 
 create.for = (namespace, options = {}) => {
@@ -29,7 +34,6 @@ create.for = (namespace, options = {}) => {
         )
       }, 1000)
     },
-    version,
   })
   return client
 }
