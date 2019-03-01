@@ -14,16 +14,15 @@ const pathsToCache = [...SrcSets.jsSet, ...SrcSets.cssSet, Urls.ICON_URL]
 const urlsToCache = []
 
 const patternsToCache = [/^\/webfonts\//, /^\/images\//, /\.chunk\.js/]
-let buildNumber
+
+let info
+const ready = (async function() {
+  const data = await self.fetch('/the/info')
+  info = await data.json()
+})()
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    (async function() {
-      const data = await self.fetch('/the/info')
-      const info = await data.json()
-      buildNumber = info.buildNumber
-    })(),
-  )
+  event.waitUntil(ready)
 })
 
 self.addEventListener('fetch', (event) => {
@@ -37,10 +36,10 @@ self.addEventListener('fetch', (event) => {
   if (!shouldCache) {
     return
   }
-
   event.respondWith(
     (async function() {
-      const version = [AppConsts.version, buildNumber].join('-')
+      await ready
+      const version = [AppConsts.version, info.buildNumber].join('-')
       const cache = await appCache(AppConsts.name, version, {
         scope: 'static-files',
       })
