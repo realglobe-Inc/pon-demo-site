@@ -187,8 +187,17 @@ module.exports = pon(
     // Sub Tasks for Production
     // -----------------------------------
     ...{
+      /** Cleanup build files */
+      'prod:clean': del('public/build/**/*.*'),
       /** Compile files for production */
-      'prod:compile': ['env:prod', 'build', 'prod:map', 'prod:css', 'prod:js'],
+      'prod:compile': [
+        'env:prod',
+        'prod:clean',
+        'build',
+        'prod:map',
+        'prod:css',
+        'prod:js',
+      ],
       /** Compile css files for production */
       'prod:css': css.minify(
         [`public${Urls.CSS_BUNDLE_URL}`],
@@ -322,7 +331,7 @@ module.exports = pon(
         watchTargets: 'client/ui/**/*.pcss',
       }),
       'ui:workers': env.dynamic(
-        ({ isProduction }) =>
+        ({ }) =>
           browser.all('workers', `public`, {
             context: `${__dirname}/client/shim`,
           }),
