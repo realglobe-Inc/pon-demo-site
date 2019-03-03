@@ -14,7 +14,7 @@ class ConnectionRetryDialog extends React.Component {
       active: state['connection.retry.active'],
       busy: state['connection.retry.busy'],
     }),
-    ({ l, connectionRetryScene: retryScene }) => ({
+    ({ connectionRetryScene: retryScene, l }) => ({
       l,
       onClose: async () => retryScene.init(),
       onReload: async () => {
