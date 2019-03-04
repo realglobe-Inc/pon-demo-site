@@ -40,6 +40,7 @@
     "pre": "Shortcut for 'prepare` task",
     "prepare": "Prepare project",
     "prod": "Prepare and start on production",
+    "prod:clean": "Cleanup build files",
     "prod:compile": "Compile files for production",
     "prod:css": "Compile css files for production",
     "prod:db": "Prepare database for production",

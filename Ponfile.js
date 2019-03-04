@@ -331,7 +331,7 @@ module.exports = pon(
         watchTargets: 'client/ui/**/*.pcss',
       }),
       'ui:workers': env.dynamic(
-        ({ }) =>
+        ({}) =>
           browser.all('workers', `public`, {
             context: `${__dirname}/client/shim`,
           }),
