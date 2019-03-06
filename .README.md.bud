@@ -16,7 +16,7 @@ module.exports = Readme({
   overview: 'doc/overview.md',
   pkg,
   repo: pkg.repository,
-  sections: 'doc/guides/*.md.hbs',
+  sections: 'doc/readme/*.md.hbs',
   vars: {},
 })
 
