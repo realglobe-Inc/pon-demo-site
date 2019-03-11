@@ -7,8 +7,8 @@
 
 import { unlessProduction } from 'the-check'
 import { TheClient } from 'the-client/shim'
-import { GlobalKeys } from '@self/conf'
 import { get } from 'the-window'
+import { GlobalKeys } from '@self/conf'
 
 class Client extends TheClient {}
 

@@ -21,7 +21,7 @@ class HomeView extends React.Component {
         console.log('new Count:', pipedProxy.count)
       },
       onMount: async () => {},
-      onReceive: async (received) => {},
+      onReceive: async () => {},
       onUnmount: async () => {},
     }),
   )

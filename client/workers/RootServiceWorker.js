@@ -3,8 +3,8 @@
  */
 'use strict'
 
-import { SrcSets, Urls } from '@self/conf'
 import { appCache, cachingFetch, parseUrl } from 'the-sw-util'
+import { SrcSets, Urls } from '@self/conf'
 
 const pathnamesToCache = [
   ...SrcSets.jsSet,
@@ -15,7 +15,7 @@ const pathnamesToCache = [
   /\.chunk\.js/,
 ]
 
-self.addEventListener('install', (event) => {})
+self.addEventListener('install', () => {})
 
 self.addEventListener('fetch', (event) => {
   const requestURL = parseUrl(event.request.url)

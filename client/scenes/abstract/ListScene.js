@@ -111,7 +111,7 @@ class ListScene extends ListSceneBase {
           size: condition.page.number * condition.page.size,
         },
       })
-      this.set({ counts: counts, entities, hasMore: hasMoreFor(counts) })
+      this.set({ counts, entities, hasMore: hasMoreFor(counts) })
       this.addEntities(entities)
     } finally {
       this.set({ moreBusy: false })
