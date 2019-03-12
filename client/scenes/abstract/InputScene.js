@@ -36,7 +36,7 @@ class InputScene extends InputSceneBase {
   @withBusy.while
   @withResult.save
   async doExec() {
-    return await this.processEntry((values) => this.dealWith(values))
+    return this.processEntry((values) => this.dealWith(values))
   }
 }
 
