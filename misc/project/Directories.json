@@ -10,7 +10,7 @@
   "client/ui": "User interfaces",
   "conf": "Configuration of project",
   "doc": "Documents",
-  "doc/guides": "Guides for README",
+  "doc/readme": "Guides for README",
   "misc": "Misc files",
   "public": "Public directory to serve static files. Auto-generated",
   "server": "Server side scripts",

@@ -19,7 +19,6 @@ var/
 /client/ui/stateful/index.jsx
 /client/ui/stateless/index.jsx
 /client/ui/views/index.jsx
-/client/ui/wrappers/index.jsx
 /conf/index.js
 /conf/locales/en/index.js
 /server/controllers/index.js

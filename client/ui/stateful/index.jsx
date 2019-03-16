@@ -10,7 +10,7 @@ import Fallback from './fallback/Fallback'
 import Route from './route/Route'
 
 export {
- ConnectionRetryDialog,
- Fallback,
- Route,
+  ConnectionRetryDialog,
+  Fallback,
+  Route,
 }
