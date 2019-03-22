@@ -3,7 +3,7 @@
  */
 'use strict'
 
-const { eslintignore, eslintrc } = require('the-templates')
+const { eslintignore, eslintrc } = require('@the-/templates')
 
 module.exports = [eslintrc(), eslintignore()]
 

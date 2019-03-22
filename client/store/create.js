@@ -12,8 +12,8 @@ const {
   ObjectScope,
   StringScope,
   ValueScope,
-} = require('the-scope/shim/scopes')
-const { TheStore } = require('the-store')
+} = require('@the-/scope/shim/scopes')
+const { TheStore } = require('@the-/store')
 const scopes = require('./scopes')
 
 /** @lends create */

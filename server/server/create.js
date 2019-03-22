@@ -5,8 +5,6 @@
  */
 'use strict'
 
-const { isProduction } = require('the-check')
-const theServer = require('the-server')
 const {
   Html,
   createClient,
@@ -14,6 +12,8 @@ const {
   createStore,
 } = require('@self/client/shim')
 const Local = require('@self/Local')
+const { isProduction } = require('@the-/check')
+const theServer = require('@the-/server')
 const mappings = require('../mappings')
 const conf = require('../../conf')
 const pkg = require('../../package')
@@ -43,7 +43,6 @@ function create(config) {
   }
 
   return theServer({
-    cacheDir: 'tmp/cache',
     controllers: ControllerMapping,
     html: Html,
     info: { buildNumber },

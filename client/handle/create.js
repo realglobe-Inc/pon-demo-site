@@ -5,7 +5,7 @@
  */
 'use strict'
 
-const { TheHandle } = require('the-handle/shim')
+const { TheHandle } = require('@the-/handle/shim')
 const { SceneMapping } = require('../mappings')
 
 /** @lends create */

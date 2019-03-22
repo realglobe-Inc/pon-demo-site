@@ -6,7 +6,7 @@
 const aglob = require('aglob')
 const path = require('path')
 const { camelcase } = require('stringcase')
-const { mapping } = require('the-templates')
+const { mapping } = require('@the-/templates')
 
 module.exports = Object.entries({
   SceneMapping: {

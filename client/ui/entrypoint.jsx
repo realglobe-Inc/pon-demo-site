@@ -1,8 +1,9 @@
 'use strict'
 
-import 'the-polyfill/apply'
+import '@the-/polyfill/apply'
 import React, { lazy, Suspense } from 'react'
-import { isProduction } from 'the-check'
+import { GlobalKeys, locales, UI } from '@self/conf'
+import { isProduction } from '@the-/check'
 import {
   history as historyFor,
   mount,
@@ -10,9 +11,8 @@ import {
   quelize,
   singleton,
   workers,
-} from 'the-entrypoint'
-import { get, once, rescue, set } from 'the-window'
-import { GlobalKeys, locales, UI } from '@self/conf'
+} from '@the-/entrypoint'
+import { get, once, rescue, set } from '@the-/window'
 import context from './context'
 import Fallback from './stateful/fallback/Fallback'
 

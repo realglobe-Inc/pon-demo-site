@@ -1,7 +1,7 @@
 'use strict'
 
 const {APP_DOMAIN: domain, DOCKER_NGINX_CONTAINER_PORT: port} = require('../../Local')
-const {vhost} = require('the-templates')
+const {vhost} = require('@the-/templates')
 
 module.exports = [
   domain,

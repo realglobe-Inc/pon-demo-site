@@ -5,10 +5,10 @@
  */
 'use strict'
 
-import { unlessProduction } from 'the-check'
-import { TheClient } from 'the-client/shim'
-import { get } from 'the-window'
 import { GlobalKeys } from '@self/conf'
+import { unlessProduction } from '@the-/check'
+import { TheClient } from '@the-/client/shim'
+import { get } from '@the-/window'
 
 class Client extends TheClient {}
 

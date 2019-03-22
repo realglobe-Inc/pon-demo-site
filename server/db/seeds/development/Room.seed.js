@@ -1,6 +1,6 @@
 'use strict'
 
-const seed = require('the-seed')('en')
+const seed = require('@the-/seed')('en')
 
 module.exports = seed
   .explode(

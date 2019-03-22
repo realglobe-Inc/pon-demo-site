@@ -3,7 +3,7 @@
  */
 'use strict'
 
-const { Readme } = require('the-templates')
+const { Readme } = require('@the-/templates')
 const pkg = require('./package')
 
 module.exports = Readme({

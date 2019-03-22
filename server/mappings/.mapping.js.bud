@@ -4,7 +4,7 @@
 'use strict'
 
 const { camelcase } = require('stringcase')
-const { mapping } = require('the-templates')
+const { mapping } = require('@the-/templates')
 const c = require('../controllers')
 const r = require('../db/resources')
 

@@ -6,7 +6,7 @@
 
 const Local = require('../../Local')
 const path = require('path')
-const { isMacOS } = require('the-check')
+const { isMacOS } = require('@the-/check')
 
 module.exports = Object.freeze(
   /** @lends Containers */

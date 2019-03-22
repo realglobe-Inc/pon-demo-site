@@ -5,8 +5,8 @@
 
 import React from 'react'
 import { TheBody, TheHead, TheHtml, TheRouter } from 'the-components'
-import { addUrlQuery } from 'the-url'
 import { GlobalKeys, locales, SrcSets, Styles, UI, Urls } from '@self/conf'
+import { addUrlQuery } from '@the-/url'
 import App from './App'
 import context from './context'
 

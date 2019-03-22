@@ -4,8 +4,8 @@
 'use strict'
 
 import React from 'react'
-import theAssert from 'the-assert'
-import { TheContext } from 'the-context'
+import theAssert from '@the-/assert'
+import { TheContext } from '@the-/context'
 
 const assert = theAssert('context')
 const context = new TheContext({})
@@ -13,8 +13,9 @@ const context = new TheContext({})
 /** Create stateless renderer */
 context.stateless = function stateless() {
   const init = ({ l }) => ({ l })
+  const noop = () => null
   return (renderer) => (
-    <context.Entry init={init} pipe={null}>
+    <context.Entry init={init} pipe={noop}>
       {renderer}
     </context.Entry>
   )

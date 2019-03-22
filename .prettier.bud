@@ -3,7 +3,7 @@
  */
 'use strict'
 
-const { prettierrc } = require('the-templates')
+const { prettierrc } = require('@the-/templates')
 
 module.exports = [prettierrc()]
 

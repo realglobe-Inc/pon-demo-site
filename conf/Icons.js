@@ -4,8 +4,8 @@
  */
 'use strict'
 
-const { isProduction } = require('the-check')
-const theHash = require('the-hash')
+const { isProduction } = require('@the-/check')
+const theHash = require('@the-/hash')
 
 module.exports = Object.freeze(
   /** @lends Icons */

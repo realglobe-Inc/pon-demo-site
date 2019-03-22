@@ -4,7 +4,7 @@
 'use strict'
 
 const { TheThemeStyle } = require('the-theme-style')
-const { styleString } = require('the-style-util')
+const { styleString } = require('@the-/util-style')
 const { Styles } = require('../../conf')
 const { EOL } = require('os')
 

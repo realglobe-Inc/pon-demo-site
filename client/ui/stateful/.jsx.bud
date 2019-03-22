@@ -3,7 +3,7 @@
  */
 'use strict'
 
-const { Stateful } = require('the-templates')
+const { Stateful } = require('@the-/templates')
 
 module.exports = ['route/Route'].map((name) =>
   Stateful({

@@ -4,7 +4,7 @@
  */
 'use strict'
 
-import { RenderingCountMetrics } from 'the-metrics-presets'
+import { RenderingCountMetrics } from '@the-/metrics-presets'
 import * as stateful from './stateful'
 import * as v from './views'
 

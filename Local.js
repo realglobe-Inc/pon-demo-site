@@ -5,12 +5,12 @@
 'use strict'
 
 const { snakecase } = require('stringcase')
-const { isProduction } = require('the-check')
-const theHash = require('the-hash')
-const directorySeat = require('the-seat/handy/directorySeat')
-const theSecret = require('the-secret')
-const theSetting = require('the-setting')
 const { inspect } = require('util')
+const { isProduction } = require('@the-/check')
+const theHash = require('@the-/hash')
+const directorySeat = require('@the-/seat/handy/directorySeat')
+const theSecret = require('@the-/secret')
+const theSetting = require('@the-/setting')
 const pkg = require('./package')
 
 const SECRET_MASTER_PASSWORD = `${pkg.name}-xxxxxxxxxxxxxxxxxx` // TODO

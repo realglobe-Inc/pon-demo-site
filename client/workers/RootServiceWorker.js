@@ -3,8 +3,8 @@
  */
 'use strict'
 
-import { appCache, cachingFetch, parseUrl } from 'the-sw-util'
 import { SrcSets, Urls } from '@self/conf'
+import { appCache, cachingFetch, parseUrl } from '@the-/util-sw'
 
 const pathnamesToCache = [
   ...SrcSets.jsSet,

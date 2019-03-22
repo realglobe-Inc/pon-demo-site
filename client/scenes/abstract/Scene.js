@@ -7,7 +7,7 @@
 
 const { TheScene } = require('the-scene-base/shim')
 const { withLocation } = require('the-scene-mixins/shim')
-const { addUrlQuery, formatUrl } = require('the-url')
+const { addUrlQuery, formatUrl } = require('@the-/url')
 
 class SceneBase extends TheScene {}
 

@@ -3,7 +3,7 @@
  */
 'use strict'
 
-const { License } = require('the-templates')
+const { License } = require('@the-/templates')
 const { license, repository } = require('./package')
 
 module.exports = License({

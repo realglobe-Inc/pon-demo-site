@@ -5,7 +5,7 @@
  */
 'use strict'
 
-const theDB = require('the-db')
+const theDB = require('@the-/db')
 const { ResourceMapping } = require('../mappings')
 const Local = require('../../Local')
 
