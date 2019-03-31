@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheFooter } from 'the-components'
+import { TheFooter } from '@the-/ui'
 import context from '../context'
 
 class Footer extends React.Component {

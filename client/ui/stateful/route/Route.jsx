@@ -4,8 +4,8 @@
 'use strict'
 
 import React, { Suspense } from 'react'
-import { TheRoute } from 'the-components'
 import { isBrowser } from '@the-/check'
+import { TheRoute } from '@the-/ui'
 import Fallback from '../fallback/Fallback'
 import context from '../../context'
 

@@ -5,7 +5,7 @@
 'use strict'
 
 const { clone } = require('asobj')
-const { withBusy, withEntry, withResult } = require('the-scene-mixins/shim')
+const { withBusy, withEntry, withResult } = require('@the-/mixin-scene/shim')
 const Scene = require('./Scene')
 
 @withBusy

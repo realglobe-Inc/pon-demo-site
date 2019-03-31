@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheButton, TheCycle, TheMeta, TheView } from 'the-components'
+import { TheButton, TheCycle, TheMeta, TheView } from '@the-/ui'
 import styles from './HomeView.pcss'
 import context from '../context'
 

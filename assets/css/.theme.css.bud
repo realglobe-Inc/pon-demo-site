@@ -3,7 +3,7 @@
  */
 'use strict'
 
-const { TheThemeStyle } = require('the-theme-style')
+const { TheThemeStyle } = require('@the-/ui-theme-style')
 const { styleString } = require('@the-/util-style')
 const { Styles } = require('../../conf')
 const { EOL } = require('os')

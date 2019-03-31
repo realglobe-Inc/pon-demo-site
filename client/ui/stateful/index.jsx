@@ -14,3 +14,9 @@ export {
   Fallback,
   Route,
 }
+
+export default {
+      ConnectionRetryDialog,
+      Fallback,
+      Route,
+}

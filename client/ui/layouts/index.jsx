@@ -16,3 +16,10 @@ export {
   Header,
   Toasts,
 }
+
+export default {
+      Dialogs,
+      Footer,
+      Header,
+      Toasts,
+}

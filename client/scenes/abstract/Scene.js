@@ -5,8 +5,8 @@
  */
 'use strict'
 
-const { TheScene } = require('the-scene-base/shim')
-const { withLocation } = require('the-scene-mixins/shim')
+const { withLocation } = require('@the-/mixin-scene/shim')
+const { TheScene } = require('@the-/scene/shim')
 const { addUrlQuery, formatUrl } = require('@the-/url')
 
 class SceneBase extends TheScene {}

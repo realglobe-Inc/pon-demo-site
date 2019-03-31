@@ -21,6 +21,7 @@ const pm2 = require('pon-task-pm2')
 const { browser, ccjs, css, react } = require('pon-task-web')
 const theAssets = require('@the-/assets')
 const theBin = require('@the-/bin/pon')
+const { isProduction } = require('@the-/check')
 const thePS = require('@the-/ps/pon')
 const { Urls, locales } = require('./conf')
 const Local = require('./Local')
@@ -294,6 +295,7 @@ module.exports = pon(
             `public/build/[name].js`,
             {
               context: `${__dirname}/client/shim`,
+              devtool: isProduction() ? false : 'cheap-source-map',
               publicPath: `${Urls.JS_CHUNK_BASE_URL}/`,
             },
           ),

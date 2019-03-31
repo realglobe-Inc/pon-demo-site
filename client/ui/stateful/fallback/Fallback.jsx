@@ -5,7 +5,7 @@
 
 import c from 'classnames'
 import React from 'react'
-import { TheSpin } from 'the-spin'
+import { TheSpin } from '@the-/ui-spin'
 import styles from './Fallback.pcss'
 import context from '../../context'
 

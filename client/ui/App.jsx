@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheCaughtCatcher, TheMain, TheMeta, TheRoot } from 'the-components'
+import { TheCaughtCatcher, TheMain, TheMeta, TheRoot } from '@the-/ui'
 import context from './context'
 import { Dialogs, Footer, Header, Toasts } from './layouts'
 import Routes from './Routes'

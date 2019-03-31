@@ -4,13 +4,7 @@
 'use strict'
 
 import React from 'react'
-import {
-  TheButton,
-  TheButtonGroup,
-  TheMeta,
-  TheRoute,
-  TheView,
-} from 'the-components'
+import { TheButton, TheButtonGroup, TheMeta, TheRoute, TheView } from '@the-/ui'
 import styles from './ErrorNotfoundView.pcss'
 import context from '../../context'
 

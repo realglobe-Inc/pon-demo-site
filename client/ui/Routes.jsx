@@ -1,8 +1,8 @@
 'use strict'
 
 import React from 'react'
-import { TheRoute } from 'the-components'
 import { Urls } from '@self/conf'
+import { TheRoute } from '@the-/ui'
 import { Route } from './stateful'
 import * as v from './views'
 

@@ -5,7 +5,7 @@
 
 const {
   DataTypes: { DATE },
-} = require('the-resource-base')
+} = require('@the-/resource')
 
 module.exports = Object.freeze(
   /** @lends atPolicy */

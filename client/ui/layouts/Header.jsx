@@ -4,7 +4,7 @@
 'use strict'
 
 import React from 'react'
-import { TheHeader } from 'the-components'
+import { TheHeader } from '@the-/ui'
 import context from '../context'
 
 class Header extends React.Component {

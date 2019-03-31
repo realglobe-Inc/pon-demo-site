@@ -6,7 +6,7 @@
 const {
   DataTypes: { STRING },
   TheResource,
-} = require('the-resource-base')
+} = require('@the-/resource')
 const atPolicy = require('./concerns/policies/atPolicy')
 
 class RoomResource extends TheResource {
