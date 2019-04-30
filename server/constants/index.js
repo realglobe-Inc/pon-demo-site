@@ -2,8 +2,7 @@
 'use strict'
 
 
-export {
-}
 
-export default {
+
+module.exports = {
 }

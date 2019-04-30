@@ -21,7 +21,6 @@ const pm2 = require('pon-task-pm2')
 const { browser, ccjs, css, react } = require('pon-task-web')
 const theAssets = require('@the-/assets')
 const theBin = require('@the-/bin/pon')
-const { isProduction } = require('@the-/check')
 const thePS = require('@the-/ps/pon')
 const { Urls, locales } = require('./conf')
 const Local = require('./Local')
@@ -164,8 +163,6 @@ module.exports = pon(
       /** Link self packages */
       'pkg:link': symlink(
         {
-          'Local.js': 'node_modules/@self/Local',
-          'assets/data': 'node_modules/@self/data',
           'shim/conf': 'node_modules/@self/conf',
           'shim/utils': 'node_modules/@self/utils',
           client: 'node_modules/@self/client',
@@ -295,7 +292,6 @@ module.exports = pon(
             `public/build/[name].js`,
             {
               context: `${__dirname}/client/shim`,
-              devtool: isProduction() ? false : 'cheap-source-map',
               publicPath: `${Urls.JS_CHUNK_BASE_URL}/`,
             },
           ),

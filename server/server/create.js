@@ -11,11 +11,11 @@ const {
   createHandle,
   createStore,
 } = require('@self/client/shim')
-const Local = require('@self/Local')
 const { isProduction } = require('@the-/check')
 const theServer = require('@the-/server')
 const mappings = require('../mappings')
 const conf = require('../../conf')
+const Local = require('../../Local')
 const pkg = require('../../package')
 
 const { ControllerMapping } = mappings
