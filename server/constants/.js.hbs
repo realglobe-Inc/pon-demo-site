@@ -1,5 +1,6 @@
 /**
  * {{name}}
+ * @memberOf module:server.constants
  * @namespace {{name}}
  */
 'use strict'
@@ -7,12 +8,15 @@
 const { isProduction } = require('@the-/check')
 const theHash = require('@the-/hash')
 
-module.exports = Object.freeze(
-  /** @lends {{name}} */
+
+const {{name}} = Object.freeze(
+  /** @lends module:server.constants.{{name}} */
   {
 
   }
 )
+
+module.exports = {{name}}
 
 if (!isProduction()) {
   module.exports = theHash.proxy(module.exports, {name: '{{name}}', unknownCheck: true})

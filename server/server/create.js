@@ -13,16 +13,16 @@ const {
 } = require('@self/client/shim')
 const { isProduction } = require('@the-/check')
 const theServer = require('@the-/server')
+const { RedisConnections, WebApps } = require('../constants')
 const mappings = require('../mappings')
 const conf = require('../../conf')
-const Local = require('../../Local')
 const pkg = require('../../package')
 
 const { ControllerMapping } = mappings
 const defaultRedisConfig = {
-  db: Local.REDIS_DB,
-  host: Local.REDIS_HOST,
-  port: Local.REDIS_PORT,
+  db: RedisConnections.Default.DB,
+  host: RedisConnections.Default.HOST,
+  port: RedisConnections.Default.PORT,
 }
 
 /** @lends create */
@@ -36,7 +36,7 @@ function create(config) {
   const buildNumber = isProduction() ? 0 : String(new Date().getTime())
   const app = {
     buildNumber,
-    cdnUrl: isProduction() ? Local.APP_CDN_URL : null,
+    cdnUrl: isProduction() ? WebApps.Default.CDN_URL : null,
     db,
     locales,
     version: pkg.version,
@@ -55,7 +55,7 @@ function create(config) {
     langs: Object.keys(locales),
     redis: redisConfig,
     scope: app,
-    static: isProduction() ? [] : [Local.APP_PUBLIC_DIR],
+    static: isProduction() ? [] : [WebApps.Default.PUBLIC_DIR],
   })
 }
 

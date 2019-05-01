@@ -38,4 +38,4 @@ create.for = (namespace, options = {}) => {
   return client
 }
 
-module.exports = create
+export default create

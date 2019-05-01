@@ -22,14 +22,26 @@ const { browser, ccjs, css, react } = require('pon-task-web')
 const theAssets = require('@the-/assets')
 const theBin = require('@the-/bin/pon')
 const thePS = require('@the-/ps/pon')
+const theSecret = require('@the-/secret')
+const theSetting = require('@the-/setting')
 const { Urls, locales } = require('./conf')
-const Local = require('./Local')
 const Containers = require('./misc/docker/Containers')
 const Bins = require('./misc/project/Bins')
 const Directories = require('./misc/project/Directories')
 const Pondoc = require('./misc/project/Pondoc')
+const { Project, WebApps } = require('./server/constants')
 const migration = require('./server/db/migration')
-const { secret, setting } = Local
+
+const setting = theSetting(
+  Project.SETTING_FILE,
+  /** @lends module:server.constants.SettingValues */
+  {
+    APP_CDN_URL: '',
+    APP_DOMAIN: 'pon-demo-site.org',
+  },
+)
+const secret = theSecret(Project.SECRETS_FILE, Project.SECRET_MASTER_PASSWORD)
+
 const createDB = () => require('./server/db/create').forTask()
 
 module.exports = pon(
@@ -111,7 +123,7 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Set env variables for debug */
-      'env:debug': env('development', { DEBUG: 'app:*', ...Local }),
+      'env:debug': env('development', { DEBUG: 'app:*' }),
       /** Set env variables for production */
       'env:prod': env('production'),
       /** Set env variables for test */
@@ -139,7 +151,7 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Print local settings */
-      'local:print': () => Local.print(),
+      'constants:print': () => Local.print(),
     },
 
     // -----------------------------------
@@ -164,7 +176,6 @@ module.exports = pon(
       'pkg:link': symlink(
         {
           'shim/conf': 'node_modules/@self/conf',
-          'shim/utils': 'node_modules/@self/utils',
           client: 'node_modules/@self/client',
         },
         { force: true },
@@ -178,7 +189,7 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Run app with pm2 */
-      'pm2:app': pm2('./bin/app.js', { name: Local.APP_PROCESS_NAME }),
+      'pm2:app': pm2('./bin/app.js', { name: WebApps.Default.PROCESS_NAME }),
     },
 
     // -----------------------------------

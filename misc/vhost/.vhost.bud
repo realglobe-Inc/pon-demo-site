@@ -1,14 +1,14 @@
 'use strict'
 
-const {APP_DOMAIN: domain, DOCKER_NGINX_CONTAINER_PORT: port} = require('../../Local')
-const {vhost} = require('@the-/templates')
+const { WebApps, DockerPorts } = require('../../server/constants')
+const { vhost } = require('@the-/templates')
 
 module.exports = [
-  domain,
-  [domain].join('.')
+  WebApps.Default.DOMAIN,
+  ['www', WebApps.Default.DOMAIN].join('.'),
 ].map((domain) => vhost({
   domain,
-  port,
+  port: DockerPorts.NGINX_CONTAINER_PORT,
 }))
 
 if (!module.parent) {

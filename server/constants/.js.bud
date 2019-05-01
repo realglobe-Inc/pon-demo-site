@@ -3,11 +3,14 @@
  */
 'use strict'
 
-module.exports = [].map((name) => ({
+const path = require('path')
+
+module.exports = ['setting/SettingValues'].map((name) => ({
   data: {
-    name,
+    name: path.basename(name),
   },
   force: false,
+  mkdirp: true,
   mode: '644',
   path: `${name}.js`,
 }))
