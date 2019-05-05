@@ -69,6 +69,15 @@
       "type": "object"
     }
   },
+  "conf/locales/**/*.json": {
+    "usageRule": {
+      "flattenKeysUsedIn": [
+        "server/**/*.js",
+        "client/**/*.js",
+        "client/**/*.jsx"
+      ]
+    }
+  },
   "conf/Urls.js": {
     "moduleRule": {
       "keyPattern": "/^[A-Z_]+_URL$/",

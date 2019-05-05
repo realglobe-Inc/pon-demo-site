@@ -1,7 +1,7 @@
 /**
  * Seated value
  * @function _seat
- * @param {function} creator
+ * @param {function()} creator
  * @protected
  * @memberOf module:server.constants
  */
