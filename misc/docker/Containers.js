@@ -4,7 +4,11 @@
  */
 'use strict'
 
-const { DockerPorts, DockerContainers, WebApps } = require('../../server/constants')
+const {
+  DockerPorts,
+  DockerContainers,
+  WebApps,
+} = require('../../server/constants')
 const path = require('path')
 const { isMacOS } = require('@the-/check')
 

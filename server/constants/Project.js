@@ -21,6 +21,7 @@ const Project = {
   SECRETS_FILE: require.resolve('./secret/Secrets.json'),
   SETTING_FILE: path.join(BASE_DIR, 'var/app/setting.json'),
   SHORT_NAME: pkg.name.split('/').pop(),
+  VERSION: pkg.version,
 }
 
 module.exports = Project

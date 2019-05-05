@@ -151,7 +151,7 @@ module.exports = pon(
     // -----------------------------------
     ...{
       /** Print local settings */
-      'constants:print': () => Local.print(),
+      'constants:print': () => console.log(require('./server/constants')),
     },
 
     // -----------------------------------

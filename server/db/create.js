@@ -2,6 +2,7 @@
  * Create an db instance
  * @memberof module:server.db
  * @function create
+ * @param {Object} [config]
  * @returns {TheDB}
  */
 'use strict'

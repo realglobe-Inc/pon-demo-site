@@ -44,7 +44,7 @@
     },
     "propRule": {
       "keypathAccess": {
-        "state": "client/store/scopes",
+        "state": "client/shim/store/scopes",
         "Urls": "conf/Urls"
       }
     }
