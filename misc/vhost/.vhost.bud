@@ -3,13 +3,14 @@
 const { WebApps, DockerPorts } = require('../../server/constants')
 const { vhost } = require('@the-/templates')
 
-module.exports = [
-  WebApps.Default.DOMAIN,
-  ['www', WebApps.Default.DOMAIN].join('.'),
+const domain = WebApps.Default.DOMAIN
+module.exports = domain ? [
+  domain,
+  ['www'].join('.'),
 ].map((domain) => vhost({
   domain,
   port: DockerPorts.NGINX_CONTAINER_PORT,
-}))
+})) : []
 
 if (!module.parent) {
   require('coz').render(__filename)
