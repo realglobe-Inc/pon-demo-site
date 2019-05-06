@@ -17,6 +17,7 @@ const { eslint, fmtjson, mocha, pondoc } = require('pon-task-dev')
 const docker = require('pon-task-docker')
 const icon = require('pon-task-icon')
 const theCode = require('@the-/code/pon')
+const jsdoc = require('@the-/jsdoc/pon')
 const theLint = require('@the-/lint/pon')
 const theSupport = require('@the-/support/pon')
 const locales = require('./conf/locales')
@@ -26,7 +27,6 @@ const Rules = require('./misc/lint/Rules')
 const PondocDev = require('./misc/project/Pondoc.dev')
 const { cwd, doc, tasks } = require('./Ponfile')
 const { DockerPorts, WebApps } = require('./server/constants')
-const jsdoc = require('../the/packages/jsdoc/pon') // FIXME
 
 module.exports = pon(
   /** @module tasks */
