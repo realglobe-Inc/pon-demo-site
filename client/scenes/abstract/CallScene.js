@@ -1,5 +1,6 @@
 /**
  * CallScene
+ * @memberof module:client.scenes.abstract
  * @class CallScene
  */
 'use strict'
@@ -10,10 +11,10 @@ import Scene from './Scene'
 @withBusy
 class CallSceneBase extends Scene {}
 
-/** @lends CallScene */
+/** @lends module:client.scenes.abstract.CallScene */
 class CallScene extends CallSceneBase {
   async dealWith() {
-    throw new Error(`Not implemented`)
+    throw new Error(`[CallScene] Not implemented`)
   }
 
   @withBusy.while

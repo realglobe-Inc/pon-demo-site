@@ -30,7 +30,7 @@ create.for = (namespace, options = {}) => {
   const client = Client.for(namespace, {
     onGone: () => {
       setTimeout(() => {
-        connectionRetryScene.set({ active: true, busy: false })
+        connectionRetryScene.start()
         unlessProduction(() =>
           client.pingPongAnd(() => connectionRetryScene.doExec()),
         )

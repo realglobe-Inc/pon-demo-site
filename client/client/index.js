@@ -1,6 +1,7 @@
 /**
  * Client index
- * @module client
+ * @memberOf module:client
+ * @namespace client
  */
 'use strict'
 

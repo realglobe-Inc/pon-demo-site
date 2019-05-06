@@ -1,5 +1,6 @@
 /**
  * AppScene
+ * @memberof module:client.scenes
  * @class AppScene
  */
 'use strict'

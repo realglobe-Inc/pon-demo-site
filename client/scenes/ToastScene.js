@@ -1,5 +1,6 @@
 /**
  * ToastScene
+ * @memberof module:client.scenes
  * @class ToastScene
  */
 'use strict'
@@ -11,7 +12,7 @@ import Scene from './abstract/Scene'
 @siteToast
 class ToastSceneBase extends Scene {}
 
-/** @lends ToastScene */
+/** @lends module:client.scenes.ToastScene */
 class ToastScene extends ToastSceneBase {}
 
 export default ToastScene

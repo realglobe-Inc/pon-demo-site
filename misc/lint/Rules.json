@@ -71,7 +71,7 @@
   },
   "conf/locales/**/*.json": {
     "usageRule": {
-      "flattenKeysUsedIn": [
+      "keysUsedIn": [
         "server/**/*.js",
         "client/**/*.js",
         "client/**/*.jsx"

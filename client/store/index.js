@@ -1,6 +1,7 @@
 /**
  * Client state store
- * @module store
+ * @memberOf module:client
+ * @namespace store
  */
 'use strict'
 

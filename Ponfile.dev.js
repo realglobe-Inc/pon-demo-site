@@ -26,6 +26,7 @@ const Rules = require('./misc/lint/Rules')
 const PondocDev = require('./misc/project/Pondoc.dev')
 const { cwd, doc, tasks } = require('./Ponfile')
 const { DockerPorts, WebApps } = require('./server/constants')
+const jsdoc = require('../the/packages/jsdoc/pon') // FIXME
 
 module.exports = pon(
   /** @module tasks */
@@ -105,6 +106,13 @@ module.exports = pon(
     // Sub Tasks for Document
     // -----------------------------------
     ...{
+      /** Generate jsdoc */
+      'doc:jsdoc': jsdoc(__dirname, 'doc/jsdoc', {
+        ignore: '**/shim/**/*.*',
+        jsonFile: 'jsdoc.json',
+        mdFile: 'jsdoc.md',
+        patterns: '+(conf|client|server)/**/*.js',
+      }),
       /** Generate pondoc file */
       'doc:pondoc': pondoc('Ponfile.js', 'misc/project/Pondoc.json'),
       'doc:pondoc:dev': pondoc(
@@ -117,8 +125,8 @@ module.exports = pon(
     // Sub Tasks for ESLint
     // -----------------------------------
     ...{
-      'eslint:check': eslint('.'),
-      'eslint:fix': eslint('.', { fix: true }),
+      'eslint:check': eslint(__dirname),
+      'eslint:fix': eslint(__dirname, { fix: true }),
     },
 
     // -----------------------------------

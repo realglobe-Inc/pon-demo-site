@@ -1,6 +1,7 @@
 /**
  * Source url set
- * @module SrcSets
+ * @memberof module:conf
+ * @namespace SrcSets
  */
 'use strict'
 

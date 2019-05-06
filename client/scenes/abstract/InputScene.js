@@ -1,5 +1,6 @@
 /**
  * CreateScene
+ * @memberof module:client.scenes.abstract
  * @class CreateScene
  */
 'use strict'
@@ -12,7 +13,7 @@ import Scene from './Scene'
 @withResult
 class InputSceneBase extends Scene {}
 
-/** @lends InputScene */
+/** @lends module:client.scenes.abstract.InputScene */
 class InputScene extends InputSceneBase {
   static entitySkipFields = [/^\$/]
 

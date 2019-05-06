@@ -1,5 +1,6 @@
 /**
  * Scene for home
+ * @memberof module:client.scenes
  * @class HomeScene
  */
 'use strict'
@@ -11,7 +12,7 @@ import Scene from './abstract/Scene'
 @bindScope('home')
 class HomeSceneBase extends Scene {}
 
-/** @lends HomeScene */
+/** @lends module:client.scenes.HomeScene */
 class HomeScene extends HomeSceneBase {
   // TODO Remove this
   // Just an example
