@@ -533,13 +533,13 @@
     "order": 28
   },
   {
-    "id": "module:conf.locales.en",
-    "longname": "module:conf.locales.en",
+    "id": "module:pon-demo-site/conf.locales.en",
+    "longname": "module:pon-demo-site/conf.locales.en",
     "name": "en",
     "kind": "namespace",
     "scope": "static",
     "description": "en locales",
-    "memberof": "module:conf.locales",
+    "memberof": "module:pon-demo-site/conf.locales",
     "meta": {
       "lineno": 2,
       "filename": "index.js",
@@ -548,13 +548,13 @@
     "order": 35
   },
   {
-    "id": "module:conf.locales",
-    "longname": "module:conf.locales",
+    "id": "module:pon-demo-site/conf.locales",
+    "longname": "module:pon-demo-site/conf.locales",
     "name": "locales",
     "kind": "namespace",
     "scope": "static",
     "description": "Message resources",
-    "memberof": "module:conf",
+    "memberof": "module:pon-demo-site/conf",
     "meta": {
       "lineno": 1,
       "filename": "index.js",
@@ -563,13 +563,13 @@
     "order": 36
   },
   {
-    "id": "module:conf.SrcSets",
-    "longname": "module:conf.SrcSets",
+    "id": "module:pon-demo-site/conf.SrcSets",
+    "longname": "module:pon-demo-site/conf.SrcSets",
     "name": "SrcSets",
     "kind": "namespace",
     "scope": "static",
     "description": "Source url set",
-    "memberof": "module:conf",
+    "memberof": "module:pon-demo-site/conf",
     "meta": {
       "lineno": 1,
       "filename": "SrcSets.js",

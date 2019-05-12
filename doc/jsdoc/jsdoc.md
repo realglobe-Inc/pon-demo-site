@@ -24,30 +24,6 @@ Client module
 ## conf
 Project configurations
 
-
-* [conf](#module_conf)
-    * [.locales](#module_conf.locales) : <code>object</code>
-        * [.en](#module_conf.locales.en) : <code>object</code>
-    * [.SrcSets](#module_conf.SrcSets) : <code>object</code>
-
-<a name="module_conf.locales"></a>
-
-### conf.locales : <code>object</code>
-Message resources
-
-**Kind**: static namespace of [<code>conf</code>](#module_conf)  
-<a name="module_conf.locales.en"></a>
-
-#### locales.en : <code>object</code>
-en locales
-
-**Kind**: static namespace of [<code>locales</code>](#module_conf.locales)  
-<a name="module_conf.SrcSets"></a>
-
-### conf.SrcSets : <code>object</code>
-Source url set
-
-**Kind**: static namespace of [<code>conf</code>](#module_conf)  
 <a name="module_server"></a>
 
 ## server

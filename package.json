@@ -1,7 +1,7 @@
 {
   "name": "pon-demo-site",
   "description": "Demo of web site using pon",
-  "version": "8.0.9",
+  "version": "8.0.10",
   "author": {
     "email": "okunishinish@gmail.com",
     "name": "Taka Okunishi",
@@ -16,7 +16,7 @@
     "@the-/bin": "^15.4.2",
     "@the-/check": "^15.5.2",
     "@the-/client": "^15.4.3",
-    "@the-/code": "^15.4.50",
+    "@the-/code": "^15.4.56",
     "@the-/context": "^15.4.2",
     "@the-/controller": "^15.4.1",
     "@the-/db": "^15.4.3",
@@ -42,7 +42,7 @@
     "@the-/server": "^15.4.2",
     "@the-/setting": "^15.4.6",
     "@the-/store": "^15.4.5",
-    "@the-/templates": "^15.4.24",
+    "@the-/templates": "^15.4.27",
     "@the-/ui": "^15.4.5",
     "@the-/ui-spin": "^15.4.4",
     "@the-/ui-theme-style": "^15.4.0",
@@ -70,7 +70,7 @@
   "devDependencies": {
     "@babel/runtime": "^7.4.4",
     "@the-/eslint-config-jsdoc": "^15.4.6",
-    "@the-/eslint-config-prettier": "^15.4.4",
+    "@the-/eslint-config-prettier": "^15.4.5",
     "@the-/eslint-config-standard": "^15.4.1",
     "@the-/eslint-config-standard-jsx": "^15.4.2",
     "@the-/jsdoc": "^15.4.8",

@@ -24,6 +24,7 @@
     "format:conf": "Format conf files",
     "format:json": "Format json files",
     "format:server": "Format server files",
+    "git:changelog": "Generate changelog file",
     "icon:gen": "Generate icons",
     "l": "Shortcut for `lint` task",
     "lint": "Apply lint",
