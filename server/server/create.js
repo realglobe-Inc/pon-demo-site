@@ -1,6 +1,6 @@
 /**
  * Create an server instance
- * @memberof module:server
+ * @memberof module:pon-demo-site/server
  * @function create
  * @returns {TheServer}
  */
@@ -26,7 +26,7 @@ const defaultRedisConfig = {
   port: RedisConnections.Default.PORT,
 }
 
-/** @lends module:server.create */
+/** @lends module:pon-demo-site/server.create */
 function create(config) {
   const {
     db,

@@ -8,11 +8,12 @@
 const pon = require('pon')
 const {
   command: {
-    spawn: { npm, npx },
+    spawn: { git, npm, npx },
   },
   fs: { del },
   open,
 } = require('pon-task-basic')
+const changelog = require('pon-task-changelog')
 const { eslint, fmtjson, mocha, pondoc } = require('pon-task-dev')
 const docker = require('pon-task-docker')
 const icon = require('pon-task-icon')
@@ -100,6 +101,14 @@ module.exports = pon(
       ],
       /** Watch files for debug */
       'debug:watch': ['env:debug', 'ui:*/watch'],
+    },
+
+    // -----------------------------------
+    // Sub Tasks for git
+    // -----------------------------------
+    ...{
+      /** Generate changelog file */
+      'git:changelog': [changelog(), git('add', 'CHANGELOG.md')],
     },
 
     // -----------------------------------

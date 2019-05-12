@@ -5,7 +5,7 @@ const { dir } = require('@the-/templates')
 module.exports = dir({
   annotations: {
     description: 'Server constant variables',
-    memberof: 'module:server',
+    memberof: 'module:pon-demo-site/server',
     namespace: 'constants',
   },
   cjs: true,

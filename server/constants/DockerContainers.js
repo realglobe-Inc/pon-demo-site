@@ -1,6 +1,6 @@
 /**
  * DockerContainers
- * @memberof module:server.constants
+ * @memberof module:pon-demo-site/server.constants
  * @namespace DockerContainers
  */
 'use strict'
@@ -10,14 +10,16 @@ const theHash = require('@the-/hash')
 const _seat = require('./_seat')
 const Project = require('./Project')
 
-/** @lends module:server.constants.DockerContainers */
-const DockerContainers = _seat(({ containerNameFor }) => ({
-  MYSQL_CONTAINER_NAME: containerNameFor(`${Project.SHORT_NAME}-mysql`),
-  NGINX_CONTAINER_NAME: containerNameFor(`${Project.SHORT_NAME}-nginx`),
-  REDIS_CONTAINER_NAME: containerNameFor(`${Project.SHORT_NAME}-redis`),
-}))
+module.exports = _seat(({ containerNameFor }) =>
+  /** @lends module:pon-demo-site/server.constants.DockerContainers */
+  ({
+    MYSQL_CONTAINER_NAME: containerNameFor(`${Project.SHORT_NAME}-mysql`),
+    NGINX_CONTAINER_NAME: containerNameFor(`${Project.SHORT_NAME}-nginx`),
+    REDIS_CONTAINER_NAME: containerNameFor(`${Project.SHORT_NAME}-redis`),
+  }),
+)
 
-module.exports = DockerContainers
+Object.freeze(module.exports)
 
 if (!isProduction()) {
   module.exports = theHash.proxy(module.exports, {

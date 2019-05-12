@@ -1,6 +1,6 @@
 /**
  * Resource for room
- * @memberof module:server.db.resources
+ * @memberof module:pon-demo-site/server.db.resources
  * @class RoomResource
  * @augments TheResource
  */
@@ -12,7 +12,7 @@ const {
 } = require('@the-/resource')
 const atPolicy = require('./concerns/policies/atPolicy')
 
-/** @lends module:server.db.resources.RoomResource */
+/** @lends module:pon-demo-site/server.db.resources.RoomResource */
 class RoomResource extends TheResource {
   static get schema() {
     return {
@@ -30,7 +30,7 @@ class RoomResource extends TheResource {
 
   static entityClass(ResourceEntity) {
     /**
-     * @memberof module:server.db.resources.RoomResource
+     * @memberof module:pon-demo-site/server.db.resources.RoomResource
      * @inner
      * @class
      */

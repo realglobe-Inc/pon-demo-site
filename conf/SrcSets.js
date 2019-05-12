@@ -1,6 +1,6 @@
 /**
  * Source url set
- * @memberof module:conf
+ * @memberof module:pon-demo-site/conf
  * @namespace SrcSets
  */
 'use strict'

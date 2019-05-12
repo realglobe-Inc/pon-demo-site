@@ -2,7 +2,7 @@
  * ListScene
  * @class ListScene
  * @abstract
- * @memberOf module:client.scenes.abstract
+ * @memberOf module:pon-demo-site/client.scenes.abstract
  */
 'use strict'
 
@@ -35,7 +35,7 @@ import Scene from './Scene'
 })
 class ListSceneBase extends Scene {}
 
-/** @lends module:client.scenes.abstract.ListScene */
+/** @lends module:pon-demo-site/client.scenes.abstract.ListScene */
 class ListScene extends ListSceneBase {
   static qField = ['name']
 

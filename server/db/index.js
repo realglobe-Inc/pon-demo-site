@@ -1,6 +1,6 @@
 /**
  * Database module
- * @memberof module:server
+ * @memberof module:pon-demo-site/server
  * @namespace db
  */
 'use strict'

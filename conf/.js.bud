@@ -5,7 +5,7 @@
 
 module.exports = [].map((name) => ({
   data: {
-    memberof: 'module:conf',
+    memberof: 'module:pon-demo-site/conf',
     name,
   },
   force: false,

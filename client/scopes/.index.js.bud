@@ -4,7 +4,7 @@ const { scopes } = require('@the-/templates')
 
 module.exports = scopes({
   dirname: __dirname,
-  memberof: 'module:client',
+  memberof: 'module:pon-demo-site/client',
 })
 
 if (!module.parent) {

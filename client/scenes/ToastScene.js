@@ -1,6 +1,6 @@
 /**
  * ToastScene
- * @memberof module:client.scenes
+ * @memberof module:pon-demo-site/client.scenes
  * @class ToastScene
  */
 'use strict'
@@ -12,7 +12,7 @@ import Scene from './abstract/Scene'
 @siteToast
 class ToastSceneBase extends Scene {}
 
-/** @lends module:client.scenes.ToastScene */
+/** @lends module:pon-demo-site/client.scenes.ToastScene */
 class ToastScene extends ToastSceneBase {}
 
 export default ToastScene

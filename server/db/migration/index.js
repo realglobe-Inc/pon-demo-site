@@ -1,5 +1,5 @@
 /**
- * @memberof module:server.db
+ * @memberof module:pon-demo-site/server.db
  * @function migration
  */
 'use strict'

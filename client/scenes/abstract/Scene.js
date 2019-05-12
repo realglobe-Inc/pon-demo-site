@@ -1,6 +1,6 @@
 /**
  * Base scene
- * @memberof module:client.scenes.abstract
+ * @memberof module:pon-demo-site/client.scenes.abstract
  * @abstract
  * @class Scene
  */
@@ -12,7 +12,7 @@ import { addUrlQuery, formatUrl } from '@the-/url'
 
 class SceneBase extends TheScene {}
 
-/** @lends module:client.scenes.abstract.Scene */
+/** @lends module:pon-demo-site/client.scenes.abstract.Scene */
 @withLocation
 class Scene extends SceneBase {
   catchEntryError(e) {

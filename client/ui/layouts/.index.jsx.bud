@@ -5,7 +5,7 @@ const { dir } = require('@the-/templates')
 module.exports = dir({
   annotations: {
     description: 'Layout Components',
-    memberof: 'module:client.ui',
+    memberof: 'module:pon-demo-site/client.ui',
     namespace: 'layouts',
   },
   dirname: __dirname,

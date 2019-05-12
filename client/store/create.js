@@ -1,6 +1,6 @@
 /**
  * Create an new store
- * @memberof module:client.store
+ * @memberof module:pon-demo-site/client.store
  * @function create
  * @returns {TheStore}
  */
@@ -17,7 +17,7 @@ import {
 import { TheStore } from '@the-/store'
 import scopes from './scopes'
 
-/** @lends module:client.store.create */
+/** @lends module:pon-demo-site/client.store.create */
 export default function create() {
   return new TheStore({
     // States to persists on local storage

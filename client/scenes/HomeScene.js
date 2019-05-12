@@ -1,6 +1,6 @@
 /**
  * Scene for home
- * @memberof module:client.scenes
+ * @memberof module:pon-demo-site/client.scenes
  * @class HomeScene
  */
 'use strict'
@@ -12,7 +12,7 @@ import Scene from './abstract/Scene'
 @bindScope('home')
 class HomeSceneBase extends Scene {}
 
-/** @lends module:client.scenes.HomeScene */
+/** @lends module:pon-demo-site/client.scenes.HomeScene */
 class HomeScene extends HomeSceneBase {
   // TODO Remove this
   // Just an example

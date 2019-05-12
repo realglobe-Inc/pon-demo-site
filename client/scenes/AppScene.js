@@ -1,6 +1,6 @@
 /**
  * AppScene
- * @memberof module:client.scenes
+ * @memberof module:pon-demo-site/client.scenes
  * @class AppScene
  */
 'use strict'

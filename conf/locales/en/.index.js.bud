@@ -8,7 +8,7 @@ const name = path.basename(__dirname)
 module.exports = dir({
   dirname: __dirname,
   annotations: {
-    memberof: 'module:conf.locales',
+    memberof: 'module:pon-demo-site/conf.locales',
     namespace: name,
     description: `${name} locales`,
   },

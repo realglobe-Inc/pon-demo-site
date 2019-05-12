@@ -1,6 +1,6 @@
 /**
  * ConnectionRetryScene
- * @memberof module:client.scenes
+ * @memberof module:pon-demo-site/client.scenes
  * @class ConnectionRetryScene
  */
 'use strict'
@@ -13,7 +13,7 @@ import Scene from './abstract/Scene'
 @bindScope('connection.retry')
 class ConnectionRetrySceneBase extends Scene {}
 
-/** @lends module:client.scenes.ConnectionRetryScene */
+/** @lends module:pon-demo-site/client.scenes.ConnectionRetryScene */
 class ConnectionRetryScene extends ConnectionRetrySceneBase {
   start() {
     this.set({ active: true, busy: false })

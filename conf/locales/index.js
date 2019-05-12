@@ -1,6 +1,6 @@
 /**
  * Message resources
- * @memberof module:conf
+ * @memberof module:pon-demo-site/conf
  * @namespace locales
  */
 'use strict'

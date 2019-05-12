@@ -1,6 +1,6 @@
 /**
  * setting/SettingValues
- * @memberof module:server.constants
+ * @memberof module:pon-demo-site/server.constants
  * @protected
  * @namespace SettingValues
  */
@@ -12,14 +12,13 @@ const theSetting = require('@the-/setting')
 const Project = require('../Project')
 const setting = theSetting(Project.SETTING_FILE)
 
-const SettingValues = Object.freeze(
-  /** @lends module:server.constants.SettingValues */
+module.exports =
+  /** @lends module:pon-demo-site/server.constants.SettingValues */
   {
     ...setting.get(),
-  },
-)
+  }
 
-module.exports = SettingValues
+Object.freeze(module.exports)
 
 if (!isProduction()) {
   module.exports = theHash.proxy(module.exports, {

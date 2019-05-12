@@ -1,6 +1,6 @@
 /**
  * Client a site client
- * @memberof module:client.client
+ * @memberof module:pon-demo-site/client.client
  * @function create
  * @param {Object} [config={}]
  * @returns {TheClient} A client instance
@@ -14,7 +14,7 @@ import { get } from '@the-/window'
 
 class Client extends TheClient {}
 
-/** @lends module:client.client.create */
+/** @lends module:pon-demo-site/client.client.create */
 function create(config = {}) {
   const { v } = get(GlobalKeys.PROPS) || {}
   return new Client({

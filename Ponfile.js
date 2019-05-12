@@ -34,7 +34,7 @@ const migration = require('./server/db/migration')
 
 const setting = theSetting(
   Project.SETTING_FILE,
-  /** @lends module:server.constants.SettingValues */
+  /** @lends module:pon-demo-site/server.constants.SettingValues */
   {
     APP_CDN_URL: '',
     APP_DOMAIN: 'pon-demo-site.org',

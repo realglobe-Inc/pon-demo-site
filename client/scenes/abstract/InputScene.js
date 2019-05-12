@@ -1,6 +1,6 @@
 /**
  * CreateScene
- * @memberof module:client.scenes.abstract
+ * @memberof module:pon-demo-site/client.scenes.abstract
  * @class CreateScene
  */
 'use strict'
@@ -13,7 +13,7 @@ import Scene from './Scene'
 @withResult
 class InputSceneBase extends Scene {}
 
-/** @lends module:client.scenes.abstract.InputScene */
+/** @lends module:pon-demo-site/client.scenes.abstract.InputScene */
 class InputScene extends InputSceneBase {
   static entitySkipFields = [/^\$/]
 
