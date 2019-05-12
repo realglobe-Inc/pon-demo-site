@@ -16,7 +16,7 @@ class DetailSceneBase extends Scene {}
 /** @lends module:pon-demo-site/client.scenes.abstract.DetailScene */
 class DetailScene extends DetailSceneBase {
   async dealWith(id) {
-    throw new Error(`Not implemented`)
+    throw new Error('Not implemented')
   }
 
   @withBusy.while

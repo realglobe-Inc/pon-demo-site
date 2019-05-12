@@ -215,7 +215,7 @@ module.exports = pon(
       /** Prepare database for production */
       'prod:db': ['env:prod', 'db'],
       /** Compile js files for production */
-      'prod:js': ccjs.dir(`public/build`, `public${Urls.PROD_ASSET_URL}`, {}),
+      'prod:js': ccjs.dir('public/build', `public${Urls.PROD_ASSET_URL}`, {}),
       /** Delete source map files for production */
       'prod:map': del('public/**/*.map'),
     },
@@ -300,7 +300,7 @@ module.exports = pon(
             {
               bundle: 'ui/entrypoint.js',
             },
-            `public/build/[name].js`,
+            'public/build/[name].js',
             {
               context: `${__dirname}/client/shim`,
               publicPath: `${Urls.JS_CHUNK_BASE_URL}/`,
@@ -334,14 +334,14 @@ module.exports = pon(
       'ui:css/watch': 'ui:css/*/watch',
       /** Compile react components */
       'ui:react': react('client', 'client/shim', {
-        extractCss: `client/shim/ui/bundle.pcss`,
+        extractCss: 'client/shim/ui/bundle.pcss',
         pattern: ['*.js', '*.jsx', '!(shim)/**/+(*.jsx|*.js|*.json)'],
         sourceRoot: '..',
         watchTargets: 'client/ui/**/*.pcss',
       }),
       'ui:workers': env.dynamic(
         () =>
-          browser.all('workers', `public`, {
+          browser.all('workers', 'public', {
             context: `${__dirname}/client/shim`,
           }),
         { sub: ['watch', 'analyze'] },

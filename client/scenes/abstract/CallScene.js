@@ -14,7 +14,7 @@ class CallSceneBase extends Scene {}
 /** @lends module:pon-demo-site/client.scenes.abstract.CallScene */
 class CallScene extends CallSceneBase {
   async dealWith() {
-    throw new Error(`[CallScene] Not implemented`)
+    throw new Error('[CallScene] Not implemented')
   }
 
   @withBusy.while

@@ -23,7 +23,7 @@ class InputScene extends InputSceneBase {
   }
 
   async dealWith(values) {
-    throw new Error(`Not implemented`)
+    throw new Error('Not implemented')
   }
 
   @withBusy.while
