@@ -3,29 +3,353 @@
 ## Modules
 
 <dl>
-<dt><a href="#module_client">client</a></dt>
+<dt><a href="#module_pon-demo-site/client">pon-demo-site/client</a></dt>
 <dd><p>Client module</p>
 </dd>
-<dt><a href="#module_conf">conf</a></dt>
+<dt><a href="#module_pon-demo-site/conf">pon-demo-site/conf</a></dt>
 <dd><p>Project configurations</p>
 </dd>
-<dt><a href="#module_server">server</a></dt>
+<dt><a href="#module_pon-demo-site/server">pon-demo-site/server</a></dt>
 <dd><p>Application server</p>
 </dd>
 </dl>
 
-<a name="module_client"></a>
+<a name="module_pon-demo-site/client"></a>
 
-## client
+## pon-demo-site/client
 Client module
 
-<a name="module_conf"></a>
 
-## conf
+* [pon-demo-site/client](#module_pon-demo-site/client)
+    * [.client](#module_pon-demo-site/client.client) : <code>object</code>
+        * [.create([config])](#module_pon-demo-site/client.client.create) ⇒ <code>TheClient</code>
+    * [.mappings](#module_pon-demo-site/client.mappings) : <code>object</code>
+    * [.scenes](#module_pon-demo-site/client.scenes) : <code>object</code>
+        * [.AppScene](#module_pon-demo-site/client.scenes.AppScene)
+            * [new AppScene()](#new_module_pon-demo-site/client.scenes.AppScene_new)
+        * [.ConnectionRetryScene](#module_pon-demo-site/client.scenes.ConnectionRetryScene)
+            * [new ConnectionRetryScene()](#new_module_pon-demo-site/client.scenes.ConnectionRetryScene_new)
+        * [.HomeScene](#module_pon-demo-site/client.scenes.HomeScene)
+            * [new HomeScene()](#new_module_pon-demo-site/client.scenes.HomeScene_new)
+        * [.ToastScene](#module_pon-demo-site/client.scenes.ToastScene)
+            * [new ToastScene()](#new_module_pon-demo-site/client.scenes.ToastScene_new)
+    * [.scopes](#module_pon-demo-site/client.scopes) : <code>object</code>
+    * [.store](#module_pon-demo-site/client.store) : <code>object</code>
+        * [.create()](#module_pon-demo-site/client.store.create) ⇒ <code>TheStore</code>
+
+<a name="module_pon-demo-site/client.client"></a>
+
+### pon-demo-site/client.client : <code>object</code>
+Client index
+
+**Kind**: static namespace of [<code>pon-demo-site/client</code>](#module_pon-demo-site/client)  
+<a name="module_pon-demo-site/client.client.create"></a>
+
+#### client.create([config]) ⇒ <code>TheClient</code>
+Client a site client
+
+**Kind**: static method of [<code>client</code>](#module_pon-demo-site/client.client)  
+**Returns**: <code>TheClient</code> - A client instance  
+
+| Param | Type | Default |
+| --- | --- | --- |
+| [config] | <code>Object</code> | <code>{}</code> | 
+
+<a name="module_pon-demo-site/client.mappings"></a>
+
+### pon-demo-site/client.mappings : <code>object</code>
+Module mappings
+
+**Kind**: static namespace of [<code>pon-demo-site/client</code>](#module_pon-demo-site/client)  
+<a name="module_pon-demo-site/client.scenes"></a>
+
+### pon-demo-site/client.scenes : <code>object</code>
+Scene classes
+
+**Kind**: static namespace of [<code>pon-demo-site/client</code>](#module_pon-demo-site/client)  
+
+* [.scenes](#module_pon-demo-site/client.scenes) : <code>object</code>
+    * [.AppScene](#module_pon-demo-site/client.scenes.AppScene)
+        * [new AppScene()](#new_module_pon-demo-site/client.scenes.AppScene_new)
+    * [.ConnectionRetryScene](#module_pon-demo-site/client.scenes.ConnectionRetryScene)
+        * [new ConnectionRetryScene()](#new_module_pon-demo-site/client.scenes.ConnectionRetryScene_new)
+    * [.HomeScene](#module_pon-demo-site/client.scenes.HomeScene)
+        * [new HomeScene()](#new_module_pon-demo-site/client.scenes.HomeScene_new)
+    * [.ToastScene](#module_pon-demo-site/client.scenes.ToastScene)
+        * [new ToastScene()](#new_module_pon-demo-site/client.scenes.ToastScene_new)
+
+<a name="module_pon-demo-site/client.scenes.AppScene"></a>
+
+#### scenes.AppScene
+**Kind**: static class of [<code>scenes</code>](#module_pon-demo-site/client.scenes)  
+<a name="new_module_pon-demo-site/client.scenes.AppScene_new"></a>
+
+##### new AppScene()
+AppScene
+
+<a name="module_pon-demo-site/client.scenes.ConnectionRetryScene"></a>
+
+#### scenes.ConnectionRetryScene
+**Kind**: static class of [<code>scenes</code>](#module_pon-demo-site/client.scenes)  
+<a name="new_module_pon-demo-site/client.scenes.ConnectionRetryScene_new"></a>
+
+##### new ConnectionRetryScene()
+ConnectionRetryScene
+
+<a name="module_pon-demo-site/client.scenes.HomeScene"></a>
+
+#### scenes.HomeScene
+**Kind**: static class of [<code>scenes</code>](#module_pon-demo-site/client.scenes)  
+<a name="new_module_pon-demo-site/client.scenes.HomeScene_new"></a>
+
+##### new HomeScene()
+Scene for home
+
+<a name="module_pon-demo-site/client.scenes.ToastScene"></a>
+
+#### scenes.ToastScene
+**Kind**: static class of [<code>scenes</code>](#module_pon-demo-site/client.scenes)  
+<a name="new_module_pon-demo-site/client.scenes.ToastScene_new"></a>
+
+##### new ToastScene()
+ToastScene
+
+<a name="module_pon-demo-site/client.scopes"></a>
+
+### pon-demo-site/client.scopes : <code>object</code>
+Scopes
+
+**Kind**: static namespace of [<code>pon-demo-site/client</code>](#module_pon-demo-site/client)  
+<a name="module_pon-demo-site/client.store"></a>
+
+### pon-demo-site/client.store : <code>object</code>
+Client state store
+
+**Kind**: static namespace of [<code>pon-demo-site/client</code>](#module_pon-demo-site/client)  
+<a name="module_pon-demo-site/client.store.create"></a>
+
+#### store.create() ⇒ <code>TheStore</code>
+Create an new store
+
+**Kind**: static method of [<code>store</code>](#module_pon-demo-site/client.store)  
+<a name="module_pon-demo-site/conf"></a>
+
+## pon-demo-site/conf
 Project configurations
 
-<a name="module_server"></a>
 
-## server
+* [pon-demo-site/conf](#module_pon-demo-site/conf)
+    * [.locales](#module_pon-demo-site/conf.locales) : <code>object</code>
+        * [.en](#module_pon-demo-site/conf.locales.en) : <code>object</code>
+    * [.SrcSets](#module_pon-demo-site/conf.SrcSets) : <code>object</code>
+
+<a name="module_pon-demo-site/conf.locales"></a>
+
+### pon-demo-site/conf.locales : <code>object</code>
+Message resources
+
+**Kind**: static namespace of [<code>pon-demo-site/conf</code>](#module_pon-demo-site/conf)  
+<a name="module_pon-demo-site/conf.locales.en"></a>
+
+#### locales.en : <code>object</code>
+en locales
+
+**Kind**: static namespace of [<code>locales</code>](#module_pon-demo-site/conf.locales)  
+<a name="module_pon-demo-site/conf.SrcSets"></a>
+
+### pon-demo-site/conf.SrcSets : <code>object</code>
+Source url set
+
+**Kind**: static namespace of [<code>pon-demo-site/conf</code>](#module_pon-demo-site/conf)  
+<a name="module_pon-demo-site/server"></a>
+
+## pon-demo-site/server
 Application server
 
+
+* [pon-demo-site/server](#module_pon-demo-site/server)
+    * [.constants](#module_pon-demo-site/server.constants) : <code>object</code>
+        * [.DockerContainers](#module_pon-demo-site/server.constants.DockerContainers) : <code>object</code>
+        * [.DockerPorts](#module_pon-demo-site/server.constants.DockerPorts) : <code>object</code>
+        * [.MysqlConnections](#module_pon-demo-site/server.constants.MysqlConnections) : <code>object</code>
+        * [.Project](#module_pon-demo-site/server.constants.Project) : <code>object</code>
+        * [.RedisConnections](#module_pon-demo-site/server.constants.RedisConnections) : <code>object</code>
+        * [.SettingValues](#module_pon-demo-site/server.constants.SettingValues) : <code>object</code>
+        * [.WebApps](#module_pon-demo-site/server.constants.WebApps) : <code>object</code>
+            * [~seated](#module_pon-demo-site/server.constants.WebApps..seated) : <code>object</code>
+    * [.controllers](#module_pon-demo-site/server.controllers) : <code>object</code>
+        * [.AppCtrl](#module_pon-demo-site/server.controllers.AppCtrl)
+            * [new AppCtrl()](#new_module_pon-demo-site/server.controllers.AppCtrl_new)
+        * *[.Ctrl](#module_pon-demo-site/server.controllers.Ctrl)*
+    * [.db](#module_pon-demo-site/server.db) : <code>object</code>
+        * [.resources](#module_pon-demo-site/server.db.resources) : <code>object</code>
+            * [.RoomResource](#module_pon-demo-site/server.db.resources.RoomResource) ⇐ <code>TheResource</code>
+                * [new RoomResource()](#new_module_pon-demo-site/server.db.resources.RoomResource_new)
+                * [~TheRoomResourceEntity](#module_pon-demo-site/server.db.resources.RoomResource..TheRoomResourceEntity)
+        * [.create([config])](#module_pon-demo-site/server.db.create) ⇒ <code>TheDB</code>
+        * [.migration()](#module_pon-demo-site/server.db.migration)
+    * [.mappings](#module_pon-demo-site/server.mappings) : <code>object</code>
+    * [.create()](#module_pon-demo-site/server.create) ⇒ <code>TheServer</code>
+
+<a name="module_pon-demo-site/server.constants"></a>
+
+### pon-demo-site/server.constants : <code>object</code>
+Server constant variables
+
+**Kind**: static namespace of [<code>pon-demo-site/server</code>](#module_pon-demo-site/server)  
+
+* [.constants](#module_pon-demo-site/server.constants) : <code>object</code>
+    * [.DockerContainers](#module_pon-demo-site/server.constants.DockerContainers) : <code>object</code>
+    * [.DockerPorts](#module_pon-demo-site/server.constants.DockerPorts) : <code>object</code>
+    * [.MysqlConnections](#module_pon-demo-site/server.constants.MysqlConnections) : <code>object</code>
+    * [.Project](#module_pon-demo-site/server.constants.Project) : <code>object</code>
+    * [.RedisConnections](#module_pon-demo-site/server.constants.RedisConnections) : <code>object</code>
+    * [.SettingValues](#module_pon-demo-site/server.constants.SettingValues) : <code>object</code>
+    * [.WebApps](#module_pon-demo-site/server.constants.WebApps) : <code>object</code>
+        * [~seated](#module_pon-demo-site/server.constants.WebApps..seated) : <code>object</code>
+
+<a name="module_pon-demo-site/server.constants.DockerContainers"></a>
+
+#### constants.DockerContainers : <code>object</code>
+DockerContainers
+
+**Kind**: static namespace of [<code>constants</code>](#module_pon-demo-site/server.constants)  
+<a name="module_pon-demo-site/server.constants.DockerPorts"></a>
+
+#### constants.DockerPorts : <code>object</code>
+DockerPorts
+
+**Kind**: static namespace of [<code>constants</code>](#module_pon-demo-site/server.constants)  
+<a name="module_pon-demo-site/server.constants.MysqlConnections"></a>
+
+#### constants.MysqlConnections : <code>object</code>
+MysqlConnections
+
+**Kind**: static namespace of [<code>constants</code>](#module_pon-demo-site/server.constants)  
+<a name="module_pon-demo-site/server.constants.Project"></a>
+
+#### constants.Project : <code>object</code>
+Project
+
+**Kind**: static namespace of [<code>constants</code>](#module_pon-demo-site/server.constants)  
+<a name="module_pon-demo-site/server.constants.RedisConnections"></a>
+
+#### constants.RedisConnections : <code>object</code>
+RedisConnections
+
+**Kind**: static namespace of [<code>constants</code>](#module_pon-demo-site/server.constants)  
+<a name="module_pon-demo-site/server.constants.SettingValues"></a>
+
+#### constants.SettingValues : <code>object</code>
+setting/SettingValues
+
+**Kind**: static namespace of [<code>constants</code>](#module_pon-demo-site/server.constants)  
+**Access**: protected  
+<a name="module_pon-demo-site/server.constants.WebApps"></a>
+
+#### constants.WebApps : <code>object</code>
+WebApps
+
+**Kind**: static namespace of [<code>constants</code>](#module_pon-demo-site/server.constants)  
+<a name="module_pon-demo-site/server.constants.WebApps..seated"></a>
+
+##### WebApps~seated : <code>object</code>
+**Kind**: inner namespace of [<code>WebApps</code>](#module_pon-demo-site/server.constants.WebApps)  
+<a name="module_pon-demo-site/server.controllers"></a>
+
+### pon-demo-site/server.controllers : <code>object</code>
+Server controllers
+
+**Kind**: static namespace of [<code>pon-demo-site/server</code>](#module_pon-demo-site/server)  
+
+* [.controllers](#module_pon-demo-site/server.controllers) : <code>object</code>
+    * [.AppCtrl](#module_pon-demo-site/server.controllers.AppCtrl)
+        * [new AppCtrl()](#new_module_pon-demo-site/server.controllers.AppCtrl_new)
+    * *[.Ctrl](#module_pon-demo-site/server.controllers.Ctrl)*
+
+<a name="module_pon-demo-site/server.controllers.AppCtrl"></a>
+
+#### controllers.AppCtrl
+**Kind**: static class of [<code>controllers</code>](#module_pon-demo-site/server.controllers)  
+<a name="new_module_pon-demo-site/server.controllers.AppCtrl_new"></a>
+
+##### new AppCtrl()
+Application controller
+
+<a name="module_pon-demo-site/server.controllers.Ctrl"></a>
+
+#### *controllers.Ctrl*
+**Kind**: static abstract class of [<code>controllers</code>](#module_pon-demo-site/server.controllers)  
+<a name="module_pon-demo-site/server.db"></a>
+
+### pon-demo-site/server.db : <code>object</code>
+Database module
+
+**Kind**: static namespace of [<code>pon-demo-site/server</code>](#module_pon-demo-site/server)  
+
+* [.db](#module_pon-demo-site/server.db) : <code>object</code>
+    * [.resources](#module_pon-demo-site/server.db.resources) : <code>object</code>
+        * [.RoomResource](#module_pon-demo-site/server.db.resources.RoomResource) ⇐ <code>TheResource</code>
+            * [new RoomResource()](#new_module_pon-demo-site/server.db.resources.RoomResource_new)
+            * [~TheRoomResourceEntity](#module_pon-demo-site/server.db.resources.RoomResource..TheRoomResourceEntity)
+    * [.create([config])](#module_pon-demo-site/server.db.create) ⇒ <code>TheDB</code>
+    * [.migration()](#module_pon-demo-site/server.db.migration)
+
+<a name="module_pon-demo-site/server.db.resources"></a>
+
+#### db.resources : <code>object</code>
+Db resource classes
+
+**Kind**: static namespace of [<code>db</code>](#module_pon-demo-site/server.db)  
+
+* [.resources](#module_pon-demo-site/server.db.resources) : <code>object</code>
+    * [.RoomResource](#module_pon-demo-site/server.db.resources.RoomResource) ⇐ <code>TheResource</code>
+        * [new RoomResource()](#new_module_pon-demo-site/server.db.resources.RoomResource_new)
+        * [~TheRoomResourceEntity](#module_pon-demo-site/server.db.resources.RoomResource..TheRoomResourceEntity)
+
+<a name="module_pon-demo-site/server.db.resources.RoomResource"></a>
+
+##### resources.RoomResource ⇐ <code>TheResource</code>
+**Kind**: static class of [<code>resources</code>](#module_pon-demo-site/server.db.resources)  
+**Extends**: <code>TheResource</code>  
+
+* [.RoomResource](#module_pon-demo-site/server.db.resources.RoomResource) ⇐ <code>TheResource</code>
+    * [new RoomResource()](#new_module_pon-demo-site/server.db.resources.RoomResource_new)
+    * [~TheRoomResourceEntity](#module_pon-demo-site/server.db.resources.RoomResource..TheRoomResourceEntity)
+
+<a name="new_module_pon-demo-site/server.db.resources.RoomResource_new"></a>
+
+###### new RoomResource()
+Resource for room
+
+<a name="module_pon-demo-site/server.db.resources.RoomResource..TheRoomResourceEntity"></a>
+
+###### RoomResource~TheRoomResourceEntity
+**Kind**: inner class of [<code>RoomResource</code>](#module_pon-demo-site/server.db.resources.RoomResource)  
+<a name="module_pon-demo-site/server.db.create"></a>
+
+#### db.create([config]) ⇒ <code>TheDB</code>
+Create an db instance
+
+**Kind**: static method of [<code>db</code>](#module_pon-demo-site/server.db)  
+
+| Param | Type |
+| --- | --- |
+| [config] | <code>Object</code> | 
+
+<a name="module_pon-demo-site/server.db.migration"></a>
+
+#### db.migration()
+**Kind**: static method of [<code>db</code>](#module_pon-demo-site/server.db)  
+<a name="module_pon-demo-site/server.mappings"></a>
+
+### pon-demo-site/server.mappings : <code>object</code>
+Module mappings
+
+**Kind**: static namespace of [<code>pon-demo-site/server</code>](#module_pon-demo-site/server)  
+<a name="module_pon-demo-site/server.create"></a>
+
+### pon-demo-site/server.create() ⇒ <code>TheServer</code>
+Create an server instance
+
+**Kind**: static method of [<code>pon-demo-site/server</code>](#module_pon-demo-site/server)  

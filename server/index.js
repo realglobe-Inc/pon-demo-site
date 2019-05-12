@@ -1,6 +1,6 @@
 /**
  * Application server
- * @module server
+ * @module pon-demo-site/server
  */
 'use strict'
 

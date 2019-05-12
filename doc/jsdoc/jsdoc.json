@@ -1,8 +1,8 @@
 [
   {
-    "id": "module:client",
-    "longname": "module:client",
-    "name": "client",
+    "id": "module:pon-demo-site/client",
+    "longname": "module:pon-demo-site/client",
+    "name": "pon-demo-site/client",
     "kind": "module",
     "description": "Client module",
     "meta": {
@@ -13,9 +13,9 @@
     "order": 3
   },
   {
-    "id": "module:conf",
-    "longname": "module:conf",
-    "name": "conf",
+    "id": "module:pon-demo-site/conf",
+    "longname": "module:pon-demo-site/conf",
+    "name": "pon-demo-site/conf",
     "kind": "module",
     "description": "Project configurations",
     "meta": {
@@ -26,9 +26,9 @@
     "order": 34
   },
   {
-    "id": "module:server",
-    "longname": "module:server",
-    "name": "server",
+    "id": "module:pon-demo-site/server",
+    "longname": "module:pon-demo-site/server",
+    "name": "pon-demo-site/server",
     "kind": "module",
     "description": "Application server",
     "meta": {

@@ -1,6 +1,6 @@
 /**
  * Client module
- * @module client
+ * @module pon-demo-site/client
  */
 'use strict'
 
