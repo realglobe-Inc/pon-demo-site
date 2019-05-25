@@ -31,7 +31,12 @@ class HomeView extends React.Component {
       ({ busy, count, l, onCountUp, onMount, onReceive, onUnmount }) => {
         const title = null
         return (
-          <TheCycle {...{ onMount, onReceive, onUnmount }} values={{}}>
+          <TheCycle
+            onMount={onMount}
+            onReceive={onReceive}
+            onUnmount={onUnmount}
+            values={{}}
+          >
             <TheMeta title={title}>
               <TheView className={styles.self}>
                 <TheView.Header icon={null} text={title} />
