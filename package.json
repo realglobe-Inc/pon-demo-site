@@ -1,7 +1,7 @@
 {
   "name": "pon-demo-site",
   "description": "Demo of web site using pon",
-  "version": "8.0.10",
+  "version": "8.0.11",
   "author": {
     "email": "okunishinish@gmail.com",
     "name": "Taka Okunishi",
@@ -16,7 +16,7 @@
     "@the-/bin": "^15.4.2",
     "@the-/check": "^15.5.2",
     "@the-/client": "^15.4.3",
-    "@the-/code": "^15.5.22",
+    "@the-/code": "^15.5.42",
     "@the-/context": "^15.4.2",
     "@the-/controller": "^15.4.1",
     "@the-/db": "^15.4.8",
@@ -42,7 +42,7 @@
     "@the-/server": "^15.4.2",
     "@the-/setting": "^15.4.6",
     "@the-/store": "^15.4.5",
-    "@the-/templates": "^15.4.29",
+    "@the-/templates": "^15.5.0",
     "@the-/ui": "^15.4.10",
     "@the-/ui-spin": "^15.4.4",
     "@the-/ui-theme-style": "^15.4.0",
@@ -69,6 +69,7 @@
   },
   "devDependencies": {
     "@babel/runtime": "^7.4.5",
+    "@the-/eslint-config-code": "^15.4.11",
     "@the-/eslint-config-jsdoc": "^15.4.6",
     "@the-/eslint-config-prettier": "^15.4.5",
     "@the-/eslint-config-standard": "^15.4.7",
@@ -79,7 +80,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-import": "^2.17.3",
-    "eslint-plugin-jsdoc": "^6.0.3",
+    "eslint-plugin-jsdoc": "^7.0.2",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-promise": "^4.1.1",

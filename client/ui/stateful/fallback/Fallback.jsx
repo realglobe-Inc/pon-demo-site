@@ -13,7 +13,9 @@ class Fallback extends React.Component {
   #stateful = context.stateful(() => ({}), () => ({}))
 
   render() {
-    const { className } = this.props
+    const {
+      props: { className },
+    } = this
     return this.#stateful(() => (
       <div className={c(styles.self, className)}>
         <TheSpin className={styles.spin} enabled />
