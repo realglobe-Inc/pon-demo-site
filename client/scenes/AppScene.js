@@ -6,19 +6,12 @@
 'use strict'
 
 import { Urls } from '@self/conf'
-import {
-  bindScope,
-  withBusy,
-  withHistory,
-  withLocation,
-  withQuery,
-} from '@the-/mixin-scene/shim'
+import { bindScope, withBusy, withQuery } from '@the-/mixin-scene/shim'
+import { reload, show } from '@the-/window'
 import Scene from './abstract/Scene'
 
 @withBusy
 @withQuery
-@withHistory
-@withLocation
 @bindScope('app')
 class AppSceneBase extends Scene {}
 
@@ -36,7 +29,7 @@ class AppScene extends AppSceneBase {
       NotFoundError: Urls.ERROR_NOTFOUND_URL,
     }[(reason?.name)]
     if (href) {
-      this.changeLocationTo(href)
+      show(href)
       return true
     }
     return false
@@ -51,7 +44,7 @@ class AppScene extends AppSceneBase {
 
   @withBusy.while
   async doExec() {
-    await this.reloadLocation()
+    await reload()
   }
 }
 

@@ -11,8 +11,8 @@ import {
   withBusy,
   withEntities,
   withFilter,
-  withHistory,
   withPage,
+  withQuery,
   withReady,
   withSort,
 } from '@the-/mixin-scene/shim'
@@ -25,7 +25,7 @@ import Scene from './Scene'
 @withPage
 @withReady
 @withFilter
-@withHistory
+@withQuery
 @bindDefaults({
   counts: {},
   entities: [],
@@ -63,7 +63,7 @@ class ListScene extends ListSceneBase {
   setQ(q) {
     this.set({ pageNumber: 1 })
     this.setFilterByQ(q, { fields: this.constructor.qField })
-    this.replaceHistoryByQuery({ q })
+    this.mergeQueryToSearch({ q })
   }
 
   async dealWith(condition) {

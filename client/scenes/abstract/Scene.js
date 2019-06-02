@@ -6,14 +6,13 @@
  */
 'use strict'
 
-import { withLocation } from '@the-/mixin-scene/shim'
 import { TheScene } from '@the-/scene/shim'
 import { addUrlQuery, formatUrl } from '@the-/url'
+import { reload } from '@the-/window'
 
 class SceneBase extends TheScene {}
 
 /** @lends module:pon-demo-site/client.scenes.abstract.Scene */
-@withLocation
 class Scene extends SceneBase {
   catchEntryError(e) {
     try {
@@ -45,7 +44,7 @@ class Scene extends SceneBase {
   }
 
   async goTo(url, params = {}, options = {}) {
-    const { query = {}, reload = false } = options
+    const { query = {}, reload: shouldReload = false } = options
     const href = addUrlQuery(formatUrl(url, params), query)
     const {
       store: { app },
@@ -53,8 +52,8 @@ class Scene extends SceneBase {
     app.busy.true()
     try {
       await super.goTo(href)
-      if (reload) {
-        await this.reloadLocation()
+      if (shouldReload) {
+        await reload()
       }
     } finally {
       app.busy.false()

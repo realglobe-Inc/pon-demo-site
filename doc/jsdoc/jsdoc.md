@@ -33,6 +33,10 @@ Client module
             * [new HomeScene()](#new_module_pon-demo-site/client.scenes.HomeScene_new)
         * [.ToastScene](#module_pon-demo-site/client.scenes.ToastScene)
             * [new ToastScene()](#new_module_pon-demo-site/client.scenes.ToastScene_new)
+            * [.reset(queues)](#module_pon-demo-site/client.scenes.ToastScene+reset)
+            * [.showError(message)](#module_pon-demo-site/client.scenes.ToastScene+showError)
+            * [.showInfo(message)](#module_pon-demo-site/client.scenes.ToastScene+showInfo)
+            * [.showWarn(message)](#module_pon-demo-site/client.scenes.ToastScene+showWarn)
     * [.scopes](#module_pon-demo-site/client.scopes) : <code>object</code>
     * [.store](#module_pon-demo-site/client.store) : <code>object</code>
         * [.create()](#module_pon-demo-site/client.store.create) ⇒ <code>TheStore</code>
@@ -77,6 +81,10 @@ Scene classes
         * [new HomeScene()](#new_module_pon-demo-site/client.scenes.HomeScene_new)
     * [.ToastScene](#module_pon-demo-site/client.scenes.ToastScene)
         * [new ToastScene()](#new_module_pon-demo-site/client.scenes.ToastScene_new)
+        * [.reset(queues)](#module_pon-demo-site/client.scenes.ToastScene+reset)
+        * [.showError(message)](#module_pon-demo-site/client.scenes.ToastScene+showError)
+        * [.showInfo(message)](#module_pon-demo-site/client.scenes.ToastScene+showInfo)
+        * [.showWarn(message)](#module_pon-demo-site/client.scenes.ToastScene+showWarn)
 
 <a name="module_pon-demo-site/client.scenes.AppScene"></a>
 
@@ -109,10 +117,62 @@ Scene for home
 
 #### scenes.ToastScene
 **Kind**: static class of [<code>scenes</code>](#module_pon-demo-site/client.scenes)  
+
+* [.ToastScene](#module_pon-demo-site/client.scenes.ToastScene)
+    * [new ToastScene()](#new_module_pon-demo-site/client.scenes.ToastScene_new)
+    * [.reset(queues)](#module_pon-demo-site/client.scenes.ToastScene+reset)
+    * [.showError(message)](#module_pon-demo-site/client.scenes.ToastScene+showError)
+    * [.showInfo(message)](#module_pon-demo-site/client.scenes.ToastScene+showInfo)
+    * [.showWarn(message)](#module_pon-demo-site/client.scenes.ToastScene+showWarn)
+
 <a name="new_module_pon-demo-site/client.scenes.ToastScene_new"></a>
 
 ##### new ToastScene()
 ToastScene
+
+<a name="module_pon-demo-site/client.scenes.ToastScene+reset"></a>
+
+##### toastScene.reset(queues)
+Rest toasts
+
+**Kind**: instance method of [<code>ToastScene</code>](#module_pon-demo-site/client.scenes.ToastScene)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| queues | <code>Object.&lt;string, Array.&lt;string&gt;&gt;</code> | Toast queue |
+
+<a name="module_pon-demo-site/client.scenes.ToastScene+showError"></a>
+
+##### toastScene.showError(message)
+Show error toast
+
+**Kind**: instance method of [<code>ToastScene</code>](#module_pon-demo-site/client.scenes.ToastScene)  
+
+| Param | Type |
+| --- | --- |
+| message | <code>string</code> | 
+
+<a name="module_pon-demo-site/client.scenes.ToastScene+showInfo"></a>
+
+##### toastScene.showInfo(message)
+Show info toast
+
+**Kind**: instance method of [<code>ToastScene</code>](#module_pon-demo-site/client.scenes.ToastScene)  
+
+| Param | Type |
+| --- | --- |
+| message | <code>string</code> | 
+
+<a name="module_pon-demo-site/client.scenes.ToastScene+showWarn"></a>
+
+##### toastScene.showWarn(message)
+Show warn toast
+
+**Kind**: instance method of [<code>ToastScene</code>](#module_pon-demo-site/client.scenes.ToastScene)  
+
+| Param | Type |
+| --- | --- |
+| message | <code>string</code> | 
 
 <a name="module_pon-demo-site/client.scopes"></a>
 

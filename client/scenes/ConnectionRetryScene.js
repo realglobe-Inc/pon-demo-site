@@ -5,11 +5,11 @@
  */
 'use strict'
 
-import { bindScope, withBusy, withLocation } from '@the-/mixin-scene/shim'
+import { bindScope, withBusy } from '@the-/mixin-scene/shim'
+import { reload } from '@the-/window'
 import Scene from './abstract/Scene'
 
 @withBusy
-@withLocation
 @bindScope('connection.retry')
 class ConnectionRetrySceneBase extends Scene {}
 
@@ -21,7 +21,7 @@ class ConnectionRetryScene extends ConnectionRetrySceneBase {
 
   @withBusy.while
   async doExec() {
-    await this.reloadLocation()
+    await reload()
   }
 }
 

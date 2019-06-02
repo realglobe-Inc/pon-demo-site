@@ -23,7 +23,7 @@
       "path": "conf"
     },
     "name": "pon-demo-site/conf",
-    "order": 34
+    "order": 38
   },
   {
     "description": "Application server",
@@ -36,7 +36,7 @@
       "path": "server"
     },
     "name": "pon-demo-site/server",
-    "order": 61
+    "order": 65
   },
   {
     "description": "CallScene",
@@ -126,7 +126,7 @@
     "longname": "module:pon-demo-site/server.controllers.AppCtrl",
     "memberof": "module:pon-demo-site/server.controllers.AppCtrl",
     "name": "AppCtrl",
-    "order": 51
+    "order": 55
   },
   {
     "description": "Resource for room",
@@ -135,7 +135,7 @@
     "longname": "module:pon-demo-site/server.db.resources.RoomResource",
     "memberof": "module:pon-demo-site/server.db.resources.RoomResource",
     "name": "RoomResource",
-    "order": 59
+    "order": 63
   },
   {
     "async": true,
@@ -159,6 +159,107 @@
             "Promise"
           ]
         }
+      }
+    ],
+    "scope": "instance"
+  },
+  {
+    "description": "Rest toasts",
+    "id": "module:pon-demo-site/client.scenes.ToastScene#reset",
+    "kind": "function",
+    "longname": "module:pon-demo-site/client.scenes.ToastScene#reset",
+    "memberof": "module:pon-demo-site/client.scenes.ToastScene",
+    "meta": {
+      "filename": "ToastScene.js",
+      "lineno": 20,
+      "path": "client/scenes"
+    },
+    "name": "reset",
+    "order": 26,
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object.<string, Array.<string>>"
+          ]
+        },
+        "description": "Toast queue",
+        "name": "queues"
+      }
+    ],
+    "scope": "instance"
+  },
+  {
+    "description": "Show error toast",
+    "id": "module:pon-demo-site/client.scenes.ToastScene#showError",
+    "kind": "function",
+    "longname": "module:pon-demo-site/client.scenes.ToastScene#showError",
+    "memberof": "module:pon-demo-site/client.scenes.ToastScene",
+    "meta": {
+      "filename": "ToastScene.js",
+      "lineno": 29,
+      "path": "client/scenes"
+    },
+    "name": "showError",
+    "order": 27,
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "name": "message"
+      }
+    ],
+    "scope": "instance"
+  },
+  {
+    "description": "Show info toast",
+    "id": "module:pon-demo-site/client.scenes.ToastScene#showInfo",
+    "kind": "function",
+    "longname": "module:pon-demo-site/client.scenes.ToastScene#showInfo",
+    "memberof": "module:pon-demo-site/client.scenes.ToastScene",
+    "meta": {
+      "filename": "ToastScene.js",
+      "lineno": 36,
+      "path": "client/scenes"
+    },
+    "name": "showInfo",
+    "order": 28,
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "name": "message"
+      }
+    ],
+    "scope": "instance"
+  },
+  {
+    "description": "Show warn toast",
+    "id": "module:pon-demo-site/client.scenes.ToastScene#showWarn",
+    "kind": "function",
+    "longname": "module:pon-demo-site/client.scenes.ToastScene#showWarn",
+    "memberof": "module:pon-demo-site/client.scenes.ToastScene",
+    "meta": {
+      "filename": "ToastScene.js",
+      "lineno": 43,
+      "path": "client/scenes"
+    },
+    "name": "showWarn",
+    "order": 29,
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "name": "message"
       }
     ],
     "scope": "instance"
@@ -302,7 +403,7 @@
       "path": "server/controllers"
     },
     "name": "AppCtrl",
-    "order": 50,
+    "order": 54,
     "scope": "static"
   },
   {
@@ -316,7 +417,7 @@
       "path": "server/controllers"
     },
     "name": "Ctrl",
-    "order": 52,
+    "order": 56,
     "scope": "static",
     "virtual": true
   },
@@ -334,7 +435,7 @@
       "path": "server/db/resources"
     },
     "name": "RoomResource",
-    "order": 58,
+    "order": 62,
     "scope": "static"
   },
   {
@@ -349,7 +450,7 @@
       "path": "conf"
     },
     "name": "APP",
-    "order": 29,
+    "order": 33,
     "scope": "static"
   },
   {
@@ -364,7 +465,7 @@
       "path": "conf"
     },
     "name": "CONTEXT",
-    "order": 30,
+    "order": 34,
     "scope": "static"
   },
   {
@@ -379,7 +480,7 @@
       "path": "conf"
     },
     "name": "HANDLE",
-    "order": 31,
+    "order": 35,
     "scope": "static"
   },
   {
@@ -394,7 +495,7 @@
       "path": "conf"
     },
     "name": "PROPS",
-    "order": 32,
+    "order": 36,
     "scope": "static"
   },
   {
@@ -409,7 +510,7 @@
       "path": "conf"
     },
     "name": "STORE",
-    "order": 33,
+    "order": 37,
     "scope": "static"
   },
   {
@@ -424,7 +525,7 @@
       "path": "conf"
     },
     "name": "APP_CONTAINER_ID",
-    "order": 38,
+    "order": 42,
     "scope": "static"
   },
   {
@@ -439,7 +540,7 @@
       "path": "conf"
     },
     "name": "TOAST_DURATION",
-    "order": 39,
+    "order": 43,
     "scope": "static"
   },
   {
@@ -514,7 +615,7 @@
       "path": "client/scopes"
     },
     "name": "scopes",
-    "order": 26,
+    "order": 30,
     "scope": "static"
   },
   {
@@ -529,7 +630,7 @@
       "path": "client/store"
     },
     "name": "store",
-    "order": 28,
+    "order": 32,
     "scope": "static"
   },
   {
@@ -544,7 +645,7 @@
       "path": "conf/locales/en"
     },
     "name": "en",
-    "order": 35,
+    "order": 39,
     "scope": "static"
   },
   {
@@ -559,7 +660,7 @@
       "path": "conf/locales"
     },
     "name": "locales",
-    "order": 36,
+    "order": 40,
     "scope": "static"
   },
   {
@@ -574,7 +675,7 @@
       "path": "conf"
     },
     "name": "SrcSets",
-    "order": 37,
+    "order": 41,
     "scope": "static"
   },
   {
@@ -589,7 +690,7 @@
       "path": "server/constants"
     },
     "name": "DockerContainers",
-    "order": 40,
+    "order": 44,
     "scope": "static"
   },
   {
@@ -604,7 +705,7 @@
       "path": "server/constants"
     },
     "name": "DockerPorts",
-    "order": 41,
+    "order": 45,
     "scope": "static"
   },
   {
@@ -619,7 +720,7 @@
       "path": "server/constants"
     },
     "name": "constants",
-    "order": 42,
+    "order": 46,
     "scope": "static"
   },
   {
@@ -634,7 +735,7 @@
       "path": "server/constants"
     },
     "name": "MysqlConnections",
-    "order": 43,
+    "order": 47,
     "scope": "static"
   },
   {
@@ -649,7 +750,7 @@
       "path": "server/constants"
     },
     "name": "Project",
-    "order": 44,
+    "order": 48,
     "scope": "static"
   },
   {
@@ -664,7 +765,7 @@
       "path": "server/constants"
     },
     "name": "RedisConnections",
-    "order": 45,
+    "order": 49,
     "scope": "static"
   },
   {
@@ -680,7 +781,7 @@
       "path": "server/constants/secret"
     },
     "name": "SecretValues",
-    "order": 46,
+    "order": 50,
     "scope": "static",
     "type": {
       "names": [
@@ -701,7 +802,7 @@
       "path": "server/constants/setting"
     },
     "name": "SettingValues",
-    "order": 47,
+    "order": 51,
     "scope": "static"
   },
   {
@@ -716,7 +817,7 @@
       "path": "server/constants"
     },
     "name": "WebApps",
-    "order": 48,
+    "order": 52,
     "scope": "static"
   },
   {
@@ -731,7 +832,7 @@
       "path": "server/controllers"
     },
     "name": "controllers",
-    "order": 53,
+    "order": 57,
     "scope": "static"
   },
   {
@@ -746,7 +847,7 @@
       "path": "server/db"
     },
     "name": "db",
-    "order": 55,
+    "order": 59,
     "scope": "static"
   },
   {
@@ -761,7 +862,7 @@
       "path": "server/db/resources"
     },
     "name": "resources",
-    "order": 57,
+    "order": 61,
     "scope": "static"
   },
   {
@@ -776,7 +877,7 @@
       "path": "server/mappings"
     },
     "name": "ControllerMapping",
-    "order": 62,
+    "order": 66,
     "scope": "static"
   },
   {
@@ -791,7 +892,7 @@
       "path": "server/mappings"
     },
     "name": "mappings",
-    "order": 63,
+    "order": 67,
     "scope": "static"
   },
   {
@@ -806,7 +907,7 @@
       "path": "server/mappings"
     },
     "name": "ResourceMapping",
-    "order": 64,
+    "order": 68,
     "scope": "static"
   },
   {
@@ -883,7 +984,7 @@
       "path": "client/store"
     },
     "name": "create",
-    "order": 27,
+    "order": 31,
     "returns": [
       {
         "type": {
@@ -907,7 +1008,7 @@
       "path": "server/db"
     },
     "name": "create",
-    "order": 54,
+    "order": 58,
     "params": [
       {
         "type": {
@@ -941,7 +1042,7 @@
       "path": "server/db/migration"
     },
     "name": "migration",
-    "order": 56,
+    "order": 60,
     "scope": "static"
   },
   {
@@ -956,7 +1057,7 @@
       "path": "server/server"
     },
     "name": "create",
-    "order": 65,
+    "order": 69,
     "returns": [
       {
         "type": {
@@ -979,7 +1080,7 @@
       "path": "server/db/resources"
     },
     "name": "TheRoomResourceEntity",
-    "order": 60,
+    "order": 64,
     "scope": "inner"
   },
   {
@@ -993,7 +1094,7 @@
       "path": "server/constants"
     },
     "name": "seated",
-    "order": 49,
+    "order": 53,
     "scope": "inner"
   }
 ]
