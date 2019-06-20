@@ -86,14 +86,8 @@ module.exports = pon(
       'db:cli': () => createDB().cli(),
       /** Drop database */
       'db:drop': ['assert:not-prod', db.drop(createDB)],
-      /** Dump data */
-      'db:dump': db.dump(createDB, 'var/backup/dump', { max: 3 }),
-      /** Load data from dum */
-      'db:load': db.load.ask(createDB),
       /** Migrate data */
-      'db:migrate': db.migrate(createDB, migration, {
-        snapshot: 'var/migration/snapshots',
-      }),
+      'db:migrate': db.migrate(createDB, migration, {}),
       /** Drop and setup database again */
       'db:reset': ['assert:not-prod', 'db:drop', 'db:setup', 'db:seed'],
       /** Generate test data */

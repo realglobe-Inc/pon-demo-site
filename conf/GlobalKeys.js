@@ -14,8 +14,6 @@ module.exports = Object.freeze(
     APP: 'app',
     /** Key of app context */
     CONTEXT: 'app.context',
-    /** Key of app handle */
-    HANDLE: 'app.handle',
     /** Key of app props */
     PROPS: 'app.props',
     /** Key of app store */

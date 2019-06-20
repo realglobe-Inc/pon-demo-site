@@ -11,10 +11,7 @@ const sc = require('../scenes')
 module.exports =
   /** mappings.SceneMapping */
   {
-    appScene: sc.AppScene,
-    connectionRetryScene: sc.ConnectionRetryScene,
     homeScene: sc.HomeScene,
-    toastScene: sc.ToastScene,
   }
 
 Object.freeze(module.exports)

@@ -11,8 +11,6 @@
     "db": "Prepare DB",
     "db:cli": "Open database cli",
     "db:drop": "Drop database",
-    "db:dump": "Dump data",
-    "db:load": "Load data from dum",
     "db:migrate": "Migrate data",
     "db:reset": "Drop and setup database again",
     "db:seed": "Generate test data",

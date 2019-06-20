@@ -18,7 +18,7 @@ module.exports = Object.freeze(
     mysql: {
       name: DockerContainers.MYSQL_CONTAINER_NAME,
       options: {
-        image: 'mysql:5.7.21',
+        image: 'mysql:8',
         publish: `${DockerPorts.MYSQL_CONTAINER_PORT}:3306`,
       },
     },
@@ -26,14 +26,14 @@ module.exports = Object.freeze(
       name: DockerContainers.REDIS_CONTAINER_NAME,
       options: {
         conf: path.resolve(__dirname, 'redis.conf'),
-        image: 'redis:4',
+        image: 'redis:5.0-alpine',
         publish: `${DockerPorts.REDIS_CONTAINER_PORT}:6379`,
       },
     },
     nginx: {
       name: DockerContainers.NGINX_CONTAINER_NAME,
       options: {
-        image: 'nginx:1.13',
+        image: 'nginx:1.17-alpine',
         httpPublishPort: DockerPorts.NGINX_CONTAINER_PORT,
         staticDir: WebApps.Default.PUBLIC_DIR,
         template: path.resolve(__dirname, 'nginx.conf.template'),

@@ -6,8 +6,7 @@
 'use strict'
 
 import create from './create'
-import handle from '../handle'
 
-const singleton = create.for('singleton', { handle })
+const singleton = Object.assign(create(),)
 
 export default singleton

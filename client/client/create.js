@@ -2,42 +2,25 @@
  * Client a site client
  * @memberof module:pon-demo-site/client.client
  * @function create
+ * @param {string} namespace
  * @param {Object} [config={}]
  * @returns {TheClient} A client instance
  */
 'use strict'
 
 import { GlobalKeys } from '@self/conf'
-import { unlessProduction } from '@the-/check'
 import { TheClient } from '@the-/client/shim'
 import { get } from '@the-/window'
 
 class Client extends TheClient {}
 
 /** @lends module:pon-demo-site/client.client.create */
-function create(config = {}) {
+function create(namespace = 'singleton', config = {}) {
   const { v } = get(GlobalKeys.PROPS) || {}
-  return new Client({
+  return Client.for(namespace, {
     version: v,
     ...config,
   })
-}
-
-create.for = (namespace, options = {}) => {
-  const {
-    handle: { connectionRetryScene },
-  } = options
-  const client = Client.for(namespace, {
-    onGone: () => {
-      setTimeout(() => {
-        connectionRetryScene.start()
-        unlessProduction(() =>
-          client.pingPongAnd(() => connectionRetryScene.doExec()),
-        )
-      }, 1000)
-    },
-  })
-  return client
 }
 
 export default create

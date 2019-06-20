@@ -10,6 +10,14 @@ import { TheContext } from '@the-/context'
 const assert = theAssert('context')
 const context = new TheContext({})
 
+context.createActions = (ActMapping, actContext) =>
+  Object.assign(
+    {},
+    ...Object.entries(ActMapping).map(([as, Factory]) => ({
+      [as]: Factory(actContext),
+    })),
+  )
+
 /** Create stateless renderer */
 context.stateless = function stateless() {
   const init = ({ l }) => ({ l })
@@ -24,11 +32,17 @@ context.stateless = function stateless() {
 /** Create stateful renderer */
 context.stateful = function stateful(reduceState, reduceHandle) {
   assert(arguments.length === 2, 'Takes exactly two arguments')
-  const init = ({ handle, history, l, lang }, pipedProxy) => ({
+  const init = ({ actions, history, l, lang }, pipedProxy) => ({
     history,
     l,
     lang,
-    ...reduceHandle(handle, pipedProxy),
+    ...reduceHandle(
+      {
+        l,
+        ...actions,
+      },
+      pipedProxy,
+    ),
   })
   const pipe = ({ state }) => reduceState(state)
   return (renderer) => (

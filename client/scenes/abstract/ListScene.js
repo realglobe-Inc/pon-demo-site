@@ -12,7 +12,6 @@ import {
   withEntities,
   withFilter,
   withPage,
-  withQuery,
   withReady,
   withSort,
 } from '@the-/mixin-scene/shim'
@@ -25,7 +24,6 @@ import Scene from './Scene'
 @withPage
 @withReady
 @withFilter
-@withQuery
 @bindDefaults({
   counts: {},
   entities: [],
@@ -60,12 +58,6 @@ class ListScene extends ListSceneBase {
     }
   }
 
-  setQ(q) {
-    this.set({ pageNumber: 1 })
-    this.setFilterByQ(q, { fields: this.constructor.qField })
-    this.mergeQueryToSearch({ q })
-  }
-
   async dealWith(condition) {
     throw new Error('Not implemented')
   }
@@ -75,23 +67,6 @@ class ListScene extends ListSceneBase {
   async doSync() {
     const { entities, meta: counts } = await this.dealWith(this.getCondition())
     this.set({ counts, entities, hasMore: hasMoreFor(counts) })
-  }
-
-  async doSyncBackground() {
-    const isBusy = this.get('busy') || this.get('backgroundBusy')
-    if (isBusy) {
-      // TODO これだと取りこぼしがありそう
-      return
-    }
-    this.set({ backgroundBusy: true })
-    try {
-      const { entities, meta: counts } = await this.dealWith(
-        this.getCondition(),
-      )
-      this.set({ counts, entities, hasMore: hasMoreFor(counts) })
-    } finally {
-      this.set({ backgroundBusy: false })
-    }
   }
 
   /**
@@ -116,18 +91,6 @@ class ListScene extends ListSceneBase {
       this.addEntities(entities)
     } finally {
       this.set({ moreBusy: false })
-    }
-  }
-
-  async doSyncOne(id) {
-    const {
-      entities: [one],
-    } = await this.dealWith({
-      filter: { id },
-      page: { number: 1, size: 1 },
-    })
-    if (one) {
-      this.updateEntity(one)
     }
   }
 }

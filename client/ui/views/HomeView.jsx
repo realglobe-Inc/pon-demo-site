@@ -14,10 +14,10 @@ class HomeView extends React.Component {
       busy: state['home.busy'],
       count: state['home.count'],
     }),
-    ({ homeScene, l, toastScene }, pipedProxy) => ({
+    ({ homeScene, l, toastAct }, pipedProxy) => ({
       onCountUp: async () => {
         await homeScene.countUp()
-        await toastScene.showInfo(l('toasts.COUNT_UP_DID_SUCCESS'))
+        await toastAct.showInfo(l('toasts.COUNT_UP_DID_SUCCESS'))
         console.log('new Count:', pipedProxy.count)
       },
       onMount: async () => {},

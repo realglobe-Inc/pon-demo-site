@@ -21,26 +21,97 @@ Client module
 
 
 * [pon-demo-site/client](#module_pon-demo-site/client)
+    * [.actions](#module_pon-demo-site/client.actions) : <code>object</code>
+        * [.AppAct](#module_pon-demo-site/client.actions.AppAct) : <code>object</code>
+            * [~appAct](#module_pon-demo-site/client.actions.AppAct..appAct) : <code>object</code>
+        * [.enhancers](#module_pon-demo-site/client.actions.enhancers) : <code>object</code>
+        * [.ConnectionRetryAct](#module_pon-demo-site/client.actions.ConnectionRetryAct) : <code>object</code>
+            * [~connectionRetryAct](#module_pon-demo-site/client.actions.ConnectionRetryAct..connectionRetryAct) : <code>object</code>
+        * [.HomeAct](#module_pon-demo-site/client.actions.HomeAct) : <code>object</code>
+            * [~homeAct](#module_pon-demo-site/client.actions.HomeAct..homeAct) : <code>object</code>
+        * [.ToastAct(context)](#module_pon-demo-site/client.actions.ToastAct) ⇒ <code>Object</code>
+            * [~toastAct](#module_pon-demo-site/client.actions.ToastAct..toastAct) : <code>object</code>
     * [.client](#module_pon-demo-site/client.client) : <code>object</code>
-        * [.create([config])](#module_pon-demo-site/client.client.create) ⇒ <code>TheClient</code>
+        * [.create(namespace, [config])](#module_pon-demo-site/client.client.create) ⇒ <code>TheClient</code>
     * [.mappings](#module_pon-demo-site/client.mappings) : <code>object</code>
     * [.scenes](#module_pon-demo-site/client.scenes) : <code>object</code>
-        * [.AppScene](#module_pon-demo-site/client.scenes.AppScene)
-            * [new AppScene()](#new_module_pon-demo-site/client.scenes.AppScene_new)
-        * [.ConnectionRetryScene](#module_pon-demo-site/client.scenes.ConnectionRetryScene)
-            * [new ConnectionRetryScene()](#new_module_pon-demo-site/client.scenes.ConnectionRetryScene_new)
         * [.HomeScene](#module_pon-demo-site/client.scenes.HomeScene)
             * [new HomeScene()](#new_module_pon-demo-site/client.scenes.HomeScene_new)
-        * [.ToastScene](#module_pon-demo-site/client.scenes.ToastScene)
-            * [new ToastScene()](#new_module_pon-demo-site/client.scenes.ToastScene_new)
-            * [.reset(queues)](#module_pon-demo-site/client.scenes.ToastScene+reset)
-            * [.showError(message)](#module_pon-demo-site/client.scenes.ToastScene+showError)
-            * [.showInfo(message)](#module_pon-demo-site/client.scenes.ToastScene+showInfo)
-            * [.showWarn(message)](#module_pon-demo-site/client.scenes.ToastScene+showWarn)
+        * [.LocationAct()](#module_pon-demo-site/client.scenes.LocationAct)
+            * [~locationAct](#module_pon-demo-site/client.scenes.LocationAct..locationAct) : <code>object</code>
     * [.scopes](#module_pon-demo-site/client.scopes) : <code>object</code>
     * [.store](#module_pon-demo-site/client.store) : <code>object</code>
         * [.create()](#module_pon-demo-site/client.store.create) ⇒ <code>TheStore</code>
 
+<a name="module_pon-demo-site/client.actions"></a>
+
+### pon-demo-site/client.actions : <code>object</code>
+Action modules
+
+**Kind**: static namespace of [<code>pon-demo-site/client</code>](#module_pon-demo-site/client)  
+
+* [.actions](#module_pon-demo-site/client.actions) : <code>object</code>
+    * [.AppAct](#module_pon-demo-site/client.actions.AppAct) : <code>object</code>
+        * [~appAct](#module_pon-demo-site/client.actions.AppAct..appAct) : <code>object</code>
+    * [.enhancers](#module_pon-demo-site/client.actions.enhancers) : <code>object</code>
+    * [.ConnectionRetryAct](#module_pon-demo-site/client.actions.ConnectionRetryAct) : <code>object</code>
+        * [~connectionRetryAct](#module_pon-demo-site/client.actions.ConnectionRetryAct..connectionRetryAct) : <code>object</code>
+    * [.HomeAct](#module_pon-demo-site/client.actions.HomeAct) : <code>object</code>
+        * [~homeAct](#module_pon-demo-site/client.actions.HomeAct..homeAct) : <code>object</code>
+    * [.ToastAct(context)](#module_pon-demo-site/client.actions.ToastAct) ⇒ <code>Object</code>
+        * [~toastAct](#module_pon-demo-site/client.actions.ToastAct..toastAct) : <code>object</code>
+
+<a name="module_pon-demo-site/client.actions.AppAct"></a>
+
+#### actions.AppAct : <code>object</code>
+Act for "app"
+
+**Kind**: static namespace of [<code>actions</code>](#module_pon-demo-site/client.actions)  
+<a name="module_pon-demo-site/client.actions.AppAct..appAct"></a>
+
+##### AppAct~appAct : <code>object</code>
+**Kind**: inner namespace of [<code>AppAct</code>](#module_pon-demo-site/client.actions.AppAct)  
+<a name="module_pon-demo-site/client.actions.enhancers"></a>
+
+#### actions.enhancers : <code>object</code>
+Enhancer function variables
+
+**Kind**: static namespace of [<code>actions</code>](#module_pon-demo-site/client.actions)  
+<a name="module_pon-demo-site/client.actions.ConnectionRetryAct"></a>
+
+#### actions.ConnectionRetryAct : <code>object</code>
+Act for "connection.retry"
+
+**Kind**: static namespace of [<code>actions</code>](#module_pon-demo-site/client.actions)  
+<a name="module_pon-demo-site/client.actions.ConnectionRetryAct..connectionRetryAct"></a>
+
+##### ConnectionRetryAct~connectionRetryAct : <code>object</code>
+**Kind**: inner namespace of [<code>ConnectionRetryAct</code>](#module_pon-demo-site/client.actions.ConnectionRetryAct)  
+<a name="module_pon-demo-site/client.actions.HomeAct"></a>
+
+#### actions.HomeAct : <code>object</code>
+Act for "home"
+
+**Kind**: static namespace of [<code>actions</code>](#module_pon-demo-site/client.actions)  
+<a name="module_pon-demo-site/client.actions.HomeAct..homeAct"></a>
+
+##### HomeAct~homeAct : <code>object</code>
+**Kind**: inner namespace of [<code>HomeAct</code>](#module_pon-demo-site/client.actions.HomeAct)  
+<a name="module_pon-demo-site/client.actions.ToastAct"></a>
+
+#### actions.ToastAct(context) ⇒ <code>Object</code>
+Act for 'toast'
+
+**Kind**: static method of [<code>actions</code>](#module_pon-demo-site/client.actions)  
+
+| Param | Type |
+| --- | --- |
+| context | <code>Object</code> | 
+
+<a name="module_pon-demo-site/client.actions.ToastAct..toastAct"></a>
+
+##### ToastAct~toastAct : <code>object</code>
+**Kind**: inner namespace of [<code>ToastAct</code>](#module_pon-demo-site/client.actions.ToastAct)  
 <a name="module_pon-demo-site/client.client"></a>
 
 ### pon-demo-site/client.client : <code>object</code>
@@ -49,7 +120,7 @@ Client index
 **Kind**: static namespace of [<code>pon-demo-site/client</code>](#module_pon-demo-site/client)  
 <a name="module_pon-demo-site/client.client.create"></a>
 
-#### client.create([config]) ⇒ <code>TheClient</code>
+#### client.create(namespace, [config]) ⇒ <code>TheClient</code>
 Client a site client
 
 **Kind**: static method of [<code>client</code>](#module_pon-demo-site/client.client)  
@@ -57,6 +128,7 @@ Client a site client
 
 | Param | Type | Default |
 | --- | --- | --- |
+| namespace | <code>string</code> |  | 
 | [config] | <code>Object</code> | <code>{}</code> | 
 
 <a name="module_pon-demo-site/client.mappings"></a>
@@ -73,36 +145,10 @@ Scene classes
 **Kind**: static namespace of [<code>pon-demo-site/client</code>](#module_pon-demo-site/client)  
 
 * [.scenes](#module_pon-demo-site/client.scenes) : <code>object</code>
-    * [.AppScene](#module_pon-demo-site/client.scenes.AppScene)
-        * [new AppScene()](#new_module_pon-demo-site/client.scenes.AppScene_new)
-    * [.ConnectionRetryScene](#module_pon-demo-site/client.scenes.ConnectionRetryScene)
-        * [new ConnectionRetryScene()](#new_module_pon-demo-site/client.scenes.ConnectionRetryScene_new)
     * [.HomeScene](#module_pon-demo-site/client.scenes.HomeScene)
         * [new HomeScene()](#new_module_pon-demo-site/client.scenes.HomeScene_new)
-    * [.ToastScene](#module_pon-demo-site/client.scenes.ToastScene)
-        * [new ToastScene()](#new_module_pon-demo-site/client.scenes.ToastScene_new)
-        * [.reset(queues)](#module_pon-demo-site/client.scenes.ToastScene+reset)
-        * [.showError(message)](#module_pon-demo-site/client.scenes.ToastScene+showError)
-        * [.showInfo(message)](#module_pon-demo-site/client.scenes.ToastScene+showInfo)
-        * [.showWarn(message)](#module_pon-demo-site/client.scenes.ToastScene+showWarn)
-
-<a name="module_pon-demo-site/client.scenes.AppScene"></a>
-
-#### scenes.AppScene
-**Kind**: static class of [<code>scenes</code>](#module_pon-demo-site/client.scenes)  
-<a name="new_module_pon-demo-site/client.scenes.AppScene_new"></a>
-
-##### new AppScene()
-AppScene
-
-<a name="module_pon-demo-site/client.scenes.ConnectionRetryScene"></a>
-
-#### scenes.ConnectionRetryScene
-**Kind**: static class of [<code>scenes</code>](#module_pon-demo-site/client.scenes)  
-<a name="new_module_pon-demo-site/client.scenes.ConnectionRetryScene_new"></a>
-
-##### new ConnectionRetryScene()
-ConnectionRetryScene
+    * [.LocationAct()](#module_pon-demo-site/client.scenes.LocationAct)
+        * [~locationAct](#module_pon-demo-site/client.scenes.LocationAct..locationAct) : <code>object</code>
 
 <a name="module_pon-demo-site/client.scenes.HomeScene"></a>
 
@@ -113,67 +159,16 @@ ConnectionRetryScene
 ##### new HomeScene()
 Scene for home
 
-<a name="module_pon-demo-site/client.scenes.ToastScene"></a>
+<a name="module_pon-demo-site/client.scenes.LocationAct"></a>
 
-#### scenes.ToastScene
-**Kind**: static class of [<code>scenes</code>](#module_pon-demo-site/client.scenes)  
+#### scenes.LocationAct()
+Act for 'location'
 
-* [.ToastScene](#module_pon-demo-site/client.scenes.ToastScene)
-    * [new ToastScene()](#new_module_pon-demo-site/client.scenes.ToastScene_new)
-    * [.reset(queues)](#module_pon-demo-site/client.scenes.ToastScene+reset)
-    * [.showError(message)](#module_pon-demo-site/client.scenes.ToastScene+showError)
-    * [.showInfo(message)](#module_pon-demo-site/client.scenes.ToastScene+showInfo)
-    * [.showWarn(message)](#module_pon-demo-site/client.scenes.ToastScene+showWarn)
+**Kind**: static method of [<code>scenes</code>](#module_pon-demo-site/client.scenes)  
+<a name="module_pon-demo-site/client.scenes.LocationAct..locationAct"></a>
 
-<a name="new_module_pon-demo-site/client.scenes.ToastScene_new"></a>
-
-##### new ToastScene()
-ToastScene
-
-<a name="module_pon-demo-site/client.scenes.ToastScene+reset"></a>
-
-##### toastScene.reset(queues)
-Rest toasts
-
-**Kind**: instance method of [<code>ToastScene</code>](#module_pon-demo-site/client.scenes.ToastScene)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| queues | <code>Object.&lt;string, Array.&lt;string&gt;&gt;</code> | Toast queue |
-
-<a name="module_pon-demo-site/client.scenes.ToastScene+showError"></a>
-
-##### toastScene.showError(message)
-Show error toast
-
-**Kind**: instance method of [<code>ToastScene</code>](#module_pon-demo-site/client.scenes.ToastScene)  
-
-| Param | Type |
-| --- | --- |
-| message | <code>string</code> | 
-
-<a name="module_pon-demo-site/client.scenes.ToastScene+showInfo"></a>
-
-##### toastScene.showInfo(message)
-Show info toast
-
-**Kind**: instance method of [<code>ToastScene</code>](#module_pon-demo-site/client.scenes.ToastScene)  
-
-| Param | Type |
-| --- | --- |
-| message | <code>string</code> | 
-
-<a name="module_pon-demo-site/client.scenes.ToastScene+showWarn"></a>
-
-##### toastScene.showWarn(message)
-Show warn toast
-
-**Kind**: instance method of [<code>ToastScene</code>](#module_pon-demo-site/client.scenes.ToastScene)  
-
-| Param | Type |
-| --- | --- |
-| message | <code>string</code> | 
-
+##### LocationAct~locationAct : <code>object</code>
+**Kind**: inner namespace of [<code>LocationAct</code>](#module_pon-demo-site/client.scenes.LocationAct)  
 <a name="module_pon-demo-site/client.scopes"></a>
 
 ### pon-demo-site/client.scopes : <code>object</code>
@@ -249,7 +244,8 @@ Application server
         * [.create([config])](#module_pon-demo-site/server.db.create) ⇒ <code>TheDB</code>
         * [.migration()](#module_pon-demo-site/server.db.migration)
     * [.mappings](#module_pon-demo-site/server.mappings) : <code>object</code>
-    * [.create()](#module_pon-demo-site/server.create) ⇒ <code>TheServer</code>
+    * [.server](#module_pon-demo-site/server.server) : <code>object</code>
+        * [.create()](#module_pon-demo-site/server.server.create) ⇒ <code>TheServer</code>
 
 <a name="module_pon-demo-site/server.constants"></a>
 
@@ -407,9 +403,13 @@ Create an db instance
 Module mappings
 
 **Kind**: static namespace of [<code>pon-demo-site/server</code>](#module_pon-demo-site/server)  
-<a name="module_pon-demo-site/server.create"></a>
+<a name="module_pon-demo-site/server.server"></a>
 
-### pon-demo-site/server.create() ⇒ <code>TheServer</code>
+### pon-demo-site/server.server : <code>object</code>
+**Kind**: static namespace of [<code>pon-demo-site/server</code>](#module_pon-demo-site/server)  
+<a name="module_pon-demo-site/server.server.create"></a>
+
+#### server.create() ⇒ <code>TheServer</code>
 Create an server instance
 
-**Kind**: static method of [<code>pon-demo-site/server</code>](#module_pon-demo-site/server)  
+**Kind**: static method of [<code>server</code>](#module_pon-demo-site/server.server)  

@@ -1,8 +1,8 @@
 'use strict'
+
 require = require('esm')(module)
 
-const { pascalcase } = require('stringcase')
-const { Scene } = require('@the-/templates')
+const { pascalcase, snakecase } = require('stringcase')
 const { default: scopes } = require('../store/scopes')
 
 const names = Object.keys(scopes)
@@ -15,9 +15,16 @@ const names = Object.keys(scopes)
   .filter((v, i, arr) => arr.indexOf(v) === i)
   .filter(Boolean)
 
-module.exports = names.map((name) =>
-  Scene({ cjs: true, memberof: 'module:pon-demo-site/client.scenes', name }),
-)
+module.exports = [...names].map((name) => ({
+  data: {
+    memberof: 'module:pon-demo-site/client.actions',
+    name: `${name}Act`,
+    scopePath: snakecase(name).replace(/_/g, '.'),
+  },
+  force: false,
+  mode: '644',
+  path: `${name}Act.js`,
+}))
 
 if (!module.parent) {
   require('coz').render(__filename)

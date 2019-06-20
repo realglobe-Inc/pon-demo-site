@@ -1,0 +1,23 @@
+/**
+ * Act for "{{{scopePath}}}"
+ * @memberof {{memberof}}
+ * @namespace {{name}}
+ */
+'use strict'
+
+/** @lends {{memberof}}.{{name}} */
+export default function  {{name}} ({ store }) {
+  const scope = store.{{{scopePath}}}
+
+  /**
+   * @memberof {{memberof}}.{{name}}
+   * @inner
+   * @namespace {{camelcase name}}
+   */
+  const act = {
+  }
+
+  Object.freeze(act)
+
+  return act
+}

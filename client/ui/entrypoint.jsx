@@ -15,6 +15,7 @@ import {
 import { get, once, rescue, set } from '@the-/window'
 import context from './context'
 import Fallback from './stateful/fallback/Fallback'
+import { ActMapping } from '../mappings'
 
 const App = lazy(() => import('./App'))
 
@@ -29,29 +30,29 @@ once('DOMContentLoaded', async () => {
   await workers(workerScopes)
 
   const { default: client } = await import('../client')
-  const { default: handle } = await import('../handle')
   const { default: store } = await import('../store')
 
   const history = historyFor()
 
   const l = locales.bind(lang)
-  context.set({ handle, history, l, lang, state: store.state })
+  context.set({ history, l, lang, state: store.state })
   store.subscribe(() => context.set({ state: store.state }))
 
   const controllers = await client.useAll({ debug: !isProduction() })
 
-  handle.setAttributes({ client, controllers, history, l, lang, store })
-  handle.initAll()
+  const actions = context.createActions(ActMapping, {
+    controllers,
+    history,
+    store,
+  })
 
-  const { appScene, toastScene } = handle
-  history.listen((location) => appScene.handleLocationChange(location))
-  appScene.setLocation(history.location)
-  appScene.set({ host: get('location.host'), locale: lang })
-
+  const { appAct, connectionRetryAct, locationAct, toastAct } = actions
+  locationAct.bindHistory(history)
+  connectionRetryAct.bindClient(client)
   rescue((e) => {
-    const handled = appScene.handleRejectionReason(e.reason)
+    const handled = appAct.handleRejectionReason(e.reason)
     if (!handled) {
-      toastScene.showError(l('errors.UNEXPECTED_ERROR'))
+      toastAct.showError(l('errors.UNEXPECTED_ERROR'))
     }
   })
 
@@ -61,13 +62,7 @@ once('DOMContentLoaded', async () => {
 
   const app = (
     <Suspense fallback={<Fallback />}>
-      <App
-        {...props}
-        client={client}
-        handle={handle}
-        history={history}
-        store={store}
-      />
+      <App {...props} client={client} history={history} store={store} />
     </Suspense>
   )
   await mount(app, UI.APP_CONTAINER_ID, {
@@ -81,7 +76,6 @@ once('DOMContentLoaded', async () => {
     props,
   )
 
-  set(GlobalKeys.HANDLE, handle)
   set(GlobalKeys.STORE, store)
   set(GlobalKeys.CONTEXT, context)
 

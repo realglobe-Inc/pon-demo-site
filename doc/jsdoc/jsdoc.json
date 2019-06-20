@@ -10,7 +10,7 @@
       "path": "client"
     },
     "name": "pon-demo-site/client",
-    "order": 3
+    "order": 19
   },
   {
     "description": "Project configurations",
@@ -23,7 +23,7 @@
       "path": "conf"
     },
     "name": "pon-demo-site/conf",
-    "order": 38
+    "order": 44
   },
   {
     "description": "Application server",
@@ -36,7 +36,7 @@
       "path": "server"
     },
     "name": "pon-demo-site/server",
-    "order": 65
+    "order": 71
   },
   {
     "description": "CallScene",
@@ -45,7 +45,7 @@
     "longname": "module:pon-demo-site/client.scenes.abstract.CallScene",
     "memberof": "module:pon-demo-site/client.scenes.abstract.CallScene",
     "name": "CallScene",
-    "order": 7
+    "order": 24
   },
   {
     "description": "DetailScene",
@@ -54,7 +54,7 @@
     "longname": "module:pon-demo-site/client.scenes.abstract.DetailScene",
     "memberof": "module:pon-demo-site/client.scenes.abstract.DetailScene",
     "name": "DetailScene",
-    "order": 9
+    "order": 26
   },
   {
     "description": "CreateScene",
@@ -63,7 +63,7 @@
     "longname": "module:pon-demo-site/client.scenes.abstract.CreateScene",
     "memberof": "module:pon-demo-site/client.scenes.abstract.CreateScene",
     "name": "CreateScene",
-    "order": 11
+    "order": 28
   },
   {
     "description": "ListScene",
@@ -72,7 +72,7 @@
     "longname": "module:pon-demo-site/client.scenes.abstract.ListScene",
     "memberof": "module:pon-demo-site/client.scenes.abstract.ListScene",
     "name": "ListScene",
-    "order": 13
+    "order": 30
   },
   {
     "description": "Base scene",
@@ -81,25 +81,7 @@
     "longname": "module:pon-demo-site/client.scenes.abstract.Scene",
     "memberof": "module:pon-demo-site/client.scenes.abstract.Scene",
     "name": "Scene",
-    "order": 16
-  },
-  {
-    "description": "AppScene",
-    "id": "module:pon-demo-site/client.scenes.AppScene()",
-    "kind": "constructor",
-    "longname": "module:pon-demo-site/client.scenes.AppScene",
-    "memberof": "module:pon-demo-site/client.scenes.AppScene",
-    "name": "AppScene",
-    "order": 18
-  },
-  {
-    "description": "ConnectionRetryScene",
-    "id": "module:pon-demo-site/client.scenes.ConnectionRetryScene()",
-    "kind": "constructor",
-    "longname": "module:pon-demo-site/client.scenes.ConnectionRetryScene",
-    "memberof": "module:pon-demo-site/client.scenes.ConnectionRetryScene",
-    "name": "ConnectionRetryScene",
-    "order": 20
+    "order": 33
   },
   {
     "description": "Scene for home",
@@ -108,16 +90,7 @@
     "longname": "module:pon-demo-site/client.scenes.HomeScene",
     "memberof": "module:pon-demo-site/client.scenes.HomeScene",
     "name": "HomeScene",
-    "order": 22
-  },
-  {
-    "description": "ToastScene",
-    "id": "module:pon-demo-site/client.scenes.ToastScene()",
-    "kind": "constructor",
-    "longname": "module:pon-demo-site/client.scenes.ToastScene",
-    "memberof": "module:pon-demo-site/client.scenes.ToastScene",
-    "name": "ToastScene",
-    "order": 25
+    "order": 35
   },
   {
     "description": "Application controller",
@@ -126,7 +99,7 @@
     "longname": "module:pon-demo-site/server.controllers.AppCtrl",
     "memberof": "module:pon-demo-site/server.controllers.AppCtrl",
     "name": "AppCtrl",
-    "order": 55
+    "order": 61
   },
   {
     "description": "Resource for room",
@@ -135,7 +108,7 @@
     "longname": "module:pon-demo-site/server.db.resources.RoomResource",
     "memberof": "module:pon-demo-site/server.db.resources.RoomResource",
     "name": "RoomResource",
-    "order": 63
+    "order": 69
   },
   {
     "async": true,
@@ -146,11 +119,11 @@
     "memberof": "module:pon-demo-site/client.scenes.abstract.ListScene",
     "meta": {
       "filename": "ListScene.js",
-      "lineno": 101,
+      "lineno": 76,
       "path": "client/scenes/abstract"
     },
     "name": "doSyncMore",
-    "order": 14,
+    "order": 31,
     "params": [],
     "returns": [
       {
@@ -159,107 +132,6 @@
             "Promise"
           ]
         }
-      }
-    ],
-    "scope": "instance"
-  },
-  {
-    "description": "Rest toasts",
-    "id": "module:pon-demo-site/client.scenes.ToastScene#reset",
-    "kind": "function",
-    "longname": "module:pon-demo-site/client.scenes.ToastScene#reset",
-    "memberof": "module:pon-demo-site/client.scenes.ToastScene",
-    "meta": {
-      "filename": "ToastScene.js",
-      "lineno": 20,
-      "path": "client/scenes"
-    },
-    "name": "reset",
-    "order": 26,
-    "params": [
-      {
-        "type": {
-          "names": [
-            "Object.<string, Array.<string>>"
-          ]
-        },
-        "description": "Toast queue",
-        "name": "queues"
-      }
-    ],
-    "scope": "instance"
-  },
-  {
-    "description": "Show error toast",
-    "id": "module:pon-demo-site/client.scenes.ToastScene#showError",
-    "kind": "function",
-    "longname": "module:pon-demo-site/client.scenes.ToastScene#showError",
-    "memberof": "module:pon-demo-site/client.scenes.ToastScene",
-    "meta": {
-      "filename": "ToastScene.js",
-      "lineno": 29,
-      "path": "client/scenes"
-    },
-    "name": "showError",
-    "order": 27,
-    "params": [
-      {
-        "type": {
-          "names": [
-            "string"
-          ]
-        },
-        "name": "message"
-      }
-    ],
-    "scope": "instance"
-  },
-  {
-    "description": "Show info toast",
-    "id": "module:pon-demo-site/client.scenes.ToastScene#showInfo",
-    "kind": "function",
-    "longname": "module:pon-demo-site/client.scenes.ToastScene#showInfo",
-    "memberof": "module:pon-demo-site/client.scenes.ToastScene",
-    "meta": {
-      "filename": "ToastScene.js",
-      "lineno": 36,
-      "path": "client/scenes"
-    },
-    "name": "showInfo",
-    "order": 28,
-    "params": [
-      {
-        "type": {
-          "names": [
-            "string"
-          ]
-        },
-        "name": "message"
-      }
-    ],
-    "scope": "instance"
-  },
-  {
-    "description": "Show warn toast",
-    "id": "module:pon-demo-site/client.scenes.ToastScene#showWarn",
-    "kind": "function",
-    "longname": "module:pon-demo-site/client.scenes.ToastScene#showWarn",
-    "memberof": "module:pon-demo-site/client.scenes.ToastScene",
-    "meta": {
-      "filename": "ToastScene.js",
-      "lineno": 43,
-      "path": "client/scenes"
-    },
-    "name": "showWarn",
-    "order": 29,
-    "params": [
-      {
-        "type": {
-          "names": [
-            "string"
-          ]
-        },
-        "name": "message"
       }
     ],
     "scope": "instance"
@@ -275,7 +147,7 @@
       "path": "client/scenes/abstract"
     },
     "name": "CallScene",
-    "order": 6,
+    "order": 23,
     "scope": "static"
   },
   {
@@ -289,7 +161,7 @@
       "path": "client/scenes/abstract"
     },
     "name": "DetailScene",
-    "order": 8,
+    "order": 25,
     "scope": "static"
   },
   {
@@ -303,7 +175,7 @@
       "path": "client/scenes/abstract"
     },
     "name": "CreateScene",
-    "order": 10,
+    "order": 27,
     "scope": "static"
   },
   {
@@ -317,7 +189,7 @@
       "path": "client/scenes/abstract"
     },
     "name": "ListScene",
-    "order": 12,
+    "order": 29,
     "scope": "static",
     "virtual": true
   },
@@ -332,37 +204,9 @@
       "path": "client/scenes/abstract"
     },
     "name": "Scene",
-    "order": 15,
+    "order": 32,
     "scope": "static",
     "virtual": true
-  },
-  {
-    "id": "module:pon-demo-site/client.scenes.AppScene",
-    "kind": "class",
-    "longname": "module:pon-demo-site/client.scenes.AppScene",
-    "memberof": "module:pon-demo-site/client.scenes",
-    "meta": {
-      "filename": "AppScene.js",
-      "lineno": 1,
-      "path": "client/scenes"
-    },
-    "name": "AppScene",
-    "order": 17,
-    "scope": "static"
-  },
-  {
-    "id": "module:pon-demo-site/client.scenes.ConnectionRetryScene",
-    "kind": "class",
-    "longname": "module:pon-demo-site/client.scenes.ConnectionRetryScene",
-    "memberof": "module:pon-demo-site/client.scenes",
-    "meta": {
-      "filename": "ConnectionRetryScene.js",
-      "lineno": 1,
-      "path": "client/scenes"
-    },
-    "name": "ConnectionRetryScene",
-    "order": 19,
-    "scope": "static"
   },
   {
     "id": "module:pon-demo-site/client.scenes.HomeScene",
@@ -375,21 +219,7 @@
       "path": "client/scenes"
     },
     "name": "HomeScene",
-    "order": 21,
-    "scope": "static"
-  },
-  {
-    "id": "module:pon-demo-site/client.scenes.ToastScene",
-    "kind": "class",
-    "longname": "module:pon-demo-site/client.scenes.ToastScene",
-    "memberof": "module:pon-demo-site/client.scenes",
-    "meta": {
-      "filename": "ToastScene.js",
-      "lineno": 1,
-      "path": "client/scenes"
-    },
-    "name": "ToastScene",
-    "order": 24,
+    "order": 34,
     "scope": "static"
   },
   {
@@ -403,7 +233,7 @@
       "path": "server/controllers"
     },
     "name": "AppCtrl",
-    "order": 54,
+    "order": 60,
     "scope": "static"
   },
   {
@@ -417,7 +247,7 @@
       "path": "server/controllers"
     },
     "name": "Ctrl",
-    "order": 56,
+    "order": 62,
     "scope": "static",
     "virtual": true
   },
@@ -435,7 +265,7 @@
       "path": "server/db/resources"
     },
     "name": "RoomResource",
-    "order": 62,
+    "order": 68,
     "scope": "static"
   },
   {
@@ -450,7 +280,7 @@
       "path": "conf"
     },
     "name": "APP",
-    "order": 33,
+    "order": 40,
     "scope": "static"
   },
   {
@@ -465,22 +295,7 @@
       "path": "conf"
     },
     "name": "CONTEXT",
-    "order": 34,
-    "scope": "static"
-  },
-  {
-    "description": "Key of app handle",
-    "id": "GlobalKeys.HANDLE",
-    "kind": "member",
-    "longname": "GlobalKeys.HANDLE",
-    "memberof": "GlobalKeys",
-    "meta": {
-      "filename": "GlobalKeys.js",
-      "lineno": 18,
-      "path": "conf"
-    },
-    "name": "HANDLE",
-    "order": 35,
+    "order": 41,
     "scope": "static"
   },
   {
@@ -491,11 +306,11 @@
     "memberof": "GlobalKeys",
     "meta": {
       "filename": "GlobalKeys.js",
-      "lineno": 20,
+      "lineno": 18,
       "path": "conf"
     },
     "name": "PROPS",
-    "order": 36,
+    "order": 42,
     "scope": "static"
   },
   {
@@ -506,11 +321,11 @@
     "memberof": "GlobalKeys",
     "meta": {
       "filename": "GlobalKeys.js",
-      "lineno": 22,
+      "lineno": 20,
       "path": "conf"
     },
     "name": "STORE",
-    "order": 37,
+    "order": 43,
     "scope": "static"
   },
   {
@@ -525,7 +340,7 @@
       "path": "conf"
     },
     "name": "APP_CONTAINER_ID",
-    "order": 42,
+    "order": 48,
     "scope": "static"
   },
   {
@@ -540,7 +355,82 @@
       "path": "conf"
     },
     "name": "TOAST_DURATION",
-    "order": 43,
+    "order": 49,
+    "scope": "static"
+  },
+  {
+    "description": "Act for \"app\"",
+    "id": "module:pon-demo-site/client.actions.AppAct",
+    "kind": "namespace",
+    "longname": "module:pon-demo-site/client.actions.AppAct",
+    "memberof": "module:pon-demo-site/client.actions",
+    "meta": {
+      "filename": "AppAct.js",
+      "lineno": 1,
+      "path": "client/actions"
+    },
+    "name": "AppAct",
+    "order": 0,
+    "scope": "static"
+  },
+  {
+    "description": "Enhancer function variables",
+    "id": "module:pon-demo-site/client.actions.enhancers",
+    "kind": "namespace",
+    "longname": "module:pon-demo-site/client.actions.enhancers",
+    "memberof": "module:pon-demo-site/client.actions",
+    "meta": {
+      "filename": "index.js",
+      "lineno": 2,
+      "path": "client/actions/concerns"
+    },
+    "name": "enhancers",
+    "order": 3,
+    "scope": "static"
+  },
+  {
+    "description": "Act for \"connection.retry\"",
+    "id": "module:pon-demo-site/client.actions.ConnectionRetryAct",
+    "kind": "namespace",
+    "longname": "module:pon-demo-site/client.actions.ConnectionRetryAct",
+    "memberof": "module:pon-demo-site/client.actions",
+    "meta": {
+      "filename": "ConnectionRetryAct.js",
+      "lineno": 1,
+      "path": "client/actions"
+    },
+    "name": "ConnectionRetryAct",
+    "order": 4,
+    "scope": "static"
+  },
+  {
+    "description": "Act for \"home\"",
+    "id": "module:pon-demo-site/client.actions.HomeAct",
+    "kind": "namespace",
+    "longname": "module:pon-demo-site/client.actions.HomeAct",
+    "memberof": "module:pon-demo-site/client.actions",
+    "meta": {
+      "filename": "HomeAct.js",
+      "lineno": 1,
+      "path": "client/actions"
+    },
+    "name": "HomeAct",
+    "order": 6,
+    "scope": "static"
+  },
+  {
+    "description": "Action modules",
+    "id": "module:pon-demo-site/client.actions",
+    "kind": "namespace",
+    "longname": "module:pon-demo-site/client.actions",
+    "memberof": "module:pon-demo-site/client",
+    "meta": {
+      "filename": "index.js",
+      "lineno": 2,
+      "path": "client/actions"
+    },
+    "name": "actions",
+    "order": 8,
     "scope": "static"
   },
   {
@@ -555,7 +445,22 @@
       "path": "client/client"
     },
     "name": "client",
-    "order": 1,
+    "order": 18,
+    "scope": "static"
+  },
+  {
+    "description": "Act mapping",
+    "id": "mappings.ActMapping",
+    "kind": "namespace",
+    "longname": "mappings.ActMapping",
+    "memberof": "mappings",
+    "meta": {
+      "filename": "ActMapping.js",
+      "lineno": 2,
+      "path": "client/mappings"
+    },
+    "name": "ActMapping",
+    "order": 20,
     "scope": "static"
   },
   {
@@ -570,7 +475,7 @@
       "path": "client/mappings"
     },
     "name": "mappings",
-    "order": 4,
+    "order": 21,
     "scope": "static"
   },
   {
@@ -585,7 +490,7 @@
       "path": "client/mappings"
     },
     "name": "SceneMapping",
-    "order": 5,
+    "order": 22,
     "scope": "static"
   },
   {
@@ -600,7 +505,7 @@
       "path": "client/scenes"
     },
     "name": "scenes",
-    "order": 23,
+    "order": 36,
     "scope": "static"
   },
   {
@@ -615,7 +520,7 @@
       "path": "client/scopes"
     },
     "name": "scopes",
-    "order": 30,
+    "order": 37,
     "scope": "static"
   },
   {
@@ -630,7 +535,7 @@
       "path": "client/store"
     },
     "name": "store",
-    "order": 32,
+    "order": 39,
     "scope": "static"
   },
   {
@@ -645,7 +550,7 @@
       "path": "conf/locales/en"
     },
     "name": "en",
-    "order": 39,
+    "order": 45,
     "scope": "static"
   },
   {
@@ -660,7 +565,7 @@
       "path": "conf/locales"
     },
     "name": "locales",
-    "order": 40,
+    "order": 46,
     "scope": "static"
   },
   {
@@ -675,7 +580,7 @@
       "path": "conf"
     },
     "name": "SrcSets",
-    "order": 41,
+    "order": 47,
     "scope": "static"
   },
   {
@@ -690,7 +595,7 @@
       "path": "server/constants"
     },
     "name": "DockerContainers",
-    "order": 44,
+    "order": 50,
     "scope": "static"
   },
   {
@@ -705,7 +610,7 @@
       "path": "server/constants"
     },
     "name": "DockerPorts",
-    "order": 45,
+    "order": 51,
     "scope": "static"
   },
   {
@@ -720,7 +625,7 @@
       "path": "server/constants"
     },
     "name": "constants",
-    "order": 46,
+    "order": 52,
     "scope": "static"
   },
   {
@@ -735,7 +640,7 @@
       "path": "server/constants"
     },
     "name": "MysqlConnections",
-    "order": 47,
+    "order": 53,
     "scope": "static"
   },
   {
@@ -750,7 +655,7 @@
       "path": "server/constants"
     },
     "name": "Project",
-    "order": 48,
+    "order": 54,
     "scope": "static"
   },
   {
@@ -765,7 +670,7 @@
       "path": "server/constants"
     },
     "name": "RedisConnections",
-    "order": 49,
+    "order": 55,
     "scope": "static"
   },
   {
@@ -781,7 +686,7 @@
       "path": "server/constants/secret"
     },
     "name": "SecretValues",
-    "order": 50,
+    "order": 56,
     "scope": "static",
     "type": {
       "names": [
@@ -802,7 +707,7 @@
       "path": "server/constants/setting"
     },
     "name": "SettingValues",
-    "order": 51,
+    "order": 57,
     "scope": "static"
   },
   {
@@ -817,7 +722,7 @@
       "path": "server/constants"
     },
     "name": "WebApps",
-    "order": 52,
+    "order": 58,
     "scope": "static"
   },
   {
@@ -832,7 +737,7 @@
       "path": "server/controllers"
     },
     "name": "controllers",
-    "order": 57,
+    "order": 63,
     "scope": "static"
   },
   {
@@ -847,7 +752,7 @@
       "path": "server/db"
     },
     "name": "db",
-    "order": 59,
+    "order": 65,
     "scope": "static"
   },
   {
@@ -862,7 +767,7 @@
       "path": "server/db/resources"
     },
     "name": "resources",
-    "order": 61,
+    "order": 67,
     "scope": "static"
   },
   {
@@ -877,7 +782,7 @@
       "path": "server/mappings"
     },
     "name": "ControllerMapping",
-    "order": 66,
+    "order": 72,
     "scope": "static"
   },
   {
@@ -892,7 +797,7 @@
       "path": "server/mappings"
     },
     "name": "mappings",
-    "order": 67,
+    "order": 73,
     "scope": "static"
   },
   {
@@ -907,7 +812,205 @@
       "path": "server/mappings"
     },
     "name": "ResourceMapping",
-    "order": 68,
+    "order": 74,
+    "scope": "static"
+  },
+  {
+    "id": "module:pon-demo-site/server.server",
+    "kind": "namespace",
+    "longname": "module:pon-demo-site/server.server",
+    "memberof": "module:pon-demo-site/server",
+    "meta": {
+      "filename": "index.js",
+      "lineno": 1,
+      "path": "server/server"
+    },
+    "name": "server",
+    "order": 76,
+    "scope": "static"
+  },
+  {
+    "description": "Bush scope access",
+    "id": "module:pon-demo-site/client.actions.concerns.busyAccess",
+    "kind": "function",
+    "longname": "module:pon-demo-site/client.actions.concerns.busyAccess",
+    "memberof": "module:pon-demo-site/client.actions.concerns",
+    "meta": {
+      "filename": "busyAccess.js",
+      "lineno": 1,
+      "path": "client/actions/concerns"
+    },
+    "name": "busyAccess",
+    "order": 2,
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "name": "scope"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        }
+      }
+    ],
+    "scope": "static"
+  },
+  {
+    "description": "Act for 'location'",
+    "id": "module:pon-demo-site/client.scenes.LocationAct",
+    "kind": "function",
+    "longname": "module:pon-demo-site/client.scenes.LocationAct",
+    "memberof": "module:pon-demo-site/client.scenes",
+    "meta": {
+      "filename": "LocationAct.js",
+      "lineno": 1,
+      "path": "client/actions"
+    },
+    "name": "LocationAct",
+    "order": 9,
+    "scope": "static"
+  },
+  {
+    "description": "Act for 'toast'",
+    "id": "module:pon-demo-site/client.actions.ToastAct",
+    "kind": "function",
+    "longname": "module:pon-demo-site/client.actions.ToastAct",
+    "memberof": "module:pon-demo-site/client.actions",
+    "meta": {
+      "filename": "ToastAct.js",
+      "lineno": 1,
+      "path": "client/actions"
+    },
+    "name": "ToastAct",
+    "order": 11,
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "name": "context"
+      }
+    ],
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        }
+      }
+    ],
+    "scope": "static"
+  },
+  {
+    "description": "Rest toasts",
+    "id": "ToastAct~act.reset",
+    "kind": "function",
+    "longname": "ToastAct~act.reset",
+    "memberof": "ToastAct~act",
+    "meta": {
+      "filename": "ToastAct.js",
+      "lineno": 24,
+      "path": "client/actions"
+    },
+    "name": "reset",
+    "order": 13,
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object.<string, Array.<string>>"
+          ]
+        },
+        "description": "Toast queue",
+        "name": "queues"
+      }
+    ],
+    "scope": "static"
+  },
+  {
+    "description": "Show error toast",
+    "id": "ToastAct~act.showError",
+    "kind": "function",
+    "longname": "ToastAct~act.showError",
+    "memberof": "ToastAct~act",
+    "meta": {
+      "filename": "ToastAct.js",
+      "lineno": 33,
+      "path": "client/actions"
+    },
+    "name": "showError",
+    "order": 14,
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "name": "message"
+      }
+    ],
+    "scope": "static"
+  },
+  {
+    "description": "Show info toast",
+    "id": "ToastAct~act.showInfo",
+    "kind": "function",
+    "longname": "ToastAct~act.showInfo",
+    "memberof": "ToastAct~act",
+    "meta": {
+      "filename": "ToastAct.js",
+      "lineno": 40,
+      "path": "client/actions"
+    },
+    "name": "showInfo",
+    "order": 15,
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "name": "message"
+      }
+    ],
+    "scope": "static"
+  },
+  {
+    "description": "Show warn toast",
+    "id": "ToastAct~act.showWarn",
+    "kind": "function",
+    "longname": "ToastAct~act.showWarn",
+    "memberof": "ToastAct~act",
+    "meta": {
+      "filename": "ToastAct.js",
+      "lineno": 47,
+      "path": "client/actions"
+    },
+    "name": "showWarn",
+    "order": 16,
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "name": "message"
+      }
+    ],
     "scope": "static"
   },
   {
@@ -922,8 +1025,16 @@
       "path": "client/client"
     },
     "name": "create",
-    "order": 0,
+    "order": 17,
     "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "name": "namespace"
+      },
       {
         "type": {
           "names": [
@@ -948,31 +1059,6 @@
     "scope": "static"
   },
   {
-    "description": "Create a new handle",
-    "id": "module:pon-demo-site/client.handle.create",
-    "kind": "function",
-    "longname": "module:pon-demo-site/client.handle.create",
-    "memberof": "module:pon-demo-site/client.handle",
-    "meta": {
-      "filename": "create.js",
-      "lineno": 1,
-      "path": "client/handle"
-    },
-    "name": "create",
-    "order": 2,
-    "returns": [
-      {
-        "type": {
-          "names": [
-            "TheHandle"
-          ]
-        },
-        "description": "Handle instance"
-      }
-    ],
-    "scope": "static"
-  },
-  {
     "description": "Create an new store",
     "id": "module:pon-demo-site/client.store.create",
     "kind": "function",
@@ -984,7 +1070,7 @@
       "path": "client/store"
     },
     "name": "create",
-    "order": 31,
+    "order": 38,
     "returns": [
       {
         "type": {
@@ -1008,7 +1094,7 @@
       "path": "server/db"
     },
     "name": "create",
-    "order": 58,
+    "order": 64,
     "params": [
       {
         "type": {
@@ -1042,22 +1128,22 @@
       "path": "server/db/migration"
     },
     "name": "migration",
-    "order": 60,
+    "order": 66,
     "scope": "static"
   },
   {
     "description": "Create an server instance",
-    "id": "module:pon-demo-site/server.create",
+    "id": "module:pon-demo-site/server.server.create",
     "kind": "function",
-    "longname": "module:pon-demo-site/server.create",
-    "memberof": "module:pon-demo-site/server",
+    "longname": "module:pon-demo-site/server.server.create",
+    "memberof": "module:pon-demo-site/server.server",
     "meta": {
       "filename": "create.js",
       "lineno": 1,
       "path": "server/server"
     },
     "name": "create",
-    "order": 69,
+    "order": 75,
     "returns": [
       {
         "type": {
@@ -1080,7 +1166,77 @@
       "path": "server/db/resources"
     },
     "name": "TheRoomResourceEntity",
-    "order": 64,
+    "order": 70,
+    "scope": "inner"
+  },
+  {
+    "id": "module:pon-demo-site/client.actions.AppAct~appAct",
+    "kind": "namespace",
+    "longname": "module:pon-demo-site/client.actions.AppAct~appAct",
+    "memberof": "module:pon-demo-site/client.actions.AppAct",
+    "meta": {
+      "filename": "AppAct.js",
+      "lineno": 18,
+      "path": "client/actions"
+    },
+    "name": "appAct",
+    "order": 1,
+    "scope": "inner"
+  },
+  {
+    "id": "module:pon-demo-site/client.actions.ConnectionRetryAct~connectionRetryAct",
+    "kind": "namespace",
+    "longname": "module:pon-demo-site/client.actions.ConnectionRetryAct~connectionRetryAct",
+    "memberof": "module:pon-demo-site/client.actions.ConnectionRetryAct",
+    "meta": {
+      "filename": "ConnectionRetryAct.js",
+      "lineno": 20,
+      "path": "client/actions"
+    },
+    "name": "connectionRetryAct",
+    "order": 5,
+    "scope": "inner"
+  },
+  {
+    "id": "module:pon-demo-site/client.actions.HomeAct~homeAct",
+    "kind": "namespace",
+    "longname": "module:pon-demo-site/client.actions.HomeAct~homeAct",
+    "memberof": "module:pon-demo-site/client.actions.HomeAct",
+    "meta": {
+      "filename": "HomeAct.js",
+      "lineno": 17,
+      "path": "client/actions"
+    },
+    "name": "homeAct",
+    "order": 7,
+    "scope": "inner"
+  },
+  {
+    "id": "module:pon-demo-site/client.scenes.LocationAct~locationAct",
+    "kind": "namespace",
+    "longname": "module:pon-demo-site/client.scenes.LocationAct~locationAct",
+    "memberof": "module:pon-demo-site/client.scenes.LocationAct",
+    "meta": {
+      "filename": "LocationAct.js",
+      "lineno": 15,
+      "path": "client/actions"
+    },
+    "name": "locationAct",
+    "order": 10,
+    "scope": "inner"
+  },
+  {
+    "id": "module:pon-demo-site/client.actions.ToastAct~toastAct",
+    "kind": "namespace",
+    "longname": "module:pon-demo-site/client.actions.ToastAct~toastAct",
+    "memberof": "module:pon-demo-site/client.actions.ToastAct",
+    "meta": {
+      "filename": "ToastAct.js",
+      "lineno": 14,
+      "path": "client/actions"
+    },
+    "name": "toastAct",
+    "order": 12,
     "scope": "inner"
   },
   {
@@ -1094,7 +1250,7 @@
       "path": "server/constants"
     },
     "name": "seated",
-    "order": 53,
+    "order": 59,
     "scope": "inner"
   }
 ]

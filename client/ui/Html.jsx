@@ -12,14 +12,13 @@ import context from './context'
 /** @lends Html */
 function Html({ appScope, renderingContext }) {
   const { buildNumber, cdnUrl, version } = appScope
-  const { client, handle, lang, path, store } = renderingContext
+  const { lang, path, store } = renderingContext
   const v = [version, buildNumber].join('-')
   const l = locales.bind(lang)
   const workerScopes = {
     '/': addUrlQuery(Urls.JS_ROOT_SERVICE_WORKER_URL, { v }),
   }
-  handle.setAttributes({ client, l, lang, store })
-  context.set({ handle, l, lang, state: store.state })
+  context.set({ l, lang, state: store.state })
 
   const appProps = {
     lang,

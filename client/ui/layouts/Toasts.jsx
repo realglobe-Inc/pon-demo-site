@@ -15,8 +15,8 @@ class Toasts extends React.Component {
       info: state['toast.info'],
       warn: state['toast.warn'],
     }),
-    ({ toastScene }) => ({
-      onReset: (queues) => toastScene.reset(queues),
+    ({ toastAct }) => ({
+      onReset: (queues) => toastAct.reset(queues),
     }),
   )
 

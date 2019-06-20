@@ -1,17 +1,12 @@
 /**
  * Create an server instance
- * @memberof module:pon-demo-site/server
+ * @memberof module:pon-demo-site/server.server
  * @function create
  * @returns {TheServer}
  */
 'use strict'
 
-const {
-  Html,
-  createClient,
-  createHandle,
-  createStore,
-} = require('@self/client/shim')
+const { Html, createClient, createStore } = require('@self/client/shim')
 const { isProduction } = require('@the-/check')
 const theServer = require('@the-/server')
 const theTmp = require('@the-/tmp')
@@ -55,7 +50,6 @@ function create(config) {
     injectors: {
       app: () => app,
       client: () => createClient(),
-      handle: () => createHandle(),
       store: () => createStore(),
     },
     langs: Object.keys(locales),
