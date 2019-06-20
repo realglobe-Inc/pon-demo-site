@@ -11,11 +11,11 @@ const assert = theAssert('context')
 const context = new TheContext({})
 
 context.createActions = (ActMapping, actContext) =>
-  Object.assign(
-    {},
-    ...Object.entries(ActMapping).map(([as, Factory]) => ({
-      [as]: Factory(actContext),
-    })),
+  Object.fromEntries(
+    Object.entries(ActMapping).map(([as, Factory]) => [
+      as,
+      Factory(actContext),
+    ]),
   )
 
 /** Create stateless renderer */

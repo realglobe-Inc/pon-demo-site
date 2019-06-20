@@ -24,7 +24,6 @@ Client module
     * [.actions](#module_pon-demo-site/client.actions) : <code>object</code>
         * [.AppAct](#module_pon-demo-site/client.actions.AppAct) : <code>object</code>
             * [~appAct](#module_pon-demo-site/client.actions.AppAct..appAct) : <code>object</code>
-        * [.enhancers](#module_pon-demo-site/client.actions.enhancers) : <code>object</code>
         * [.ConnectionRetryAct](#module_pon-demo-site/client.actions.ConnectionRetryAct) : <code>object</code>
             * [~connectionRetryAct](#module_pon-demo-site/client.actions.ConnectionRetryAct..connectionRetryAct) : <code>object</code>
         * [.HomeAct](#module_pon-demo-site/client.actions.HomeAct) : <code>object</code>
@@ -53,7 +52,6 @@ Action modules
 * [.actions](#module_pon-demo-site/client.actions) : <code>object</code>
     * [.AppAct](#module_pon-demo-site/client.actions.AppAct) : <code>object</code>
         * [~appAct](#module_pon-demo-site/client.actions.AppAct..appAct) : <code>object</code>
-    * [.enhancers](#module_pon-demo-site/client.actions.enhancers) : <code>object</code>
     * [.ConnectionRetryAct](#module_pon-demo-site/client.actions.ConnectionRetryAct) : <code>object</code>
         * [~connectionRetryAct](#module_pon-demo-site/client.actions.ConnectionRetryAct..connectionRetryAct) : <code>object</code>
     * [.HomeAct](#module_pon-demo-site/client.actions.HomeAct) : <code>object</code>
@@ -71,12 +69,6 @@ Act for "app"
 
 ##### AppAct~appAct : <code>object</code>
 **Kind**: inner namespace of [<code>AppAct</code>](#module_pon-demo-site/client.actions.AppAct)  
-<a name="module_pon-demo-site/client.actions.enhancers"></a>
-
-#### actions.enhancers : <code>object</code>
-Enhancer function variables
-
-**Kind**: static namespace of [<code>actions</code>](#module_pon-demo-site/client.actions)  
 <a name="module_pon-demo-site/client.actions.ConnectionRetryAct"></a>
 
 #### actions.ConnectionRetryAct : <code>object</code>

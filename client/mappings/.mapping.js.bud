@@ -21,18 +21,6 @@ module.exports = Object.entries({
     requireAs: 'ac',
     requirePath: '../actions',
   },
-  SceneMapping: {
-    cjs: true,
-    mapping: aglob
-      .sync(`${__dirname}/../scenes/*Scene.js`)
-      .map((filename) => path.basename(filename, '.js'))
-      .map((name) => ({
-        className: name,
-        instanceName: camelcase(name),
-      })),
-    requireAs: 'sc',
-    requirePath: '../scenes',
-  },
 }).map(([name, values]) => mapping({ name, ...values }))
 
 if (!module.parent) {

@@ -35,16 +35,14 @@ once('DOMContentLoaded', async () => {
   const history = historyFor()
 
   const l = locales.bind(lang)
-  context.set({ history, l, lang, state: store.state })
-  store.subscribe(() => context.set({ state: store.state }))
-
   const controllers = await client.useAll({ debug: !isProduction() })
-
   const actions = context.createActions(ActMapping, {
     controllers,
     history,
     store,
   })
+  context.set({ actions, history, l, lang, state: store.state })
+  store.subscribe(() => context.set({ state: store.state }))
 
   const { appAct, connectionRetryAct, locationAct, toastAct } = actions
   locationAct.bindHistory(history)
