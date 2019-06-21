@@ -10,11 +10,11 @@ import { TheContext } from '@the-/context'
 const assert = theAssert('context')
 const context = new TheContext({})
 
-context.createActions = (ActMapping, actContext) =>
+context.createActions = (ActMapping, store, actContext) =>
   Object.fromEntries(
     Object.entries(ActMapping).map(([as, Factory]) => [
       as,
-      Factory(actContext),
+      Factory.fromStore(store, actContext),
     ]),
   )
 

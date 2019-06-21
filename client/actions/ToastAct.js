@@ -8,9 +8,7 @@
 'use strict'
 
 /** @lends module:pon-demo-site/client.actions.ToastAct */
-export default function ToastAct({ store }) {
-  const { toast: scope } = store
-
+function ToastAct(scope) {
   /**
    * @memberof module:pon-demo-site/client.actions.ToastAct
    * @inner
@@ -53,3 +51,7 @@ export default function ToastAct({ store }) {
 
   return act
 }
+
+ToastAct.fromStore = (store, ctx) => ToastAct(store.toast, ctx)
+
+export default ToastAct

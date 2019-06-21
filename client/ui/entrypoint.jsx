@@ -36,10 +36,9 @@ once('DOMContentLoaded', async () => {
 
   const l = locales.bind(lang)
   const controllers = await client.useAll({ debug: !isProduction() })
-  const actions = context.createActions(ActMapping, {
+  const actions = context.createActions(ActMapping, store, {
     controllers,
     history,
-    store,
   })
   context.set({ actions, history, l, lang, state: store.state })
   store.subscribe(() => context.set({ state: store.state }))

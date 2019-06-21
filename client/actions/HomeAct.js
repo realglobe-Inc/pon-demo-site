@@ -8,9 +8,8 @@
 import { busyFor } from '@the-/facade-scope'
 
 /** @lends module:pon-demo-site/client.actions.HomeAct */
-export default function HomeAct({ controllers, store }) {
+function HomeAct(scope, { controllers }) {
   const { appCtrl } = controllers
-  const { home: scope } = store
 
   const busy = busyFor(scope)
 
@@ -32,3 +31,7 @@ export default function HomeAct({ controllers, store }) {
 
   return act
 }
+
+HomeAct.fromStore = (store, ctx) => HomeAct(store.home, ctx)
+
+export default HomeAct

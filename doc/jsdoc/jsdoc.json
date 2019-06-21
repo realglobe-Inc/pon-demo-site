@@ -359,36 +359,6 @@
     "scope": "static"
   },
   {
-    "description": "Act for \"app\"",
-    "id": "module:pon-demo-site/client.actions.AppAct",
-    "kind": "namespace",
-    "longname": "module:pon-demo-site/client.actions.AppAct",
-    "memberof": "module:pon-demo-site/client.actions",
-    "meta": {
-      "filename": "AppAct.js",
-      "lineno": 1,
-      "path": "client/actions"
-    },
-    "name": "AppAct",
-    "order": 0,
-    "scope": "static"
-  },
-  {
-    "description": "Act for \"connection.retry\"",
-    "id": "module:pon-demo-site/client.actions.ConnectionRetryAct",
-    "kind": "namespace",
-    "longname": "module:pon-demo-site/client.actions.ConnectionRetryAct",
-    "memberof": "module:pon-demo-site/client.actions",
-    "meta": {
-      "filename": "ConnectionRetryAct.js",
-      "lineno": 1,
-      "path": "client/actions"
-    },
-    "name": "ConnectionRetryAct",
-    "order": 2,
-    "scope": "static"
-  },
-  {
     "description": "Act for \"home\"",
     "id": "module:pon-demo-site/client.actions.HomeAct",
     "kind": "namespace",
@@ -815,6 +785,36 @@
     "scope": "static"
   },
   {
+    "description": "Act for \"app\"",
+    "id": "module:pon-demo-site/client.actions.AppAct",
+    "kind": "function",
+    "longname": "module:pon-demo-site/client.actions.AppAct",
+    "memberof": "module:pon-demo-site/client.actions",
+    "meta": {
+      "filename": "AppAct.js",
+      "lineno": 1,
+      "path": "client/actions"
+    },
+    "name": "AppAct",
+    "order": 0,
+    "scope": "static"
+  },
+  {
+    "description": "Act for \"connection.retry\"",
+    "id": "module:pon-demo-site/client.actions.ConnectionRetryAct",
+    "kind": "function",
+    "longname": "module:pon-demo-site/client.actions.ConnectionRetryAct",
+    "memberof": "module:pon-demo-site/client.actions",
+    "meta": {
+      "filename": "ConnectionRetryAct.js",
+      "lineno": 1,
+      "path": "client/actions"
+    },
+    "name": "ConnectionRetryAct",
+    "order": 2,
+    "scope": "static"
+  },
+  {
     "description": "Act for 'location'",
     "id": "module:pon-demo-site/client.scenes.LocationAct",
     "kind": "function",
@@ -865,13 +865,13 @@
   },
   {
     "description": "Rest toasts",
-    "id": "ToastAct~act.reset",
+    "id": "module:pon-demo-site/client.actions.ToastAct~act.reset",
     "kind": "function",
-    "longname": "ToastAct~act.reset",
-    "memberof": "ToastAct~act",
+    "longname": "module:pon-demo-site/client.actions.ToastAct~act.reset",
+    "memberof": "module:pon-demo-site/client.actions.ToastAct~act",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 24,
+      "lineno": 22,
       "path": "client/actions"
     },
     "name": "reset",
@@ -891,13 +891,13 @@
   },
   {
     "description": "Show error toast",
-    "id": "ToastAct~act.showError",
+    "id": "module:pon-demo-site/client.actions.ToastAct~act.showError",
     "kind": "function",
-    "longname": "ToastAct~act.showError",
-    "memberof": "ToastAct~act",
+    "longname": "module:pon-demo-site/client.actions.ToastAct~act.showError",
+    "memberof": "module:pon-demo-site/client.actions.ToastAct~act",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 33,
+      "lineno": 31,
       "path": "client/actions"
     },
     "name": "showError",
@@ -916,13 +916,13 @@
   },
   {
     "description": "Show info toast",
-    "id": "ToastAct~act.showInfo",
+    "id": "module:pon-demo-site/client.actions.ToastAct~act.showInfo",
     "kind": "function",
-    "longname": "ToastAct~act.showInfo",
-    "memberof": "ToastAct~act",
+    "longname": "module:pon-demo-site/client.actions.ToastAct~act.showInfo",
+    "memberof": "module:pon-demo-site/client.actions.ToastAct~act",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 40,
+      "lineno": 38,
       "path": "client/actions"
     },
     "name": "showInfo",
@@ -941,13 +941,13 @@
   },
   {
     "description": "Show warn toast",
-    "id": "ToastAct~act.showWarn",
+    "id": "module:pon-demo-site/client.actions.ToastAct~act.showWarn",
     "kind": "function",
-    "longname": "ToastAct~act.showWarn",
-    "memberof": "ToastAct~act",
+    "longname": "module:pon-demo-site/client.actions.ToastAct~act.showWarn",
+    "memberof": "module:pon-demo-site/client.actions.ToastAct~act",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 47,
+      "lineno": 45,
       "path": "client/actions"
     },
     "name": "showWarn",
@@ -1141,7 +1141,7 @@
     "memberof": "module:pon-demo-site/client.actions.ConnectionRetryAct",
     "meta": {
       "filename": "ConnectionRetryAct.js",
-      "lineno": 20,
+      "lineno": 16,
       "path": "client/actions"
     },
     "name": "connectionRetryAct",
@@ -1155,7 +1155,7 @@
     "memberof": "module:pon-demo-site/client.actions.HomeAct",
     "meta": {
       "filename": "HomeAct.js",
-      "lineno": 17,
+      "lineno": 16,
       "path": "client/actions"
     },
     "name": "homeAct",
@@ -1169,7 +1169,7 @@
     "memberof": "module:pon-demo-site/client.scenes.LocationAct",
     "meta": {
       "filename": "LocationAct.js",
-      "lineno": 15,
+      "lineno": 13,
       "path": "client/actions"
     },
     "name": "locationAct",
@@ -1183,7 +1183,7 @@
     "memberof": "module:pon-demo-site/client.actions.ToastAct",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 14,
+      "lineno": 12,
       "path": "client/actions"
     },
     "name": "toastAct",

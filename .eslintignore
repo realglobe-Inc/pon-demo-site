@@ -15,7 +15,6 @@ var/
 /client/mappings/ActMapping.js
 /client/mappings/SceneMapping.js
 /client/mappings/index.js
-/client/scenes/index.js
 /client/scopes/index.js
 /client/ui/layouts/Dialogs.jsx
 /client/ui/layouts/index.jsx

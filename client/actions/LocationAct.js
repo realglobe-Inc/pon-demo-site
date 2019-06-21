@@ -9,9 +9,7 @@ import { queryWithSearch } from '@the-/util-client'
 import { get } from '@the-/window'
 
 /** @lends module:pon-demo-site/client.scenes.LocationAct */
-export default function LocationAct({ store }) {
-  const { location: scope } = store
-
+function LocationAct(scope) {
   /**
    * @memberof module:pon-demo-site/client.scenes.LocationAct
    * @inner
@@ -40,3 +38,7 @@ export default function LocationAct({ store }) {
 
   return act
 }
+
+LocationAct.fromStore = (store, ctx) => LocationAct(store.location, ctx)
+
+export default LocationAct

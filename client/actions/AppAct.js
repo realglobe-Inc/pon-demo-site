@@ -1,7 +1,7 @@
 /**
  * Act for "app"
  * @memberof module:pon-demo-site/client.actions
- * @namespace AppAct
+ * @function AppAct
  */
 'use strict'
 
@@ -9,7 +9,7 @@ import { Urls } from '@self/conf'
 import { show } from '@the-/window'
 
 /** @lends module:pon-demo-site/client.actions.AppAct */
-export default function AppAct() {
+function AppAct() {
   const RejectionHandleURLs = {
     ForbiddenError: Urls.ERROR_FORBIDDEN_URL,
     NotFoundError: Urls.ERROR_NOTFOUND_URL,
@@ -35,3 +35,7 @@ export default function AppAct() {
 
   return act
 }
+
+AppAct.fromStore = (store, ctx) => AppAct(store.app, ctx)
+
+export default AppAct

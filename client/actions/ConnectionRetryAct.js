@@ -1,7 +1,7 @@
 /**
  * Act for "connection.retry"
  * @memberof module:pon-demo-site/client.actions
- * @namespace ConnectionRetryAct
+ * @function ConnectionRetryAct
  */
 'use strict'
 
@@ -10,11 +10,7 @@ import { busyFor } from '@the-/facade-scope'
 import { reload } from '@the-/window'
 
 /** @lends module:pon-demo-site/client.actions.ConnectionRetryAct */
-export default function ConnectionRetryAct({ store }) {
-  const {
-    connection: { retry: scope },
-  } = store
-
+function ConnectionRetryAct(scope) {
   const busy = busyFor(scope)
 
   /**
@@ -50,3 +46,8 @@ export default function ConnectionRetryAct({ store }) {
 
   return act
 }
+
+ConnectionRetryAct.fromStore = (store, ctx) =>
+  ConnectionRetryAct(store.connection.retry, ctx)
+
+export default ConnectionRetryAct
