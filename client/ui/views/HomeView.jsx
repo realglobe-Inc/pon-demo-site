@@ -9,12 +9,12 @@ import styles from './HomeView.pcss'
 import context from '../context'
 
 class HomeView extends React.Component {
-  #stateful = context.stateful(
+  #stateful = context.Stateful(
     (state) => ({
       busy: state['home.busy'],
       count: state['home.count'],
     }),
-    ({ homeAct, l, toastAct }, pipedProxy) => ({
+    ({ actions: { homeAct, toastAct }, l }, pipedProxy) => ({
       onCountUp: async () => {
         await homeAct.countUp()
         await toastAct.showInfo(l('toasts.COUNT_UP_DID_SUCCESS'))

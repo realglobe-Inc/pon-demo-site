@@ -9,7 +9,7 @@ import { Urls } from '@self/conf'
 import { show } from '@the-/window'
 
 /** @lends module:pon-demo-site/client.actions.AppAct */
-function AppAct() {
+function AppAct(scope) {
   const RejectionHandleURLs = {
     ForbiddenError: Urls.ERROR_FORBIDDEN_URL,
     NotFoundError: Urls.ERROR_NOTFOUND_URL,
@@ -28,6 +28,9 @@ function AppAct() {
         return true
       }
       return false
+    },
+    prepare() {
+      scope.set({ ready: true })
     },
   }
 

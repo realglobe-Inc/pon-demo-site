@@ -9,13 +9,13 @@ import { TheToast, TheToastGroup } from '@the-/ui'
 import context from '../context'
 
 class Toasts extends React.Component {
-  #stateful = context.stateful(
+  #stateful = context.Stateful(
     (state) => ({
       error: state['toast.error'],
       info: state['toast.info'],
       warn: state['toast.warn'],
     }),
-    ({ toastAct }) => ({
+    ({ actions: { toastAct } }) => ({
       onReset: (queues) => toastAct.reset(queues),
     }),
   )

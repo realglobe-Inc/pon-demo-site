@@ -10,7 +10,7 @@ import Fallback from '../fallback/Fallback'
 import context from '../../context'
 
 class Route extends React.Component {
-  #stateful = context.stateful(() => ({}), () => ({}))
+  #stateful = context.Stateful(() => ({}), () => ({}))
 
   render() {
     if (!isBrowser()) {

@@ -34,14 +34,13 @@ once('DOMContentLoaded', async () => {
 
   const history = historyFor()
 
-  const l = locales.bind(lang)
+  context.loadStore(store)
+  const l = context.loadLocale(locales, lang)
   const controllers = await client.useAll({ debug: !isProduction() })
-  const actions = context.createActions(ActMapping, store, {
+  const actions = context.loadActions(ActMapping, {
     controllers,
     history,
   })
-  context.set({ actions, history, l, lang, state: store.state })
-  store.subscribe(() => context.set({ state: store.state }))
 
   const { appAct, connectionRetryAct, locationAct, toastAct } = actions
   locationAct.bindHistory(history)
@@ -62,6 +61,7 @@ once('DOMContentLoaded', async () => {
       <App {...props} client={client} history={history} store={store} />
     </Suspense>
   )
+
   await mount(app, UI.APP_CONTAINER_ID, {
     history,
     router: true,

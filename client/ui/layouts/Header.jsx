@@ -8,7 +8,7 @@ import { TheHeader } from '@the-/ui'
 import context from '../context'
 
 class Header extends React.Component {
-  #stateful = context.stateful(() => ({}), () => ({}))
+  #stateful = context.Stateful(() => ({}), () => ({}))
 
   render() {
     return this.#stateful(({ l }) => (

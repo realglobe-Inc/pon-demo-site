@@ -9,12 +9,12 @@ import { TheButton, TheButtonGroup, TheDialog } from '@the-/ui'
 import context from '../../context'
 
 class ConnectionRetryDialog extends React.Component {
-  #stateful = context.stateful(
+  #stateful = context.Stateful(
     (state) => ({
       active: state['connection.retry.active'],
       busy: state['connection.retry.busy'],
     }),
-    ({ connectionRetryAct: retryAct, l }) => ({
+    ({ actions: { connectionRetryAct: retryAct }, l }) => ({
       l,
       onClose: async () => retryAct.close(),
       onReload: async () => {

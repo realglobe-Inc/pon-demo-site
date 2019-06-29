@@ -14,12 +14,11 @@ function Html({ appScope, renderingContext }) {
   const { buildNumber, cdnUrl, version } = appScope
   const { lang, path, store } = renderingContext
   const v = [version, buildNumber].join('-')
-  const l = locales.bind(lang)
+  const l = context.loadLocale(locales, lang)
   const workerScopes = {
     '/': addUrlQuery(Urls.JS_ROOT_SERVICE_WORKER_URL, { v }),
   }
-  context.set({ l, lang, state: store.state })
-
+  context.loadStore(store)
   const appProps = {
     lang,
     v,

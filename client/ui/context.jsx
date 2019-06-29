@@ -1,5 +1,7 @@
 /**
  * UI Context
+ * @memberof module:pon-demo-site/client
+ * @namespace context
  */
 'use strict'
 
@@ -10,16 +12,34 @@ import { TheContext } from '@the-/context'
 const assert = theAssert('context')
 const context = new TheContext({})
 
-context.createActions = (ActMapping, store, actContext) =>
-  Object.fromEntries(
+context.loadStore = (store) => {
+  store.subscribe(() => context.set({ state: store.state }))
+  context.set({ state: store.state })
+  return store
+}
+
+context.loadLocale = (locales, lang) => {
+  const l = locales.bind(lang)
+  context.set({ l, lang })
+  return l
+}
+
+context.loadActions = (ActMapping, actContext) => {
+  const store = context.get('store')
+  assert(!!store, 'store is required for loadActions')
+  const actions = Object.fromEntries(
     Object.entries(ActMapping).map(([as, Factory]) => [
       as,
       Factory.fromStore(store, actContext),
     ]),
   )
+  context.set({ actions })
+  return actions
+}
 
 /** Create stateless renderer */
-context.stateless = function stateless() {
+context.Stateless = function Stateless() {
+  assert(arguments.length === 0, 'Stateful takes exactly no arguments')
   const init = ({ l }) => ({ l })
   const noop = () => null
   return (renderer) => (
@@ -30,19 +50,12 @@ context.stateless = function stateless() {
 }
 
 /** Create stateful renderer */
-context.stateful = function stateful(reduceState, reduceHandle) {
-  assert(arguments.length === 2, 'Takes exactly two arguments')
-  const init = ({ actions, history, l, lang }, pipedProxy) => ({
-    history,
+context.Stateful = function Stateful(reduceState, reduceHandle) {
+  assert(arguments.length === 2, 'Stateful takes exactly two arguments')
+  const init = ({ actions, l, lang }) => ({
     l,
     lang,
-    ...reduceHandle(
-      {
-        l,
-        ...actions,
-      },
-      pipedProxy,
-    ),
+    ...reduceHandle({ actions, l, lang }),
   })
   const pipe = ({ state }) => reduceState(state)
   return (renderer) => (

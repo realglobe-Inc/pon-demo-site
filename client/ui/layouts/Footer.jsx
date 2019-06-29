@@ -8,7 +8,7 @@ import { TheFooter } from '@the-/ui'
 import context from '../context'
 
 class Footer extends React.Component {
-  #stateful = context.stateful(() => ({}), () => ({}))
+  #stateful = context.Stateful(() => ({}), () => ({}))
 
   render() {
     return this.#stateful(({ l }) => (

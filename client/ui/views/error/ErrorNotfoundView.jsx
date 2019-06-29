@@ -9,7 +9,7 @@ import styles from './ErrorNotfoundView.pcss'
 import context from '../../context'
 
 class ErrorNotfoundView extends React.Component {
-  #stateful = context.stateful(() => ({}), ({ l }) => ({ l }))
+  #stateful = context.Stateful(() => ({}), ({ l }) => ({ l }))
 
   render() {
     return this.#stateful(({ l }) => (

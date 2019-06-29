@@ -6,12 +6,12 @@
 'use strict'
 
 import { unlessProduction } from '@the-/check'
-import { busyFor } from '@the-/facade-scope'
+import { busyAccessFor } from '@the-/facade-scope'
 import { reload } from '@the-/window'
 
 /** @lends module:pon-demo-site/client.actions.ConnectionRetryAct */
 function ConnectionRetryAct(scope) {
-  const busy = busyFor(scope)
+  const busyAccess = busyAccessFor(scope)
 
   /**
    * @memberof module:pon-demo-site/client.actions.ConnectionRetryAct
@@ -33,7 +33,7 @@ function ConnectionRetryAct(scope) {
       scope.init()
     },
     async reload() {
-      return busy.while(async () => {
+      return busyAccess.while(async () => {
         reload()
       })
     },
