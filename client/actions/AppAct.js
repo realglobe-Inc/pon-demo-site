@@ -21,6 +21,9 @@ function AppAct(scope) {
    * @namespace appAct
    */
   const act = {
+    prepare() {
+      scope.set({ ready: true })
+    },
     async handleRejectionReason(reason) {
       const href = RejectionHandleURLs[(reason?.name)]
       if (href) {
@@ -28,9 +31,6 @@ function AppAct(scope) {
         return true
       }
       return false
-    },
-    prepare() {
-      scope.set({ ready: true })
     },
   }
 

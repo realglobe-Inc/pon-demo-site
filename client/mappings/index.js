@@ -7,13 +7,10 @@
 'use strict'
 
 const ActMapping_ = require('./ActMapping')
-const SceneMapping_ = require('./SceneMapping')
 
 // `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
 exports.ActMapping = ActMapping_
-exports.SceneMapping = SceneMapping_
 
 module.exports = {
   ActMapping: ActMapping_,
-  SceneMapping: SceneMapping_,
 }

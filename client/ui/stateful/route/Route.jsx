@@ -7,10 +7,10 @@ import React, { Suspense } from 'react'
 import { isBrowser } from '@the-/check'
 import { TheRoute } from '@the-/ui'
 import Fallback from '../fallback/Fallback'
-import context from '../../context'
+import { Stateful } from '../../context'
 
 class Route extends React.Component {
-  #stateful = context.Stateful(() => ({}), () => ({}))
+  #stateful = Stateful(() => ({}), () => ({}))
 
   render() {
     if (!isBrowser()) {

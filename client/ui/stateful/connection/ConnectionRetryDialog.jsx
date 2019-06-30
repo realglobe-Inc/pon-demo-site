@@ -6,10 +6,10 @@
 import React from 'react'
 import { Icons } from '@self/conf'
 import { TheButton, TheButtonGroup, TheDialog } from '@the-/ui'
-import context from '../../context'
+import { Stateful } from '../../context'
 
 class ConnectionRetryDialog extends React.Component {
-  #stateful = context.Stateful(
+  #stateful = Stateful(
     (state) => ({
       active: state['connection.retry.active'],
       busy: state['connection.retry.busy'],

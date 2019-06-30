@@ -13,7 +13,7 @@ import {
   workers,
 } from '@the-/entrypoint'
 import { get, once, rescue, set } from '@the-/window'
-import context from './context'
+import context, { loadActions, loadLocale, loadStore } from './context'
 import Fallback from './stateful/fallback/Fallback'
 import { ActMapping } from '../mappings'
 
@@ -34,10 +34,10 @@ once('DOMContentLoaded', async () => {
 
   const history = historyFor()
 
-  context.loadStore(store)
-  const l = context.loadLocale(locales, lang)
+  loadStore(store)
+  const l = loadLocale(locales, lang)
   const controllers = await client.useAll({ debug: !isProduction() })
-  const actions = context.loadActions(ActMapping, {
+  const actions = loadActions(ActMapping, {
     controllers,
     history,
   })

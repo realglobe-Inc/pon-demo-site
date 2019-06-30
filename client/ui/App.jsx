@@ -5,12 +5,12 @@
 
 import React from 'react'
 import { TheCaughtCatcher, TheCycle, TheMain, TheMeta, TheRoot } from '@the-/ui'
-import context from './context'
+import { Stateful } from './context'
 import { Dialogs, Footer, Header, Toasts } from './layouts'
 import Routes from './Routes'
 
 class App extends React.Component {
-  #stateful = context.Stateful(
+  #stateful = Stateful(
     (state) => ({
       busy: state['app.busy'],
       pathname: state['app.pathname'],

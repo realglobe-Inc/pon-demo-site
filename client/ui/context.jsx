@@ -12,19 +12,19 @@ import { TheContext } from '@the-/context'
 const assert = theAssert('context')
 const context = new TheContext({})
 
-context.loadStore = (store) => {
+export function loadStore(store) {
   store.subscribe(() => context.set({ state: store.state }))
   context.set({ state: store.state })
   return store
 }
 
-context.loadLocale = (locales, lang) => {
+export function loadLocale(locales, lang) {
   const l = locales.bind(lang)
   context.set({ l, lang })
   return l
 }
 
-context.loadActions = (ActMapping, actContext) => {
+export function loadActions(ActMapping, actContext) {
   const store = context.get('store')
   assert(!!store, 'store is required for loadActions')
   const actions = Object.fromEntries(
@@ -38,7 +38,7 @@ context.loadActions = (ActMapping, actContext) => {
 }
 
 /** Create stateless renderer */
-context.Stateless = function Stateless() {
+export function Stateless() {
   assert(arguments.length === 0, 'Stateful takes exactly no arguments')
   const init = ({ l }) => ({ l })
   const noop = () => null
@@ -50,7 +50,7 @@ context.Stateless = function Stateless() {
 }
 
 /** Create stateful renderer */
-context.Stateful = function Stateful(reduceState, reduceHandle) {
+export function Stateful(reduceState, reduceHandle) {
   assert(arguments.length === 2, 'Stateful takes exactly two arguments')
   const init = ({ actions, l, lang }) => ({
     l,

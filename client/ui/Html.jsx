@@ -7,18 +7,18 @@ import React from 'react'
 import { GlobalKeys, locales, SrcSets, Styles, UI, Urls } from '@self/conf'
 import { TheBody, TheHead, TheHtml, TheRouter } from '@the-/ui'
 import { addUrlQuery } from '@the-/url'
-import context from './context'
+import { loadLocale, loadStore } from './context'
 
 /** @lends Html */
 function Html({ appScope, renderingContext }) {
   const { buildNumber, cdnUrl, version } = appScope
   const { lang, path, store } = renderingContext
   const v = [version, buildNumber].join('-')
-  const l = context.loadLocale(locales, lang)
+  const l = loadLocale(locales, lang)
   const workerScopes = {
     '/': addUrlQuery(Urls.JS_ROOT_SERVICE_WORKER_URL, { v }),
   }
-  context.loadStore(store)
+  loadStore(store)
   const appProps = {
     lang,
     v,

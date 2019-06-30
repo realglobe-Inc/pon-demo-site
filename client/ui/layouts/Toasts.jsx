@@ -6,10 +6,10 @@
 import React from 'react'
 import { UI } from '@self/conf'
 import { TheToast, TheToastGroup } from '@the-/ui'
-import context from '../context'
+import { Stateful } from '../context'
 
 class Toasts extends React.Component {
-  #stateful = context.Stateful(
+  #stateful = Stateful(
     (state) => ({
       error: state['toast.error'],
       info: state['toast.info'],

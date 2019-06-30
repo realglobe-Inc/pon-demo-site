@@ -5,10 +5,10 @@
 
 import React from 'react'
 import { TheFooter } from '@the-/ui'
-import context from '../context'
+import { Stateful } from '../context'
 
 class Footer extends React.Component {
-  #stateful = context.Stateful(() => ({}), () => ({}))
+  #stateful = Stateful(() => ({}), () => ({}))
 
   render() {
     return this.#stateful(({ l }) => (

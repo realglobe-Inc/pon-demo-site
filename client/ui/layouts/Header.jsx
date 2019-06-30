@@ -5,10 +5,10 @@
 
 import React from 'react'
 import { TheHeader } from '@the-/ui'
-import context from '../context'
+import { Stateful } from '../context'
 
 class Header extends React.Component {
-  #stateful = context.Stateful(() => ({}), () => ({}))
+  #stateful = Stateful(() => ({}), () => ({}))
 
   render() {
     return this.#stateful(({ l }) => (

@@ -11,14 +11,14 @@ module.exports = Object.freeze(
   /** @lends atPolicy */
   {
     createdAt: {
-      default: () => new Date(),
       description: 'Date created',
       type: DATE,
+      default: () => new Date(),
     },
     updatedAt: {
-      default: () => new Date(),
       description: 'Date updated',
       type: DATE,
+      default: () => new Date(),
     },
   },
 )

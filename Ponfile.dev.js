@@ -187,10 +187,10 @@ module.exports = pon(
     // Sub Tasks for Lint
     // -----------------------------------
     ...{
-      /** Validate locales */
-      'lint:loc': () => locales.validate(),
       /** Lint by rules */
       'lint:rules': theLint(Rules),
+      /** Validate locales */
+      'lint:loc': () => locales.validate(),
     },
 
     // -----------------------------------
