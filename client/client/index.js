@@ -7,6 +7,6 @@
 
 import create from './create'
 
-const singleton = Object.assign(create(),)
+const singleton = Object.assign(create())
 
 export default singleton

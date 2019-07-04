@@ -5,7 +5,7 @@
 
 import React from 'react'
 import { TheCaughtCatcher, TheCycle, TheMain, TheMeta, TheRoot } from '@the-/ui'
-import { Stateful } from './context'
+import { context, Stateful } from './context'
 import { Dialogs, Footer, Header, Toasts } from './layouts'
 import Routes from './Routes'
 
@@ -13,7 +13,6 @@ class App extends React.Component {
   #stateful = Stateful(
     (state) => ({
       busy: state['app.busy'],
-      pathname: state['app.pathname'],
       ready: state['app.ready'],
     }),
     ({ actions: { appAct } }) => ({

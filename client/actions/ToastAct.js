@@ -17,7 +17,7 @@ function ToastAct(scope) {
   const act = {
     /**
      * Rest toasts
-     * @param {Object<string, string[]>} queues - Toast queue
+     * @param {object<string, Array<string>>} queues - Toast queue
      */
     reset(queues) {
       for (const [name, queue] of Object.entries(queues)) {

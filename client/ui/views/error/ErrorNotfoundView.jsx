@@ -6,6 +6,7 @@
 import React from 'react'
 import { TheButton, TheButtonGroup, TheMeta, TheRoute, TheView } from '@the-/ui'
 import styles from './ErrorNotfoundView.pcss'
+import { Stateful } from '../../context'
 
 class ErrorNotfoundView extends React.Component {
   #stateful = Stateful(() => ({}), ({ l }) => ({ l }))

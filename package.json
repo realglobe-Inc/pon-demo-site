@@ -46,7 +46,6 @@
     "@the-/ui-theme-style": "^15.4.8",
     "@the-/url": "^15.4.4",
     "@the-/util-client": "^15.6.2",
-    "@the-/util-site": "^15.4.9",
     "@the-/util-style": "^15.4.0",
     "@the-/util-sw": "^15.5.0",
     "@the-/window": "^15.5.0",
