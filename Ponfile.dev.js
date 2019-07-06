@@ -16,8 +16,8 @@ const {
 const changelog = require('pon-task-changelog')
 const { eslint, fmtjson, mocha, pondoc } = require('pon-task-dev')
 const docker = require('pon-task-docker')
-const icon = require('pon-task-icon')
 const theCode = require('@the-/code/pon')
+const icon = require('@the-/icon/pon')
 const jsdoc = require('@the-/jsdoc/pon')
 const theLint = require('@the-/lint/pon')
 const theSupport = require('@the-/support/pon')
@@ -61,13 +61,6 @@ module.exports = pon(
       'icon:gen': [
         Drawings.appIcon &&
           icon('assets/images/app-icon.png', Drawings.appIcon),
-        Drawings.fbAppIcon &&
-          icon('assets/images/fb/fb-app-icon.png', Drawings.fbAppIcon),
-        Drawings.officialAccountIcon &&
-          icon(
-            'assets/images/accounts/official-account-icon.png',
-            Drawings.officialAccountIcon,
-          ),
       ].filter(Boolean),
     },
 

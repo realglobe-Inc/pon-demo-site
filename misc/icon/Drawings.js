@@ -6,33 +6,18 @@
 
 const pkg = require('../../package')
 const { Styles } = require('../../conf')
+const {Themes} = require('@the-/icon')
 
-const FONT_THEME = 'c'
+const font = `${__dirname}/fonts/Raleway/Raleway-Black.ttf`
 
 module.exports = Object.freeze(
   /** @lends Drawings */
   {
     appIcon: {
       text: pkg.name[0],
-      font: FONT_THEME,
-      shape: 'g',
+      font,
       color: Styles.DOMINANT_COLOR,
-    },
-    fbAppIcon: {
-      text: pkg.name,
-      font: FONT_THEME,
-      shape: 'a',
-      color: Styles.DOMINANT_COLOR,
-      size: 1024,
-      fontSize: 128,
-    },
-    officialAccountIcon: {
-      text: pkg.name,
-      font: FONT_THEME,
-      shape: 'a',
-      color: Styles.DOMINANT_COLOR,
-      size: 256,
-      fontSize: 24,
+      theme: Themes.SQUARE,
     },
   },
 )
