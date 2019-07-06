@@ -82,6 +82,8 @@ module.exports = pon(
     // Sub Tasks for Database
     // -----------------------------------
     ...{
+      /** Open database cli */
+      'db:cli': () => createDB().cli(),
       /** Drop database */
       'db:drop': ['assert:not-prod', db.drop(createDB)],
       /** Migrate data */
@@ -92,8 +94,6 @@ module.exports = pon(
       'db:seed': db.seed(createDB, 'server/db/seeds/:env/*.seed.js'),
       /** Setup database */
       'db:setup': db.setup(createDB),
-      /** Open database cli */
-      'db:cli': () => createDB().cli(),
     },
 
     // -----------------------------------
@@ -313,11 +313,7 @@ module.exports = pon(
           ],
         }),
         concat(
-          [
-            'client/shim/ui/**/*.css',
-            'client/ui/base.pcss',
-            'client/ui/styles/*.pcss',
-          ],
+          ['client/shim/ui/**/*.css', 'client/ui/styles/*.pcss'],
           'public/build/bundle.pcss',
           {},
         ),
@@ -389,6 +385,8 @@ module.exports = pon(
       prod: ['env:prod', 'prod:compile', 'prod:db', 'start'],
       /** Restart app as daemon */
       restart: ['pm2:app/restart'],
+      /** Update project settings with interactive shell */
+      setting: () => setting.ask(),
       /** Show app daemon status */
       show: ['pm2:app/show'],
       /** Start app as daemon */
@@ -406,8 +404,6 @@ module.exports = pon(
       ],
       /** Run all ui tasks */
       ui: ['ui:css', 'ui:react', 'ui:browser', 'ui:workers'],
-      /** Update project settings with interactive shell */
-      setting: () => setting.ask(),
     },
 
     // -----------------------------------

@@ -13,7 +13,7 @@ import {
 
 /** @lends ui.Dialogs */
 class Dialogs extends React.Component {
-  render () {
+  render() {
     return (
       <>
         <ConnectionRetryDialog />

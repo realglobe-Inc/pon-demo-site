@@ -13,6 +13,9 @@
       "declared": true
     },
     "depsRule": {
+      "forbidImportFrom": [
+        "//lib$/"
+      ],
       "importFrom": [
         ".mjs",
         ".js",

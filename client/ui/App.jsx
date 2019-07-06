@@ -23,8 +23,8 @@ class App extends React.Component {
   render() {
     return (
       <context.Root>
-        {this.#stateful(({ busy, l, onMount, ready }) => (
-          <TheCaughtCatcher>
+        <TheCaughtCatcher>
+          {this.#stateful(({ busy, l, onMount, ready }) => (
             <TheMeta.Root title={l('app.APP_NAME')}>
               <TheCycle onMount={onMount}>
                 <TheRoot>
@@ -38,8 +38,8 @@ class App extends React.Component {
                 </TheRoot>
               </TheCycle>
             </TheMeta.Root>
-          </TheCaughtCatcher>
-        ))}
+          ))}
+        </TheCaughtCatcher>
       </context.Root>
     )
   }
