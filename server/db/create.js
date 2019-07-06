@@ -24,6 +24,15 @@ const defaultConfig = {
 
 /** @lends module:pon-demo-site/server.db.create */
 function create(config = defaultConfig, options = {}) {
+  if (process.env.CI) {
+    console.warn(`
+==============================
+
+[db] Using mock DB for CI ENV 
+
+==============================`)
+    config = { dialect: 'memory' }
+  }
   return theDB({
     resources: ResourceMapping,
     ...config,
