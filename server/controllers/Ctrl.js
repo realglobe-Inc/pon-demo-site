@@ -7,10 +7,10 @@
 const { TheCtrl } = require('@the-/controller')
 const { compose, withDebug } = require('@the-/mixin-controller')
 
-const CtrBase = compose(withDebug)(TheCtrl)
+const CtrlBase = compose(withDebug)(TheCtrl)
 
 /** @lends module:pon-demo-site/server.controllers.Ctrl */
-class Ctrl extends CtrBase {
+class Ctrl extends CtrlBase {
   get resources() {
     return this.app.db.resources
   }

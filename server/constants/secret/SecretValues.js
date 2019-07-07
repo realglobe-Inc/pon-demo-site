@@ -4,7 +4,7 @@
  * `pon secret:dec` / `pon secret:enc` で復号化、暗号化ができる
  * @namespace {string} SecretValues
  * @private
- * @memberOf module:@hec-eye/constants
+ * @memberOf module:pon-demo-site/server
  */
 'use strict'
 

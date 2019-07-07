@@ -20,12 +20,14 @@ const theCode = require('@the-/code/pon')
 const icon = require('@the-/icon/pon')
 const jsdoc = require('@the-/jsdoc/pon')
 const theLint = require('@the-/lint/pon')
+const theSpell = require('@the-/spell/pon')
 const theSupport = require('@the-/support/pon')
 const locales = require('./conf/locales')
 const Containers = require('./misc/docker/Containers')
 const Drawings = require('./misc/icon/Drawings')
 const Rules = require('./misc/lint/Rules')
 const PondocDev = require('./misc/project/Pondoc.dev')
+const Words = require('./misc/spell/Words')
 const { cwd, doc, tasks } = require('./Ponfile')
 const { DockerPorts, WebApps } = require('./server/constants')
 
@@ -184,6 +186,11 @@ module.exports = pon(
       'lint:loc': () => locales.validate(),
       /** Lint by rules */
       'lint:rules': theLint(Rules),
+      /** Run spell check */
+      'lint:spell': theSpell(['client/**/+(*.jsx|*.js)', 'server/**/*.js'], {
+        ignore: ['client/shim/**/*.*'],
+        words: Words,
+      }),
     },
 
     // -----------------------------------
@@ -248,7 +255,13 @@ module.exports = pon(
       /** Format source codes */
       format: ['format:conf', 'format:json', 'format:client', 'format:server'],
       /** Apply lint */
-      lint: ['lint:loc', 'lint:rules', 'eslint:fix', 'eslint:check'],
+      lint: [
+        'lint:loc',
+        'lint:rules',
+        'eslint:fix',
+        'eslint:check',
+        'lint:spell',
+      ],
       /** Open project */
       open: 'open:app',
       /** Prepare project */
