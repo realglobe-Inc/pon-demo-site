@@ -187,10 +187,13 @@ module.exports = pon(
       /** Lint by rules */
       'lint:rules': theLint(Rules),
       /** Run spell check */
-      'lint:spell': theSpell(['client/**/+(*.jsx|*.js)', 'server/**/*.js'], {
-        ignore: ['client/shim/**/*.*'],
-        words: Words,
-      }),
+      'lint:spell': theSpell(
+        ['client/**/+(*.jsx|*.js)', 'server/**/*.js', 'conf/*.js'],
+        {
+          ignore: ['client/shim/**/*.*'],
+          words: Words,
+        },
+      ),
     },
 
     // -----------------------------------
