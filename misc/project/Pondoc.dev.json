@@ -30,6 +30,7 @@
     "lint": "Apply lint",
     "lint:loc": "Validate locales",
     "lint:rules": "Lint by rules",
+    "lint:spell": "Run spell check",
     "o": "Shortcut for `open` task",
     "open": "Open project",
     "open:app": "Open app in browser",

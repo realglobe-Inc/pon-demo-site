@@ -5,13 +5,13 @@
  */
 'use strict'
 
-import { busyFor } from '@the-/facade-scope'
+import { busyAccessFor } from '@the-/facade-scope'
 
 /** @lends module:pon-demo-site/client.actions.HomeAct */
 function HomeAct(scope, { controllers }) {
   const { appCtrl } = controllers
 
-  const busy = busyFor(scope)
+  const busy = busyAccessFor(scope)
 
   /**
    * @memberof module:pon-demo-site/client.actions.HomeAct

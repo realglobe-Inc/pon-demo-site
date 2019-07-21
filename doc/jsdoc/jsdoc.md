@@ -33,11 +33,6 @@ Client module
     * [.client](#module_pon-demo-site/client.client) : <code>object</code>
         * [.create(namespace, [config])](#module_pon-demo-site/client.client.create) ⇒ <code>TheClient</code>
     * [.mappings](#module_pon-demo-site/client.mappings) : <code>object</code>
-    * [.scenes](#module_pon-demo-site/client.scenes) : <code>object</code>
-        * [.HomeScene](#module_pon-demo-site/client.scenes.HomeScene)
-            * [new HomeScene()](#new_module_pon-demo-site/client.scenes.HomeScene_new)
-        * [.LocationAct()](#module_pon-demo-site/client.scenes.LocationAct)
-            * [~locationAct](#module_pon-demo-site/client.scenes.LocationAct..locationAct) : <code>object</code>
     * [.scopes](#module_pon-demo-site/client.scopes) : <code>object</code>
     * [.store](#module_pon-demo-site/client.store) : <code>object</code>
         * [.create()](#module_pon-demo-site/client.store.create) ⇒ <code>TheStore</code>
@@ -129,38 +124,6 @@ Client a site client
 Module mappings
 
 **Kind**: static namespace of [<code>pon-demo-site/client</code>](#module_pon-demo-site/client)  
-<a name="module_pon-demo-site/client.scenes"></a>
-
-### pon-demo-site/client.scenes : <code>object</code>
-Scene classes
-
-**Kind**: static namespace of [<code>pon-demo-site/client</code>](#module_pon-demo-site/client)  
-
-* [.scenes](#module_pon-demo-site/client.scenes) : <code>object</code>
-    * [.HomeScene](#module_pon-demo-site/client.scenes.HomeScene)
-        * [new HomeScene()](#new_module_pon-demo-site/client.scenes.HomeScene_new)
-    * [.LocationAct()](#module_pon-demo-site/client.scenes.LocationAct)
-        * [~locationAct](#module_pon-demo-site/client.scenes.LocationAct..locationAct) : <code>object</code>
-
-<a name="module_pon-demo-site/client.scenes.HomeScene"></a>
-
-#### scenes.HomeScene
-**Kind**: static class of [<code>scenes</code>](#module_pon-demo-site/client.scenes)  
-<a name="new_module_pon-demo-site/client.scenes.HomeScene_new"></a>
-
-##### new HomeScene()
-Scene for home
-
-<a name="module_pon-demo-site/client.scenes.LocationAct"></a>
-
-#### scenes.LocationAct()
-Act for 'location'
-
-**Kind**: static method of [<code>scenes</code>](#module_pon-demo-site/client.scenes)  
-<a name="module_pon-demo-site/client.scenes.LocationAct..locationAct"></a>
-
-##### LocationAct~locationAct : <code>object</code>
-**Kind**: inner namespace of [<code>LocationAct</code>](#module_pon-demo-site/client.scenes.LocationAct)  
 <a name="module_pon-demo-site/client.scopes"></a>
 
 ### pon-demo-site/client.scopes : <code>object</code>

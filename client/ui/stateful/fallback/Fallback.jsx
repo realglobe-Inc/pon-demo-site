@@ -9,19 +9,14 @@ import { TheSpin } from '@the-/ui-spin'
 import styles from './Fallback.pcss'
 import { Stateful } from '../../context'
 
-class Fallback extends React.Component {
-  #stateful = Stateful(() => ({}), () => ({}))
+const stateful = Stateful(() => ({}), () => ({}))
 
-  render() {
-    const {
-      props: { className },
-    } = this
-    return this.#stateful(() => (
-      <div className={c(styles.self, className)}>
-        <TheSpin className={styles.spin} enabled />
-      </div>
-    ))
-  }
-}
+const Fallback = React.memo(({ className }) =>
+  stateful(() => (
+    <div className={c(styles.self, className)}>
+      <TheSpin className={styles.spin} enabled />
+    </div>
+  )),
+)
 
 export default Fallback

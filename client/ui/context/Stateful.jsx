@@ -5,13 +5,14 @@
  */
 'use strict'
 
+import React from 'react'
 import theAssert from '@the-/assert'
 import context from './context'
 const assert = theAssert('context/Stateful')
 
 /** @lends module:pon-demo-site/client.context.Stateful */
-export default function Stateful(reduceState, reduceHandle) {
-  assert(arguments.length === 2, 'Stateful takes exactly two arguments')
+export default function Stateful(reduceState, reduceHandle = () => ({})) {
+  assert(arguments.length <= 2, 'Stateful takes one or two arguments')
   const init = ({ actions, l, lang }) => ({
     l,
     lang,

@@ -9,20 +9,18 @@ import { TheRoute } from '@the-/ui'
 import Fallback from '../fallback/Fallback'
 import { Stateful } from '../../context'
 
-class Route extends React.Component {
-  #stateful = Stateful(() => ({}), () => ({}))
+const stateful = Stateful(() => ({}), () => ({}))
 
-  render() {
-    if (!isBrowser()) {
-      // TODO remove ( ReactDOMServer does not yet support Suspense. )
-      return <Fallback />
-    }
-    return this.#stateful(() => (
-      <Suspense fallback={<Fallback />}>
-        <TheRoute {...this.props} />
-      </Suspense>
-    ))
+const Route = React.memo((props) => {
+  if (!isBrowser()) {
+    // TODO remove ( ReactDOMServer does not yet support Suspense. )
+    return <Fallback />
   }
-}
+  return stateful(() => (
+    <Suspense fallback={<Fallback />}>
+      <TheRoute {...props} />
+    </Suspense>
+  ))
+})
 
 export default Route

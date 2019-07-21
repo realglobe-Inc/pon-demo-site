@@ -17,8 +17,6 @@ import context, { loader } from './context'
 import Fallback from './stateful/fallback/Fallback'
 import { ActMapping } from '../mappings'
 
-const App = lazy(() => import('./App'))
-
 singleton()
 patch()
 
@@ -57,6 +55,7 @@ once('DOMContentLoaded', async () => {
   }))
   appAct.setLocale(lang)
 
+  const App = lazy(() => import('./App'))
   const app = (
     <Suspense fallback={<Fallback />}>
       <App {...props} client={client} history={history} store={store} />

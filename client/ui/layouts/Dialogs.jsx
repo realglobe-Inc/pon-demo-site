@@ -2,7 +2,7 @@
 /**
  * Dialogs Component
  * @memberof ui
- * @class Dialogs
+ * @function Dialogs
  */
 'use strict'
 
@@ -12,14 +12,12 @@ import {
 } from '../stateful'
 
 /** @lends ui.Dialogs */
-class Dialogs extends React.Component {
-  render() {
-    return (
-      <>
-        <ConnectionRetryDialog />
-      </>
-    )
-  }
-}
+const Dialogs = React.memo(() =>
+  (
+    <React.Fragment>
+      <ConnectionRetryDialog />
+    </React.Fragment>
+  )
+)
 
 export default Dialogs
