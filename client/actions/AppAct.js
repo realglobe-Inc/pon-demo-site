@@ -24,6 +24,9 @@ function AppAct(scope) {
     prepare() {
       scope.set({ ready: true })
     },
+    setLocale(locale) {
+      scope.set({ locale })
+    },
     async handleRejectionReason(reason) {
       const href = RejectionHandleURLs[(reason?.name)]
       if (href) {

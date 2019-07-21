@@ -1,5 +1,6 @@
 /**
- * @class Html
+ * @memberof module:pon-demo-site/client.ui
+ * @function Html
  */
 'use strict'
 
@@ -8,8 +9,8 @@ import { GlobalKeys, locales, SrcSets, Styles, UI, Urls } from '@self/conf'
 import { TheBody, TheHead, TheHtml, TheRouter } from '@the-/ui'
 import { addUrlQuery } from '@the-/url'
 
-/** @lends Html */
-function Html({ appScope, renderingContext }) {
+/** @lends module:pon-demo-site/client.ui.Html */
+const Html = React.memo(({ appScope, renderingContext }) => {
   const { buildNumber, cdnUrl, version } = appScope
   const { lang, path } = renderingContext
   const v = [version, buildNumber].join('-')
@@ -41,6 +42,6 @@ function Html({ appScope, renderingContext }) {
       </TheBody>
     </TheHtml>
   )
-}
+})
 
 export default Html

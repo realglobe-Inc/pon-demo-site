@@ -55,6 +55,7 @@ once('DOMContentLoaded', async () => {
   quelize(() => ({
     locale: store.state['app.locale'],
   }))
+  appAct.setLocale(lang)
 
   const app = (
     <Suspense fallback={<Fallback />}>
