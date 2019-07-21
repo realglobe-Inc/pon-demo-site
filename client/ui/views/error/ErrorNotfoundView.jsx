@@ -8,10 +8,9 @@ import { TheButton, TheButtonGroup, TheMeta, TheRoute, TheView } from '@the-/ui'
 import styles from './ErrorNotfoundView.pcss'
 import { Stateful } from '../../context'
 
-const stateful = Stateful(() => ({}), ({ l }) => ({ l }))
-
-const ErrorNotfoundView = React.memo(() =>
-  stateful(({ l }) => (
+const ErrorNotfoundView = React.memo(() => {
+  const stateful = Stateful.memo(() => ({}))
+  return stateful(({ l }) => (
     <TheMeta title={l('titles.ERROR_NOTFOUND_TITLE')}>
       <TheView className={styles.self}>
         <TheView.Body>
@@ -28,7 +27,7 @@ const ErrorNotfoundView = React.memo(() =>
         </TheView.Body>
       </TheView>
     </TheMeta>
-  )),
-)
+  ))
+})
 
 export default ErrorNotfoundView

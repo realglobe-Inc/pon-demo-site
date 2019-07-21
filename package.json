@@ -1,7 +1,7 @@
 {
   "name": "pon-demo-site",
   "description": "Demo of web site using pon",
-  "version": "9.0.0",
+  "version": "9.0.1",
   "author": {
     "email": "okunishinish@gmail.com",
     "name": "Taka Okunishi",
@@ -25,8 +25,8 @@
     "@the-/hash": "^15.4.3",
     "@the-/lint": "^15.4.25",
     "@the-/loc": "^15.4.9",
-    "@the-/metrics": "^15.4.0",
-    "@the-/metrics-presets": "^15.4.4",
+    "@the-/metrics": "^15.5.1",
+    "@the-/metrics-presets": "^15.5.0",
     "@the-/mixin-controller": "^15.4.1",
     "@the-/polyfill": "^16.0.1",
     "@the-/ps": "^15.4.2",
@@ -81,7 +81,7 @@
     "babel-eslint": "^10.0.2",
     "eslint": "^6.1.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsdoc": "^15.5.5",
+    "eslint-plugin-jsdoc": "^15.6.0",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-promise": "^4.2.1",

@@ -6,39 +6,37 @@
 import React from 'react'
 import { UI } from '@self/conf'
 import { TheToast, TheToastGroup } from '@the-/ui'
-import { Stateful } from '../context'
+import { Handle, Stateful } from '../context'
 
-const stateful = Stateful(
-  (state) => ({
+const Toasts = React.memo(() => {
+  const stateful = Stateful.memo((state) => ({
     error: state['toast.error'],
     info: state['toast.info'],
     warn: state['toast.warn'],
-  }),
-  ({ actions: { toastAct } }) => ({
+  }))
+  const handle = Handle.memo(({ actions: { toastAct } }) => ({
     onReset: (queues) => toastAct.reset(queues),
-  }),
-)
+  }))
 
-const Toasts = React.memo(() =>
-  stateful(({ error, info, onReset, warn }) => (
+  return stateful(({ error, info, warn }) => (
     <TheToastGroup>
       <TheToast.Info
         clearAfter={UI.TOAST_DURATION}
         messages={info}
-        onUpdate={onReset}
+        onUpdate={handle.onReset}
       />
       <TheToast.Warn
         clearAfter={UI.TOAST_DURATION}
         messages={warn}
-        onUpdate={onReset}
+        onUpdate={handle.onReset}
       />
       <TheToast.Error
         clearAfter={UI.TOAST_DURATION}
         messages={error}
-        onUpdate={onReset}
+        onUpdate={handle.onReset}
       />
     </TheToastGroup>
-  )),
-)
+  ))
+})
 
 export default Toasts
