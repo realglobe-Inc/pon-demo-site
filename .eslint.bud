@@ -5,7 +5,13 @@
 
 const { eslintignore, eslintrc } = require('@the-/templates')
 
-module.exports = [eslintrc(), eslintignore()]
+module.exports = [
+  eslintrc({
+    jsdoc: false,
+    react: true,
+  }),
+  eslintignore(),
+]
 
 if (!module.parent) {
   require('coz').render(__filename)

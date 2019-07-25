@@ -2,7 +2,7 @@
  * Create an db instance
  * @memberof module:pon-demo-site/server.db
  * @function create
- * @param {Object} [config]
+ * @param {object} [config]
  * @returns {TheDB}
  */
 'use strict'

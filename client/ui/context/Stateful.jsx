@@ -22,8 +22,3 @@ export default function Stateful(reduceState) {
     </context.Entry>
   )
 }
-
-Stateful.memo = function statefulMemo(reduceState, deps = []) {
-  assert(arguments.length <= 2, 'Stateful.memo takes one or two arguments')
-  return React.useMemo(() => Stateful(reduceState), deps)
-}

@@ -3,7 +3,7 @@
  * @memberof module:pon-demo-site/client.client
  * @function create
  * @param {string} namespace
- * @param {Object} [config={}]
+ * @param {object} [config={}]
  * @returns {TheClient} A client instance
  */
 'use strict'

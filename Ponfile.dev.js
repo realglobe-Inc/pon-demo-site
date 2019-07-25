@@ -129,8 +129,8 @@ module.exports = pon(
     // Sub Tasks for ESLint
     // -----------------------------------
     ...{
-      'eslint:check': eslint(__dirname),
-      'eslint:fix': eslint(__dirname, { fix: true }),
+      'eslint:check': eslint(__dirname, { ext: '.js,.bud,.jsx' }),
+      'eslint:fix': eslint(__dirname, { ext: '.js,.bud,.jsx', fix: true }),
     },
 
     // -----------------------------------
