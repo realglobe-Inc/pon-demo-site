@@ -1,6 +1,6 @@
 /**
  * Client state store
- * @memberOf module:pon-demo-site/client
+ * @memberof module:pon-demo-site/client
  * @namespace store
  */
 'use strict'

@@ -43,3 +43,8 @@ create.forTask = () => create(defaultConfig, { enableHooks: false })
 create.forTest = () => create({ dialect: 'memory' }, { enableHooks: false })
 
 module.exports = create
+
+/**
+ * @external TheDB
+ * @see https://github.com/the-labo/the/tree/master/packages/db#readme
+ */

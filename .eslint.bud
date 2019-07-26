@@ -7,7 +7,7 @@ const { eslintignore, eslintrc } = require('@the-/templates')
 
 module.exports = [
   eslintrc({
-    jsdoc: false,
+    jsdoc: true,
     react: true,
   }),
   eslintignore(),

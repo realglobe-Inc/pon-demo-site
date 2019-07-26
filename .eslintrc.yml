@@ -9,5 +9,7 @@ extends:
 - "@the-/eslint-config-standard"
 - "@the-/eslint-config-standard-jsx"
 - "@the-/eslint-config-prettier"
-#- "@the-/eslint-config-jsdoc"
+- "@the-/eslint-config-jsdoc"
 - "@the-/eslint-config-code"
+
+

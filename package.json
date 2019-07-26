@@ -1,7 +1,7 @@
 {
   "name": "pon-demo-site",
   "description": "Demo of web site using pon",
-  "version": "9.0.1",
+  "version": "9.0.3",
   "author": {
     "email": "okunishinish@gmail.com",
     "name": "Taka Okunishi",
@@ -77,7 +77,7 @@
     "@the-/jsdoc": "^15.4.11",
     "@the-/spell": "^15.6.18",
     "@the-/support": "^15.4.0",
-    "@the-/templates": "^16.0.5",
+    "@the-/templates": "^16.0.6",
     "arequest": "^3.0.2",
     "babel-eslint": "^10.0.2",
     "eslint": "^6.1.0",

@@ -2,6 +2,7 @@
 'use strict'
 
 process.chdir(`${__dirname}/../..`)
+
 const { TheRefactor } = require('@the-/refactor')
 const {
   finder,

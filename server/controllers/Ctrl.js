@@ -1,8 +1,9 @@
 'use strict'
+
 /**
  * @class Ctrl
  * @abstract
- * @memberOf module:pon-demo-site/server.controllers
+ * @memberof module:pon-demo-site/server.controllers
  */
 const { TheCtrl } = require('@the-/controller')
 const { compose, withDebug } = require('@the-/mixin-controller')

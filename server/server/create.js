@@ -60,3 +60,8 @@ function create(config) {
 }
 
 module.exports = create
+
+/**
+ * @external TheServer
+ * @see https://github.com/the-labo/the/tree/master/packages/server#readme
+ */

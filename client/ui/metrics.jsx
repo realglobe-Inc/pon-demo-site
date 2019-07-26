@@ -7,7 +7,6 @@
 // import { RenderingCountMetrics } from '@the-/metrics-presets'
 import * as stateful from './stateful'
 import * as v from './views'
-
 const { TheMetrics } = require('@the-/metrics')
 
 const hasSymbol = typeof Symbol === 'function' && !!Symbol.for

@@ -1,6 +1,6 @@
 /**
  * Client index
- * @memberOf module:pon-demo-site/client
+ * @memberof module:pon-demo-site/client
  * @namespace client
  */
 'use strict'

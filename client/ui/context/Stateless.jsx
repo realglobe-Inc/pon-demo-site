@@ -6,6 +6,7 @@
 
 import theAssert from '@the-/assert'
 import context from './context'
+
 const assert = theAssert('context/Stateless')
 
 /** @lends module:pon-demo-site/client.context.Stateless */

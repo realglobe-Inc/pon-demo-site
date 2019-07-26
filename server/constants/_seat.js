@@ -3,7 +3,7 @@
  * @function _seat
  * @param {function()} creator
  * @protected
- * @memberOf module:pon-demo-site/server.constants
+ * @memberof module:pon-demo-site/server.constants
  */
 'use strict'
 

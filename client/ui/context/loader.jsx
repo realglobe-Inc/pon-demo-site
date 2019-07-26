@@ -5,7 +5,7 @@
  */
 'use strict'
 
-import theAssert from '@the-/assert/lib'
+import theAssert from '@the-/assert'
 import context from './context'
 
 const assert = theAssert('context.loader')
