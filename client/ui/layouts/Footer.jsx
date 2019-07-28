@@ -1,12 +1,15 @@
 /**
  * Footer component
- n */
+ * @memberof module:pon-demo-site/client
+ * @function Footer
+ */
 'use strict'
 
 import React from 'react'
 import { TheFooter } from '@the-/ui'
 import { Stateful } from '../context'
 
+/** @lends module:pon-demo-site/client.Footer */
 const Footer = React.memo(() => {
   const stateful = Stateful.memo(() => ({}))
   return stateful(({ l }) => (

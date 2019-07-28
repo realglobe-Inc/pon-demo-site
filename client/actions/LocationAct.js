@@ -2,6 +2,7 @@
  * Act for 'location'
  * @memberof module:pon-demo-site/client.scenes
  * @function LocationAct
+ * @returns {object} Act instance
  */
 'use strict'
 

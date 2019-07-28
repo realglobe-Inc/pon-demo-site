@@ -1,5 +1,7 @@
 /**
  * Toasts component
+ * @memberof module:pon-demo-site/client
+ * @function Toasts
  */
 'use strict'
 
@@ -8,6 +10,7 @@ import { UI } from '@self/conf'
 import { TheToast, TheToastGroup } from '@the-/ui'
 import { Handle, Stateful } from '../context'
 
+/** @lends module:pon-demo-site/client.Toasts */
 const Toasts = React.memo(() => {
   const stateful = Stateful.memo((state) => ({
     error: state['toast.error'],

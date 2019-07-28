@@ -2,8 +2,7 @@
  * Act for 'toast'
  * @memberof module:pon-demo-site/client.actions
  * @function ToastAct
- * @param {object} context
- * @returns {object}
+ * @returns {object} Act instance
  */
 'use strict'
 

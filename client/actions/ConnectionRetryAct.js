@@ -2,6 +2,7 @@
  * Act for "connection.retry"
  * @memberof module:pon-demo-site/client.actions
  * @function ConnectionRetryAct
+ * @returns {object} Act instance
  */
 'use strict'
 

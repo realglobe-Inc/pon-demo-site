@@ -1,5 +1,7 @@
 /**
  * ConnectionRetryDialog component
+ * @memberof module:pon-demo-site/client.ui
+ * @function ConnectionRetryDialog
  */
 'use strict'
 
@@ -8,6 +10,7 @@ import { Icons } from '@self/conf'
 import { TheButton, TheButtonGroup, TheDialog } from '@the-/ui'
 import { Handle, Stateful } from '../../context'
 
+/** @lends module:pon-demo-site/client.ui.ConnectionRetryDialog */
 const ConnectionRetryDialog = React.memo(() => {
   const stateful = Stateful.memo((state) => ({
     active: state['connection.retry.active'],

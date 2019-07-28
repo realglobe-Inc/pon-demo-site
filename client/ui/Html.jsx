@@ -10,8 +10,8 @@ import { TheBody, TheHead, TheHtml, TheRouter } from '@the-/ui'
 import { addUrlQuery } from '@the-/url'
 
 /** @lends module:pon-demo-site/client.ui.Html */
-const Html = React.memo(({ appScope, renderingContext }) => {
-  const { buildNumber, cdnUrl, version } = appScope
+const Html = React.memo(({ app, renderingContext }) => {
+  const { buildNumber, cdnUrl, version } = app
   const { lang, path } = renderingContext
   const v = [version, buildNumber].join('-')
   const l = locales.bind(lang)

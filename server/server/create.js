@@ -6,10 +6,11 @@
  */
 'use strict'
 
-const { Html, createClient, createStore } = require('@self/client/shim')
+const { Html } = require('@self/client/shim')
 const { isProduction } = require('@the-/check')
 const theServer = require('@the-/server')
 const theTmp = require('@the-/tmp')
+const { withDebug } = require('@the-/util-ctrl')
 const { RedisConnections, WebApps } = require('../constants')
 const mappings = require('../mappings')
 const conf = require('../../conf')
@@ -44,17 +45,15 @@ function create(config) {
 
   return theServer({
     cacheDir: CACHE_DIR,
-    controllers: ControllerMapping,
+    controllers: withDebug.fromFactories(ControllerMapping),
     html: Html,
     info: { buildNumber },
-    injectors: {
-      app: () => app,
-      client: () => createClient(),
-      store: () => createStore(),
-    },
-    langs: Object.keys(locales),
+    inject: (ctx) => ({
+      ...ctx,
+      app,
+    }),
+    langs: Object.keys(locales).filter((lang) => !/^\$/.test(lang)),
     redis: redisConfig,
-    scope: app,
     static: isProduction() ? [] : [WebApps.Default.PUBLIC_DIR],
   })
 }

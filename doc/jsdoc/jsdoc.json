@@ -19,7 +19,7 @@
     "longname": "module:pon-demo-site/conf",
     "meta": {
       "filename": "index.js",
-      "lineno": 2,
+      "lineno": 3,
       "path": "conf"
     },
     "name": "pon-demo-site/conf",
@@ -36,16 +36,7 @@
       "path": "server"
     },
     "name": "pon-demo-site/server",
-    "order": 54
-  },
-  {
-    "description": "Application controller",
-    "id": "module:pon-demo-site/server.controllers.AppCtrl()",
-    "kind": "constructor",
-    "longname": "module:pon-demo-site/server.controllers.AppCtrl",
-    "memberof": "module:pon-demo-site/server.controllers.AppCtrl",
-    "name": "AppCtrl",
-    "order": 44
+    "order": 53
   },
   {
     "description": "Resource for room",
@@ -54,36 +45,39 @@
     "longname": "module:pon-demo-site/server.db.resources.RoomResource",
     "memberof": "module:pon-demo-site/server.db.resources.RoomResource",
     "name": "RoomResource",
-    "order": 52
+    "order": 51
   },
   {
-    "id": "module:pon-demo-site/server.controllers.AppCtrl",
-    "kind": "class",
-    "longname": "module:pon-demo-site/server.controllers.AppCtrl",
-    "memberof": "module:pon-demo-site/server.controllers",
+    "id": "external:TheDB",
+    "kind": "external",
+    "longname": "external:TheDB",
     "meta": {
-      "filename": "AppCtrl.js",
-      "lineno": 1,
-      "path": "server/controllers"
+      "filename": "create.js",
+      "lineno": 47,
+      "path": "server/db"
     },
-    "name": "AppCtrl",
-    "order": 43,
-    "scope": "static"
-  },
-  {
-    "id": "module:pon-demo-site/server.controllers.Ctrl",
-    "kind": "class",
-    "longname": "module:pon-demo-site/server.controllers.Ctrl",
-    "memberof": "module:pon-demo-site/server.controllers",
-    "meta": {
-      "filename": "Ctrl.js",
-      "lineno": 2,
-      "path": "server/controllers"
-    },
-    "name": "Ctrl",
+    "name": "TheDB",
     "order": 45,
-    "scope": "static",
-    "virtual": true
+    "scope": "global",
+    "see": [
+      "https://github.com/the-labo/the/tree/master/packages/db#readme"
+    ]
+  },
+  {
+    "id": "external:TheServer",
+    "kind": "external",
+    "longname": "external:TheServer",
+    "meta": {
+      "filename": "create.js",
+      "lineno": 63,
+      "path": "server/server"
+    },
+    "name": "TheServer",
+    "order": 57,
+    "scope": "global",
+    "see": [
+      "https://github.com/the-labo/the/tree/master/packages/server#readme"
+    ]
   },
   {
     "augments": [
@@ -99,7 +93,7 @@
       "path": "server/db/resources"
     },
     "name": "RoomResource",
-    "order": 51,
+    "order": 50,
     "scope": "static"
   },
   {
@@ -215,7 +209,7 @@
     "memberof": "module:pon-demo-site/client",
     "meta": {
       "filename": "index.js",
-      "lineno": 2,
+      "lineno": 3,
       "path": "client/actions"
     },
     "name": "actions",
@@ -245,7 +239,7 @@
     "memberof": "mappings",
     "meta": {
       "filename": "ActMapping.js",
-      "lineno": 2,
+      "lineno": 3,
       "path": "client/mappings"
     },
     "name": "ActMapping",
@@ -260,7 +254,7 @@
     "memberof": "module:pon-demo-site/client",
     "meta": {
       "filename": "index.js",
-      "lineno": 2,
+      "lineno": 3,
       "path": "client/mappings"
     },
     "name": "mappings",
@@ -305,7 +299,7 @@
     "memberof": "module:pon-demo-site/conf.locales",
     "meta": {
       "filename": "index.js",
-      "lineno": 2,
+      "lineno": 3,
       "path": "conf/locales/en"
     },
     "name": "en",
@@ -380,7 +374,7 @@
     "memberof": "module:pon-demo-site/server",
     "meta": {
       "filename": "index.js",
-      "lineno": 2,
+      "lineno": 3,
       "path": "server/constants"
     },
     "name": "constants",
@@ -492,11 +486,11 @@
     "memberof": "module:pon-demo-site/server",
     "meta": {
       "filename": "index.js",
-      "lineno": 2,
+      "lineno": 3,
       "path": "server/controllers"
     },
     "name": "controllers",
-    "order": 46,
+    "order": 44,
     "scope": "static"
   },
   {
@@ -511,7 +505,7 @@
       "path": "server/db"
     },
     "name": "db",
-    "order": 48,
+    "order": 47,
     "scope": "static"
   },
   {
@@ -522,11 +516,11 @@
     "memberof": "module:pon-demo-site/server.db",
     "meta": {
       "filename": "index.js",
-      "lineno": 2,
+      "lineno": 3,
       "path": "server/db/resources"
     },
     "name": "resources",
-    "order": 50,
+    "order": 49,
     "scope": "static"
   },
   {
@@ -537,11 +531,11 @@
     "memberof": "mappings",
     "meta": {
       "filename": "ControllerMapping.js",
-      "lineno": 2,
+      "lineno": 3,
       "path": "server/mappings"
     },
     "name": "ControllerMapping",
-    "order": 55,
+    "order": 54,
     "scope": "static"
   },
   {
@@ -552,11 +546,11 @@
     "memberof": "module:pon-demo-site/server",
     "meta": {
       "filename": "index.js",
-      "lineno": 2,
+      "lineno": 3,
       "path": "server/mappings"
     },
     "name": "mappings",
-    "order": 56,
+    "order": 55,
     "scope": "static"
   },
   {
@@ -567,11 +561,11 @@
     "memberof": "mappings",
     "meta": {
       "filename": "ResourceMapping.js",
-      "lineno": 2,
+      "lineno": 3,
       "path": "server/mappings"
     },
     "name": "ResourceMapping",
-    "order": 57,
+    "order": 56,
     "scope": "static"
   },
   {
@@ -650,7 +644,7 @@
       {
         "type": {
           "names": [
-            "Object"
+            "object"
           ]
         },
         "name": "context"
@@ -660,7 +654,7 @@
       {
         "type": {
           "names": [
-            "Object"
+            "object"
           ]
         }
       }
@@ -793,7 +787,7 @@
       {
         "type": {
           "names": [
-            "Object"
+            "object"
           ]
         },
         "optional": true,
@@ -838,6 +832,21 @@
     "scope": "static"
   },
   {
+    "description": "Application controller",
+    "id": "module:pon-demo-site/server.controllers.AppCtrl",
+    "kind": "function",
+    "longname": "module:pon-demo-site/server.controllers.AppCtrl",
+    "memberof": "module:pon-demo-site/server.controllers",
+    "meta": {
+      "filename": "AppCtrl.js",
+      "lineno": 1,
+      "path": "server/controllers"
+    },
+    "name": "AppCtrl",
+    "order": 43,
+    "scope": "static"
+  },
+  {
     "description": "Create an db instance",
     "id": "module:pon-demo-site/server.db.create",
     "kind": "function",
@@ -849,12 +858,12 @@
       "path": "server/db"
     },
     "name": "create",
-    "order": 47,
+    "order": 46,
     "params": [
       {
         "type": {
           "names": [
-            "Object"
+            "object"
           ]
         },
         "optional": true,
@@ -883,7 +892,7 @@
       "path": "server/db/migration"
     },
     "name": "migration",
-    "order": 49,
+    "order": 48,
     "scope": "static"
   },
   {
@@ -921,7 +930,7 @@
       "path": "server/db/resources"
     },
     "name": "TheRoomResourceEntity",
-    "order": 53,
+    "order": 52,
     "scope": "inner"
   },
   {

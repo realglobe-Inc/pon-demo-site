@@ -1,7 +1,8 @@
 /**
  * Act for "home"
  * @memberof module:pon-demo-site/client.actions
- * @namespace HomeAct
+ * @function HomeAct
+ * @returns {object} Act instance
  */
 'use strict'
 
@@ -12,7 +13,6 @@ function HomeAct(scope, { controllers }) {
   const { appCtrl } = controllers
 
   const busy = busyAccessFor(scope)
-
   /**
    * @memberof module:pon-demo-site/client.actions.HomeAct
    * @inner

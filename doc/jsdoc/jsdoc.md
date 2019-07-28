@@ -28,7 +28,7 @@ Client module
             * [~appAct](#module_pon-demo-site/client.actions.AppAct..appAct) : <code>object</code>
         * [.ConnectionRetryAct()](#module_pon-demo-site/client.actions.ConnectionRetryAct)
             * [~connectionRetryAct](#module_pon-demo-site/client.actions.ConnectionRetryAct..connectionRetryAct) : <code>object</code>
-        * [.ToastAct(context)](#module_pon-demo-site/client.actions.ToastAct) ⇒ <code>Object</code>
+        * [.ToastAct(context)](#module_pon-demo-site/client.actions.ToastAct) ⇒ <code>object</code>
             * [~toastAct](#module_pon-demo-site/client.actions.ToastAct..toastAct) : <code>object</code>
     * [.client](#module_pon-demo-site/client.client) : <code>object</code>
         * [.create(namespace, [config])](#module_pon-demo-site/client.client.create) ⇒ <code>TheClient</code>
@@ -51,7 +51,7 @@ Action modules
         * [~appAct](#module_pon-demo-site/client.actions.AppAct..appAct) : <code>object</code>
     * [.ConnectionRetryAct()](#module_pon-demo-site/client.actions.ConnectionRetryAct)
         * [~connectionRetryAct](#module_pon-demo-site/client.actions.ConnectionRetryAct..connectionRetryAct) : <code>object</code>
-    * [.ToastAct(context)](#module_pon-demo-site/client.actions.ToastAct) ⇒ <code>Object</code>
+    * [.ToastAct(context)](#module_pon-demo-site/client.actions.ToastAct) ⇒ <code>object</code>
         * [~toastAct](#module_pon-demo-site/client.actions.ToastAct..toastAct) : <code>object</code>
 
 <a name="module_pon-demo-site/client.actions.HomeAct"></a>
@@ -86,14 +86,14 @@ Act for "connection.retry"
 **Kind**: inner namespace of [<code>ConnectionRetryAct</code>](#module_pon-demo-site/client.actions.ConnectionRetryAct)  
 <a name="module_pon-demo-site/client.actions.ToastAct"></a>
 
-#### actions.ToastAct(context) ⇒ <code>Object</code>
+#### actions.ToastAct(context) ⇒ <code>object</code>
 Act for 'toast'
 
 **Kind**: static method of [<code>actions</code>](#module_pon-demo-site/client.actions)  
 
 | Param | Type |
 | --- | --- |
-| context | <code>Object</code> | 
+| context | <code>object</code> | 
 
 <a name="module_pon-demo-site/client.actions.ToastAct..toastAct"></a>
 
@@ -116,7 +116,7 @@ Client a site client
 | Param | Type | Default |
 | --- | --- | --- |
 | namespace | <code>string</code> |  | 
-| [config] | <code>Object</code> | <code>{}</code> | 
+| [config] | <code>object</code> | <code>{}</code> | 
 
 <a name="module_pon-demo-site/client.mappings"></a>
 
@@ -188,9 +188,7 @@ Application server
         * [.WebApps](#module_pon-demo-site/server.constants.WebApps) : <code>object</code>
             * [~seated](#module_pon-demo-site/server.constants.WebApps..seated) : <code>object</code>
     * [.controllers](#module_pon-demo-site/server.controllers) : <code>object</code>
-        * [.AppCtrl](#module_pon-demo-site/server.controllers.AppCtrl)
-            * [new AppCtrl()](#new_module_pon-demo-site/server.controllers.AppCtrl_new)
-        * *[.Ctrl](#module_pon-demo-site/server.controllers.Ctrl)*
+        * [.AppCtrl()](#module_pon-demo-site/server.controllers.AppCtrl)
     * [.db](#module_pon-demo-site/server.db) : <code>object</code>
         * [.resources](#module_pon-demo-site/server.db.resources) : <code>object</code>
             * [.RoomResource](#module_pon-demo-site/server.db.resources.RoomResource) ⇐ <code>TheResource</code>
@@ -272,25 +270,12 @@ WebApps
 Server controllers
 
 **Kind**: static namespace of [<code>pon-demo-site/server</code>](#module_pon-demo-site/server)  
-
-* [.controllers](#module_pon-demo-site/server.controllers) : <code>object</code>
-    * [.AppCtrl](#module_pon-demo-site/server.controllers.AppCtrl)
-        * [new AppCtrl()](#new_module_pon-demo-site/server.controllers.AppCtrl_new)
-    * *[.Ctrl](#module_pon-demo-site/server.controllers.Ctrl)*
-
 <a name="module_pon-demo-site/server.controllers.AppCtrl"></a>
 
-#### controllers.AppCtrl
-**Kind**: static class of [<code>controllers</code>](#module_pon-demo-site/server.controllers)  
-<a name="new_module_pon-demo-site/server.controllers.AppCtrl_new"></a>
-
-##### new AppCtrl()
+#### controllers.AppCtrl()
 Application controller
 
-<a name="module_pon-demo-site/server.controllers.Ctrl"></a>
-
-#### *controllers.Ctrl*
-**Kind**: static abstract class of [<code>controllers</code>](#module_pon-demo-site/server.controllers)  
+**Kind**: static method of [<code>controllers</code>](#module_pon-demo-site/server.controllers)  
 <a name="module_pon-demo-site/server.db"></a>
 
 ### pon-demo-site/server.db : <code>object</code>
@@ -346,7 +331,7 @@ Create an db instance
 
 | Param | Type |
 | --- | --- |
-| [config] | <code>Object</code> | 
+| [config] | <code>object</code> | 
 
 <a name="module_pon-demo-site/server.db.migration"></a>
 

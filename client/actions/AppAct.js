@@ -2,6 +2,7 @@
  * Act for "app"
  * @memberof module:pon-demo-site/client.actions
  * @function AppAct
+ * @returns {object} Act instance
  */
 'use strict'
 

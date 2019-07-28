@@ -6,6 +6,7 @@
  */
 'use strict'
 
+import memoizeOne from 'memoize-one'
 import context from './context'
 
 /** @lends module:pon-demo-site/client.context.Handle */
@@ -14,3 +15,5 @@ export default function Handle(factory) {
   const l = context.get('l')
   return factory({ actions, l })
 }
+
+Handle.memo = memoizeOne((factory) => Handle(factory))
