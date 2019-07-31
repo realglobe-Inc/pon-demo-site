@@ -30,8 +30,8 @@
     },
     "propRule": {
       "keypathAccess": {
-        "state": "client/shim/store/scopes",
-        "Urls": "conf/Urls"
+        "Paths": "conf/Paths",
+        "state": "client/shim/store/scopes"
       }
     }
   },
@@ -64,9 +64,9 @@
       ]
     }
   },
-  "conf/Urls.js": {
+  "conf/Paths.js": {
     "moduleRule": {
-      "keyPattern": "/^[A-Z_]+_URL$/",
+      "keyPattern": "/^[A-Z_]+_PATH$/",
       "type": "object",
       "valuePattern": "/^//",
       "valueUnique": true

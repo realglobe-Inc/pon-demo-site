@@ -187,21 +187,6 @@
     "scope": "static"
   },
   {
-    "description": "Act for \"home\"",
-    "id": "module:pon-demo-site/client.actions.HomeAct",
-    "kind": "namespace",
-    "longname": "module:pon-demo-site/client.actions.HomeAct",
-    "memberof": "module:pon-demo-site/client.actions",
-    "meta": {
-      "filename": "HomeAct.js",
-      "lineno": 1,
-      "path": "client/actions"
-    },
-    "name": "HomeAct",
-    "order": 4,
-    "scope": "static"
-  },
-  {
     "description": "Action modules",
     "id": "module:pon-demo-site/client.actions",
     "kind": "namespace",
@@ -595,6 +580,16 @@
     },
     "name": "AppAct",
     "order": 0,
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "description": "Act instance"
+      }
+    ],
     "scope": "static"
   },
   {
@@ -610,6 +605,41 @@
     },
     "name": "ConnectionRetryAct",
     "order": 2,
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "description": "Act instance"
+      }
+    ],
+    "scope": "static"
+  },
+  {
+    "description": "Act for \"home\"",
+    "id": "module:pon-demo-site/client.actions.HomeAct",
+    "kind": "function",
+    "longname": "module:pon-demo-site/client.actions.HomeAct",
+    "memberof": "module:pon-demo-site/client.actions",
+    "meta": {
+      "filename": "HomeAct.js",
+      "lineno": 1,
+      "path": "client/actions"
+    },
+    "name": "HomeAct",
+    "order": 4,
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "description": "Act instance"
+      }
+    ],
     "scope": "static"
   },
   {
@@ -625,6 +655,16 @@
     },
     "name": "LocationAct",
     "order": 7,
+    "returns": [
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "description": "Act instance"
+      }
+    ],
     "scope": "static"
   },
   {
@@ -640,23 +680,14 @@
     },
     "name": "ToastAct",
     "order": 9,
-    "params": [
-      {
-        "type": {
-          "names": [
-            "object"
-          ]
-        },
-        "name": "context"
-      }
-    ],
     "returns": [
       {
         "type": {
           "names": [
             "object"
           ]
-        }
+        },
+        "description": "Act instance"
       }
     ],
     "scope": "static"
@@ -669,7 +700,7 @@
     "memberof": "module:pon-demo-site/client.actions.ToastAct~act",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 22,
+      "lineno": 21,
       "path": "client/actions"
     },
     "name": "reset",
@@ -695,7 +726,7 @@
     "memberof": "module:pon-demo-site/client.actions.ToastAct~act",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 31,
+      "lineno": 30,
       "path": "client/actions"
     },
     "name": "showError",
@@ -720,7 +751,7 @@
     "memberof": "module:pon-demo-site/client.actions.ToastAct~act",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 38,
+      "lineno": 37,
       "path": "client/actions"
     },
     "name": "showInfo",
@@ -745,7 +776,7 @@
     "memberof": "module:pon-demo-site/client.actions.ToastAct~act",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 45,
+      "lineno": 44,
       "path": "client/actions"
     },
     "name": "showWarn",
@@ -940,7 +971,7 @@
     "memberof": "module:pon-demo-site/client.actions.AppAct",
     "meta": {
       "filename": "AppAct.js",
-      "lineno": 18,
+      "lineno": 19,
       "path": "client/actions"
     },
     "name": "appAct",
@@ -954,7 +985,7 @@
     "memberof": "module:pon-demo-site/client.actions.ConnectionRetryAct",
     "meta": {
       "filename": "ConnectionRetryAct.js",
-      "lineno": 16,
+      "lineno": 17,
       "path": "client/actions"
     },
     "name": "connectionRetryAct",
@@ -982,7 +1013,7 @@
     "memberof": "module:pon-demo-site/client.scenes.LocationAct",
     "meta": {
       "filename": "LocationAct.js",
-      "lineno": 13,
+      "lineno": 14,
       "path": "client/actions"
     },
     "name": "locationAct",
@@ -996,7 +1027,7 @@
     "memberof": "module:pon-demo-site/client.actions.ToastAct",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 12,
+      "lineno": 11,
       "path": "client/actions"
     },
     "name": "toastAct",

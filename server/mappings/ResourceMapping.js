@@ -12,7 +12,7 @@ const r = require('../db/resources')
 module.exports =
   /** mappings.ResourceMapping */
   {
-    Room: r.RoomResource,
+    User: r.UserResource,
   }
 
 Object.freeze(module.exports)

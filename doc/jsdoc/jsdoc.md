@@ -22,13 +22,13 @@ Client module
 
 * [pon-demo-site/client](#module_pon-demo-site/client)
     * [.actions](#module_pon-demo-site/client.actions) : <code>object</code>
-        * [.HomeAct](#module_pon-demo-site/client.actions.HomeAct) : <code>object</code>
-            * [~homeAct](#module_pon-demo-site/client.actions.HomeAct..homeAct) : <code>object</code>
-        * [.AppAct()](#module_pon-demo-site/client.actions.AppAct)
+        * [.AppAct()](#module_pon-demo-site/client.actions.AppAct) ⇒ <code>object</code>
             * [~appAct](#module_pon-demo-site/client.actions.AppAct..appAct) : <code>object</code>
-        * [.ConnectionRetryAct()](#module_pon-demo-site/client.actions.ConnectionRetryAct)
+        * [.ConnectionRetryAct()](#module_pon-demo-site/client.actions.ConnectionRetryAct) ⇒ <code>object</code>
             * [~connectionRetryAct](#module_pon-demo-site/client.actions.ConnectionRetryAct..connectionRetryAct) : <code>object</code>
-        * [.ToastAct(context)](#module_pon-demo-site/client.actions.ToastAct) ⇒ <code>object</code>
+        * [.HomeAct()](#module_pon-demo-site/client.actions.HomeAct) ⇒ <code>object</code>
+            * [~homeAct](#module_pon-demo-site/client.actions.HomeAct..homeAct) : <code>object</code>
+        * [.ToastAct()](#module_pon-demo-site/client.actions.ToastAct) ⇒ <code>object</code>
             * [~toastAct](#module_pon-demo-site/client.actions.ToastAct..toastAct) : <code>object</code>
     * [.client](#module_pon-demo-site/client.client) : <code>object</code>
         * [.create(namespace, [config])](#module_pon-demo-site/client.client.create) ⇒ <code>TheClient</code>
@@ -45,56 +45,55 @@ Action modules
 **Kind**: static namespace of [<code>pon-demo-site/client</code>](#module_pon-demo-site/client)  
 
 * [.actions](#module_pon-demo-site/client.actions) : <code>object</code>
-    * [.HomeAct](#module_pon-demo-site/client.actions.HomeAct) : <code>object</code>
-        * [~homeAct](#module_pon-demo-site/client.actions.HomeAct..homeAct) : <code>object</code>
-    * [.AppAct()](#module_pon-demo-site/client.actions.AppAct)
+    * [.AppAct()](#module_pon-demo-site/client.actions.AppAct) ⇒ <code>object</code>
         * [~appAct](#module_pon-demo-site/client.actions.AppAct..appAct) : <code>object</code>
-    * [.ConnectionRetryAct()](#module_pon-demo-site/client.actions.ConnectionRetryAct)
+    * [.ConnectionRetryAct()](#module_pon-demo-site/client.actions.ConnectionRetryAct) ⇒ <code>object</code>
         * [~connectionRetryAct](#module_pon-demo-site/client.actions.ConnectionRetryAct..connectionRetryAct) : <code>object</code>
-    * [.ToastAct(context)](#module_pon-demo-site/client.actions.ToastAct) ⇒ <code>object</code>
+    * [.HomeAct()](#module_pon-demo-site/client.actions.HomeAct) ⇒ <code>object</code>
+        * [~homeAct](#module_pon-demo-site/client.actions.HomeAct..homeAct) : <code>object</code>
+    * [.ToastAct()](#module_pon-demo-site/client.actions.ToastAct) ⇒ <code>object</code>
         * [~toastAct](#module_pon-demo-site/client.actions.ToastAct..toastAct) : <code>object</code>
 
-<a name="module_pon-demo-site/client.actions.HomeAct"></a>
-
-#### actions.HomeAct : <code>object</code>
-Act for "home"
-
-**Kind**: static namespace of [<code>actions</code>](#module_pon-demo-site/client.actions)  
-<a name="module_pon-demo-site/client.actions.HomeAct..homeAct"></a>
-
-##### HomeAct~homeAct : <code>object</code>
-**Kind**: inner namespace of [<code>HomeAct</code>](#module_pon-demo-site/client.actions.HomeAct)  
 <a name="module_pon-demo-site/client.actions.AppAct"></a>
 
-#### actions.AppAct()
+#### actions.AppAct() ⇒ <code>object</code>
 Act for "app"
 
 **Kind**: static method of [<code>actions</code>](#module_pon-demo-site/client.actions)  
+**Returns**: <code>object</code> - Act instance  
 <a name="module_pon-demo-site/client.actions.AppAct..appAct"></a>
 
 ##### AppAct~appAct : <code>object</code>
 **Kind**: inner namespace of [<code>AppAct</code>](#module_pon-demo-site/client.actions.AppAct)  
 <a name="module_pon-demo-site/client.actions.ConnectionRetryAct"></a>
 
-#### actions.ConnectionRetryAct()
+#### actions.ConnectionRetryAct() ⇒ <code>object</code>
 Act for "connection.retry"
 
 **Kind**: static method of [<code>actions</code>](#module_pon-demo-site/client.actions)  
+**Returns**: <code>object</code> - Act instance  
 <a name="module_pon-demo-site/client.actions.ConnectionRetryAct..connectionRetryAct"></a>
 
 ##### ConnectionRetryAct~connectionRetryAct : <code>object</code>
 **Kind**: inner namespace of [<code>ConnectionRetryAct</code>](#module_pon-demo-site/client.actions.ConnectionRetryAct)  
+<a name="module_pon-demo-site/client.actions.HomeAct"></a>
+
+#### actions.HomeAct() ⇒ <code>object</code>
+Act for "home"
+
+**Kind**: static method of [<code>actions</code>](#module_pon-demo-site/client.actions)  
+**Returns**: <code>object</code> - Act instance  
+<a name="module_pon-demo-site/client.actions.HomeAct..homeAct"></a>
+
+##### HomeAct~homeAct : <code>object</code>
+**Kind**: inner namespace of [<code>HomeAct</code>](#module_pon-demo-site/client.actions.HomeAct)  
 <a name="module_pon-demo-site/client.actions.ToastAct"></a>
 
-#### actions.ToastAct(context) ⇒ <code>object</code>
+#### actions.ToastAct() ⇒ <code>object</code>
 Act for 'toast'
 
 **Kind**: static method of [<code>actions</code>](#module_pon-demo-site/client.actions)  
-
-| Param | Type |
-| --- | --- |
-| context | <code>object</code> | 
-
+**Returns**: <code>object</code> - Act instance  
 <a name="module_pon-demo-site/client.actions.ToastAct..toastAct"></a>
 
 ##### ToastAct~toastAct : <code>object</code>

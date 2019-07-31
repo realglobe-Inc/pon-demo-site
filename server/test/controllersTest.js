@@ -22,9 +22,8 @@ describe('controllers', function() {
     const { AppCtrl } = controllers
     const session = {}
     const db = createDB.forTest()
-    const appCtrl = new AppCtrl({
+    const appCtrl = AppCtrl({
       app: { db },
-      client: {},
       session,
     })
 

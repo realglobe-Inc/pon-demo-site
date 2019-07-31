@@ -24,7 +24,7 @@ const theBin = require('@the-/bin/pon')
 const thePS = require('@the-/ps/pon')
 const theSecret = require('@the-/secret')
 const theSetting = require('@the-/setting')
-const { Urls, locales } = require('./conf')
+const { Paths, locales } = require('./conf')
 const Containers = require('./misc/docker/Containers')
 const Bins = require('./misc/project/Bins')
 const Directories = require('./misc/project/Directories')
@@ -203,13 +203,13 @@ module.exports = pon(
       ],
       /** Compile css files for production */
       'prod:css': css.minify(
-        [`public${Urls.CSS_BUNDLE_URL}`],
-        `public${Urls.PROD_CSS_BUNDLE_URL}`,
+        [`public${Paths.CSS_BUNDLE_PATH}`],
+        `public${Paths.PROD_CSS_BUNDLE_PATH}`,
       ),
       /** Prepare database for production */
       'prod:db': ['env:prod', 'db'],
       /** Compile js files for production */
-      'prod:js': ccjs.dir('public/build', `public${Urls.PROD_ASSET_URL}`, {}),
+      'prod:js': ccjs.dir('public/build', `public${Paths.PROD_ASSET_PATH}`, {}),
       /** Delete source map files for production */
       'prod:map': del('public/**/*.map'),
     },
@@ -297,7 +297,7 @@ module.exports = pon(
             'public/build/[name].js',
             {
               context: `${__dirname}/client/shim`,
-              publicPath: `${Urls.JS_CHUNK_BASE_URL}/`,
+              publicPath: `${Paths.JS_CHUNK_BASE_PATH}/`,
             },
           ),
         { sub: ['watch', 'analyze'] },

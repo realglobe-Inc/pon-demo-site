@@ -6,14 +6,14 @@
  */
 'use strict'
 
-import { Urls } from '@self/conf'
+import { Paths } from '@self/conf'
 import { show } from '@the-/window'
 
 /** @lends module:pon-demo-site/client.actions.AppAct */
 function AppAct(scope) {
   const RejectionHandleURLs = {
-    ForbiddenError: Urls.ERROR_FORBIDDEN_URL,
-    NotFoundError: Urls.ERROR_NOTFOUND_URL,
+    ForbiddenError: Paths.ERROR_FORBIDDEN_PATH,
+    NotFoundError: Paths.ERROR_NOTFOUND_PATH,
   }
 
   /**
