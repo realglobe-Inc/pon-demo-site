@@ -14,16 +14,19 @@ async function main() {
   await new TheRefactor()
     .process([
       '+(assets|server|client|conf)/**/*.js',
+      '+(assets|server|client|conf)/**/*.jsx',
       '+(assets|server|client|conf)/**/.*.bud',
       'misc/lint/*.json',
       '*.js',
     ],'Urls', 'Paths')
 
   const Paths = require('../../conf/Paths')
-  for(const key of Object.keys(Paths)){
+  const keys = Object.keys(Paths).map((key) => key.replace(/_PATH$/, '_URL'))
+  for(const key of keys){
     await new TheRefactor()
       .process([
         '+(assets|server|client|conf)/**/*.js',
+        '+(assets|server|client|conf)/**/*.jsx',
         '+(assets|server|client|conf)/**/.*.bud',
         '*.js',
       ],key, key.replace(/_URL$/, '_PATH'))

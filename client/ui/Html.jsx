@@ -5,7 +5,7 @@
 'use strict'
 
 import React from 'react'
-import { GlobalKeys, locales, SrcSets, Styles, UI, Urls } from '@self/conf'
+import { GlobalKeys, locales, Paths, SrcSets, Styles, UI } from '@self/conf'
 import { TheBody, TheHead, TheHtml, TheRouter } from '@the-/ui'
 import { addUrlQuery } from '@the-/url'
 
@@ -16,7 +16,7 @@ const Html = React.memo(({ app, renderingContext }) => {
   const v = [version, buildNumber].join('-')
   const l = locales.bind(lang)
   const workerScopes = {
-    '/': addUrlQuery(Urls.JS_ROOT_SERVICE_WORKER_URL, { v }),
+    '/': addUrlQuery(Paths.JS_ROOT_SERVICE_WORKER_PATH, { v }),
   }
   const appProps = {
     lang,
@@ -30,7 +30,7 @@ const Html = React.memo(({ app, renderingContext }) => {
         color={Styles.DOMINANT_COLOR}
         css={SrcSets.cssSet}
         globals={{ [GlobalKeys.APP]: {}, [GlobalKeys.PROPS]: appProps }}
-        icon={Urls.ICON_URL}
+        icon={Paths.ICON_PATH}
         js={SrcSets.jsSet}
         title={l('app.APP_NAME')}
         version={v}
