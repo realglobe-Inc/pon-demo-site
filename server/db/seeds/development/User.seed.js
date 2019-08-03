@@ -5,7 +5,7 @@ const seed = require('@the-/seed')('en')
 module.exports = seed
   .explode(
     {
-      name: 'room-#{i}',
+      name: 'user-#{i}',
     },
     10,
   )

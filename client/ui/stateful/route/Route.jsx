@@ -1,5 +1,7 @@
 /**
  * Route component
+ * @memberof module:pon-demo-site/client.ui
+ * @function Route
  */
 'use strict'
 
@@ -9,6 +11,7 @@ import { TheRoute } from '@the-/ui'
 import Fallback from '../fallback/Fallback'
 import { Stateful } from '../../context'
 
+/** @lends module:pon-demo-site/client.ui.Route */
 const Route = React.memo((props) => {
   if (!isBrowser()) {
     // TODO remove ( ReactDOMServer does not yet support Suspense. )

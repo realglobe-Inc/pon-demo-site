@@ -17,7 +17,7 @@ const UserResource = ({ define }) => {
     createdAt: { ...atPolicy.createdAt },
     name: {
       description: 'Name of user',
-      minLength: 4,
+      minLength: 2,
       required: true,
       trim: true,
       type: STRING,

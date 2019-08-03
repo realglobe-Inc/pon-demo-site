@@ -9,8 +9,8 @@ const { isProduction } = require('@the-/check')
 const theHash = require('@the-/hash')
 const Paths = require('./Paths')
 
-module.exports = Object.freeze(
-  /** @lends SrcSets */
+const SrcSets =
+  /** @lends module:pon-demo-site/conf.SrcSets */
   {
     cssSet: [
       Paths.CSS_THEME_PATH,
@@ -27,8 +27,11 @@ module.exports = Object.freeze(
         ? [Paths.PROD_JS_BUNDLE_PATH]
         : [Paths.JS_BUNDLE_PATH]),
     ],
-  },
-)
+  }
+
+Object.freeze(SrcSets)
+
+module.exports = SrcSets
 
 if (!isProduction()) {
   module.exports = theHash.proxy(module.exports, {

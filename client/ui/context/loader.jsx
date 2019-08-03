@@ -24,13 +24,11 @@ const loader = {
     context.set({ actions })
     return actions
   },
-
   loadLocale(locales, lang) {
     const l = locales.bind(lang)
     context.set({ l, lang })
     return l
   },
-
   loadStore(store) {
     store.subscribe(() => context.set({ state: store.state }))
     context.set({ state: store.state, store })

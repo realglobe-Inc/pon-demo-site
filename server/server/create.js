@@ -24,7 +24,7 @@ const defaultRedisConfig = {
   port: RedisConnections.Default.PORT,
 }
 
-/** @lends module:pon-demo-site/server.create */
+/** @lends module:pon-demo-site/server.server.create */
 function create(config) {
   const {
     db,

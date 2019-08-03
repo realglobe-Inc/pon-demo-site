@@ -1,14 +1,15 @@
 /**
  * Global keys
- * @enum {string} GlobalKeys
+ * @memberof module:pon-demo-site/conf
+ * @namespace GlobalKeys
  */
 'use strict'
 
 const { isProduction } = require('@the-/check')
 const theHash = require('@the-/hash')
 
-module.exports = Object.freeze(
-  /** @lends GlobalKeys */
+const GlobalKeys =
+  /** @lends module:pon-demo-site/conf.GlobalKeys */
   {
     /** Key of app */
     APP: 'app',
@@ -18,8 +19,10 @@ module.exports = Object.freeze(
     PROPS: 'app.props',
     /** Key of app store */
     STORE: 'app.store',
-  },
-)
+  }
+Object.freeze(GlobalKeys)
+
+module.exports = GlobalKeys
 
 if (!isProduction()) {
   module.exports = theHash.proxy(module.exports, {

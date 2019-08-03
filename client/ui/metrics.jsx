@@ -15,7 +15,7 @@ function metrics() {
   {
     const Components = { ...v, ...stateful }
     void RenderingCountMetrics(Components, {
-      interval: 30 * 1000,
+      interval: 30000,
     })
   }
 }

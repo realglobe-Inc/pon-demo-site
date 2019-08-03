@@ -1,5 +1,7 @@
 /**
  * Fallback component
+ * @memberof module:pon-demo-site/client.ui
+ * @function Fallback
  */
 'use strict'
 
@@ -9,6 +11,7 @@ import { TheSpin } from '@the-/ui-spin'
 import styles from './Fallback.pcss'
 import { Stateful } from '../../context'
 
+/** @lends module:pon-demo-site/client.ui.Fallback */
 const Fallback = React.memo(({ className }) => {
   const stateful = Stateful.memo(() => ({}))
   return stateful(() => (

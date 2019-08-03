@@ -23,7 +23,7 @@
       "path": "conf"
     },
     "name": "pon-demo-site/conf",
-    "order": 27
+    "order": 30
   },
   {
     "description": "Application server",
@@ -36,16 +36,16 @@
       "path": "server"
     },
     "name": "pon-demo-site/server",
-    "order": 53
+    "order": 57
   },
   {
     "description": "Resource for room",
-    "id": "module:pon-demo-site/server.db.resources.RoomResource()",
+    "id": "module:pon-demo-site/server.db.resources.UserResource()",
     "kind": "constructor",
-    "longname": "module:pon-demo-site/server.db.resources.RoomResource",
-    "memberof": "module:pon-demo-site/server.db.resources.RoomResource",
-    "name": "RoomResource",
-    "order": 51
+    "longname": "module:pon-demo-site/server.db.resources.UserResource",
+    "memberof": "module:pon-demo-site/server.db.resources.UserResource",
+    "name": "UserResource",
+    "order": 55
   },
   {
     "id": "external:TheDB",
@@ -57,7 +57,7 @@
       "path": "server/db"
     },
     "name": "TheDB",
-    "order": 45,
+    "order": 49,
     "scope": "global",
     "see": [
       "https://github.com/the-labo/the/tree/master/packages/db#readme"
@@ -73,7 +73,7 @@
       "path": "server/server"
     },
     "name": "TheServer",
-    "order": 57,
+    "order": 61,
     "scope": "global",
     "see": [
       "https://github.com/the-labo/the/tree/master/packages/server#readme"
@@ -83,77 +83,77 @@
     "augments": [
       "TheResource"
     ],
-    "id": "module:pon-demo-site/server.db.resources.RoomResource",
+    "id": "module:pon-demo-site/server.db.resources.UserResource",
     "kind": "class",
-    "longname": "module:pon-demo-site/server.db.resources.RoomResource",
+    "longname": "module:pon-demo-site/server.db.resources.UserResource",
     "memberof": "module:pon-demo-site/server.db.resources",
     "meta": {
-      "filename": "RoomResource.js",
+      "filename": "UserResource.js",
       "lineno": 1,
       "path": "server/db/resources"
     },
-    "name": "RoomResource",
-    "order": 50,
+    "name": "UserResource",
+    "order": 54,
     "scope": "static"
   },
   {
     "description": "Key of app",
-    "id": "GlobalKeys.APP",
+    "id": "module:pon-demo-site/conf.GlobalKeys.APP",
     "kind": "member",
-    "longname": "GlobalKeys.APP",
-    "memberof": "GlobalKeys",
+    "longname": "module:pon-demo-site/conf.GlobalKeys.APP",
+    "memberof": "module:pon-demo-site/conf.GlobalKeys",
     "meta": {
       "filename": "GlobalKeys.js",
-      "lineno": 14,
+      "lineno": 15,
       "path": "conf"
     },
     "name": "APP",
-    "order": 23,
-    "scope": "static"
-  },
-  {
-    "description": "Key of app context",
-    "id": "GlobalKeys.CONTEXT",
-    "kind": "member",
-    "longname": "GlobalKeys.CONTEXT",
-    "memberof": "GlobalKeys",
-    "meta": {
-      "filename": "GlobalKeys.js",
-      "lineno": 16,
-      "path": "conf"
-    },
-    "name": "CONTEXT",
-    "order": 24,
-    "scope": "static"
-  },
-  {
-    "description": "Key of app props",
-    "id": "GlobalKeys.PROPS",
-    "kind": "member",
-    "longname": "GlobalKeys.PROPS",
-    "memberof": "GlobalKeys",
-    "meta": {
-      "filename": "GlobalKeys.js",
-      "lineno": 18,
-      "path": "conf"
-    },
-    "name": "PROPS",
     "order": 25,
     "scope": "static"
   },
   {
-    "description": "Key of app store",
-    "id": "GlobalKeys.STORE",
+    "description": "Key of app context",
+    "id": "module:pon-demo-site/conf.GlobalKeys.CONTEXT",
     "kind": "member",
-    "longname": "GlobalKeys.STORE",
-    "memberof": "GlobalKeys",
+    "longname": "module:pon-demo-site/conf.GlobalKeys.CONTEXT",
+    "memberof": "module:pon-demo-site/conf.GlobalKeys",
     "meta": {
       "filename": "GlobalKeys.js",
-      "lineno": 20,
+      "lineno": 17,
+      "path": "conf"
+    },
+    "name": "CONTEXT",
+    "order": 26,
+    "scope": "static"
+  },
+  {
+    "description": "Key of app props",
+    "id": "module:pon-demo-site/conf.GlobalKeys.PROPS",
+    "kind": "member",
+    "longname": "module:pon-demo-site/conf.GlobalKeys.PROPS",
+    "memberof": "module:pon-demo-site/conf.GlobalKeys",
+    "meta": {
+      "filename": "GlobalKeys.js",
+      "lineno": 19,
+      "path": "conf"
+    },
+    "name": "PROPS",
+    "order": 27,
+    "scope": "static"
+  },
+  {
+    "description": "Key of app store",
+    "id": "module:pon-demo-site/conf.GlobalKeys.STORE",
+    "kind": "member",
+    "longname": "module:pon-demo-site/conf.GlobalKeys.STORE",
+    "memberof": "module:pon-demo-site/conf.GlobalKeys",
+    "meta": {
+      "filename": "GlobalKeys.js",
+      "lineno": 21,
       "path": "conf"
     },
     "name": "STORE",
-    "order": 26,
+    "order": 28,
     "scope": "static"
   },
   {
@@ -168,7 +168,7 @@
       "path": "conf"
     },
     "name": "APP_CONTAINER_ID",
-    "order": 31,
+    "order": 35,
     "scope": "static"
   },
   {
@@ -183,7 +183,7 @@
       "path": "conf"
     },
     "name": "TOAST_DURATION",
-    "order": 32,
+    "order": 36,
     "scope": "static"
   },
   {
@@ -277,6 +277,51 @@
     "scope": "static"
   },
   {
+    "description": "Ref resolved scopes",
+    "id": "module:pon-demo-site/client.store.scopes",
+    "kind": "namespace",
+    "longname": "module:pon-demo-site/client.store.scopes",
+    "memberof": "module:pon-demo-site/client.store",
+    "meta": {
+      "filename": "scopes.js",
+      "lineno": 1,
+      "path": "client/store"
+    },
+    "name": "scopes",
+    "order": 23,
+    "scope": "static"
+  },
+  {
+    "description": "Global keys",
+    "id": "module:pon-demo-site/conf.GlobalKeys",
+    "kind": "namespace",
+    "longname": "module:pon-demo-site/conf.GlobalKeys",
+    "memberof": "module:pon-demo-site/conf",
+    "meta": {
+      "filename": "GlobalKeys.js",
+      "lineno": 1,
+      "path": "conf"
+    },
+    "name": "GlobalKeys",
+    "order": 24,
+    "scope": "static"
+  },
+  {
+    "description": "Site icons",
+    "id": "module:pon-demo-site/conf.Icons",
+    "kind": "namespace",
+    "longname": "module:pon-demo-site/conf.Icons",
+    "memberof": "module:pon-demo-site/conf",
+    "meta": {
+      "filename": "Icons.js",
+      "lineno": 1,
+      "path": "conf"
+    },
+    "name": "Icons",
+    "order": 29,
+    "scope": "static"
+  },
+  {
     "description": "en locales",
     "id": "module:pon-demo-site/conf.locales.en",
     "kind": "namespace",
@@ -288,7 +333,7 @@
       "path": "conf/locales/en"
     },
     "name": "en",
-    "order": 28,
+    "order": 31,
     "scope": "static"
   },
   {
@@ -303,7 +348,22 @@
       "path": "conf/locales"
     },
     "name": "locales",
-    "order": 29,
+    "order": 32,
+    "scope": "static"
+  },
+  {
+    "description": "Site Paths",
+    "id": "module:pon-demo-site/conf.Paths",
+    "kind": "namespace",
+    "longname": "module:pon-demo-site/conf.Paths",
+    "memberof": "module:pon-demo-site/conf",
+    "meta": {
+      "filename": "Paths.js",
+      "lineno": 1,
+      "path": "conf"
+    },
+    "name": "Paths",
+    "order": 33,
     "scope": "static"
   },
   {
@@ -318,7 +378,7 @@
       "path": "conf"
     },
     "name": "SrcSets",
-    "order": 30,
+    "order": 34,
     "scope": "static"
   },
   {
@@ -333,7 +393,7 @@
       "path": "server/constants"
     },
     "name": "DockerContainers",
-    "order": 33,
+    "order": 37,
     "scope": "static"
   },
   {
@@ -348,7 +408,7 @@
       "path": "server/constants"
     },
     "name": "DockerPorts",
-    "order": 34,
+    "order": 38,
     "scope": "static"
   },
   {
@@ -363,7 +423,7 @@
       "path": "server/constants"
     },
     "name": "constants",
-    "order": 35,
+    "order": 39,
     "scope": "static"
   },
   {
@@ -378,7 +438,7 @@
       "path": "server/constants"
     },
     "name": "MysqlConnections",
-    "order": 36,
+    "order": 40,
     "scope": "static"
   },
   {
@@ -393,7 +453,7 @@
       "path": "server/constants"
     },
     "name": "Project",
-    "order": 37,
+    "order": 41,
     "scope": "static"
   },
   {
@@ -408,7 +468,7 @@
       "path": "server/constants"
     },
     "name": "RedisConnections",
-    "order": 38,
+    "order": 42,
     "scope": "static"
   },
   {
@@ -424,7 +484,7 @@
       "path": "server/constants/secret"
     },
     "name": "SecretValues",
-    "order": 39,
+    "order": 43,
     "scope": "static",
     "type": {
       "names": [
@@ -445,7 +505,7 @@
       "path": "server/constants/setting"
     },
     "name": "SettingValues",
-    "order": 40,
+    "order": 44,
     "scope": "static"
   },
   {
@@ -460,7 +520,7 @@
       "path": "server/constants"
     },
     "name": "WebApps",
-    "order": 41,
+    "order": 45,
     "scope": "static"
   },
   {
@@ -475,7 +535,7 @@
       "path": "server/controllers"
     },
     "name": "controllers",
-    "order": 44,
+    "order": 48,
     "scope": "static"
   },
   {
@@ -490,7 +550,7 @@
       "path": "server/db"
     },
     "name": "db",
-    "order": 47,
+    "order": 51,
     "scope": "static"
   },
   {
@@ -505,7 +565,7 @@
       "path": "server/db/resources"
     },
     "name": "resources",
-    "order": 49,
+    "order": 53,
     "scope": "static"
   },
   {
@@ -520,7 +580,7 @@
       "path": "server/mappings"
     },
     "name": "ControllerMapping",
-    "order": 54,
+    "order": 58,
     "scope": "static"
   },
   {
@@ -535,7 +595,7 @@
       "path": "server/mappings"
     },
     "name": "mappings",
-    "order": 55,
+    "order": 59,
     "scope": "static"
   },
   {
@@ -550,7 +610,7 @@
       "path": "server/mappings"
     },
     "name": "ResourceMapping",
-    "order": 56,
+    "order": 60,
     "scope": "static"
   },
   {
@@ -564,7 +624,7 @@
       "path": "server/server"
     },
     "name": "server",
-    "order": 59,
+    "order": 63,
     "scope": "static"
   },
   {
@@ -874,7 +934,7 @@
       "path": "server/controllers"
     },
     "name": "AppCtrl",
-    "order": 43,
+    "order": 47,
     "scope": "static"
   },
   {
@@ -889,7 +949,7 @@
       "path": "server/db"
     },
     "name": "create",
-    "order": 46,
+    "order": 50,
     "params": [
       {
         "type": {
@@ -923,7 +983,7 @@
       "path": "server/db/migration"
     },
     "name": "migration",
-    "order": 48,
+    "order": 52,
     "scope": "static"
   },
   {
@@ -938,7 +998,7 @@
       "path": "server/server"
     },
     "name": "create",
-    "order": 58,
+    "order": 62,
     "returns": [
       {
         "type": {
@@ -956,12 +1016,12 @@
     "longname": "module:pon-demo-site/server.db.resources.RoomResource~TheRoomResourceEntity",
     "memberof": "module:pon-demo-site/server.db.resources.RoomResource",
     "meta": {
-      "filename": "RoomResource.js",
-      "lineno": 37,
+      "filename": "UserResource.js",
+      "lineno": 33,
       "path": "server/db/resources"
     },
     "name": "TheRoomResourceEntity",
-    "order": 52,
+    "order": 56,
     "scope": "inner"
   },
   {
@@ -1045,7 +1105,7 @@
       "path": "server/constants"
     },
     "name": "seated",
-    "order": 42,
+    "order": 46,
     "scope": "inner"
   }
 ]

@@ -16,7 +16,9 @@ const Footer = React.memo(() => {
     <TheFooter className='footer'>
       <TheFooter.CopyRight footer={l('org.ORG_NAME')} />
       <TheFooter.Links className='footerLinks'>
-        <TheFooter.Link to={l('org.ORG_URL')} />
+        <TheFooter.Link to={l('org.ORG_URL')}>
+          {l('org.ORG_NAME')}
+        </TheFooter.Link>
       </TheFooter.Links>
     </TheFooter>
   ))

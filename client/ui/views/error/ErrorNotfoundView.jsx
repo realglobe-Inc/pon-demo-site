@@ -1,5 +1,7 @@
 /**
  * ErrorNotfoundView component
+ * @memberof module:pon-demo-site/client.ui
+ * @function ErrorNotfoundView
  */
 'use strict'
 
@@ -8,6 +10,7 @@ import { TheButton, TheButtonGroup, TheMeta, TheRoute, TheView } from '@the-/ui'
 import styles from './ErrorNotfoundView.pcss'
 import { Stateful } from '../../context'
 
+/** @lends module:pon-demo-site/client.ui.ErrorNotfoundView */
 const ErrorNotfoundView = React.memo(() => {
   const stateful = Stateful.memo(() => ({}))
   return stateful(({ l }) => (

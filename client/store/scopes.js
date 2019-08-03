@@ -1,5 +1,7 @@
 /**
  * Ref resolved scopes
+ * @memberof module:pon-demo-site/client.store
+ * @namespace scopes
  */
 'use strict'
 

@@ -35,6 +35,7 @@ Client module
     * [.mappings](#module_pon-demo-site/client.mappings) : <code>object</code>
     * [.scopes](#module_pon-demo-site/client.scopes) : <code>object</code>
     * [.store](#module_pon-demo-site/client.store) : <code>object</code>
+        * [.scopes](#module_pon-demo-site/client.store.scopes) : <code>object</code>
         * [.create()](#module_pon-demo-site/client.store.create) ⇒ <code>TheStore</code>
 
 <a name="module_pon-demo-site/client.actions"></a>
@@ -135,6 +136,17 @@ Scopes
 Client state store
 
 **Kind**: static namespace of [<code>pon-demo-site/client</code>](#module_pon-demo-site/client)  
+
+* [.store](#module_pon-demo-site/client.store) : <code>object</code>
+    * [.scopes](#module_pon-demo-site/client.store.scopes) : <code>object</code>
+    * [.create()](#module_pon-demo-site/client.store.create) ⇒ <code>TheStore</code>
+
+<a name="module_pon-demo-site/client.store.scopes"></a>
+
+#### store.scopes : <code>object</code>
+Ref resolved scopes
+
+**Kind**: static namespace of [<code>store</code>](#module_pon-demo-site/client.store)  
 <a name="module_pon-demo-site/client.store.create"></a>
 
 #### store.create() ⇒ <code>TheStore</code>
@@ -148,10 +160,60 @@ Project configurations
 
 
 * [pon-demo-site/conf](#module_pon-demo-site/conf)
+    * [.GlobalKeys](#module_pon-demo-site/conf.GlobalKeys) : <code>object</code>
+        * [.APP](#module_pon-demo-site/conf.GlobalKeys.APP)
+        * [.CONTEXT](#module_pon-demo-site/conf.GlobalKeys.CONTEXT)
+        * [.PROPS](#module_pon-demo-site/conf.GlobalKeys.PROPS)
+        * [.STORE](#module_pon-demo-site/conf.GlobalKeys.STORE)
+    * [.Icons](#module_pon-demo-site/conf.Icons) : <code>object</code>
     * [.locales](#module_pon-demo-site/conf.locales) : <code>object</code>
         * [.en](#module_pon-demo-site/conf.locales.en) : <code>object</code>
+    * [.Paths](#module_pon-demo-site/conf.Paths) : <code>object</code>
     * [.SrcSets](#module_pon-demo-site/conf.SrcSets) : <code>object</code>
 
+<a name="module_pon-demo-site/conf.GlobalKeys"></a>
+
+### pon-demo-site/conf.GlobalKeys : <code>object</code>
+Global keys
+
+**Kind**: static namespace of [<code>pon-demo-site/conf</code>](#module_pon-demo-site/conf)  
+
+* [.GlobalKeys](#module_pon-demo-site/conf.GlobalKeys) : <code>object</code>
+    * [.APP](#module_pon-demo-site/conf.GlobalKeys.APP)
+    * [.CONTEXT](#module_pon-demo-site/conf.GlobalKeys.CONTEXT)
+    * [.PROPS](#module_pon-demo-site/conf.GlobalKeys.PROPS)
+    * [.STORE](#module_pon-demo-site/conf.GlobalKeys.STORE)
+
+<a name="module_pon-demo-site/conf.GlobalKeys.APP"></a>
+
+#### GlobalKeys.APP
+Key of app
+
+**Kind**: static property of [<code>GlobalKeys</code>](#module_pon-demo-site/conf.GlobalKeys)  
+<a name="module_pon-demo-site/conf.GlobalKeys.CONTEXT"></a>
+
+#### GlobalKeys.CONTEXT
+Key of app context
+
+**Kind**: static property of [<code>GlobalKeys</code>](#module_pon-demo-site/conf.GlobalKeys)  
+<a name="module_pon-demo-site/conf.GlobalKeys.PROPS"></a>
+
+#### GlobalKeys.PROPS
+Key of app props
+
+**Kind**: static property of [<code>GlobalKeys</code>](#module_pon-demo-site/conf.GlobalKeys)  
+<a name="module_pon-demo-site/conf.GlobalKeys.STORE"></a>
+
+#### GlobalKeys.STORE
+Key of app store
+
+**Kind**: static property of [<code>GlobalKeys</code>](#module_pon-demo-site/conf.GlobalKeys)  
+<a name="module_pon-demo-site/conf.Icons"></a>
+
+### pon-demo-site/conf.Icons : <code>object</code>
+Site icons
+
+**Kind**: static namespace of [<code>pon-demo-site/conf</code>](#module_pon-demo-site/conf)  
 <a name="module_pon-demo-site/conf.locales"></a>
 
 ### pon-demo-site/conf.locales : <code>object</code>
@@ -164,6 +226,12 @@ Message resources
 en locales
 
 **Kind**: static namespace of [<code>locales</code>](#module_pon-demo-site/conf.locales)  
+<a name="module_pon-demo-site/conf.Paths"></a>
+
+### pon-demo-site/conf.Paths : <code>object</code>
+Site Paths
+
+**Kind**: static namespace of [<code>pon-demo-site/conf</code>](#module_pon-demo-site/conf)  
 <a name="module_pon-demo-site/conf.SrcSets"></a>
 
 ### pon-demo-site/conf.SrcSets : <code>object</code>
@@ -190,9 +258,8 @@ Application server
         * [.AppCtrl()](#module_pon-demo-site/server.controllers.AppCtrl)
     * [.db](#module_pon-demo-site/server.db) : <code>object</code>
         * [.resources](#module_pon-demo-site/server.db.resources) : <code>object</code>
-            * [.RoomResource](#module_pon-demo-site/server.db.resources.RoomResource) ⇐ <code>TheResource</code>
-                * [new RoomResource()](#new_module_pon-demo-site/server.db.resources.RoomResource_new)
-                * [~TheRoomResourceEntity](#module_pon-demo-site/server.db.resources.RoomResource..TheRoomResourceEntity)
+            * [.UserResource](#module_pon-demo-site/server.db.resources.UserResource) ⇐ <code>TheResource</code>
+                * [new UserResource()](#new_module_pon-demo-site/server.db.resources.UserResource_new)
         * [.create([config])](#module_pon-demo-site/server.db.create) ⇒ <code>TheDB</code>
         * [.migration()](#module_pon-demo-site/server.db.migration)
     * [.mappings](#module_pon-demo-site/server.mappings) : <code>object</code>
@@ -284,9 +351,8 @@ Database module
 
 * [.db](#module_pon-demo-site/server.db) : <code>object</code>
     * [.resources](#module_pon-demo-site/server.db.resources) : <code>object</code>
-        * [.RoomResource](#module_pon-demo-site/server.db.resources.RoomResource) ⇐ <code>TheResource</code>
-            * [new RoomResource()](#new_module_pon-demo-site/server.db.resources.RoomResource_new)
-            * [~TheRoomResourceEntity](#module_pon-demo-site/server.db.resources.RoomResource..TheRoomResourceEntity)
+        * [.UserResource](#module_pon-demo-site/server.db.resources.UserResource) ⇐ <code>TheResource</code>
+            * [new UserResource()](#new_module_pon-demo-site/server.db.resources.UserResource_new)
     * [.create([config])](#module_pon-demo-site/server.db.create) ⇒ <code>TheDB</code>
     * [.migration()](#module_pon-demo-site/server.db.migration)
 
@@ -298,29 +364,19 @@ Db resource classes
 **Kind**: static namespace of [<code>db</code>](#module_pon-demo-site/server.db)  
 
 * [.resources](#module_pon-demo-site/server.db.resources) : <code>object</code>
-    * [.RoomResource](#module_pon-demo-site/server.db.resources.RoomResource) ⇐ <code>TheResource</code>
-        * [new RoomResource()](#new_module_pon-demo-site/server.db.resources.RoomResource_new)
-        * [~TheRoomResourceEntity](#module_pon-demo-site/server.db.resources.RoomResource..TheRoomResourceEntity)
+    * [.UserResource](#module_pon-demo-site/server.db.resources.UserResource) ⇐ <code>TheResource</code>
+        * [new UserResource()](#new_module_pon-demo-site/server.db.resources.UserResource_new)
 
-<a name="module_pon-demo-site/server.db.resources.RoomResource"></a>
+<a name="module_pon-demo-site/server.db.resources.UserResource"></a>
 
-##### resources.RoomResource ⇐ <code>TheResource</code>
+##### resources.UserResource ⇐ <code>TheResource</code>
 **Kind**: static class of [<code>resources</code>](#module_pon-demo-site/server.db.resources)  
 **Extends**: <code>TheResource</code>  
+<a name="new_module_pon-demo-site/server.db.resources.UserResource_new"></a>
 
-* [.RoomResource](#module_pon-demo-site/server.db.resources.RoomResource) ⇐ <code>TheResource</code>
-    * [new RoomResource()](#new_module_pon-demo-site/server.db.resources.RoomResource_new)
-    * [~TheRoomResourceEntity](#module_pon-demo-site/server.db.resources.RoomResource..TheRoomResourceEntity)
-
-<a name="new_module_pon-demo-site/server.db.resources.RoomResource_new"></a>
-
-###### new RoomResource()
+###### new UserResource()
 Resource for room
 
-<a name="module_pon-demo-site/server.db.resources.RoomResource..TheRoomResourceEntity"></a>
-
-###### RoomResource~TheRoomResourceEntity
-**Kind**: inner class of [<code>RoomResource</code>](#module_pon-demo-site/server.db.resources.RoomResource)  
 <a name="module_pon-demo-site/server.db.create"></a>
 
 #### db.create([config]) ⇒ <code>TheDB</code>

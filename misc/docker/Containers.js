@@ -1,5 +1,6 @@
 /**
  * Docker container configurations
+ * @memberof module:pon-demo-site/misc.docker
  * @namespace Containers
  */
 'use strict'
@@ -13,7 +14,7 @@ const path = require('path')
 const { isMacOS } = require('@the-/check')
 
 module.exports = Object.freeze(
-  /** @lends Containers */
+  /** @lends module:pon-demo-site/misc.docker.Containers */
   {
     mysql: {
       name: DockerContainers.MYSQL_CONTAINER_NAME,

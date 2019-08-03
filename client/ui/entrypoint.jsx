@@ -79,5 +79,8 @@ once('DOMContentLoaded', async () => {
   if (debugMode) {
     const { default: metrics } = await import('./metrics')
     metrics()
+
+    const { default: axe } = await import('@the-/axe')
+    axe.start()
   }
 })
