@@ -10,18 +10,18 @@ import { UI } from '@self/conf'
 import { TheToast, TheToastGroup } from '@the-/ui'
 import { Handle, Stateful } from '../context'
 
-/** @lends module:pon-demo-site/client.Toasts */
-const Toasts = React.memo(() => {
-  const stateful = Stateful.memo((state) => ({
-    error: state['toast.error'],
-    info: state['toast.info'],
-    warn: state['toast.warn'],
-  }))
-  const handle = Handle.memo(({ actions: { toastAct } }) => ({
-    onReset: (queues) => toastAct.reset(queues),
-  }))
+const stateful = Stateful((state) => ({
+  error: state['toast.error'],
+  info: state['toast.info'],
+  warn: state['toast.warn'],
+}))
+const handle = Handle(({ actions: { toastAct } }) => ({
+  onReset: (queues) => toastAct.reset(queues),
+}))
 
-  return stateful(({ error, info, warn }) => (
+/** @lends module:pon-demo-site/client.Toasts */
+const Toasts = React.memo(() =>
+  stateful(({ error, info, warn }) => (
     <TheToastGroup>
       <TheToast.Info
         clearAfter={UI.TOAST_DURATION}
@@ -39,7 +39,7 @@ const Toasts = React.memo(() => {
         onUpdate={handle.onReset}
       />
     </TheToastGroup>
-  ))
-})
+  )),
+)
 
 export default Toasts

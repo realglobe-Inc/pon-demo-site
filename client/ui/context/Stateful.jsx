@@ -5,7 +5,6 @@
  */
 'use strict'
 
-import memoizeOne from 'memoize-one'
 import React from 'react'
 import theAssert from '@the-/assert'
 import context from './context'
@@ -23,5 +22,3 @@ export default function Stateful(reduceState) {
     </context.Entry>
   )
 }
-
-Stateful.memo = memoizeOne((reduceState) => Stateful(reduceState))

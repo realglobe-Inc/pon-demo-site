@@ -31,6 +31,7 @@ const UserResource = ({ define }) => {
        * @class
        */
       class TheRoomResourceEntity extends ResourceEntity {}
+
       return TheRoomResourceEntity
     },
   })

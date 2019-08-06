@@ -33,6 +33,7 @@ function create(config = defaultConfig, options = {}) {
 ==============================`)
     config = { dialect: 'memory' }
   }
+
   return theDB({
     resources: ResourceMapping,
     ...config,

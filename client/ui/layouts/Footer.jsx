@@ -9,10 +9,11 @@ import React from 'react'
 import { TheFooter } from '@the-/ui'
 import { Stateful } from '../context'
 
+const stateful = Stateful(() => ({}))
+
 /** @lends module:pon-demo-site/client.Footer */
-const Footer = React.memo(() => {
-  const stateful = Stateful.memo(() => ({}))
-  return stateful(({ l }) => (
+const Footer = React.memo(() =>
+  stateful(({ l }) => (
     <TheFooter className='footer'>
       <TheFooter.CopyRight footer={l('org.ORG_NAME')} />
       <TheFooter.Links className='footerLinks'>
@@ -21,7 +22,7 @@ const Footer = React.memo(() => {
         </TheFooter.Link>
       </TheFooter.Links>
     </TheFooter>
-  ))
-})
+  )),
+)
 
 export default Footer

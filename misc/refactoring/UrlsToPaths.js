@@ -4,32 +4,34 @@
 process.chdir(`${__dirname}/../..`)
 
 const { TheRefactor } = require('@the-/refactor')
-const {
-  finder,
-  parse,
-  constants: { NodeTypes },
-} = require('@the-/ast')
 
 async function main() {
-  await new TheRefactor()
-    .process([
+  await new TheRefactor().process(
+    [
       '+(assets|server|client|conf)/**/*.js',
       '+(assets|server|client|conf)/**/*.jsx',
       '+(assets|server|client|conf)/**/.*.bud',
       'misc/lint/*.json',
       '*.js',
-    ],'Urls', 'Paths')
+    ],
+    'Urls',
+    'Paths',
+  )
 
   const Paths = require('../../conf/Paths')
+
   const keys = Object.keys(Paths).map((key) => key.replace(/_PATH$/, '_URL'))
-  for(const key of keys){
-    await new TheRefactor()
-      .process([
+  for (const key of keys) {
+    await new TheRefactor().process(
+      [
         '+(assets|server|client|conf)/**/*.js',
         '+(assets|server|client|conf)/**/*.jsx',
         '+(assets|server|client|conf)/**/.*.bud',
         '*.js',
-      ],key, key.replace(/_URL$/, '_PATH'))
+      ],
+      key,
+      key.replace(/_URL$/, '_PATH'),
+    )
   }
 }
 

@@ -37,9 +37,6 @@ module.exports = pon(
     $cwd: cwd,
     $dev: true,
     $doc: { ...doc, ...PondocDev },
-    // -----------------------------------
-    // From Ponfile.js
-    // -----------------------------------
     ...tasks,
     'analyze:ui': ['ui:*/analyze'],
     'clean:cache': del(['tmp/cache/**/*.*', 'node_modules/.cache/**/*.*']),
@@ -73,8 +70,8 @@ module.exports = pon(
       Containers.mysql.name,
       Containers.mysql.options,
     ),
-    'eslint:check': eslint(__dirname, { ext: '.js,.bud,.jsx' }),
-    'eslint:fix': eslint(__dirname, { ext: '.js,.bud,.jsx', fix: true }),
+    'eslint:check': eslint(__dirname, { ext: '.js,.bud,.jsx,.json' }),
+    'eslint:fix': eslint(__dirname, { ext: '.js,.bud,.jsx,.json', fix: true }),
     'format:client': theCode(
       [
         'client/ui/**/*.pcss',
@@ -111,7 +108,7 @@ module.exports = pon(
       { sort: true },
     ),
     /** Format server files */
-    /** Format server files */
+    'format:misc': theCode(['misc/**/*.js', 'server/**/.*.bud'], {}),
     'format:server': theCode(['server/**/*.js', 'server/**/.*.bud'], {}),
     'git:changelog': [changelog(), git('add', 'CHANGELOG.md')],
     'icon:gen': [
@@ -162,20 +159,21 @@ module.exports = pon(
     docker: ['docker:redis/run', 'docker:mysql/run', 'docker:nginx/run'],
     /** Shortcut for `debug:server` task */
     ds: 'debug:server',
+    eslint: ['eslint:fix', 'eslint:check'],
     /** Shortcut for `format` task */
     f: 'format',
     /** Format source codes */
-    format: ['format:conf', 'format:json', 'format:client', 'format:server'],
+    format: [
+      'format:conf',
+      'format:json',
+      'format:client',
+      'format:server',
+      'format:misc',
+    ],
     /** Shortcut for `lint` task */
     l: 'lint',
     /** Apply lint */
-    lint: [
-      'lint:loc',
-      'lint:rules',
-      'eslint:fix',
-      'eslint:check',
-      'lint:spell',
-    ],
+    lint: ['lint:loc', 'lint:rules', 'eslint', 'lint:spell'],
     /** Shortcut for `open` task */
     o: 'open',
     /** Open project */

@@ -34,6 +34,7 @@ function AppAct(scope) {
         show(href)
         return true
       }
+
       return false
     },
   }

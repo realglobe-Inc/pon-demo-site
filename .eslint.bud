@@ -7,6 +7,9 @@ const { eslintignore, eslintrc } = require('@the-/templates')
 
 module.exports = [
   eslintrc({
+    additional: {
+      plugins: ['json-light'],
+    },
     jsdoc: true,
     react: true,
   }),

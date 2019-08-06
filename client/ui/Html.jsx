@@ -24,7 +24,7 @@ const Html = React.memo(({ app, renderingContext }) => {
     workerScopes,
   }
   return (
-    <TheHtml>
+    <TheHtml lang={lang}>
       <TheHead
         cdn={cdnUrl}
         color={Styles.DOMINANT_COLOR}
