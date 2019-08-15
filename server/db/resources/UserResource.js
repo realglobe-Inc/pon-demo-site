@@ -1,9 +1,3 @@
-/**
- * Resource for room
- * @memberof module:pon-demo-site/server.db.resources
- * @class UserResource
- * @augments TheResource
- */
 'use strict'
 
 const {
@@ -11,7 +5,11 @@ const {
 } = require('@the-/resource')
 const atPolicy = require('./concerns/policies/atPolicy')
 
-/** @lends module:pon-demo-site/server.db.resources.UserResource */
+/**
+ * Resource for room
+ * @memberof module:pon-demo-site/server.db.resources
+ * @function UserResource
+ */
 const UserResource = ({ define }) => {
   const User = define({
     createdAt: { ...atPolicy.createdAt },

@@ -7,7 +7,7 @@
 
 const { isProduction } = require('@the-/check')
 const theHash = require('@the-/hash')
-const pkg = require('../package')
+const pkg = require('../package.json')
 
 const prodAssetPath = `/v${pkg.version}`
 

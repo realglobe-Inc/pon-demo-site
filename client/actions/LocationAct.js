@@ -1,22 +1,24 @@
-/**
- * Act for 'location'
- * @memberof module:pon-demo-site/client.scenes
- * @function LocationAct
- * @returns {object} Act instance
- */
 'use strict'
 
 import { queryWithSearch } from '@the-/util-client'
 import { get } from '@the-/window'
 
-/** @lends module:pon-demo-site/client.scenes.LocationAct */
-function LocationAct(scope) {
+/**
+ * Act for 'location'
+ * @memberof module:pon-demo-site/client.scenes
+ * @function LocationAct
+ * @param {Object} scope - Scope of act
+ * @param {Object} ctx - Actions context
+ * @returns {Object} Act instance
+ */
+function LocationAct(scope, ctx) {
   /**
    * @memberof module:pon-demo-site/client.scenes.LocationAct
    * @inner
    * @namespace locationAct
    */
   const act = {
+    __proto__: { ctx },
     bindHistory(history) {
       history.listen((location) => act.handleLocationChange(location))
       act.setLocation(history.location)

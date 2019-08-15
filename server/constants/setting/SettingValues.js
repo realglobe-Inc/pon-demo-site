@@ -1,9 +1,3 @@
-/**
- * setting/SettingValues
- * @memberof module:pon-demo-site/server.constants
- * @protected
- * @namespace SettingValues
- */
 'use strict'
 
 const { isProduction } = require('@the-/check')
@@ -14,7 +8,12 @@ const Project = require('../Project')
 const setting = theSetting(Project.SETTING_FILE)
 
 module.exports =
-  /** @lends module:pon-demo-site/server.constants.SettingValues */
+  /**
+   * setting/SettingValues
+   * @memberof module:pon-demo-site/server.constants
+   * @protected
+   * @namespace SettingValues
+   */
   {
     ...setting.get(),
   }

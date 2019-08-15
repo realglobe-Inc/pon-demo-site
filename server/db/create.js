@@ -2,8 +2,8 @@
  * Create an db instance
  * @memberof module:pon-demo-site/server.db
  * @function create
- * @param {object} [config]
- * @returns {TheDB}
+ * @param {Object} [config]
+ * @returns {Object}
  */
 'use strict'
 
@@ -22,8 +22,8 @@ const defaultConfig = {
   username: MysqlConnections.Default.USERNAME,
 }
 
-/** @lends module:pon-demo-site/server.db.create */
-function create(config = defaultConfig, options = {}) {
+/** @lends module:pon-demo-site/server.db */
+function create(config, options = {}) {
   if (process.env.CI) {
     console.warn(`
 ==============================
@@ -36,7 +36,7 @@ function create(config = defaultConfig, options = {}) {
 
   return theDB({
     resources: ResourceMapping,
-    ...config,
+    ...(config || defaultConfig),
   }).unref()
 }
 

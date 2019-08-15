@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "noEmit": true,
+    "checkJs": true,
+    "target": "es2018",
+    "allowJs": true,
+    "jsx": "react",
+    "lib": [
+      "esnext",
+      "webworker"
+    ]
+  },
+  "exclude": [
+    "client/shim",
+    "client/ui",
+    "**/tmp",
+    "**/public",
+    "**/var",
+    "**/shim",
+    "**/node_modules",
+    "**/test"
+  ]
+}

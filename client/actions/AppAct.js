@@ -1,16 +1,17 @@
-/**
- * Act for "app"
- * @memberof module:pon-demo-site/client.actions
- * @function AppAct
- * @returns {object} Act instance
- */
 'use strict'
 
 import { Paths } from '@self/conf'
 import { show } from '@the-/window'
 
-/** @lends module:pon-demo-site/client.actions.AppAct */
-function AppAct(scope) {
+/**
+ * Act for "app"
+ * @memberof module:pon-demo-site/client.actions
+ * @function AppAct
+ * @param {Object} scope - Store scope
+ * @param {Object} ctx - Context of action
+ * @returns {Object} Act instance
+ */
+function AppAct(scope, ctx) {
   const RejectionHandleURLs = {
     ForbiddenError: Paths.ERROR_FORBIDDEN_PATH,
     NotFoundError: Paths.ERROR_NOTFOUND_PATH,
@@ -22,6 +23,7 @@ function AppAct(scope) {
    * @namespace appAct
    */
   const act = {
+    __proto__: { ctx },
     prepare() {
       scope.set({ ready: true })
     },
@@ -29,7 +31,11 @@ function AppAct(scope) {
       scope.set({ locale })
     },
     async handleRejectionReason(reason) {
-      const href = RejectionHandleURLs[(reason?.name)]
+      if (!reason) {
+        return false
+      }
+
+      const href = RejectionHandleURLs[reason.name]
       if (href) {
         show(href)
         return true

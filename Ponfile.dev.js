@@ -25,9 +25,9 @@ const theSupport = require('@the-/support/pon')
 const locales = require('./conf/locales')
 const Containers = require('./misc/docker/Containers')
 const Drawings = require('./misc/icon/Drawings')
-const Rules = require('./misc/lint/Rules')
-const PondocDev = require('./misc/project/Pondoc.dev')
-const Words = require('./misc/spell/Words')
+const Rules = require('./misc/lint/Rules.json')
+const PondocDev = require('./misc/project/Pondoc.dev.json')
+const Words = require('./misc/spell/Words.json')
 const { cwd, doc, tasks } = require('./Ponfile')
 const { DockerPorts, WebApps } = require('./server/constants')
 
@@ -125,6 +125,7 @@ module.exports = pon(
         words: Words,
       },
     ),
+    'lint:types': npx('tsc'),
     'open:app': open(`http://localhost:${DockerPorts.NGINX_CONTAINER_PORT}`),
     /** Open homepage field in package.json */
     'open:repo': npm('docs'),
@@ -173,7 +174,7 @@ module.exports = pon(
     /** Shortcut for `lint` task */
     l: 'lint',
     /** Apply lint */
-    lint: ['lint:loc', 'lint:rules', 'eslint', 'lint:spell'],
+    lint: ['lint:loc', 'lint:rules', 'eslint', 'lint:spell', 'lint:types'],
     /** Shortcut for `open` task */
     o: 'open',
     /** Open project */

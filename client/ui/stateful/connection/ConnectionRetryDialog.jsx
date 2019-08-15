@@ -1,8 +1,3 @@
-/**
- * ConnectionRetryDialog component
- * @memberof module:pon-demo-site/client.ui
- * @function ConnectionRetryDialog
- */
 'use strict'
 
 import React from 'react'
@@ -22,7 +17,11 @@ const handle = Handle(({ actions: { connectionRetryAct: retryAct }, l }) => ({
   },
 }))
 
-/** @lends module:pon-demo-site/client.ui.ConnectionRetryDialog */
+/**
+ * ConnectionRetryDialog component
+ * @memberof module:pon-demo-site/client.ui
+ * @function ConnectionRetryDialog
+ */
 const ConnectionRetryDialog = React(() =>
   stateful(({ active, busy, l }) => {
     if (!active) {

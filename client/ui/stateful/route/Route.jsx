@@ -1,8 +1,3 @@
-/**
- * Route component
- * @memberof module:pon-demo-site/client.ui
- * @function Route
- */
 'use strict'
 
 import React, { Suspense } from 'react'
@@ -13,7 +8,11 @@ import { Stateful } from '../../context'
 
 const stateful = Stateful(() => ({}))
 
-/** @lends module:pon-demo-site/client.ui.Route */
+/**
+ * Route component
+ * @memberof module:pon-demo-site/client.ui
+ * @function Route
+ */
 const Route = React.memo((props) => {
   if (!isBrowser()) {
     // TODO remove ( ReactDOMServer does not yet support Suspense. )

@@ -1,16 +1,19 @@
-/**
- * Act for "home"
- * @memberof module:pon-demo-site/client.actions
- * @function HomeAct
- * @returns {object} Act instance
- */
 'use strict'
 
 import { busyAccessFor } from '@the-/facade-scope'
 
-/** @lends module:pon-demo-site/client.actions.HomeAct */
-function HomeAct(scope, { controllers }) {
-  const { appCtrl } = controllers
+/**
+ * Act for "home"
+ * @memberof module:pon-demo-site/client.actions
+ * @function HomeAct
+ * @param {Object} scope - Store scope
+ * @param {Object} ctx - Context of action
+ * @returns {Object} Act instance
+ */
+function HomeAct(scope, ctx) {
+  const {
+    controllers: { appCtrl },
+  } = ctx
 
   const busy = busyAccessFor(scope)
   /**

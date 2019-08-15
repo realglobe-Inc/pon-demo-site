@@ -1,8 +1,3 @@
-/**
- * @class {{name}}
- * @memberof {{memberof}}
- * @augments TheResource
- */
 'use strict'
 
 const {
@@ -10,7 +5,11 @@ const {
   DataTypes: { STRING, ENTITY },
 } = require('the-resource-base')
 
-/** @lends {{memberof}}.{{name}} */
+/**
+ * @class {{name}}
+ * @memberof {{memberof}}
+ * @augments TheResource
+ */
 function {{name}} ({ define }) {
   const {{shortName}} = define({
     name: {

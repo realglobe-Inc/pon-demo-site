@@ -22,13 +22,13 @@ Client module
 
 * [pon-demo-site/client](#module_pon-demo-site/client)
     * [.actions](#module_pon-demo-site/client.actions) : <code>object</code>
-        * [.AppAct()](#module_pon-demo-site/client.actions.AppAct) ⇒ <code>object</code>
+        * [.AppAct(scope, ctx)](#module_pon-demo-site/client.actions.AppAct) ⇒ <code>Object</code>
             * [~appAct](#module_pon-demo-site/client.actions.AppAct..appAct) : <code>object</code>
-        * [.ConnectionRetryAct()](#module_pon-demo-site/client.actions.ConnectionRetryAct) ⇒ <code>object</code>
+        * [.ConnectionRetryAct(scope, ctx)](#module_pon-demo-site/client.actions.ConnectionRetryAct) ⇒ <code>Object</code>
             * [~connectionRetryAct](#module_pon-demo-site/client.actions.ConnectionRetryAct..connectionRetryAct) : <code>object</code>
-        * [.HomeAct()](#module_pon-demo-site/client.actions.HomeAct) ⇒ <code>object</code>
+        * [.HomeAct(scope, ctx)](#module_pon-demo-site/client.actions.HomeAct) ⇒ <code>Object</code>
             * [~homeAct](#module_pon-demo-site/client.actions.HomeAct..homeAct) : <code>object</code>
-        * [.ToastAct()](#module_pon-demo-site/client.actions.ToastAct) ⇒ <code>object</code>
+        * [.ToastAct(scope, ctx)](#module_pon-demo-site/client.actions.ToastAct) ⇒ <code>Object</code>
             * [~toastAct](#module_pon-demo-site/client.actions.ToastAct..toastAct) : <code>object</code>
     * [.client](#module_pon-demo-site/client.client) : <code>object</code>
         * [.create(namespace, [config])](#module_pon-demo-site/client.client.create) ⇒ <code>TheClient</code>
@@ -46,55 +46,79 @@ Action modules
 **Kind**: static namespace of [<code>pon-demo-site/client</code>](#module_pon-demo-site/client)  
 
 * [.actions](#module_pon-demo-site/client.actions) : <code>object</code>
-    * [.AppAct()](#module_pon-demo-site/client.actions.AppAct) ⇒ <code>object</code>
+    * [.AppAct(scope, ctx)](#module_pon-demo-site/client.actions.AppAct) ⇒ <code>Object</code>
         * [~appAct](#module_pon-demo-site/client.actions.AppAct..appAct) : <code>object</code>
-    * [.ConnectionRetryAct()](#module_pon-demo-site/client.actions.ConnectionRetryAct) ⇒ <code>object</code>
+    * [.ConnectionRetryAct(scope, ctx)](#module_pon-demo-site/client.actions.ConnectionRetryAct) ⇒ <code>Object</code>
         * [~connectionRetryAct](#module_pon-demo-site/client.actions.ConnectionRetryAct..connectionRetryAct) : <code>object</code>
-    * [.HomeAct()](#module_pon-demo-site/client.actions.HomeAct) ⇒ <code>object</code>
+    * [.HomeAct(scope, ctx)](#module_pon-demo-site/client.actions.HomeAct) ⇒ <code>Object</code>
         * [~homeAct](#module_pon-demo-site/client.actions.HomeAct..homeAct) : <code>object</code>
-    * [.ToastAct()](#module_pon-demo-site/client.actions.ToastAct) ⇒ <code>object</code>
+    * [.ToastAct(scope, ctx)](#module_pon-demo-site/client.actions.ToastAct) ⇒ <code>Object</code>
         * [~toastAct](#module_pon-demo-site/client.actions.ToastAct..toastAct) : <code>object</code>
 
 <a name="module_pon-demo-site/client.actions.AppAct"></a>
 
-#### actions.AppAct() ⇒ <code>object</code>
+#### actions.AppAct(scope, ctx) ⇒ <code>Object</code>
 Act for "app"
 
 **Kind**: static method of [<code>actions</code>](#module_pon-demo-site/client.actions)  
-**Returns**: <code>object</code> - Act instance  
+**Returns**: <code>Object</code> - Act instance  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| scope | <code>Object</code> | Store scope |
+| ctx | <code>Object</code> | Context of action |
+
 <a name="module_pon-demo-site/client.actions.AppAct..appAct"></a>
 
 ##### AppAct~appAct : <code>object</code>
 **Kind**: inner namespace of [<code>AppAct</code>](#module_pon-demo-site/client.actions.AppAct)  
 <a name="module_pon-demo-site/client.actions.ConnectionRetryAct"></a>
 
-#### actions.ConnectionRetryAct() ⇒ <code>object</code>
+#### actions.ConnectionRetryAct(scope, ctx) ⇒ <code>Object</code>
 Act for "connection.retry"
 
 **Kind**: static method of [<code>actions</code>](#module_pon-demo-site/client.actions)  
-**Returns**: <code>object</code> - Act instance  
+**Returns**: <code>Object</code> - Act instance  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| scope | <code>Object</code> | Store scope |
+| ctx | <code>Object</code> | Context of action |
+
 <a name="module_pon-demo-site/client.actions.ConnectionRetryAct..connectionRetryAct"></a>
 
 ##### ConnectionRetryAct~connectionRetryAct : <code>object</code>
 **Kind**: inner namespace of [<code>ConnectionRetryAct</code>](#module_pon-demo-site/client.actions.ConnectionRetryAct)  
 <a name="module_pon-demo-site/client.actions.HomeAct"></a>
 
-#### actions.HomeAct() ⇒ <code>object</code>
+#### actions.HomeAct(scope, ctx) ⇒ <code>Object</code>
 Act for "home"
 
 **Kind**: static method of [<code>actions</code>](#module_pon-demo-site/client.actions)  
-**Returns**: <code>object</code> - Act instance  
+**Returns**: <code>Object</code> - Act instance  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| scope | <code>Object</code> | Store scope |
+| ctx | <code>Object</code> | Context of action |
+
 <a name="module_pon-demo-site/client.actions.HomeAct..homeAct"></a>
 
 ##### HomeAct~homeAct : <code>object</code>
 **Kind**: inner namespace of [<code>HomeAct</code>](#module_pon-demo-site/client.actions.HomeAct)  
 <a name="module_pon-demo-site/client.actions.ToastAct"></a>
 
-#### actions.ToastAct() ⇒ <code>object</code>
+#### actions.ToastAct(scope, ctx) ⇒ <code>Object</code>
 Act for 'toast'
 
 **Kind**: static method of [<code>actions</code>](#module_pon-demo-site/client.actions)  
-**Returns**: <code>object</code> - Act instance  
+**Returns**: <code>Object</code> - Act instance  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| scope | <code>Object</code> | Scope of act |
+| ctx | <code>Object</code> | Actions context |
+
 <a name="module_pon-demo-site/client.actions.ToastAct..toastAct"></a>
 
 ##### ToastAct~toastAct : <code>object</code>
@@ -258,9 +282,8 @@ Application server
         * [.AppCtrl()](#module_pon-demo-site/server.controllers.AppCtrl)
     * [.db](#module_pon-demo-site/server.db) : <code>object</code>
         * [.resources](#module_pon-demo-site/server.db.resources) : <code>object</code>
-            * [.UserResource](#module_pon-demo-site/server.db.resources.UserResource) ⇐ <code>TheResource</code>
-                * [new UserResource()](#new_module_pon-demo-site/server.db.resources.UserResource_new)
-        * [.create([config])](#module_pon-demo-site/server.db.create) ⇒ <code>TheDB</code>
+            * [.UserResource()](#module_pon-demo-site/server.db.resources.UserResource)
+        * [.create([config])](#module_pon-demo-site/server.db.create) ⇒ <code>Object</code>
         * [.migration()](#module_pon-demo-site/server.db.migration)
     * [.mappings](#module_pon-demo-site/server.mappings) : <code>object</code>
     * [.server](#module_pon-demo-site/server.server) : <code>object</code>
@@ -351,9 +374,8 @@ Database module
 
 * [.db](#module_pon-demo-site/server.db) : <code>object</code>
     * [.resources](#module_pon-demo-site/server.db.resources) : <code>object</code>
-        * [.UserResource](#module_pon-demo-site/server.db.resources.UserResource) ⇐ <code>TheResource</code>
-            * [new UserResource()](#new_module_pon-demo-site/server.db.resources.UserResource_new)
-    * [.create([config])](#module_pon-demo-site/server.db.create) ⇒ <code>TheDB</code>
+        * [.UserResource()](#module_pon-demo-site/server.db.resources.UserResource)
+    * [.create([config])](#module_pon-demo-site/server.db.create) ⇒ <code>Object</code>
     * [.migration()](#module_pon-demo-site/server.db.migration)
 
 <a name="module_pon-demo-site/server.db.resources"></a>
@@ -362,31 +384,22 @@ Database module
 Db resource classes
 
 **Kind**: static namespace of [<code>db</code>](#module_pon-demo-site/server.db)  
-
-* [.resources](#module_pon-demo-site/server.db.resources) : <code>object</code>
-    * [.UserResource](#module_pon-demo-site/server.db.resources.UserResource) ⇐ <code>TheResource</code>
-        * [new UserResource()](#new_module_pon-demo-site/server.db.resources.UserResource_new)
-
 <a name="module_pon-demo-site/server.db.resources.UserResource"></a>
 
-##### resources.UserResource ⇐ <code>TheResource</code>
-**Kind**: static class of [<code>resources</code>](#module_pon-demo-site/server.db.resources)  
-**Extends**: <code>TheResource</code>  
-<a name="new_module_pon-demo-site/server.db.resources.UserResource_new"></a>
-
-###### new UserResource()
+##### resources.UserResource()
 Resource for room
 
+**Kind**: static method of [<code>resources</code>](#module_pon-demo-site/server.db.resources)  
 <a name="module_pon-demo-site/server.db.create"></a>
 
-#### db.create([config]) ⇒ <code>TheDB</code>
+#### db.create([config]) ⇒ <code>Object</code>
 Create an db instance
 
 **Kind**: static method of [<code>db</code>](#module_pon-demo-site/server.db)  
 
 | Param | Type |
 | --- | --- |
-| [config] | <code>object</code> | 
+| [config] | <code>Object</code> | 
 
 <a name="module_pon-demo-site/server.db.migration"></a>
 

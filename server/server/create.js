@@ -1,9 +1,3 @@
-/**
- * Create an server instance
- * @memberof module:pon-demo-site/server.server
- * @function create
- * @returns {TheServer}
- */
 'use strict'
 
 const { Html } = require('@self/client/shim')
@@ -14,7 +8,7 @@ const { withDebug } = require('@the-/util-ctrl')
 const { RedisConnections, WebApps } = require('../constants')
 const mappings = require('../mappings')
 const conf = require('../../conf')
-const pkg = require('../../package')
+const pkg = require('../../package.json')
 const debug = require('debug')('app:server')
 
 const { ControllerMapping } = mappings
@@ -24,7 +18,12 @@ const defaultRedisConfig = {
   port: RedisConnections.Default.PORT,
 }
 
-/** @lends module:pon-demo-site/server.server.create */
+/**
+ * Create an server instance
+ * @memberof module:pon-demo-site/server.server
+ * @function create
+ * @returns {TheServer}
+ */
 function create(config) {
   const {
     db,

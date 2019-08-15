@@ -1,8 +1,3 @@
-/**
- * ErrorNotfoundView component
- * @memberof module:pon-demo-site/client.ui
- * @function ErrorNotfoundView
- */
 'use strict'
 
 import React from 'react'
@@ -12,7 +7,11 @@ import { Stateful } from '../../context'
 
 const stateful = Stateful(() => ({}))
 
-/** @lends module:pon-demo-site/client.ui.ErrorNotfoundView */
+/**
+ * ErrorNotfoundView component
+ * @memberof module:pon-demo-site/client.ui
+ * @function ErrorNotfoundView
+ */
 const ErrorNotfoundView = React.memo(() =>
   stateful(({ l }) => (
     <TheMeta title={l('titles.ERROR_NOTFOUND_TITLE')}>

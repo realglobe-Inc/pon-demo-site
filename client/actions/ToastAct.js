@@ -1,22 +1,24 @@
+'use strict'
+
 /**
  * Act for 'toast'
  * @memberof module:pon-demo-site/client.actions
  * @function ToastAct
- * @returns {object} Act instance
+ * @param {Object} scope - Scope of act
+ * @param {Object} ctx - Actions context
+ * @returns {Object} Act instance
  */
-'use strict'
-
-/** @lends module:pon-demo-site/client.actions.ToastAct */
-function ToastAct(scope) {
+function ToastAct(scope, ctx) {
   /**
    * @memberof module:pon-demo-site/client.actions.ToastAct
    * @inner
    * @namespace toastAct
    */
   const act = {
+    __proto__: { ctx },
     /**
      * Rest toasts
-     * @param {object<string, Array<string>>} queues - Toast queue
+     * @param {Object<string, Array<string>>} queues - Toast queue
      */
     reset(queues) {
       for (const [name, queue] of Object.entries(queues)) {

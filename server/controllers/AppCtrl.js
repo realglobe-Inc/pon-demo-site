@@ -1,11 +1,10 @@
+'use strict'
+
 /**
  * Application controller
  * @memberof module:pon-demo-site/server.controllers
  * @function AppCtrl
  */
-'use strict'
-
-/** @lends module:pon-demo-site/server.controllers.AppCtrl */
 function AppCtrl({ session }) {
   const appCtrl = {
     async countUp() {

@@ -36,16 +36,7 @@
       "path": "server"
     },
     "name": "pon-demo-site/server",
-    "order": 57
-  },
-  {
-    "description": "Resource for room",
-    "id": "module:pon-demo-site/server.db.resources.UserResource()",
-    "kind": "constructor",
-    "longname": "module:pon-demo-site/server.db.resources.UserResource",
-    "memberof": "module:pon-demo-site/server.db.resources.UserResource",
-    "name": "UserResource",
-    "order": 55
+    "order": 56
   },
   {
     "id": "external:TheDB",
@@ -73,28 +64,11 @@
       "path": "server/server"
     },
     "name": "TheServer",
-    "order": 61,
+    "order": 60,
     "scope": "global",
     "see": [
       "https://github.com/the-labo/the/tree/master/packages/server#readme"
     ]
-  },
-  {
-    "augments": [
-      "TheResource"
-    ],
-    "id": "module:pon-demo-site/server.db.resources.UserResource",
-    "kind": "class",
-    "longname": "module:pon-demo-site/server.db.resources.UserResource",
-    "memberof": "module:pon-demo-site/server.db.resources",
-    "meta": {
-      "filename": "UserResource.js",
-      "lineno": 1,
-      "path": "server/db/resources"
-    },
-    "name": "UserResource",
-    "order": 54,
-    "scope": "static"
   },
   {
     "description": "Key of app",
@@ -209,7 +183,7 @@
     "memberof": "module:pon-demo-site/client",
     "meta": {
       "filename": "index.js",
-      "lineno": 1,
+      "lineno": 5,
       "path": "client/client"
     },
     "name": "client",
@@ -254,7 +228,7 @@
     "memberof": "module:pon-demo-site/client",
     "meta": {
       "filename": "index.js",
-      "lineno": 2,
+      "lineno": 19,
       "path": "client/scopes"
     },
     "name": "scopes",
@@ -269,7 +243,7 @@
     "memberof": "module:pon-demo-site/client",
     "meta": {
       "filename": "index.js",
-      "lineno": 1,
+      "lineno": 5,
       "path": "client/store"
     },
     "name": "store",
@@ -580,7 +554,7 @@
       "path": "server/mappings"
     },
     "name": "ControllerMapping",
-    "order": 58,
+    "order": 57,
     "scope": "static"
   },
   {
@@ -595,7 +569,7 @@
       "path": "server/mappings"
     },
     "name": "mappings",
-    "order": 59,
+    "order": 58,
     "scope": "static"
   },
   {
@@ -610,7 +584,7 @@
       "path": "server/mappings"
     },
     "name": "ResourceMapping",
-    "order": 60,
+    "order": 59,
     "scope": "static"
   },
   {
@@ -624,7 +598,7 @@
       "path": "server/server"
     },
     "name": "server",
-    "order": 63,
+    "order": 62,
     "scope": "static"
   },
   {
@@ -635,16 +609,36 @@
     "memberof": "module:pon-demo-site/client.actions",
     "meta": {
       "filename": "AppAct.js",
-      "lineno": 1,
+      "lineno": 6,
       "path": "client/actions"
     },
     "name": "AppAct",
     "order": 0,
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Store scope",
+        "name": "scope"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Context of action",
+        "name": "ctx"
+      }
+    ],
     "returns": [
       {
         "type": {
           "names": [
-            "object"
+            "Object"
           ]
         },
         "description": "Act instance"
@@ -660,16 +654,36 @@
     "memberof": "module:pon-demo-site/client.actions",
     "meta": {
       "filename": "ConnectionRetryAct.js",
-      "lineno": 1,
+      "lineno": 7,
       "path": "client/actions"
     },
     "name": "ConnectionRetryAct",
     "order": 2,
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Store scope",
+        "name": "scope"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Context of action",
+        "name": "ctx"
+      }
+    ],
     "returns": [
       {
         "type": {
           "names": [
-            "object"
+            "Object"
           ]
         },
         "description": "Act instance"
@@ -685,16 +699,36 @@
     "memberof": "module:pon-demo-site/client.actions",
     "meta": {
       "filename": "HomeAct.js",
-      "lineno": 1,
+      "lineno": 5,
       "path": "client/actions"
     },
     "name": "HomeAct",
     "order": 4,
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Store scope",
+        "name": "scope"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Context of action",
+        "name": "ctx"
+      }
+    ],
     "returns": [
       {
         "type": {
           "names": [
-            "object"
+            "Object"
           ]
         },
         "description": "Act instance"
@@ -710,16 +744,36 @@
     "memberof": "module:pon-demo-site/client.scenes",
     "meta": {
       "filename": "LocationAct.js",
-      "lineno": 1,
+      "lineno": 6,
       "path": "client/actions"
     },
     "name": "LocationAct",
     "order": 7,
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Scope of act",
+        "name": "scope"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Actions context",
+        "name": "ctx"
+      }
+    ],
     "returns": [
       {
         "type": {
           "names": [
-            "object"
+            "Object"
           ]
         },
         "description": "Act instance"
@@ -735,16 +789,36 @@
     "memberof": "module:pon-demo-site/client.actions",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 1,
+      "lineno": 3,
       "path": "client/actions"
     },
     "name": "ToastAct",
     "order": 9,
+    "params": [
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Scope of act",
+        "name": "scope"
+      },
+      {
+        "type": {
+          "names": [
+            "Object"
+          ]
+        },
+        "description": "Actions context",
+        "name": "ctx"
+      }
+    ],
     "returns": [
       {
         "type": {
           "names": [
-            "object"
+            "Object"
           ]
         },
         "description": "Act instance"
@@ -754,13 +828,13 @@
   },
   {
     "description": "Rest toasts",
-    "id": "module:pon-demo-site/client.actions.ToastAct~act.reset",
+    "id": "ToastAct~act.reset",
     "kind": "function",
-    "longname": "module:pon-demo-site/client.actions.ToastAct~act.reset",
-    "memberof": "module:pon-demo-site/client.actions.ToastAct~act",
+    "longname": "ToastAct~act.reset",
+    "memberof": "ToastAct~act",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 21,
+      "lineno": 23,
       "path": "client/actions"
     },
     "name": "reset",
@@ -780,13 +854,13 @@
   },
   {
     "description": "Show error toast",
-    "id": "module:pon-demo-site/client.actions.ToastAct~act.showError",
+    "id": "ToastAct~act.showError",
     "kind": "function",
-    "longname": "module:pon-demo-site/client.actions.ToastAct~act.showError",
-    "memberof": "module:pon-demo-site/client.actions.ToastAct~act",
+    "longname": "ToastAct~act.showError",
+    "memberof": "ToastAct~act",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 30,
+      "lineno": 32,
       "path": "client/actions"
     },
     "name": "showError",
@@ -805,13 +879,13 @@
   },
   {
     "description": "Show info toast",
-    "id": "module:pon-demo-site/client.actions.ToastAct~act.showInfo",
+    "id": "ToastAct~act.showInfo",
     "kind": "function",
-    "longname": "module:pon-demo-site/client.actions.ToastAct~act.showInfo",
-    "memberof": "module:pon-demo-site/client.actions.ToastAct~act",
+    "longname": "ToastAct~act.showInfo",
+    "memberof": "ToastAct~act",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 37,
+      "lineno": 39,
       "path": "client/actions"
     },
     "name": "showInfo",
@@ -830,13 +904,13 @@
   },
   {
     "description": "Show warn toast",
-    "id": "module:pon-demo-site/client.actions.ToastAct~act.showWarn",
+    "id": "ToastAct~act.showWarn",
     "kind": "function",
-    "longname": "module:pon-demo-site/client.actions.ToastAct~act.showWarn",
-    "memberof": "module:pon-demo-site/client.actions.ToastAct~act",
+    "longname": "ToastAct~act.showWarn",
+    "memberof": "ToastAct~act",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 44,
+      "lineno": 46,
       "path": "client/actions"
     },
     "name": "showWarn",
@@ -861,7 +935,7 @@
     "memberof": "module:pon-demo-site/client.client",
     "meta": {
       "filename": "create.js",
-      "lineno": 1,
+      "lineno": 7,
       "path": "client/client"
     },
     "name": "create",
@@ -906,7 +980,7 @@
     "memberof": "module:pon-demo-site/client.store",
     "meta": {
       "filename": "create.js",
-      "lineno": 1,
+      "lineno": 14,
       "path": "client/store"
     },
     "name": "create",
@@ -954,7 +1028,7 @@
       {
         "type": {
           "names": [
-            "object"
+            "Object"
           ]
         },
         "optional": true,
@@ -965,7 +1039,7 @@
       {
         "type": {
           "names": [
-            "TheDB"
+            "Object"
           ]
         }
       }
@@ -987,6 +1061,21 @@
     "scope": "static"
   },
   {
+    "description": "Resource for room",
+    "id": "module:pon-demo-site/server.db.resources.UserResource",
+    "kind": "function",
+    "longname": "module:pon-demo-site/server.db.resources.UserResource",
+    "memberof": "module:pon-demo-site/server.db.resources",
+    "meta": {
+      "filename": "UserResource.js",
+      "lineno": 1,
+      "path": "server/db/resources"
+    },
+    "name": "UserResource",
+    "order": 54,
+    "scope": "static"
+  },
+  {
     "description": "Create an server instance",
     "id": "module:pon-demo-site/server.server.create",
     "kind": "function",
@@ -998,7 +1087,7 @@
       "path": "server/server"
     },
     "name": "create",
-    "order": 62,
+    "order": 61,
     "returns": [
       {
         "type": {
@@ -1017,11 +1106,11 @@
     "memberof": "module:pon-demo-site/server.db.resources.RoomResource",
     "meta": {
       "filename": "UserResource.js",
-      "lineno": 33,
+      "lineno": 32,
       "path": "server/db/resources"
     },
     "name": "TheRoomResourceEntity",
-    "order": 56,
+    "order": 55,
     "scope": "inner"
   },
   {
@@ -1031,7 +1120,7 @@
     "memberof": "module:pon-demo-site/client.actions.AppAct",
     "meta": {
       "filename": "AppAct.js",
-      "lineno": 19,
+      "lineno": 20,
       "path": "client/actions"
     },
     "name": "appAct",
@@ -1045,7 +1134,7 @@
     "memberof": "module:pon-demo-site/client.actions.ConnectionRetryAct",
     "meta": {
       "filename": "ConnectionRetryAct.js",
-      "lineno": 17,
+      "lineno": 18,
       "path": "client/actions"
     },
     "name": "connectionRetryAct",
@@ -1059,7 +1148,7 @@
     "memberof": "module:pon-demo-site/client.actions.HomeAct",
     "meta": {
       "filename": "HomeAct.js",
-      "lineno": 16,
+      "lineno": 19,
       "path": "client/actions"
     },
     "name": "homeAct",
@@ -1073,7 +1162,7 @@
     "memberof": "module:pon-demo-site/client.scenes.LocationAct",
     "meta": {
       "filename": "LocationAct.js",
-      "lineno": 14,
+      "lineno": 15,
       "path": "client/actions"
     },
     "name": "locationAct",
@@ -1087,7 +1176,7 @@
     "memberof": "module:pon-demo-site/client.actions.ToastAct",
     "meta": {
       "filename": "ToastAct.js",
-      "lineno": 11,
+      "lineno": 12,
       "path": "client/actions"
     },
     "name": "toastAct",

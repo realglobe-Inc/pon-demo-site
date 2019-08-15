@@ -1,8 +1,3 @@
-/**
- * WebApps
- * @memberof module:pon-demo-site/server.constants
- * @namespace WebApps
- */
 'use strict'
 
 const { isProduction } = require('@the-/check')

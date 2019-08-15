@@ -1,7 +1,3 @@
-/**
- * @memberof module:pon-demo-site/client.ui
- * @function Html
- */
 'use strict'
 
 import React from 'react'
@@ -9,7 +5,10 @@ import { GlobalKeys, locales, Paths, SrcSets, Styles, UI } from '@self/conf'
 import { TheBody, TheHead, TheHtml, TheRouter } from '@the-/ui'
 import { addUrlQuery } from '@the-/url'
 
-/** @lends module:pon-demo-site/client.ui.Html */
+/**
+ * @memberof module:pon-demo-site/client.ui
+ * @function Html
+ */
 const Html = React.memo(({ app, renderingContext }) => {
   const { buildNumber, cdnUrl, version } = app
   const { lang, path } = renderingContext

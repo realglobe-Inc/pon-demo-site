@@ -1,14 +1,11 @@
-/**
- * @enum {object} atPolicy
- */
 'use strict'
 
 const {
   DataTypes: { DATE },
 } = require('@the-/resource')
 
-module.exports = Object.freeze(
-  /** @lends atPolicy */
+const atPolicy =
+  /** @namespace atPolicy */
   {
     createdAt: {
       default: () => new Date(),
@@ -20,5 +17,7 @@ module.exports = Object.freeze(
       description: 'Date updated',
       type: DATE,
     },
-  },
-)
+  }
+Object.freeze(atPolicy)
+
+module.exports = atPolicy

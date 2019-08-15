@@ -1,17 +1,18 @@
-/**
- * Act for "connection.retry"
- * @memberof module:pon-demo-site/client.actions
- * @function ConnectionRetryAct
- * @returns {object} Act instance
- */
 'use strict'
 
 import { unlessProduction } from '@the-/check'
 import { busyAccessFor } from '@the-/facade-scope'
 import { reload } from '@the-/window'
 
-/** @lends module:pon-demo-site/client.actions.ConnectionRetryAct */
-function ConnectionRetryAct(scope) {
+/**
+ * Act for "connection.retry"
+ * @memberof module:pon-demo-site/client.actions
+ * @function ConnectionRetryAct
+ * @param {Object} scope - Store scope
+ * @param {Object} ctx - Context of action
+ * @returns {Object} Act instance
+ */
+function ConnectionRetryAct(scope, ctx) {
   const busyAccess = busyAccessFor(scope)
 
   /**
@@ -20,6 +21,7 @@ function ConnectionRetryAct(scope) {
    * @namespace connectionRetryAct
    */
   const act = {
+    __proto__: { ctx },
     bindClient(client) {
       client.onGone(() => {
         setTimeout(() => {

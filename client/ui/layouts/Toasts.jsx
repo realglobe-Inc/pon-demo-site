@@ -1,8 +1,3 @@
-/**
- * Toasts component
- * @memberof module:pon-demo-site/client
- * @function Toasts
- */
 'use strict'
 
 import React from 'react'
@@ -19,7 +14,11 @@ const handle = Handle(({ actions: { toastAct } }) => ({
   onReset: (queues) => toastAct.reset(queues),
 }))
 
-/** @lends module:pon-demo-site/client.Toasts */
+/**
+ * Toasts component
+ * @memberof module:pon-demo-site/client
+ * @function Toasts
+ */
 const Toasts = React.memo(() =>
   stateful(({ error, info, warn }) => (
     <TheToastGroup>

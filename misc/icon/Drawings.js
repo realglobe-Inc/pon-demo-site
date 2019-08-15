@@ -6,7 +6,7 @@
 
 const { Themes } = require('@the-/icon')
 const { Styles } = require('../../conf')
-const pkg = require('../../package')
+const pkg = require('../../package.json')
 
 const font = `${__dirname}/fonts/Raleway/Raleway-Black.ttf`
 

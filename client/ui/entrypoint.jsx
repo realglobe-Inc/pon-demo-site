@@ -13,7 +13,7 @@ import {
   workers,
 } from '@the-/entrypoint'
 import { get, once, rescue, set } from '@the-/window'
-import context, { loader } from './context'
+import context, { loader, locator } from './context'
 import Fallback from './stateful/fallback/Fallback'
 import { ActMapping } from '../mappings'
 
@@ -38,6 +38,7 @@ once('DOMContentLoaded', async () => {
   const actions = loader.loadActions(ActMapping, {
     controllers,
     history,
+    locator,
   })
 
   const { appAct, connectionRetryAct, locationAct, toastAct } = actions

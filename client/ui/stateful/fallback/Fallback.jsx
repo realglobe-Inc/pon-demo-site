@@ -1,8 +1,3 @@
-/**
- * Fallback component
- * @memberof module:pon-demo-site/client.ui
- * @function Fallback
- */
 'use strict'
 
 import c from 'classnames'
@@ -13,7 +8,11 @@ import { Stateful } from '../../context'
 
 const stateful = Stateful(() => ({}))
 
-/** @lends module:pon-demo-site/client.ui.Fallback */
+/**
+ * Fallback component
+ * @memberof module:pon-demo-site/client.ui
+ * @function Fallback
+ */
 const Fallback = React.memo(({ className }) =>
   stateful(() => (
     <div className={c(styles.self, className)}>

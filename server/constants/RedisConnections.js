@@ -1,8 +1,3 @@
-/**
- * RedisConnections
- * @memberof module:pon-demo-site/server.constants
- * @namespace RedisConnections
- */
 'use strict'
 
 const { isProduction } = require('@the-/check')
@@ -10,7 +5,11 @@ const theHash = require('@the-/hash')
 const DockerPorts = require('./DockerPorts')
 
 module.exports =
-  /** @lends module:pon-demo-site/server.constants.RedisConnections */
+  /**
+   * RedisConnections
+   * @memberof module:pon-demo-site/server.constants
+   * @namespace RedisConnections
+   */
   {
     Default: {
       DB: '1',

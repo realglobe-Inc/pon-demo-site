@@ -7,13 +7,13 @@
  */
 'use strict'
 
-const app_ = require('./app')
-const buttons_ = require('./buttons')
-const errors_ = require('./errors')
-const messages_ = require('./messages')
-const org_ = require('./org')
-const titles_ = require('./titles')
-const toasts_ = require('./toasts')
+const app_ = require('./app.json')
+const buttons_ = require('./buttons.json')
+const errors_ = require('./errors.json')
+const messages_ = require('./messages.json')
+const org_ = require('./org.json')
+const titles_ = require('./titles.json')
+const toasts_ = require('./toasts.json')
 
 // `module.exports` overrides these `exports.*`, but still needs them for lebab (https://github.com/lebab/lebab)
 exports.app = app_

@@ -41,7 +41,6 @@
     "struct:cp": "Execute file copy",
     "struct:mkdir": "Generate project directories",
     "struct:pkg": "Prepare sub packages",
-    "struct:render": "Render coz templates",
     "ui": "Run all ui tasks",
     "ui:css": "Compile stylesheets",
     "ui:css/watch": "Run ws css watch",

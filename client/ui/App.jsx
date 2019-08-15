@@ -1,8 +1,3 @@
-/**
- * App component
- * @memberof module:pon-demo-site/client.ui
- * @function App
- */
 'use strict'
 
 import React from 'react'
@@ -20,7 +15,11 @@ const handle = Handle(({ actions: { appAct } }) => ({
   onMount: () => appAct.prepare(),
 }))
 
-/** @lends module:pon-demo-site/client.ui.App */
+/**
+ * App component
+ * @memberof module:pon-demo-site/client.ui
+ * @function App
+ */
 const App = React.memo(() => (
   <context.Root>
     <TheCaughtCatcher>

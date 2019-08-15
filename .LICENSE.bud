@@ -4,7 +4,7 @@
 'use strict'
 
 const { License } = require('@the-/templates')
-const { license, repository } = require('./package')
+const { license, repository } = require('./package.json')
 
 module.exports = License({
   holder: repository.split(/\//).shift(),

@@ -1,8 +1,3 @@
-/**
- * Loader for context
- * @memberof module:pon-demo-site/client
- * @namespace loader
- */
 'use strict'
 
 import theAssert from '@the-/assert'
@@ -10,15 +5,25 @@ import context from './context'
 
 const assert = theAssert('context.loader')
 
-/** @lends module:pon-demo-site/client.loader */
+/**
+ * Loader for context
+ * @memberof module:pon-demo-site/client
+ * @namespace loader
+ */
 const loader = {
-  loadActions(ActMapping, actContext) {
+  /**
+   * Load actions
+   * @param {Object<string, function(): Object>} ActMapping
+   * @param {Object} ctx - Action context
+   * @returns {*}
+   */
+  loadActions(ActMapping, ctx) {
     const store = context.get('store')
     assert(!!store, 'store is required for loadActions')
     const actions = Object.fromEntries(
       Object.entries(ActMapping).map(([as, Factory]) => [
         as,
-        Factory.fromStore(store, actContext),
+        Factory.fromStore(store, ctx),
       ]),
     )
     context.set({ actions })

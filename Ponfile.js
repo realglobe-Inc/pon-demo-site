@@ -26,9 +26,9 @@ const theSecret = require('@the-/secret')
 const theSetting = require('@the-/setting')
 const { Paths, locales } = require('./conf')
 const Containers = require('./misc/docker/Containers')
-const Bins = require('./misc/project/Bins')
-const Directories = require('./misc/project/Directories')
-const Pondoc = require('./misc/project/Pondoc')
+const Bins = require('./misc/project/Bins.json')
+const Directories = require('./misc/project/Directories.json')
+const Pondoc = require('./misc/project/Pondoc.json')
 const { Project, WebApps } = require('./server/constants')
 const migration = require('./server/db/migration')
 
@@ -156,7 +156,6 @@ module.exports = pon(
         { force: true },
       ),
     ],
-    /** Render coz templates */
     'struct:render': [
       coz(
         [

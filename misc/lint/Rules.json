@@ -90,6 +90,7 @@
         "@babel/runtime",
         "@the-/run",
         "@the-/metrics",
+        "@types/.*",
         "/.*-plugin-.*/",
         "sqlite3",
         "/.*-eslint/",
